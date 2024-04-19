@@ -12,16 +12,40 @@ website:
         menu:
           - text: Abbey, Pierre
             href: p_abbey.qmd
+          - text: Anderson, Katie
+            href: k_anderson.qmd
+          - text: Black, Rachael
+            href: r_black.qmd
+          - text: Brempong, Neria
+            href: n_brempong.qmd
           - text: Deshpande, Archit
             href: a_deshpande.qmd
+          - text: Duba, Lauren
+            href: l_duba.qmd
+          - text: Fiorelli, Joseph
+            href: j_fiorelli.qmd
+          - text: Hallinan, Katie
+            href: k_hallinan.qmd
           - text: Johannes, Brooke
             href: b_johannes.qmd
+          - text: Kombo, Rachel
+            href: r_kombo.qmd
+          - text: Legg, Kathy
+            href: k_legg.qmd
           - text: Mack, Carmen
             href: c_mack.qmd
+          - text: Mai, Christine
+            href: c_mai.qmd
           - text: May, Cameron
             href: c_may.qmd
+          - text: Mays, Meghan
+            href: m_mays.qmd
+          - text: McGorry, Noah
+            href: n_mcgorry.qmd
           - text: Procaccio, Bella
             href: b_procaccio.qmd
+          - text: Salameh, Alaa
+            href: a_salameh.qmd
           - text: Sarker, Niharika
             href: n_sarker.qmd
           - text: Spaeth, Timothy
