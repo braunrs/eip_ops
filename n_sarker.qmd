@@ -1,0 +1,21 @@
+---
+title: "Niharika Sarker"
+date: "`r Sys.Date()`"
+lightbox:
+  match: auto
+about:
+  id: hero-heading
+  template: solana
+  image: blank_staff.jpg
+  image-width: 15em
+format:
+  html: 
+    grid:
+      sidebar-width: 200px
+      body-width: 1050px
+      margin-width: 250px
+---
+
+
+This page is currently under construction.
+

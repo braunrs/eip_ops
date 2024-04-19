@@ -1,0 +1,12 @@
+---
+title: "Welcome to the EIP Operations Website"
+image: eip_logo.png
+about:
+    template: jolla
+    image-shape: round
+    image-width: 15em
+---
+
+Welcome to the main landing page of the EIP Operations Website.
+This page is currently under construction, but the navigation bar is active and will direct you to staff metrics.
+

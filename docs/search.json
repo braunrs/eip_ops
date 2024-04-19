@@ -233,9 +233,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "eip_ops",
+    "title": "EIP Operations Website",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Login\n\n\nPassword:  Login\n\n\n\nEIP Mission Statement\nThe UC Early Intervention Program is committed to identifying and intervening with populations most at risk for threats to health and well-being at the earliest opportunity, and helping these individuals connect with community resources to improve health outcomes.\n\nOperations Website\nIn order to protect the information contained within this website, this initial landing page is password protected and hides the navigation bar to the actual EIP Data website. Since you gained access to this page with the valid password, you can now use the following link to connect to the data website:\nEIP Operations Website"
+  },
+  {
+    "objectID": "main.html",
+    "href": "main.html",
+    "title": "Welcome to the EIP Operations Website",
+    "section": "",
+    "text": "Welcome to the main landing page of the EIP Operations Website. This page is currently under construction, but the navigation bar is active and will direct you to staff metrics."
   },
   {
     "objectID": "n_sarker.html",

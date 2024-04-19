@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "EIP Operations Website"
+  navbar:
+    right:
+      - text: "Home"
+        href: main.qmd
+      - text: "Current Staff"
+        menu:
+          - text: Abbey, Pierre
+            href: p_abbey.qmd
+          - text: Deshpande, Archit
+            href: a_deshpande.qmd
+          - text: Johannes, Brooke
+            href: b_johannes.qmd
+          - text: Mack, Carmen
+            href: c_mack.qmd
+          - text: May, Cameron
+            href: c_may.qmd
+          - text: Procaccio, Bella
+            href: b_procaccio.qmd
+          - text: Sarker, Niharika
+            href: n_sarker.qmd
+          - text: Spaeth, Timothy
+            href: t_spaeth.qmd
+          - text: Striker, Chloe
+            href: c_striker.qmd
+          - text: Twitty, Dylanne
+            href: d_twitty.qmd
+
+format:
+  html:
+    theme: spacelab
+    css: styles.css
+    toc: true
+
+
+
