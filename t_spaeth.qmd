@@ -6,7 +6,7 @@ lightbox:
 about:
   id: hero-heading
   template: solana
-  image: c_Spaeth.jpg
+  image: blank_staff.jpg
   image-width: 15em
 format:
   html: 
