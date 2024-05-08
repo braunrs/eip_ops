@@ -1,12 +1,125 @@
 ---
 title: "Welcome to the EIP Operations Website"
-image: eip_logo.png
+image: images/eip_logo.jpg
+lightbox:
+  match: auto
+  effect: fade
+  loop: true
 about:
     template: jolla
     image-shape: round
     image-width: 15em
 ---
 
-Welcome to the main landing page of the EIP Operations Website.
-This page is currently under construction, but the navigation bar is active and will direct you to staff metrics.
+:::{#hero-heading}
+This site shows our current EIP staff and describes their roles within the program. You can go to their personal page by clicking on their image, directing you towards their current metrics.
+:::
+
+<br>
+<br>
+<br>
+
+### Health Promotion Advocates (HPAs)
+
+The role of the EIP HPA...
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+[![Pierre Abbey](images/blank_staff.jpg){group="hpa-gallery"}](p_abbey.html "Pierre Abbey")
+
+[![Archit Deshpande](images/a_deshpande.jpg){group="hpa-gallery"}](a_deshpande.html "Archit Deshpande")
+
+[![Brooke Johannes](images/b_johannes.jpg){group="hpa-gallery"}](b_johannes.html "Brooke Johannes")
+
+[![Cameron May](images/c_may.jpg){group="hpa-gallery"}](c_may.html "Cameron May")
+
+[![Bella Procaccio](images/b_procaccio.jpg){group="hpa-gallery"}](b_procaccio.html "Bella Procaccio")
+
+[![Niharika Sarker](images/n_sarker.jpg){group="hpa-gallery"}](n_sarker.html "Niharika Sarker")
+
+[![Timothy Spaeth](images/t_spaeth.jpg){group="hpa-gallery"}](t_spaeth.html "Timothy Spaeth")
+
+[![Dylanne Twitty](images/blank_staff.jpg){group="hpa-gallery"}](d_twitty.html "Dylanne Twitty")
+:::
+
+
+<br>
+<br>
+<br>
+
+
+### Linkage to Care Coordinators (LtC)
+
+The role of the EIP LtC Coordinator...
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+[![Katie Anderson](images/k_anderson.jpg){group="ltc-gallery"}](k_anderson.html "Katie Anderson")
+
+[![Rachael Black](images/r_black.jpg){group="ltc-gallery"}](r_black.html "Rachael Black")
+
+[![Neria Brempong](images/n_brempong.jpg){group="ltc-gallery"}](n_brempong.html "Neria Brempong")
+
+[![Joseph Fiorelli](images/j_fiorelli.jpg){group="ltc-gallery"}](j_fiorelli.html "Joseph Fiorelli")
+
+[![Katie Hallinan](images/k_hallinan.jpg){group="ltc-gallery"}](k_hallinan.html "Katie Hallinan")
+
+[![Rachel Kombo](images/r_kombo.jpg){group="ltc-gallery"}](r_kombo.html "Rachel Kombo")
+
+[![Carmen Mack](images/blank_staff.jpg){group="ltc-gallery"}](c_mack.html "Carmen Mack")
+
+[![Christine Mai](images/blank_staff.jpg){group="ltc-gallery"}](c_mai.html "Christine Mai")
+
+[![Meg Mays](images/m_mays.jpg){group="ltc-gallery"}](m_mays.html "Meg Mays")
+
+[![Noah McGorry](images/n_mcGorry.jpg){group="ltc-gallery"}](n_mcgorry.html "Noah McGorry")
+
+[![Alaa Salameh](images/a_salameh.jpg){group="ltc-gallery"}](a_salameh.html "Alaa Salameh")
+:::
+
+
+<br>
+<br>
+<br>
+
+
+### Peer Support Staff
+
+The role of the EIP Peer Support Staff...
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+![Kimberly Arnold](images/k_arnold.jpg){group="peer-gallery" fig-alt="Kimberly Arnold"}
+
+[![Lauren Duba](images/l_duba.jpg){group="peer-gallery"}](l_duba.html "Lauren Duba")
+
+![Janelle Freman](images/j_freman.jpg){group="peer-gallery" fig-alt="Janelle Freman"}
+
+[![Kathy Legg](images/k_legg.jpg){group="peer-gallery"}](k_legg.html "Kathy Legg")
+
+![Dawn Selleny](images/d_selleny.jpg){group="peer-gallery" fig-alt="Dawn Selleny"}
+:::
+
+
+<br>
+<br>
+<br>
+
+
+### EIP Operations Team
+
+The role of the EIP Operations Team...
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+![Jessika Bass](images/j_bass.jpg){group="ops-gallery" fig-alt="Jessika Bass"}
+
+![Ryane Sickles](images/r_sickles.jpg){group="ops-gallery" fig-alt="Ryane Sickles"}
+
+![Elysia Smith](images/e_smith.jpg){group="ops-gallery" fig-alt="Elysia Smith"}
+
+[![Chloe Striker](images/c_striker.jpg){group="ops-gallery"}](c_striker.html "Chloe Striker")
+:::
+
+
+
+
+
+
 

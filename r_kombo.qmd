@@ -6,8 +6,8 @@ lightbox:
 about:
   id: hero-heading
   template: solana
-  image: r_kombo.jpg
-  image-width: 15em
+  image: images/r_kombo.jpg
+  image-width: 20em
 format:
   html: 
     grid:
@@ -53,7 +53,7 @@ summary(eip23$record_id)
 eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20240429_0804.csv')
 dim(eip24)
 summary(eip24$record_id)
-eip24$record_id <- paste(eip24$record_id, "_23", sep = "")
+eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
 summary(eip24$record_id)
 
 ```
@@ -200,136 +200,136 @@ person <- select(person, record_id, mrn, dob,
 dim(person)
 
 eip23 <- select(eip23, -mrn, -dob, 
-               -race___1, -race___2, -race___3, -race___4, -race___5, 
-               -race___6, -ethnicity,
-               -sex_raised, -sex_selfdefined, -insurance, -address_county,
-               -address_zip_code,
-               -followup_date1, -followup_date2, -followup_date3, -followup_date4,
-               -followup_date5, -followup_date6, -followup_date7, -followup_date8,
-               -followup_date9, -followup_date10, -followup_date11, -followup_date12,
-               -followup_date13, -followup_date14, -followup_date15, -followup_date16,
-               -followup_date17, -followup_date18, -followup_date19, -followup_date20,
-               -followup_date21, -followup_date22, -followup_date23, -followup_date24,
-               -followup_date25, -followup_date26, -followup_date27, -followup_date28,
-               -followup_date29, -followup_date30, -followup_date31, -followup_date32,
-               -followup_date33, -followup_date34, -followup_date35, -followup_date36,
-               -followup_date37, -followup_date38, -followup_date39, -followup_date40,
-               -followup_date41, -followup_date42, -followup_date43, -followup_date44,
-               -followup_date45, -followup_date46, -followup_date47, -followup_date48,
-               -followup_date49, -followup_date50, -followup_counselor1, -followup_counselor2,
-               -followup_counselor3, -followup_counselor4, -followup_counselor5,
-               -followup_counselor6, -followup_counselor7, -followup_counselor8,
-               -followup_counselor9, -followup_counselor10, -followup_counselor11,
-               -followup_counselor12, -followup_counselor13, -followup_counselor14,
-               -followup_counselor15, -followup_counselor16, -followup_counselor17,
-               -followup_counselor18, -followup_counselor19, -followup_counselor20,
-               -followup_counselor21, -followup_counselor22, -followup_counselor23,
-               -followup_counselor24, -followup_counselor25, -followup_counselor26,
-               -followup_counselor27, -followup_counselor28, -followup_counselor29,
-               -followup_counselor30, -followup_counselor31, -followup_counselor32,
-               -followup_counselor33, -followup_counselor34, -followup_counselor35,
-               -followup_counselor36, -followup_counselor37, -followup_counselor38,
-               -followup_counselor39, -followup_counselor40, -followup_counselor41,
-               -followup_counselor42, -followup_counselor43, -followup_counselor44,
-               -followup_counselor45, -followup_counselor46, -followup_counselor47,
-               -followup_counselor48, -followup_counselor49, -followup_counselor50,
-               -ltc_service1___8, -ltc_service2___8,
-               -ltc_service3___8, -ltc_service4___8, -ltc_service5___8,
-               -ltc_service6___8, -ltc_service7___8, -ltc_service8___8,
-               -ltc_service9___8, -ltc_service10___8, -ltc_service11___8,
-               -ltc_service12___8, -ltc_service13___8, -ltc_service14___8,
-               -ltc_service15___8, -ltc_service16___8, -ltc_service17___8,
-               -ltc_service18___8, -ltc_service19___8, -ltc_service20___8,
-               -ltc_service21___8, -ltc_service22___8, -ltc_service23___8,
-               -ltc_service24___8, -ltc_service25___8, -ltc_service26___8,
-               -ltc_service27___8, -ltc_service28___8, -ltc_service29___8,
-               -ltc_service30___8, -ltc_service31___8, -ltc_service32___8,
-               -ltc_service33___8, -ltc_service34___8, -ltc_service35___8,
-               -ltc_service36___8, -ltc_service37___8, -ltc_service38___8,
-               -ltc_service39___8, -ltc_service40___8, -ltc_service41___8,
-               -ltc_service42___8, -ltc_service43___8, -ltc_service44___8,
-               -ltc_service45___8, -ltc_service46___8, -ltc_service47___8,
-               -ltc_service48___8, -ltc_service49___8, -ltc_service50___8,
-               -naccho_contact_day1, -naccho_contact_day2,
-               -naccho_contact_day3, -naccho_contact_day4, -naccho_contact_day5,
-               -naccho_contact_day6, -naccho_contact_day7, -naccho_contact_day8,
-               -naccho_contact_day9, -naccho_contact_day10, -naccho_contact_day11,
-               -naccho_contact_day12, -naccho_contact_day13, -naccho_contact_day14,
-               -naccho_contact_day15, -naccho_contact_day16, -naccho_contact_day17,
-               -naccho_contact_day18, -naccho_contact_day19, -naccho_contact_day20,
-               -naccho_contact_day21, -naccho_contact_day22, -naccho_contact_day23,
-               -naccho_contact_day24, -naccho_contact_day25, -naccho_contact_day26,
-               -naccho_contact_day27, -naccho_contact_day28, -naccho_contact_day29,
-               -naccho_contact_day30, -naccho_contact_day31, -naccho_contact_day32,
-               -naccho_contact_day33, -naccho_contact_day34, -naccho_contact_day35,
-               -naccho_contact_day36, -naccho_contact_day37, -naccho_contact_day38,
-               -naccho_contact_day39, -naccho_contact_day40, -naccho_contact_day41,
-               -naccho_contact_day42, -naccho_contact_day43, -naccho_contact_day44,
-               -naccho_contact_day45, -naccho_contact_day46, -naccho_contact_day47,
-               -naccho_contact_day48, -naccho_contact_day49, -naccho_contact_day50,
-               -naccho_contact_confirm_tx1, -naccho_contact_confirm_tx2,
-               -naccho_contact_confirm_tx3, -naccho_contact_confirm_tx4, -naccho_contact_confirm_tx5,
-               -naccho_contact_confirm_tx6, -naccho_contact_confirm_tx7, -naccho_contact_confirm_tx8,
-               -naccho_contact_confirm_tx9, -naccho_contact_confirm_tx10, -naccho_contact_confirm_tx11,
-               -naccho_contact_confirm_tx12, -naccho_contact_confirm_tx13, -naccho_contact_confirm_tx14,
-               -naccho_contact_confirm_tx15, -naccho_contact_confirm_tx16, -naccho_contact_confirm_tx17,
-               -naccho_contact_confirm_tx18, -naccho_contact_confirm_tx19, -naccho_contact_confirm_tx20,
-               -naccho_contact_confirm_tx21, -naccho_contact_confirm_tx22, -naccho_contact_confirm_tx23,
-               -naccho_contact_confirm_tx24, -naccho_contact_confirm_tx25, -naccho_contact_confirm_tx26,
-               -naccho_contact_confirm_tx27, -naccho_contact_confirm_tx28, -naccho_contact_confirm_tx29,
-               -naccho_contact_confirm_tx30, -naccho_contact_confirm_tx31, -naccho_contact_confirm_tx32,
-               -naccho_contact_confirm_tx33, -naccho_contact_confirm_tx34, -naccho_contact_confirm_tx35,
-               -naccho_contact_confirm_tx36, -naccho_contact_confirm_tx37, -naccho_contact_confirm_tx38,
-               -naccho_contact_confirm_tx39, -naccho_contact_confirm_tx40, -naccho_contact_confirm_tx41,
-               -naccho_contact_confirm_tx42, -naccho_contact_confirm_tx43, -naccho_contact_confirm_tx44,
-               -naccho_contact_confirm_tx45, -naccho_contact_confirm_tx46, -naccho_contact_confirm_tx47,
-               -naccho_contact_confirm_tx48, -naccho_contact_confirm_tx49, -naccho_contact_confirm_tx50,
-               -who_initiated_contact1, -who_initiated_contact2, -who_initiated_contact3, -who_initiated_contact4, -who_initiated_contact5,
-               -who_initiated_contact6, -who_initiated_contact7, -who_initiated_contact8, -who_initiated_contact9, -who_initiated_contact10,
-               -who_initiated_contact11, -who_initiated_contact12, -who_initiated_contact13, -who_initiated_contact14,
-               -who_initiated_contact15, -who_initiated_contact16, -who_initiated_contact17, -who_initiated_contact18,
-               -who_initiated_contact19, -who_initiated_contact20, -who_initiated_contact21, -who_initiated_contact22,
-               -who_initiated_contact23, -who_initiated_contact24, -who_initiated_contact25, -who_initiated_contact26,
-               -who_initiated_contact27, -who_initiated_contact28, -who_initiated_contact29, -who_initiated_contact30,
-               -who_initiated_contact31, -who_initiated_contact32, -who_initiated_contact33, -who_initiated_contact34,
-               -who_initiated_contact35, -who_initiated_contact36, -who_initiated_contact37, -who_initiated_contact38,
-               -who_initiated_contact39, -who_initiated_contact40, -who_initiated_contact41, -who_initiated_contact42,
-               -who_initiated_contact43, -who_initiated_contact44, -who_initiated_contact45, -who_initiated_contact46,
-               -who_initiated_contact47, -who_initiated_contact48, -who_initiated_contact49, -who_initiated_contact50,
-               -contact_with1, -contact_with2, -contact_with3, -contact_with4, -contact_with5,
-               -contact_with6, -contact_with7, -contact_with8, -contact_with9, -contact_with10,
-               -contact_with11, -contact_with12, -contact_with13, -contact_with14,
-               -contact_with15, -contact_with16, -contact_with17, -contact_with18,
-               -contact_with19, -contact_with20, -contact_with21, -contact_with22,
-               -contact_with23, -contact_with24, -contact_with25, -contact_with26,
-               -contact_with27, -contact_with28, -contact_with29, -contact_with30,
-               -contact_with31, -contact_with32, -contact_with33, -contact_with34,
-               -contact_with35, -contact_with36, -contact_with37, -contact_with38,
-               -contact_with39, -contact_with40, -contact_with41, -contact_with42,
-               -contact_with43, -contact_with44, -contact_with45, -contact_with46,
-               -contact_with47, -contact_with48, -contact_with49, -contact_with50,
-               -ltc_contact1, -ltc_contact2, -ltc_contact3, -ltc_contact4, -ltc_contact5,
-               -ltc_contact6, -ltc_contact7, -ltc_contact8, -ltc_contact9, -ltc_contact10,
-               -ltc_contact11, -ltc_contact12, -ltc_contact13, -ltc_contact14, -ltc_contact15,
-               -ltc_contact16, -ltc_contact17, -ltc_contact18, -ltc_contact19, -ltc_contact20,
-               -ltc_contact21, -ltc_contact22, -ltc_contact23, -ltc_contact24, -ltc_contact25,
-               -ltc_contact26, -ltc_contact27, -ltc_contact28, -ltc_contact29, -ltc_contact30,
-               -ltc_contact31, -ltc_contact32, -ltc_contact33, -ltc_contact34, -ltc_contact35,
-               -ltc_contact36, -ltc_contact37, -ltc_contact38, -ltc_contact39, -ltc_contact40,
-               -ltc_contact41, -ltc_contact42, -ltc_contact43, -ltc_contact44, -ltc_contact45,
-               -ltc_contact46, -ltc_contact47, -ltc_contact48, -ltc_contact49, -ltc_contact50,
-               -no_contact_reason1, -no_contact_reason2, -no_contact_reason3, -no_contact_reason4, -no_contact_reason5,
-               -no_contact_reason6, -no_contact_reason7, -no_contact_reason8, -no_contact_reason9, -no_contact_reason10,
-               -no_contact_reason11, -no_contact_reason12, -no_contact_reason13, -no_contact_reason14,
-               -no_contact_reason15, -no_contact_reason16, -no_contact_reason17, -no_contact_reason18,
-               -no_contact_reason19, -no_contact_reason20, -no_contact_reason21, -no_contact_reason22,
-               -no_contact_reason23, -no_contact_reason24, -no_contact_reason25, -no_contact_reason26,
-               -no_contact_reason27, -no_contact_reason28, -no_contact_reason29, -no_contact_reason30,
-               -no_contact_reason31, -no_contact_reason32, -no_contact_reason33, -no_contact_reason34,
-               -no_contact_reason35, -no_contact_reason36, -no_contact_reason37, -no_contact_reason38,
-               -no_contact_reason39, -no_contact_reason40, -no_contact_reason41, -no_contact_reason42,
-               -no_contact_reason43, -no_contact_reason44, -no_contact_reason45, -no_contact_reason46,
-               -no_contact_reason47, -no_contact_reason48, -no_contact_reason49, -no_contact_reason50)
+                -race___1, -race___2, -race___3, -race___4, -race___5, 
+                -race___6, -ethnicity,
+                -sex_raised, -sex_selfdefined, -insurance, -address_county,
+                -address_zip_code,
+                -followup_date1, -followup_date2, -followup_date3, -followup_date4,
+                -followup_date5, -followup_date6, -followup_date7, -followup_date8,
+                -followup_date9, -followup_date10, -followup_date11, -followup_date12,
+                -followup_date13, -followup_date14, -followup_date15, -followup_date16,
+                -followup_date17, -followup_date18, -followup_date19, -followup_date20,
+                -followup_date21, -followup_date22, -followup_date23, -followup_date24,
+                -followup_date25, -followup_date26, -followup_date27, -followup_date28,
+                -followup_date29, -followup_date30, -followup_date31, -followup_date32,
+                -followup_date33, -followup_date34, -followup_date35, -followup_date36,
+                -followup_date37, -followup_date38, -followup_date39, -followup_date40,
+                -followup_date41, -followup_date42, -followup_date43, -followup_date44,
+                -followup_date45, -followup_date46, -followup_date47, -followup_date48,
+                -followup_date49, -followup_date50, -followup_counselor1, -followup_counselor2,
+                -followup_counselor3, -followup_counselor4, -followup_counselor5,
+                -followup_counselor6, -followup_counselor7, -followup_counselor8,
+                -followup_counselor9, -followup_counselor10, -followup_counselor11,
+                -followup_counselor12, -followup_counselor13, -followup_counselor14,
+                -followup_counselor15, -followup_counselor16, -followup_counselor17,
+                -followup_counselor18, -followup_counselor19, -followup_counselor20,
+                -followup_counselor21, -followup_counselor22, -followup_counselor23,
+                -followup_counselor24, -followup_counselor25, -followup_counselor26,
+                -followup_counselor27, -followup_counselor28, -followup_counselor29,
+                -followup_counselor30, -followup_counselor31, -followup_counselor32,
+                -followup_counselor33, -followup_counselor34, -followup_counselor35,
+                -followup_counselor36, -followup_counselor37, -followup_counselor38,
+                -followup_counselor39, -followup_counselor40, -followup_counselor41,
+                -followup_counselor42, -followup_counselor43, -followup_counselor44,
+                -followup_counselor45, -followup_counselor46, -followup_counselor47,
+                -followup_counselor48, -followup_counselor49, -followup_counselor50,
+                -ltc_service1___8, -ltc_service2___8,
+                -ltc_service3___8, -ltc_service4___8, -ltc_service5___8,
+                -ltc_service6___8, -ltc_service7___8, -ltc_service8___8,
+                -ltc_service9___8, -ltc_service10___8, -ltc_service11___8,
+                -ltc_service12___8, -ltc_service13___8, -ltc_service14___8,
+                -ltc_service15___8, -ltc_service16___8, -ltc_service17___8,
+                -ltc_service18___8, -ltc_service19___8, -ltc_service20___8,
+                -ltc_service21___8, -ltc_service22___8, -ltc_service23___8,
+                -ltc_service24___8, -ltc_service25___8, -ltc_service26___8,
+                -ltc_service27___8, -ltc_service28___8, -ltc_service29___8,
+                -ltc_service30___8, -ltc_service31___8, -ltc_service32___8,
+                -ltc_service33___8, -ltc_service34___8, -ltc_service35___8,
+                -ltc_service36___8, -ltc_service37___8, -ltc_service38___8,
+                -ltc_service39___8, -ltc_service40___8, -ltc_service41___8,
+                -ltc_service42___8, -ltc_service43___8, -ltc_service44___8,
+                -ltc_service45___8, -ltc_service46___8, -ltc_service47___8,
+                -ltc_service48___8, -ltc_service49___8, -ltc_service50___8,
+                -naccho_contact_day1, -naccho_contact_day2,
+                -naccho_contact_day3, -naccho_contact_day4, -naccho_contact_day5,
+                -naccho_contact_day6, -naccho_contact_day7, -naccho_contact_day8,
+                -naccho_contact_day9, -naccho_contact_day10, -naccho_contact_day11,
+                -naccho_contact_day12, -naccho_contact_day13, -naccho_contact_day14,
+                -naccho_contact_day15, -naccho_contact_day16, -naccho_contact_day17,
+                -naccho_contact_day18, -naccho_contact_day19, -naccho_contact_day20,
+                -naccho_contact_day21, -naccho_contact_day22, -naccho_contact_day23,
+                -naccho_contact_day24, -naccho_contact_day25, -naccho_contact_day26,
+                -naccho_contact_day27, -naccho_contact_day28, -naccho_contact_day29,
+                -naccho_contact_day30, -naccho_contact_day31, -naccho_contact_day32,
+                -naccho_contact_day33, -naccho_contact_day34, -naccho_contact_day35,
+                -naccho_contact_day36, -naccho_contact_day37, -naccho_contact_day38,
+                -naccho_contact_day39, -naccho_contact_day40, -naccho_contact_day41,
+                -naccho_contact_day42, -naccho_contact_day43, -naccho_contact_day44,
+                -naccho_contact_day45, -naccho_contact_day46, -naccho_contact_day47,
+                -naccho_contact_day48, -naccho_contact_day49, -naccho_contact_day50,
+                -naccho_contact_confirm_tx1, -naccho_contact_confirm_tx2,
+                -naccho_contact_confirm_tx3, -naccho_contact_confirm_tx4, -naccho_contact_confirm_tx5,
+                -naccho_contact_confirm_tx6, -naccho_contact_confirm_tx7, -naccho_contact_confirm_tx8,
+                -naccho_contact_confirm_tx9, -naccho_contact_confirm_tx10, -naccho_contact_confirm_tx11,
+                -naccho_contact_confirm_tx12, -naccho_contact_confirm_tx13, -naccho_contact_confirm_tx14,
+                -naccho_contact_confirm_tx15, -naccho_contact_confirm_tx16, -naccho_contact_confirm_tx17,
+                -naccho_contact_confirm_tx18, -naccho_contact_confirm_tx19, -naccho_contact_confirm_tx20,
+                -naccho_contact_confirm_tx21, -naccho_contact_confirm_tx22, -naccho_contact_confirm_tx23,
+                -naccho_contact_confirm_tx24, -naccho_contact_confirm_tx25, -naccho_contact_confirm_tx26,
+                -naccho_contact_confirm_tx27, -naccho_contact_confirm_tx28, -naccho_contact_confirm_tx29,
+                -naccho_contact_confirm_tx30, -naccho_contact_confirm_tx31, -naccho_contact_confirm_tx32,
+                -naccho_contact_confirm_tx33, -naccho_contact_confirm_tx34, -naccho_contact_confirm_tx35,
+                -naccho_contact_confirm_tx36, -naccho_contact_confirm_tx37, -naccho_contact_confirm_tx38,
+                -naccho_contact_confirm_tx39, -naccho_contact_confirm_tx40, -naccho_contact_confirm_tx41,
+                -naccho_contact_confirm_tx42, -naccho_contact_confirm_tx43, -naccho_contact_confirm_tx44,
+                -naccho_contact_confirm_tx45, -naccho_contact_confirm_tx46, -naccho_contact_confirm_tx47,
+                -naccho_contact_confirm_tx48, -naccho_contact_confirm_tx49, -naccho_contact_confirm_tx50,
+                -who_initiated_contact1, -who_initiated_contact2, -who_initiated_contact3, -who_initiated_contact4, -who_initiated_contact5,
+                -who_initiated_contact6, -who_initiated_contact7, -who_initiated_contact8, -who_initiated_contact9, -who_initiated_contact10,
+                -who_initiated_contact11, -who_initiated_contact12, -who_initiated_contact13, -who_initiated_contact14,
+                -who_initiated_contact15, -who_initiated_contact16, -who_initiated_contact17, -who_initiated_contact18,
+                -who_initiated_contact19, -who_initiated_contact20, -who_initiated_contact21, -who_initiated_contact22,
+                -who_initiated_contact23, -who_initiated_contact24, -who_initiated_contact25, -who_initiated_contact26,
+                -who_initiated_contact27, -who_initiated_contact28, -who_initiated_contact29, -who_initiated_contact30,
+                -who_initiated_contact31, -who_initiated_contact32, -who_initiated_contact33, -who_initiated_contact34,
+                -who_initiated_contact35, -who_initiated_contact36, -who_initiated_contact37, -who_initiated_contact38,
+                -who_initiated_contact39, -who_initiated_contact40, -who_initiated_contact41, -who_initiated_contact42,
+                -who_initiated_contact43, -who_initiated_contact44, -who_initiated_contact45, -who_initiated_contact46,
+                -who_initiated_contact47, -who_initiated_contact48, -who_initiated_contact49, -who_initiated_contact50,
+                -contact_with1, -contact_with2, -contact_with3, -contact_with4, -contact_with5,
+                -contact_with6, -contact_with7, -contact_with8, -contact_with9, -contact_with10,
+                -contact_with11, -contact_with12, -contact_with13, -contact_with14,
+                -contact_with15, -contact_with16, -contact_with17, -contact_with18,
+                -contact_with19, -contact_with20, -contact_with21, -contact_with22,
+                -contact_with23, -contact_with24, -contact_with25, -contact_with26,
+                -contact_with27, -contact_with28, -contact_with29, -contact_with30,
+                -contact_with31, -contact_with32, -contact_with33, -contact_with34,
+                -contact_with35, -contact_with36, -contact_with37, -contact_with38,
+                -contact_with39, -contact_with40, -contact_with41, -contact_with42,
+                -contact_with43, -contact_with44, -contact_with45, -contact_with46,
+                -contact_with47, -contact_with48, -contact_with49, -contact_with50,
+                -ltc_contact1, -ltc_contact2, -ltc_contact3, -ltc_contact4, -ltc_contact5,
+                -ltc_contact6, -ltc_contact7, -ltc_contact8, -ltc_contact9, -ltc_contact10,
+                -ltc_contact11, -ltc_contact12, -ltc_contact13, -ltc_contact14, -ltc_contact15,
+                -ltc_contact16, -ltc_contact17, -ltc_contact18, -ltc_contact19, -ltc_contact20,
+                -ltc_contact21, -ltc_contact22, -ltc_contact23, -ltc_contact24, -ltc_contact25,
+                -ltc_contact26, -ltc_contact27, -ltc_contact28, -ltc_contact29, -ltc_contact30,
+                -ltc_contact31, -ltc_contact32, -ltc_contact33, -ltc_contact34, -ltc_contact35,
+                -ltc_contact36, -ltc_contact37, -ltc_contact38, -ltc_contact39, -ltc_contact40,
+                -ltc_contact41, -ltc_contact42, -ltc_contact43, -ltc_contact44, -ltc_contact45,
+                -ltc_contact46, -ltc_contact47, -ltc_contact48, -ltc_contact49, -ltc_contact50,
+                -no_contact_reason1, -no_contact_reason2, -no_contact_reason3, -no_contact_reason4, -no_contact_reason5,
+                -no_contact_reason6, -no_contact_reason7, -no_contact_reason8, -no_contact_reason9, -no_contact_reason10,
+                -no_contact_reason11, -no_contact_reason12, -no_contact_reason13, -no_contact_reason14,
+                -no_contact_reason15, -no_contact_reason16, -no_contact_reason17, -no_contact_reason18,
+                -no_contact_reason19, -no_contact_reason20, -no_contact_reason21, -no_contact_reason22,
+                -no_contact_reason23, -no_contact_reason24, -no_contact_reason25, -no_contact_reason26,
+                -no_contact_reason27, -no_contact_reason28, -no_contact_reason29, -no_contact_reason30,
+                -no_contact_reason31, -no_contact_reason32, -no_contact_reason33, -no_contact_reason34,
+                -no_contact_reason35, -no_contact_reason36, -no_contact_reason37, -no_contact_reason38,
+                -no_contact_reason39, -no_contact_reason40, -no_contact_reason41, -no_contact_reason42,
+                -no_contact_reason43, -no_contact_reason44, -no_contact_reason45, -no_contact_reason46,
+                -no_contact_reason47, -no_contact_reason48, -no_contact_reason49, -no_contact_reason50)
 
 # Merge person dataset with full eip dataset
 
@@ -479,136 +479,136 @@ person <- select(person, record_id, mrn, dob,
 dim(person)
 
 eip24 <- select(eip24, -mrn, -dob, 
-               -race___1, -race___2, -race___3, -race___4, -race___5, 
-               -race___6, -ethnicity,
-               -sex_raised, -sex_selfdefined, -insurance, -address_county,
-               -address_zip_code,
-               -followup_date1, -followup_date2, -followup_date3, -followup_date4,
-               -followup_date5, -followup_date6, -followup_date7, -followup_date8,
-               -followup_date9, -followup_date10, -followup_date11, -followup_date12,
-               -followup_date13, -followup_date14, -followup_date15, -followup_date16,
-               -followup_date17, -followup_date18, -followup_date19, -followup_date20,
-               -followup_date21, -followup_date22, -followup_date23, -followup_date24,
-               -followup_date25, -followup_date26, -followup_date27, -followup_date28,
-               -followup_date29, -followup_date30, -followup_date31, -followup_date32,
-               -followup_date33, -followup_date34, -followup_date35, -followup_date36,
-               -followup_date37, -followup_date38, -followup_date39, -followup_date40,
-               -followup_date41, -followup_date42, -followup_date43, -followup_date44,
-               -followup_date45, -followup_date46, -followup_date47, -followup_date48,
-               -followup_date49, -followup_date50, -followup_counselor1, -followup_counselor2,
-               -followup_counselor3, -followup_counselor4, -followup_counselor5,
-               -followup_counselor6, -followup_counselor7, -followup_counselor8,
-               -followup_counselor9, -followup_counselor10, -followup_counselor11,
-               -followup_counselor12, -followup_counselor13, -followup_counselor14,
-               -followup_counselor15, -followup_counselor16, -followup_counselor17,
-               -followup_counselor18, -followup_counselor19, -followup_counselor20,
-               -followup_counselor21, -followup_counselor22, -followup_counselor23,
-               -followup_counselor24, -followup_counselor25, -followup_counselor26,
-               -followup_counselor27, -followup_counselor28, -followup_counselor29,
-               -followup_counselor30, -followup_counselor31, -followup_counselor32,
-               -followup_counselor33, -followup_counselor34, -followup_counselor35,
-               -followup_counselor36, -followup_counselor37, -followup_counselor38,
-               -followup_counselor39, -followup_counselor40, -followup_counselor41,
-               -followup_counselor42, -followup_counselor43, -followup_counselor44,
-               -followup_counselor45, -followup_counselor46, -followup_counselor47,
-               -followup_counselor48, -followup_counselor49, -followup_counselor50,
-               -ltc_service1___8, -ltc_service2___8,
-               -ltc_service3___8, -ltc_service4___8, -ltc_service5___8,
-               -ltc_service6___8, -ltc_service7___8, -ltc_service8___8,
-               -ltc_service9___8, -ltc_service10___8, -ltc_service11___8,
-               -ltc_service12___8, -ltc_service13___8, -ltc_service14___8,
-               -ltc_service15___8, -ltc_service16___8, -ltc_service17___8,
-               -ltc_service18___8, -ltc_service19___8, -ltc_service20___8,
-               -ltc_service21___8, -ltc_service22___8, -ltc_service23___8,
-               -ltc_service24___8, -ltc_service25___8, -ltc_service26___8,
-               -ltc_service27___8, -ltc_service28___8, -ltc_service29___8,
-               -ltc_service30___8, -ltc_service31___8, -ltc_service32___8,
-               -ltc_service33___8, -ltc_service34___8, -ltc_service35___8,
-               -ltc_service36___8, -ltc_service37___8, -ltc_service38___8,
-               -ltc_service39___8, -ltc_service40___8, -ltc_service41___8,
-               -ltc_service42___8, -ltc_service43___8, -ltc_service44___8,
-               -ltc_service45___8, -ltc_service46___8, -ltc_service47___8,
-               -ltc_service48___8, -ltc_service49___8, -ltc_service50___8,
-               -naccho_contact_day1, -naccho_contact_day2,
-               -naccho_contact_day3, -naccho_contact_day4, -naccho_contact_day5,
-               -naccho_contact_day6, -naccho_contact_day7, -naccho_contact_day8,
-               -naccho_contact_day9, -naccho_contact_day10, -naccho_contact_day11,
-               -naccho_contact_day12, -naccho_contact_day13, -naccho_contact_day14,
-               -naccho_contact_day15, -naccho_contact_day16, -naccho_contact_day17,
-               -naccho_contact_day18, -naccho_contact_day19, -naccho_contact_day20,
-               -naccho_contact_day21, -naccho_contact_day22, -naccho_contact_day23,
-               -naccho_contact_day24, -naccho_contact_day25, -naccho_contact_day26,
-               -naccho_contact_day27, -naccho_contact_day28, -naccho_contact_day29,
-               -naccho_contact_day30, -naccho_contact_day31, -naccho_contact_day32,
-               -naccho_contact_day33, -naccho_contact_day34, -naccho_contact_day35,
-               -naccho_contact_day36, -naccho_contact_day37, -naccho_contact_day38,
-               -naccho_contact_day39, -naccho_contact_day40, -naccho_contact_day41,
-               -naccho_contact_day42, -naccho_contact_day43, -naccho_contact_day44,
-               -naccho_contact_day45, -naccho_contact_day46, -naccho_contact_day47,
-               -naccho_contact_day48, -naccho_contact_day49, -naccho_contact_day50,
-               -naccho_contact_confirm_tx1, -naccho_contact_confirm_tx2,
-               -naccho_contact_confirm_tx3, -naccho_contact_confirm_tx4, -naccho_contact_confirm_tx5,
-               -naccho_contact_confirm_tx6, -naccho_contact_confirm_tx7, -naccho_contact_confirm_tx8,
-               -naccho_contact_confirm_tx9, -naccho_contact_confirm_tx10, -naccho_contact_confirm_tx11,
-               -naccho_contact_confirm_tx12, -naccho_contact_confirm_tx13, -naccho_contact_confirm_tx14,
-               -naccho_contact_confirm_tx15, -naccho_contact_confirm_tx16, -naccho_contact_confirm_tx17,
-               -naccho_contact_confirm_tx18, -naccho_contact_confirm_tx19, -naccho_contact_confirm_tx20,
-               -naccho_contact_confirm_tx21, -naccho_contact_confirm_tx22, -naccho_contact_confirm_tx23,
-               -naccho_contact_confirm_tx24, -naccho_contact_confirm_tx25, -naccho_contact_confirm_tx26,
-               -naccho_contact_confirm_tx27, -naccho_contact_confirm_tx28, -naccho_contact_confirm_tx29,
-               -naccho_contact_confirm_tx30, -naccho_contact_confirm_tx31, -naccho_contact_confirm_tx32,
-               -naccho_contact_confirm_tx33, -naccho_contact_confirm_tx34, -naccho_contact_confirm_tx35,
-               -naccho_contact_confirm_tx36, -naccho_contact_confirm_tx37, -naccho_contact_confirm_tx38,
-               -naccho_contact_confirm_tx39, -naccho_contact_confirm_tx40, -naccho_contact_confirm_tx41,
-               -naccho_contact_confirm_tx42, -naccho_contact_confirm_tx43, -naccho_contact_confirm_tx44,
-               -naccho_contact_confirm_tx45, -naccho_contact_confirm_tx46, -naccho_contact_confirm_tx47,
-               -naccho_contact_confirm_tx48, -naccho_contact_confirm_tx49, -naccho_contact_confirm_tx50,
-               -who_initiated_contact1, -who_initiated_contact2, -who_initiated_contact3, -who_initiated_contact4, -who_initiated_contact5,
-               -who_initiated_contact6, -who_initiated_contact7, -who_initiated_contact8, -who_initiated_contact9, -who_initiated_contact10,
-               -who_initiated_contact11, -who_initiated_contact12, -who_initiated_contact13, -who_initiated_contact14,
-               -who_initiated_contact15, -who_initiated_contact16, -who_initiated_contact17, -who_initiated_contact18,
-               -who_initiated_contact19, -who_initiated_contact20, -who_initiated_contact21, -who_initiated_contact22,
-               -who_initiated_contact23, -who_initiated_contact24, -who_initiated_contact25, -who_initiated_contact26,
-               -who_initiated_contact27, -who_initiated_contact28, -who_initiated_contact29, -who_initiated_contact30,
-               -who_initiated_contact31, -who_initiated_contact32, -who_initiated_contact33, -who_initiated_contact34,
-               -who_initiated_contact35, -who_initiated_contact36, -who_initiated_contact37, -who_initiated_contact38,
-               -who_initiated_contact39, -who_initiated_contact40, -who_initiated_contact41, -who_initiated_contact42,
-               -who_initiated_contact43, -who_initiated_contact44, -who_initiated_contact45, -who_initiated_contact46,
-               -who_initiated_contact47, -who_initiated_contact48, -who_initiated_contact49, -who_initiated_contact50,
-               -contact_with1, -contact_with2, -contact_with3, -contact_with4, -contact_with5,
-               -contact_with6, -contact_with7, -contact_with8, -contact_with9, -contact_with10,
-               -contact_with11, -contact_with12, -contact_with13, -contact_with14,
-               -contact_with15, -contact_with16, -contact_with17, -contact_with18,
-               -contact_with19, -contact_with20, -contact_with21, -contact_with22,
-               -contact_with23, -contact_with24, -contact_with25, -contact_with26,
-               -contact_with27, -contact_with28, -contact_with29, -contact_with30,
-               -contact_with31, -contact_with32, -contact_with33, -contact_with34,
-               -contact_with35, -contact_with36, -contact_with37, -contact_with38,
-               -contact_with39, -contact_with40, -contact_with41, -contact_with42,
-               -contact_with43, -contact_with44, -contact_with45, -contact_with46,
-               -contact_with47, -contact_with48, -contact_with49, -contact_with50,
-               -ltc_contact1, -ltc_contact2, -ltc_contact3, -ltc_contact4, -ltc_contact5,
-               -ltc_contact6, -ltc_contact7, -ltc_contact8, -ltc_contact9, -ltc_contact10,
-               -ltc_contact11, -ltc_contact12, -ltc_contact13, -ltc_contact14, -ltc_contact15,
-               -ltc_contact16, -ltc_contact17, -ltc_contact18, -ltc_contact19, -ltc_contact20,
-               -ltc_contact21, -ltc_contact22, -ltc_contact23, -ltc_contact24, -ltc_contact25,
-               -ltc_contact26, -ltc_contact27, -ltc_contact28, -ltc_contact29, -ltc_contact30,
-               -ltc_contact31, -ltc_contact32, -ltc_contact33, -ltc_contact34, -ltc_contact35,
-               -ltc_contact36, -ltc_contact37, -ltc_contact38, -ltc_contact39, -ltc_contact40,
-               -ltc_contact41, -ltc_contact42, -ltc_contact43, -ltc_contact44, -ltc_contact45,
-               -ltc_contact46, -ltc_contact47, -ltc_contact48, -ltc_contact49, -ltc_contact50,
-               -no_contact_reason1, -no_contact_reason2, -no_contact_reason3, -no_contact_reason4, -no_contact_reason5,
-               -no_contact_reason6, -no_contact_reason7, -no_contact_reason8, -no_contact_reason9, -no_contact_reason10,
-               -no_contact_reason11, -no_contact_reason12, -no_contact_reason13, -no_contact_reason14,
-               -no_contact_reason15, -no_contact_reason16, -no_contact_reason17, -no_contact_reason18,
-               -no_contact_reason19, -no_contact_reason20, -no_contact_reason21, -no_contact_reason22,
-               -no_contact_reason23, -no_contact_reason24, -no_contact_reason25, -no_contact_reason26,
-               -no_contact_reason27, -no_contact_reason28, -no_contact_reason29, -no_contact_reason30,
-               -no_contact_reason31, -no_contact_reason32, -no_contact_reason33, -no_contact_reason34,
-               -no_contact_reason35, -no_contact_reason36, -no_contact_reason37, -no_contact_reason38,
-               -no_contact_reason39, -no_contact_reason40, -no_contact_reason41, -no_contact_reason42,
-               -no_contact_reason43, -no_contact_reason44, -no_contact_reason45, -no_contact_reason46,
-               -no_contact_reason47, -no_contact_reason48, -no_contact_reason49, -no_contact_reason50)
+                -race___1, -race___2, -race___3, -race___4, -race___5, 
+                -race___6, -ethnicity,
+                -sex_raised, -sex_selfdefined, -insurance, -address_county,
+                -address_zip_code,
+                -followup_date1, -followup_date2, -followup_date3, -followup_date4,
+                -followup_date5, -followup_date6, -followup_date7, -followup_date8,
+                -followup_date9, -followup_date10, -followup_date11, -followup_date12,
+                -followup_date13, -followup_date14, -followup_date15, -followup_date16,
+                -followup_date17, -followup_date18, -followup_date19, -followup_date20,
+                -followup_date21, -followup_date22, -followup_date23, -followup_date24,
+                -followup_date25, -followup_date26, -followup_date27, -followup_date28,
+                -followup_date29, -followup_date30, -followup_date31, -followup_date32,
+                -followup_date33, -followup_date34, -followup_date35, -followup_date36,
+                -followup_date37, -followup_date38, -followup_date39, -followup_date40,
+                -followup_date41, -followup_date42, -followup_date43, -followup_date44,
+                -followup_date45, -followup_date46, -followup_date47, -followup_date48,
+                -followup_date49, -followup_date50, -followup_counselor1, -followup_counselor2,
+                -followup_counselor3, -followup_counselor4, -followup_counselor5,
+                -followup_counselor6, -followup_counselor7, -followup_counselor8,
+                -followup_counselor9, -followup_counselor10, -followup_counselor11,
+                -followup_counselor12, -followup_counselor13, -followup_counselor14,
+                -followup_counselor15, -followup_counselor16, -followup_counselor17,
+                -followup_counselor18, -followup_counselor19, -followup_counselor20,
+                -followup_counselor21, -followup_counselor22, -followup_counselor23,
+                -followup_counselor24, -followup_counselor25, -followup_counselor26,
+                -followup_counselor27, -followup_counselor28, -followup_counselor29,
+                -followup_counselor30, -followup_counselor31, -followup_counselor32,
+                -followup_counselor33, -followup_counselor34, -followup_counselor35,
+                -followup_counselor36, -followup_counselor37, -followup_counselor38,
+                -followup_counselor39, -followup_counselor40, -followup_counselor41,
+                -followup_counselor42, -followup_counselor43, -followup_counselor44,
+                -followup_counselor45, -followup_counselor46, -followup_counselor47,
+                -followup_counselor48, -followup_counselor49, -followup_counselor50,
+                -ltc_service1___8, -ltc_service2___8,
+                -ltc_service3___8, -ltc_service4___8, -ltc_service5___8,
+                -ltc_service6___8, -ltc_service7___8, -ltc_service8___8,
+                -ltc_service9___8, -ltc_service10___8, -ltc_service11___8,
+                -ltc_service12___8, -ltc_service13___8, -ltc_service14___8,
+                -ltc_service15___8, -ltc_service16___8, -ltc_service17___8,
+                -ltc_service18___8, -ltc_service19___8, -ltc_service20___8,
+                -ltc_service21___8, -ltc_service22___8, -ltc_service23___8,
+                -ltc_service24___8, -ltc_service25___8, -ltc_service26___8,
+                -ltc_service27___8, -ltc_service28___8, -ltc_service29___8,
+                -ltc_service30___8, -ltc_service31___8, -ltc_service32___8,
+                -ltc_service33___8, -ltc_service34___8, -ltc_service35___8,
+                -ltc_service36___8, -ltc_service37___8, -ltc_service38___8,
+                -ltc_service39___8, -ltc_service40___8, -ltc_service41___8,
+                -ltc_service42___8, -ltc_service43___8, -ltc_service44___8,
+                -ltc_service45___8, -ltc_service46___8, -ltc_service47___8,
+                -ltc_service48___8, -ltc_service49___8, -ltc_service50___8,
+                -naccho_contact_day1, -naccho_contact_day2,
+                -naccho_contact_day3, -naccho_contact_day4, -naccho_contact_day5,
+                -naccho_contact_day6, -naccho_contact_day7, -naccho_contact_day8,
+                -naccho_contact_day9, -naccho_contact_day10, -naccho_contact_day11,
+                -naccho_contact_day12, -naccho_contact_day13, -naccho_contact_day14,
+                -naccho_contact_day15, -naccho_contact_day16, -naccho_contact_day17,
+                -naccho_contact_day18, -naccho_contact_day19, -naccho_contact_day20,
+                -naccho_contact_day21, -naccho_contact_day22, -naccho_contact_day23,
+                -naccho_contact_day24, -naccho_contact_day25, -naccho_contact_day26,
+                -naccho_contact_day27, -naccho_contact_day28, -naccho_contact_day29,
+                -naccho_contact_day30, -naccho_contact_day31, -naccho_contact_day32,
+                -naccho_contact_day33, -naccho_contact_day34, -naccho_contact_day35,
+                -naccho_contact_day36, -naccho_contact_day37, -naccho_contact_day38,
+                -naccho_contact_day39, -naccho_contact_day40, -naccho_contact_day41,
+                -naccho_contact_day42, -naccho_contact_day43, -naccho_contact_day44,
+                -naccho_contact_day45, -naccho_contact_day46, -naccho_contact_day47,
+                -naccho_contact_day48, -naccho_contact_day49, -naccho_contact_day50,
+                -naccho_contact_confirm_tx1, -naccho_contact_confirm_tx2,
+                -naccho_contact_confirm_tx3, -naccho_contact_confirm_tx4, -naccho_contact_confirm_tx5,
+                -naccho_contact_confirm_tx6, -naccho_contact_confirm_tx7, -naccho_contact_confirm_tx8,
+                -naccho_contact_confirm_tx9, -naccho_contact_confirm_tx10, -naccho_contact_confirm_tx11,
+                -naccho_contact_confirm_tx12, -naccho_contact_confirm_tx13, -naccho_contact_confirm_tx14,
+                -naccho_contact_confirm_tx15, -naccho_contact_confirm_tx16, -naccho_contact_confirm_tx17,
+                -naccho_contact_confirm_tx18, -naccho_contact_confirm_tx19, -naccho_contact_confirm_tx20,
+                -naccho_contact_confirm_tx21, -naccho_contact_confirm_tx22, -naccho_contact_confirm_tx23,
+                -naccho_contact_confirm_tx24, -naccho_contact_confirm_tx25, -naccho_contact_confirm_tx26,
+                -naccho_contact_confirm_tx27, -naccho_contact_confirm_tx28, -naccho_contact_confirm_tx29,
+                -naccho_contact_confirm_tx30, -naccho_contact_confirm_tx31, -naccho_contact_confirm_tx32,
+                -naccho_contact_confirm_tx33, -naccho_contact_confirm_tx34, -naccho_contact_confirm_tx35,
+                -naccho_contact_confirm_tx36, -naccho_contact_confirm_tx37, -naccho_contact_confirm_tx38,
+                -naccho_contact_confirm_tx39, -naccho_contact_confirm_tx40, -naccho_contact_confirm_tx41,
+                -naccho_contact_confirm_tx42, -naccho_contact_confirm_tx43, -naccho_contact_confirm_tx44,
+                -naccho_contact_confirm_tx45, -naccho_contact_confirm_tx46, -naccho_contact_confirm_tx47,
+                -naccho_contact_confirm_tx48, -naccho_contact_confirm_tx49, -naccho_contact_confirm_tx50,
+                -who_initiated_contact1, -who_initiated_contact2, -who_initiated_contact3, -who_initiated_contact4, -who_initiated_contact5,
+                -who_initiated_contact6, -who_initiated_contact7, -who_initiated_contact8, -who_initiated_contact9, -who_initiated_contact10,
+                -who_initiated_contact11, -who_initiated_contact12, -who_initiated_contact13, -who_initiated_contact14,
+                -who_initiated_contact15, -who_initiated_contact16, -who_initiated_contact17, -who_initiated_contact18,
+                -who_initiated_contact19, -who_initiated_contact20, -who_initiated_contact21, -who_initiated_contact22,
+                -who_initiated_contact23, -who_initiated_contact24, -who_initiated_contact25, -who_initiated_contact26,
+                -who_initiated_contact27, -who_initiated_contact28, -who_initiated_contact29, -who_initiated_contact30,
+                -who_initiated_contact31, -who_initiated_contact32, -who_initiated_contact33, -who_initiated_contact34,
+                -who_initiated_contact35, -who_initiated_contact36, -who_initiated_contact37, -who_initiated_contact38,
+                -who_initiated_contact39, -who_initiated_contact40, -who_initiated_contact41, -who_initiated_contact42,
+                -who_initiated_contact43, -who_initiated_contact44, -who_initiated_contact45, -who_initiated_contact46,
+                -who_initiated_contact47, -who_initiated_contact48, -who_initiated_contact49, -who_initiated_contact50,
+                -contact_with1, -contact_with2, -contact_with3, -contact_with4, -contact_with5,
+                -contact_with6, -contact_with7, -contact_with8, -contact_with9, -contact_with10,
+                -contact_with11, -contact_with12, -contact_with13, -contact_with14,
+                -contact_with15, -contact_with16, -contact_with17, -contact_with18,
+                -contact_with19, -contact_with20, -contact_with21, -contact_with22,
+                -contact_with23, -contact_with24, -contact_with25, -contact_with26,
+                -contact_with27, -contact_with28, -contact_with29, -contact_with30,
+                -contact_with31, -contact_with32, -contact_with33, -contact_with34,
+                -contact_with35, -contact_with36, -contact_with37, -contact_with38,
+                -contact_with39, -contact_with40, -contact_with41, -contact_with42,
+                -contact_with43, -contact_with44, -contact_with45, -contact_with46,
+                -contact_with47, -contact_with48, -contact_with49, -contact_with50,
+                -ltc_contact1, -ltc_contact2, -ltc_contact3, -ltc_contact4, -ltc_contact5,
+                -ltc_contact6, -ltc_contact7, -ltc_contact8, -ltc_contact9, -ltc_contact10,
+                -ltc_contact11, -ltc_contact12, -ltc_contact13, -ltc_contact14, -ltc_contact15,
+                -ltc_contact16, -ltc_contact17, -ltc_contact18, -ltc_contact19, -ltc_contact20,
+                -ltc_contact21, -ltc_contact22, -ltc_contact23, -ltc_contact24, -ltc_contact25,
+                -ltc_contact26, -ltc_contact27, -ltc_contact28, -ltc_contact29, -ltc_contact30,
+                -ltc_contact31, -ltc_contact32, -ltc_contact33, -ltc_contact34, -ltc_contact35,
+                -ltc_contact36, -ltc_contact37, -ltc_contact38, -ltc_contact39, -ltc_contact40,
+                -ltc_contact41, -ltc_contact42, -ltc_contact43, -ltc_contact44, -ltc_contact45,
+                -ltc_contact46, -ltc_contact47, -ltc_contact48, -ltc_contact49, -ltc_contact50,
+                -no_contact_reason1, -no_contact_reason2, -no_contact_reason3, -no_contact_reason4, -no_contact_reason5,
+                -no_contact_reason6, -no_contact_reason7, -no_contact_reason8, -no_contact_reason9, -no_contact_reason10,
+                -no_contact_reason11, -no_contact_reason12, -no_contact_reason13, -no_contact_reason14,
+                -no_contact_reason15, -no_contact_reason16, -no_contact_reason17, -no_contact_reason18,
+                -no_contact_reason19, -no_contact_reason20, -no_contact_reason21, -no_contact_reason22,
+                -no_contact_reason23, -no_contact_reason24, -no_contact_reason25, -no_contact_reason26,
+                -no_contact_reason27, -no_contact_reason28, -no_contact_reason29, -no_contact_reason30,
+                -no_contact_reason31, -no_contact_reason32, -no_contact_reason33, -no_contact_reason34,
+                -no_contact_reason35, -no_contact_reason36, -no_contact_reason37, -no_contact_reason38,
+                -no_contact_reason39, -no_contact_reason40, -no_contact_reason41, -no_contact_reason42,
+                -no_contact_reason43, -no_contact_reason44, -no_contact_reason45, -no_contact_reason46,
+                -no_contact_reason47, -no_contact_reason48, -no_contact_reason49, -no_contact_reason50)
 
 # Merge person dataset with full eip24 dataset
 
@@ -1267,37 +1267,37 @@ eip24$ltc_coordinator_per_case___30 <- ''
 
 # Removing 2023 variables that are not needed/not in 2024 dataset
 eip23 <- select(eip23, -contact_by1, -contact_by10, -contact_by11, -contact_by12, -contact_by13, -contact_by14, -contact_by15, -contact_by16,
-               -contact_by17, -contact_by18, -contact_by19, -contact_by2, -contact_by20, -contact_by21, -contact_by22, -contact_by23, -contact_by24,
-               -contact_by25, -contact_by26, -contact_by27, -contact_by28, -contact_by29, -contact_by3, -contact_by30, -contact_by31, -contact_by32,
-               -contact_by33, -contact_by34, -contact_by35, -contact_by36, -contact_by37, -contact_by38, -contact_by39, -contact_by4, -contact_by40,
-               -contact_by41, -contact_by42, -contact_by43, -contact_by44, -contact_by45, -contact_by46, -contact_by47, -contact_by48, -contact_by49,
-               -contact_by5, -contact_by50, -contact_by6, -contact_by7, -contact_by8, -contact_by9, -contact_purpose1, -contact_purpose10,
-               -contact_purpose11, -contact_purpose12, -contact_purpose13, -contact_purpose14, -contact_purpose15, -contact_purpose16,
-               -contact_purpose17, -contact_purpose18, -contact_purpose19, -contact_purpose2, -contact_purpose20, -contact_purpose21,
-               -contact_purpose22, -contact_purpose23, -contact_purpose24, -contact_purpose25, -contact_purpose26, -contact_purpose27,
-               -contact_purpose28, -contact_purpose29, -contact_purpose3, -contact_purpose30, -contact_purpose31, -contact_purpose32,
-               -contact_purpose33, -contact_purpose34, -contact_purpose35, -contact_purpose36, -contact_purpose37, -contact_purpose38,
-               -contact_purpose39, -contact_purpose4, -contact_purpose40, -contact_purpose41, -contact_purpose42, -contact_purpose43,
-               -contact_purpose44, -contact_purpose45, -contact_purpose46, -contact_purpose47, -contact_purpose48, -contact_purpose49,
-               -contact_purpose5, -contact_purpose50, -contact_purpose6, -contact_purpose7, -contact_purpose8, -contact_purpose9,
-               -ltc_service1___7, -ltc_service10___7, -ltc_service11___7, -ltc_service12___7, -ltc_service13___7, -ltc_service14___7,
-               -ltc_service15___7, -ltc_service16___7, -ltc_service17___7, -ltc_service18___7, -ltc_service19___7, -ltc_service2___7,
-               -ltc_service20___7, -ltc_service21___7, -ltc_service22___7, -ltc_service23___7, -ltc_service24___7, -ltc_service25___7,
-               -ltc_service26___7, -ltc_service27___7, -ltc_service28___7, -ltc_service29___7, -ltc_service3___7, -ltc_service30___7,
-               -ltc_service31___7, -ltc_service32___7, -ltc_service33___7, -ltc_service34___7, -ltc_service35___7, -ltc_service36___7,
-               -ltc_service37___7, -ltc_service38___7, -ltc_service39___7, -ltc_service4___7, -ltc_service40___7, -ltc_service41___7,
-               -ltc_service42___7, -ltc_service43___7, -ltc_service44___7, -ltc_service45___7, -ltc_service46___7, -ltc_service47___7,
-               -ltc_service48___7, -ltc_service49___7, -ltc_service5___7, -ltc_service50___7, -ltc_service6___7, -ltc_service7___7, -ltc_service8___7,
-               -ltc_service9___7, -sex_selfdefined_risks, -any_drug_branch_calc, -any_drug3mo_branch_calc,
-               -peer_navigator_id___24, -aspire_attend_intake_rsn___1, -aspire_attend_intake_rsn___9,
-               -aspire_attend_intake_rsn___7, -aspire_attend_intake_rsn___2, -aspire_attend_intake_rsn___3,
-               -aspire_attend_intake_rsn___8, -aspire_attend_intake_rsn___10, -aspire_attend_intake_rsn___6,
-               -aspire_attend_intake_rsn___11, -aspire_attend_intake_rsn___4, -aspire_attend_intake_rsn___5,
-               -aspire_attend_intake_rsn___16, -aspire_attend_intake_rsn___12, -aspire_attend_intake_rsn___13,
-               -aspire_attend_intake_rsn___14, -aspire_attend_intake_rsn___15, -aspire_attend_intake_rsn___88,
-               -aspire_attend_intake_rsn___0, -aspire_attend_intake_rsn_other, -ltc_sti_referral_hotline_date,
-               -ltc_hcv_linkage_success___1, -ltc_hcv_linkage_success___2, -ltc_hcv_med_complete_date,
-               -duba_ltc_open_calc, -fouch_ltc_open_calc)
+                -contact_by17, -contact_by18, -contact_by19, -contact_by2, -contact_by20, -contact_by21, -contact_by22, -contact_by23, -contact_by24,
+                -contact_by25, -contact_by26, -contact_by27, -contact_by28, -contact_by29, -contact_by3, -contact_by30, -contact_by31, -contact_by32,
+                -contact_by33, -contact_by34, -contact_by35, -contact_by36, -contact_by37, -contact_by38, -contact_by39, -contact_by4, -contact_by40,
+                -contact_by41, -contact_by42, -contact_by43, -contact_by44, -contact_by45, -contact_by46, -contact_by47, -contact_by48, -contact_by49,
+                -contact_by5, -contact_by50, -contact_by6, -contact_by7, -contact_by8, -contact_by9, -contact_purpose1, -contact_purpose10,
+                -contact_purpose11, -contact_purpose12, -contact_purpose13, -contact_purpose14, -contact_purpose15, -contact_purpose16,
+                -contact_purpose17, -contact_purpose18, -contact_purpose19, -contact_purpose2, -contact_purpose20, -contact_purpose21,
+                -contact_purpose22, -contact_purpose23, -contact_purpose24, -contact_purpose25, -contact_purpose26, -contact_purpose27,
+                -contact_purpose28, -contact_purpose29, -contact_purpose3, -contact_purpose30, -contact_purpose31, -contact_purpose32,
+                -contact_purpose33, -contact_purpose34, -contact_purpose35, -contact_purpose36, -contact_purpose37, -contact_purpose38,
+                -contact_purpose39, -contact_purpose4, -contact_purpose40, -contact_purpose41, -contact_purpose42, -contact_purpose43,
+                -contact_purpose44, -contact_purpose45, -contact_purpose46, -contact_purpose47, -contact_purpose48, -contact_purpose49,
+                -contact_purpose5, -contact_purpose50, -contact_purpose6, -contact_purpose7, -contact_purpose8, -contact_purpose9,
+                -ltc_service1___7, -ltc_service10___7, -ltc_service11___7, -ltc_service12___7, -ltc_service13___7, -ltc_service14___7,
+                -ltc_service15___7, -ltc_service16___7, -ltc_service17___7, -ltc_service18___7, -ltc_service19___7, -ltc_service2___7,
+                -ltc_service20___7, -ltc_service21___7, -ltc_service22___7, -ltc_service23___7, -ltc_service24___7, -ltc_service25___7,
+                -ltc_service26___7, -ltc_service27___7, -ltc_service28___7, -ltc_service29___7, -ltc_service3___7, -ltc_service30___7,
+                -ltc_service31___7, -ltc_service32___7, -ltc_service33___7, -ltc_service34___7, -ltc_service35___7, -ltc_service36___7,
+                -ltc_service37___7, -ltc_service38___7, -ltc_service39___7, -ltc_service4___7, -ltc_service40___7, -ltc_service41___7,
+                -ltc_service42___7, -ltc_service43___7, -ltc_service44___7, -ltc_service45___7, -ltc_service46___7, -ltc_service47___7,
+                -ltc_service48___7, -ltc_service49___7, -ltc_service5___7, -ltc_service50___7, -ltc_service6___7, -ltc_service7___7, -ltc_service8___7,
+                -ltc_service9___7, -sex_selfdefined_risks, -any_drug_branch_calc, -any_drug3mo_branch_calc,
+                -peer_navigator_id___24, -aspire_attend_intake_rsn___1, -aspire_attend_intake_rsn___9,
+                -aspire_attend_intake_rsn___7, -aspire_attend_intake_rsn___2, -aspire_attend_intake_rsn___3,
+                -aspire_attend_intake_rsn___8, -aspire_attend_intake_rsn___10, -aspire_attend_intake_rsn___6,
+                -aspire_attend_intake_rsn___11, -aspire_attend_intake_rsn___4, -aspire_attend_intake_rsn___5,
+                -aspire_attend_intake_rsn___16, -aspire_attend_intake_rsn___12, -aspire_attend_intake_rsn___13,
+                -aspire_attend_intake_rsn___14, -aspire_attend_intake_rsn___15, -aspire_attend_intake_rsn___88,
+                -aspire_attend_intake_rsn___0, -aspire_attend_intake_rsn_other, -ltc_sti_referral_hotline_date,
+                -ltc_hcv_linkage_success___1, -ltc_hcv_linkage_success___2, -ltc_hcv_med_complete_date,
+                -duba_ltc_open_calc, -fouch_ltc_open_calc)
 setdiff(names(eip23), names(eip24))
 setdiff(names(eip24), names(eip23))
 dim(eip23)
@@ -1800,12 +1800,12 @@ table(eip$appalachian_pt)
 # Kombo, Rachel
 
 eip$Kombo[eip$counselor_enc_start == 'zkomrlf0' |
-            eip$counselor_risk_start == 'zkomrlf0' |
-            eip$counselor_hiv_start == 'zkomrlf0' |
-            eip$counselor_hcv_start == 'zkomrlf0' |
-            eip$enc_counselor == 27 |
-            eip$ltc_coord_start == 'zkomrlf0' |
-            eip$ltc_coordinator_per_case___27 == 1] <- 1
+              eip$counselor_risk_start == 'zkomrlf0' |
+              eip$counselor_hiv_start == 'zkomrlf0' |
+              eip$counselor_hcv_start == 'zkomrlf0' |
+              eip$enc_counselor == 27 |
+              eip$ltc_coord_start == 'zkomrlf0' |
+              eip$ltc_coordinator_per_case___27 == 1] <- 1
 table(eip$Kombo)
 
 
@@ -1838,36 +1838,160 @@ if (nrow(monthly_encounters) == 0) {
   monthly_encounters <- aggregate(encounters ~ enc_date, monthly_encounters, FUN = sum)
 }
 monthly_encounters
+monthly_encounters <- distinct(monthly_encounters)
+monthly_encounters
+
+
 
 
 ########################################  Assessments  ########################################
 
-table(enc$offer_outcome_risks)
-enc$assessments[enc$offer_outcome_risks == 1 & (enc$counselor_risk_start == 'zkomrlf0' | enc$enc_counselor == 27)] <- 1
+# Approached for Assessment
+table(enc$counselor_risk_start, enc$offer_outcome_risks)
+enc$approach_assessment[(enc$counselor_risk_start == 'zkomrlf0') &
+                          (enc$offer_outcome_risks == 0 | enc$offer_outcome_risks == 1 |
+                             enc$offer_outcome_risks == 2)] <- 1
+table(enc$approach_assessment)
+
+approach_assessment <- enc[which(enc$approach_assessment == 1), ]
+approach_assessment <- nrow(approach_assessment)
+approach_assessment
+
+approach_assessment_percent <- percent(approach_assessment/encounters, accuracy = 0.1)
+approach_assessment_percent
+
+
+monthly_assessments <- select(enc, enc_date, approach_assessment)
+monthly_assessments <- monthly_assessments[which(monthly_assessments$approach_assessment == 1), ]
+head(monthly_assessments)
+colnames(monthly_assessments)[2] <- 'approach_assessment'
+monthly_assessments$approach_assessment[is.na(monthly_assessments$approach_assessment)] <- 0
+head(monthly_assessments)
+
+
+if (nrow(monthly_assessments) == 0) {
+  monthly_assessments <- data.frame(enc_date = as.Date("2023-01-01"), approach_assessment = 0)
+} else {
+  monthly_assessments <- aggregate(approach_assessment ~ enc_date, monthly_assessments, FUN = sum)
+}
+monthly_assessments
+monthly_assessments <- distinct(monthly_assessments)
+monthly_assessments
+
+
+
+
+# Declined
+table(enc$counselor_risk_start, enc$offer_outcome_risks)
+enc$assessments_declined[(enc$counselor_risk_start == 'zkomrlf0') &
+                           enc$offer_outcome_risks == 0] <- 1
+table(enc$assessments_declined)
+
+assessments_declined <- enc[which(enc$assessments_declined == 1), ]
+assessments_declined <- nrow(assessments_declined)
+assessments_declined
+
+assessments_declined_percent <- percent(assessments_declined/approach_assessment, accuracy = 0.1)
+assessments_declined_percent
+
+
+monthly_assessments_declined <- select(enc, enc_date, assessments_declined)
+monthly_assessments_declined <- monthly_assessments_declined[which(monthly_assessments_declined$assessments_declined == 1), ]
+head(monthly_assessments_declined)
+colnames(monthly_assessments_declined)[2] <- 'assessments_declined'
+monthly_assessments_declined$assessments_declined[is.na(monthly_assessments_declined$assessments_declined)] <- 0
+head(monthly_assessments_declined)
+
+
+if (nrow(monthly_assessments_declined) == 0) {
+  monthly_assessments_declined <- data.frame(enc_date = as.Date("2023-01-01"), assessments_declined = 0)
+} else {
+  monthly_assessments_declined <- aggregate(assessments_declined ~ enc_date, monthly_assessments_declined, FUN = sum)
+}
+monthly_assessments_declined
+monthly_assessments_declined <- distinct(monthly_assessments_declined)
+monthly_assessments_declined
+
+
+
+
+# Prevented
+table(enc$counselor_risk_start, enc$offer_outcome_risks)
+enc$assessments_prevented[(enc$counselor_risk_start == 'zkomrlf0') &
+                           enc$offer_outcome_risks == 2] <- 1
+table(enc$assessments_prevented)
+
+assessments_prevented <- enc[which(enc$assessments_prevented == 1), ]
+assessments_prevented <- nrow(assessments_prevented)
+assessments_prevented
+
+assessments_prevented_percent <- percent(assessments_prevented/approach_assessment, accuracy = 0.1)
+assessments_prevented_percent
+
+
+monthly_assessments_prevented <- select(enc, enc_date, assessments_prevented)
+monthly_assessments_prevented <- monthly_assessments_prevented[which(monthly_assessments_prevented$assessments_prevented == 1), ]
+head(monthly_assessments_prevented)
+colnames(monthly_assessments_prevented)[2] <- 'assessments_prevented'
+monthly_assessments_prevented$assessments_prevented[is.na(monthly_assessments_prevented$assessments_prevented)] <- 0
+head(monthly_assessments_prevented)
+
+
+if (nrow(monthly_assessments_prevented) == 0) {
+  monthly_assessments_prevented <- data.frame(enc_date = as.Date("2023-01-01"), assessments_prevented = 0)
+} else {
+  monthly_assessments_prevented <- aggregate(assessments_prevented ~ enc_date, monthly_assessments_prevented, FUN = sum)
+}
+monthly_assessments_prevented
+monthly_assessments_prevented <- distinct(monthly_assessments_prevented)
+monthly_assessments_prevented
+
+
+
+
+# Assessed
+table(enc$counselor_risk_start, enc$offer_outcome_risks)
+enc$assessments[(enc$counselor_risk_start == 'zkomrlf0') &
+                  enc$offer_outcome_risks == 1] <- 1
 table(enc$assessments)
 
 assessments <- enc[which(enc$assessments == 1), ]
 assessments <- nrow(assessments)
 assessments
 
-assessments_percent <- percent(assessments/encounters, accuracy = 0.1)
+assessments_percent <- percent(assessments/approach_assessment, accuracy = 0.1)
 assessments_percent
 
 
-monthly_assessments <- select(enc, enc_date, assessments)
-monthly_assessments <- monthly_assessments[which(monthly_assessments$assessments == 1), ]
-head(monthly_assessments)
-colnames(monthly_assessments)[2] <- 'assessments'
-monthly_assessments$assessments[is.na(monthly_assessments$assessments)] <- 0
-head(monthly_assessments)
+monthly_assessed <- select(enc, enc_date, assessments)
+monthly_assessed <- monthly_assessed[which(monthly_assessed$assessments == 1), ]
+head(monthly_assessed)
+colnames(monthly_assessed)[2] <- 'assessments'
+monthly_assessed$assessments[is.na(monthly_assessed$assessments)] <- 0
+head(monthly_assessed)
 
 
-if (nrow(monthly_assessments) == 0) {
-  monthly_assessments <- data.frame(enc_date = as.Date("2023-01-01"), assessments = 0)
+if (nrow(monthly_assessed) == 0) {
+  monthly_assessed <- data.frame(enc_date = as.Date("2023-01-01"), assessments = 0)
 } else {
-  monthly_assessments <- aggregate(assessments ~ enc_date, monthly_assessments, FUN = sum)
+  monthly_assessed <- aggregate(assessments ~ enc_date, monthly_assessed, FUN = sum)
 }
-monthly_assessments
+monthly_assessed
+monthly_assessed <- distinct(monthly_assessed)
+monthly_assessed
+
+
+
+# combining all assessment pieces
+monthly_assessments <- merge(monthly_assessments, monthly_assessments_declined, by = 'enc_date', all = T)
+monthly_assessments <- merge(monthly_assessments, monthly_assessments_prevented, by = 'enc_date', all = T)
+monthly_assessments <- merge(monthly_assessments, monthly_assessed, by = 'enc_date', all = T)
+monthly_assessments$approach_assessment[is.na(monthly_assessments$approach_assessment)] <- 0
+monthly_assessments$assessments_declined[is.na(monthly_assessments$assessments_declined)] <- 0
+monthly_assessments$assessments_prevented[is.na(monthly_assessments$assessments_prevented)] <- 0
+monthly_assessments$assessments[is.na(monthly_assessments$assessments)] <- 0
+monthly_assessments <- distinct(monthly_assessments)
+monthly_assessments # metrics of assessments
 
 
 
@@ -1875,24 +1999,42 @@ monthly_assessments
 # Screening for SUD
 
 enc$sud_assessed[enc$assessments == 1 &
-                   (!is.na(enc$audit_c1) |
-                      !is.na(enc$audit_c2) |
-                      !is.na(enc$audit_c3) |
-                      !is.na(enc$binge_drinking) |
-                      !is.na(enc$nonmedical_drug_use) |
-                      !is.na(enc$drug_difficulty) |
-                      !is.na(enc$marijuana_use) |
-                      !is.na(enc$cocaine_use) |
-                      !is.na(enc$rx_amphetamine_use) |
-                      !is.na(enc$meth_use) |
-                      !is.na(enc$inhalants_use) |
-                      !is.na(enc$sedatives_use) |
-                      !is.na(enc$ruffies_use) |
-                      !is.na(enc$hallucinogen_use) |
-                      !is.na(enc$street_opioid_use) |
-                      !is.na(enc$rx_opioid_use) |
-                      !is.na(enc$injection_drug_use) |
-                      !is.na(enc$other_drug_use))] <- 1
+                   ((enc$audit_c1 == 0 | enc$audit_c1 == 1 | enc$audit_c1 == 2 | enc$audit_c1 == 3 |
+                       enc$audit_c1 == 4) |
+                      (enc$audit_c2 == 0 | enc$audit_c2 == 1 | enc$audit_c2 == 3 | enc$audit_c2 == 4 |
+                         enc$audit_c2 == 5) |
+                      (enc$audit_c3 == 0 | enc$audit_c3 == 1 | enc$audit_c3 == 2 | enc$audit_c3 == 3 |
+                         enc$audit_c3 == 4) |
+                      (enc$binge_drinking == 0 | enc$binge_drinking == 1 | enc$binge_drinking == 2 |
+                         enc$binge_drinking == 3) |
+                      (enc$nonmedical_drug_use == 0 | enc$nonmedical_drug_use == 1) |
+                      (enc$drug_difficulty != '') |
+                      (enc$marijuana_use == 0 | enc$marijuana_use == 1 | enc$marijuana_use == 2 |
+                         enc$marijuana_use == 3 | enc$marijuana_use == 4) |
+                      (enc$cocaine_use == 0 | enc$cocaine_use == 1 | enc$cocaine_use == 2 |
+                         enc$cocaine_use == 3 | enc$cocaine_use == 4) |
+                      (enc$rx_amphetamine_use == 0 | enc$rx_amphetamine_use == 1 | enc$rx_amphetamine_use == 2 |
+                         enc$rx_amphetamine_use == 3 | enc$rx_amphetamine_use == 4) |
+                      (enc$meth_use == 0 | enc$meth_use == 1 | enc$meth_use == 2 |
+                         enc$meth_use == 3 | enc$meth_use == 4) |
+                      (enc$inhalants_use == 0 | enc$inhalants_use == 1 | enc$inhalants_use == 2 |
+                         enc$inhalants_use == 3 | enc$inhalants_use == 4) |
+                      (enc$sedatives_use == 0 | enc$sedatives_use == 1 | enc$sedatives_use == 2 |
+                         enc$sedatives_use == 3 | enc$sedatives_use == 4) |
+                      (enc$ruffies_use == 0 | enc$ruffies_use == 1 | enc$ruffies_use == 2 |
+                         enc$ruffies_use == 3 | enc$ruffies_use == 4) |
+                      (enc$hallucinogen_use == 0 | enc$hallucinogen_use == 1 | enc$hallucinogen_use == 2 |
+                         enc$hallucinogen_use == 3 | enc$hallucinogen_use == 4) |
+                      (enc$street_opioid_use == 0 | enc$street_opioid_use == 1 | enc$street_opioid_use == 2 |
+                         enc$street_opioid_use == 3 | enc$street_opioid_use == 4) |
+                      (enc$rx_opioid_use == 0 | enc$rx_opioid_use == 1 | enc$rx_opioid_use == 2 |
+                         enc$rx_opioid_use == 3 | enc$rx_opioid_use == 4) |
+                      (enc$injection_drug_use == 0 | enc$injection_drug_use == 1 | enc$injection_drug_use == 2 |
+                         enc$injection_drug_use == 3 | enc$injection_drug_use == 4) |
+                      (enc$other_drug_use == 0 | enc$other_drug_use == 1 | enc$other_drug_use == 2 |
+                         enc$other_drug_use == 3 | enc$other_drug_use == 4) |
+                      (enc$fts_knowledge == 0 | enc$fts_knowledge == 1) |
+                      (enc$fts_offered == 0 | enc$fts_offered == 1))] <- 1
 table(enc$sud_assessed)
 sud_assessed <- enc[which(enc$sud_assessed == 1), ]
 dim(sud_assessed)
@@ -1904,7 +2046,7 @@ sud_assessed_percent
 
 
 table(enc$sud_screen_positive)
-enc$sud_pos[enc$sud_screen_positive == 1] <- 1
+enc$sud_pos[enc$sud_assessed == 1 & enc$sud_screen_positive == 1] <- 1
 table(enc$sud_pos)
 sud_pos <- enc[which(enc$sud_pos == 1), ]
 dim(sud_pos)
@@ -1932,7 +2074,6 @@ if (nrow(monthly_sud_assess) == 0) {
 monthly_sud_assess
 
 
-
 monthly_sud_pos <- select(enc, enc_date, sud_pos)
 monthly_sud_pos <- monthly_sud_pos[which(monthly_sud_pos$sud_pos == 1), ]
 head(monthly_sud_pos)
@@ -1949,15 +2090,13 @@ if (nrow(monthly_sud_pos) == 0) {
 monthly_sud_pos
 
 
-
 # combining all SUD assessment pieces
-monthly_sud_assess <- merge(monthly_assessments, monthly_sud_assess, by = 'enc_date', all = T)
 monthly_sud_assess <- merge(monthly_sud_assess, monthly_sud_pos, by = 'enc_date', all = T)
-monthly_sud_assess # metrics of SUD assessments, positive screens
-monthly_sud_assess$assessments[is.na(monthly_sud_assess$assessments)] <- 0
+monthly_sud_assess
 monthly_sud_assess$sud_assessed[is.na(monthly_sud_assess$sud_assessed)] <- 0
 monthly_sud_assess$sud_pos[is.na(monthly_sud_assess$sud_pos)] <- 0
-monthly_sud_assess
+monthly_sud_assess <- distinct(monthly_sud_assess)
+monthly_sud_assess # metrics of SUD assessments, positive screens
 
 
 
@@ -1966,10 +2105,10 @@ monthly_sud_assess
 
 # brief assessment for MH
 enc$brief_mh_assessed[enc$assessments == 1 &
-                        (!is.na(enc$phq1) |
-                           !is.na(enc$phq2) |
-                           !is.na(enc$gad1) |
-                           !is.na(enc$gad2))] <- 1
+                        (enc$phq1 == 0 | enc$phq1 == 1 | enc$phq1 == 2 | enc$phq1 == 3 |
+                           enc$phq2 == 0 | enc$phq2 == 1 | enc$phq2 == 2 | enc$phq2 == 3 |
+                           enc$gad1 == 0 | enc$gad1 == 1 | enc$gad1 == 2 | enc$gad1 == 3 |
+                           enc$gad2 == 0 | enc$gad2 == 1 | enc$gad2 == 2 | enc$gad2 == 3)] <- 1
 table(enc$brief_mh_assessed)
 brief_mh_assessed <- enc[which(enc$brief_mh_assessed == 1), ]
 dim(brief_mh_assessed)
@@ -1981,38 +2120,40 @@ brief_mh_assessed_percent
 
 
 # full assessment for MH (only those SUD+)
-enc$mh_assessed[enc$assessments == 1 & enc$sud_pos == 1 &
-                  (!is.na(enc$phq1) |
-                     !is.na(enc$phq2) |
-                     !is.na(enc$gad3) |
-                     !is.na(enc$phq4) |
-                     !is.na(enc$phq5) |
-                     !is.na(enc$phq6) |
-                     !is.na(enc$phq7) |
-                     !is.na(enc$phq8) |
-                     !is.na(enc$phq9) |
-                     !is.na(enc$gad1) |
-                     !is.na(enc$gad2) |
-                     !is.na(enc$gad3) |
-                     !is.na(enc$gad4) |
-                     !is.na(enc$gad5) |
-                     !is.na(enc$gad6) |
-                     !is.na(enc$gad7) |
-                     !is.na(enc$pclc1) |
-                     !is.na(enc$pclc4))] <- 1
+enc$mh_assessed[enc$assessments == 1 &
+                  (enc$phq1 == 0 | enc$phq1 == 1 | enc$phq1 == 2 | enc$phq1 == 3 |
+                     enc$phq2 == 0 | enc$phq2 == 1 | enc$phq2 == 2 | enc$phq2 == 3 |
+                     enc$phq3 == 0 | enc$phq3 == 1 | enc$phq3 == 2 | enc$phq3 == 3 |
+                     enc$phq4 == 0 | enc$phq4 == 1 | enc$phq4 == 2 | enc$phq4 == 3 |
+                     enc$phq5 == 0 | enc$phq5 == 1 | enc$phq5 == 2 | enc$phq5 == 3 |
+                     enc$phq6 == 0 | enc$phq6 == 1 | enc$phq6 == 2 | enc$phq6 == 3 |
+                     enc$phq7 == 0 | enc$phq7 == 1 | enc$phq7 == 2 | enc$phq7 == 3 |
+                     enc$phq8 == 0 | enc$phq8 == 1 | enc$phq8 == 2 | enc$phq8 == 3 |
+                     enc$phq9 == 0 | enc$phq9 == 1 | enc$phq9 == 2 | enc$phq9 == 3 |
+                     enc$phq10 == 0 | enc$phq10 == 1 | enc$phq10 == 2 | enc$phq10 == 3 |
+                     enc$gad1 == 0 | enc$gad1 == 1 | enc$gad1 == 2 | enc$gad1 == 3 |
+                     enc$gad2 == 0 | enc$gad2 == 1 | enc$gad2 == 2 | enc$gad2 == 3 |
+                     enc$gad3 == 0 | enc$gad3 == 1 | enc$gad3 == 2 | enc$gad3 == 3 |
+                     enc$gad4 == 0 | enc$gad4 == 1 | enc$gad4 == 2 | enc$gad4 == 3 |
+                     enc$gad5 == 0 | enc$gad5 == 1 | enc$gad5 == 2 | enc$gad5 == 3 |
+                     enc$gad6 == 0 | enc$gad6 == 1 | enc$gad6 == 2 | enc$gad6 == 3 |
+                     enc$gad7 == 0 | enc$gad7 == 1 | enc$gad7 == 2 | enc$gad7 == 3 |
+                     enc$gad7_level_difficulty == 0 | enc$gad7_level_difficulty == 1 |
+                     enc$gad7_level_difficulty == 2 | enc$gad7_level_difficulty == 3 |
+                     enc$pclc1 == 1 | enc$pclc1 == 2 | enc$pclc1 == 3 | enc$pclc1 == 4 | enc$pclc1 == 5 |
+                     enc$pclc4 == 1 | enc$pclc4 == 2 | enc$pclc4 == 3 | enc$pclc4 == 4 | enc$pclc4 == 5)] <- 1
 table(enc$mh_assessed)
 mh_assessed <- enc[which(enc$mh_assessed == 1), ]
 dim(mh_assessed)
 mh_assessed <- nrow(mh_assessed)
 mh_assessed
 
-mh_assessed_percent <- percent(mh_assessed/sud_pos, accuracy = 0.1)
+mh_assessed_percent <- percent(mh_assessed/assessments, accuracy = 0.1)
 mh_assessed_percent
 
 
 # MH positive
-enc$mh_pos[enc$assessments == 1 & enc$sud_pos == 1 &
-             enc$mh_screen_positive] <- 1
+enc$mh_pos[enc$assessments == 1 & enc$mh_screen_positive] <- 1
 table(enc$mh_pos)
 mh_pos <- enc[which(enc$mh_pos == 1), ]
 dim(mh_pos)
@@ -2041,7 +2182,6 @@ if (nrow(monthly_brief_mh_assess) == 0) {
 monthly_brief_mh_assess
 
 
-
 monthly_mh_assessed <- select(enc, enc_date, mh_assessed)
 monthly_mh_assessed <- monthly_mh_assessed[which(monthly_mh_assessed$mh_assessed == 1), ]
 head(monthly_mh_assessed)
@@ -2056,7 +2196,6 @@ if (nrow(monthly_mh_assessed) == 0) {
   monthly_mh_assessed <- aggregate(mh_assessed ~ enc_date, monthly_mh_assessed, FUN = sum)
 }
 monthly_mh_assessed
-
 
 
 monthly_mh_pos <- select(enc, enc_date, mh_pos)
@@ -2075,35 +2214,32 @@ if (nrow(monthly_mh_pos) == 0) {
 monthly_mh_pos
 
 
-
 # combining all MH assessment pieces
-monthly_mh_assess <- select(monthly_sud_assess, enc_date, assessments, sud_pos)
+monthly_mh_assess <- select(enc, enc_date)
 monthly_mh_assess <- merge(monthly_mh_assess, monthly_brief_mh_assess, by = 'enc_date', all = T)
 monthly_mh_assess <- merge(monthly_mh_assess, monthly_mh_assessed, by = 'enc_date', all = T)
 monthly_mh_assess <- merge(monthly_mh_assess, monthly_mh_pos, by = 'enc_date', all = T)
-monthly_mh_assess$mh_assessed[is.na(monthly_mh_assess$mh_assessed)] <- 0
-monthly_mh_assess$mh_pos[is.na(monthly_mh_assess$mh_pos)] <- 0
-monthly_mh_assess # metrics of MH assessments, positive screens
-monthly_mh_assess$assessments[is.na(monthly_mh_assess$assessments)] <- 0
-monthly_mh_assess$sud_pos[is.na(monthly_mh_assess$sud_pos)] <- 0
 monthly_mh_assess$brief_mh_assessed[is.na(monthly_mh_assess$brief_mh_assessed)] <- 0
 monthly_mh_assess$mh_assessed[is.na(monthly_mh_assess$mh_assessed)] <- 0
 monthly_mh_assess$mh_pos[is.na(monthly_mh_assess$mh_pos)] <- 0
+monthly_mh_assess <- distinct(monthly_mh_assess)
+monthly_mh_assess # metrics of MH assessments, positive screens
 
 
 
 
 # Depression
-enc$depression_assessed[enc$assessments == 1 & enc$sud_pos == 1 &
-                          (!is.na(enc$phq1) |
-                             !is.na(enc$phq2) |
-                             !is.na(enc$gad3) |
-                             !is.na(enc$phq4) |
-                             !is.na(enc$phq5) |
-                             !is.na(enc$phq6) |
-                             !is.na(enc$phq7) |
-                             !is.na(enc$phq8) |
-                             !is.na(enc$phq9))] <- 1
+enc$depression_assessed[enc$assessments == 1 & enc$mh_assessed == 1 &
+                          (enc$phq1 == 0 | enc$phq1 == 1 | enc$phq1 == 2 | enc$phq1 == 3 |
+                             enc$phq2 == 0 | enc$phq2 == 1 | enc$phq2 == 2 | enc$phq2 == 3 |
+                             enc$phq3 == 0 | enc$phq3 == 1 | enc$phq3 == 2 | enc$phq3 == 3 |
+                             enc$phq4 == 0 | enc$phq4 == 1 | enc$phq4 == 2 | enc$phq4 == 3 |
+                             enc$phq5 == 0 | enc$phq5 == 1 | enc$phq5 == 2 | enc$phq5 == 3 |
+                             enc$phq6 == 0 | enc$phq6 == 1 | enc$phq6 == 2 | enc$phq6 == 3 |
+                             enc$phq7 == 0 | enc$phq7 == 1 | enc$phq7 == 2 | enc$phq7 == 3 |
+                             enc$phq8 == 0 | enc$phq8 == 1 | enc$phq8 == 2 | enc$phq8 == 3 |
+                             enc$phq9 == 0 | enc$phq9 == 1 | enc$phq9 == 2 | enc$phq9 == 3 |
+                             enc$phq10 == 0 | enc$phq10 == 1 | enc$phq10 == 2 | enc$phq10 == 3)] <- 1
 table(enc$depression_assessed)
 depression_assessed <- enc[which(enc$depression_assessed == 1), ]
 dim(depression_assessed)
@@ -2114,8 +2250,7 @@ depression_assessed_percent <- percent(depression_assessed/mh_assessed, accuracy
 depression_assessed_percent
 
 
-enc$depression_pos[enc$assessments == 1 & enc$sud_pos == 1 &
-                     enc$phq9_score_positive == 1] <- 1
+enc$depression_pos[enc$assessments == 1 & enc$depression_assessed == 1 & enc$phq9_score_positive == 1] <- 1
 table(enc$depression_pos)
 depression_pos <- enc[which(enc$depression_pos == 1), ]
 dim(depression_pos)
@@ -2127,14 +2262,16 @@ depression_pos_percent
 
 
 # Anxiety
-enc$anxiety_assessed[enc$assessments == 1 & enc$sud_pos == 1 &
-                       (!is.na(enc$gad1) |
-                          !is.na(enc$gad2) |
-                          !is.na(enc$gad3) |
-                          !is.na(enc$gad4) |
-                          !is.na(enc$gad5) |
-                          !is.na(enc$gad6) |
-                          !is.na(enc$gad7))] <- 1
+enc$anxiety_assessed[enc$assessments == 1 & enc$mh_assessed == 1 &
+                       (enc$gad1 == 0 | enc$gad1 == 1 | enc$gad1 == 2 | enc$gad1 == 3 |
+                          enc$gad2 == 0 | enc$gad2 == 1 | enc$gad2 == 2 | enc$gad2 == 3 |
+                          enc$gad3 == 0 | enc$gad3 == 1 | enc$gad3 == 2 | enc$gad3 == 3 |
+                          enc$gad4 == 0 | enc$gad4 == 1 | enc$gad4 == 2 | enc$gad4 == 3 |
+                          enc$gad5 == 0 | enc$gad5 == 1 | enc$gad5 == 2 | enc$gad5 == 3 |
+                          enc$gad6 == 0 | enc$gad6 == 1 | enc$gad6 == 2 | enc$gad6 == 3 |
+                          enc$gad7 == 0 | enc$gad7 == 1 | enc$gad7 == 2 | enc$gad7 == 3 |
+                          enc$gad7_level_difficulty == 0 | enc$gad7_level_difficulty == 1 |
+                          enc$gad7_level_difficulty == 2 | enc$gad7_level_difficulty == 3)] <- 1
 table(enc$anxiety_assessed)
 anxiety_assessed <- enc[which(enc$anxiety_assessed == 1), ]
 dim(anxiety_assessed)
@@ -2145,8 +2282,7 @@ anxiety_assessed_percent <- percent(anxiety_assessed/mh_assessed, accuracy = 0.1
 anxiety_assessed_percent
 
 
-enc$anxiety_pos[enc$assessments == 1 & enc$sud_pos == 1 &
-                  enc$gad7_score_positive == 1] <- 1
+enc$anxiety_pos[enc$assessments == 1 & enc$anxiety_assessed == 1 & enc$gad7_score_positive == 1] <- 1
 table(enc$anxiety_pos)
 anxiety_pos <- enc[which(enc$anxiety_pos == 1), ]
 dim(anxiety_pos)
@@ -2158,9 +2294,9 @@ anxiety_pos_percent
 
 
 # PTSD
-enc$ptsd_assessed[enc$assessments == 1 & enc$sud_pos == 1 &
-                    (!is.na(enc$pclc1) |
-                       !is.na(enc$pclc4))] <- 1
+enc$ptsd_assessed[enc$assessments == 1 & enc$mh_assessed == 1 &
+                    (enc$pclc1 == 1 | enc$pclc1 == 2 | enc$pclc1 == 3 | enc$pclc1 == 4 | enc$pclc1 == 5 |
+                       enc$pclc4 == 1 | enc$pclc4 == 2 | enc$pclc4 == 3 | enc$pclc4 == 4 | enc$pclc4 == 5)] <- 1
 table(enc$ptsd_assessed)
 ptsd_assessed <- enc[which(enc$ptsd_assessed == 1), ]
 dim(ptsd_assessed)
@@ -2171,8 +2307,7 @@ ptsd_assessed_percent <- percent(ptsd_assessed/mh_assessed, accuracy = 0.1)
 ptsd_assessed_percent
 
 
-enc$ptsd_pos[enc$assessments == 1 & enc$sud_pos == 1 &
-               enc$pclc_score_positive == 1] <- 1
+enc$ptsd_pos[enc$assessments == 1 & enc$ptsd_assessed == 1 & enc$pclc_score_positive == 1] <- 1
 table(enc$ptsd_pos)
 ptsd_pos <- enc[which(enc$ptsd_pos == 1), ]
 dim(ptsd_pos)
@@ -2202,7 +2337,6 @@ if (nrow(monthly_depression_assess) == 0) {
 monthly_depression_assess
 
 
-
 monthly_depression_pos <- select(enc, enc_date, depression_pos)
 monthly_depression_pos <- monthly_depression_pos[which(monthly_depression_pos$depression_pos == 1), ]
 head(monthly_depression_pos)
@@ -2217,7 +2351,6 @@ if (nrow(monthly_depression_pos) == 0) {
   monthly_depression_pos <- aggregate(depression_pos ~ enc_date, monthly_depression_pos, FUN = sum)
 }
 monthly_depression_pos
-
 
 
 monthly_anxiety_assess <- select(enc, enc_date, anxiety_assessed)
@@ -2236,7 +2369,6 @@ if (nrow(monthly_anxiety_assess) == 0) {
 monthly_anxiety_assess
 
 
-
 monthly_anxiety_pos <- select(enc, enc_date, anxiety_pos)
 monthly_anxiety_pos <- monthly_anxiety_pos[which(monthly_anxiety_pos$anxiety_pos == 1), ]
 head(monthly_anxiety_pos)
@@ -2251,7 +2383,6 @@ if (nrow(monthly_anxiety_pos) == 0) {
   aggregated_data <- aggregate(anxiety_pos ~ enc_date, monthly_anxiety_pos, FUN = sum)
 }
 monthly_anxiety_pos
-
 
 
 monthly_ptsd_assess <- select(enc, enc_date, ptsd_assessed)
@@ -2270,7 +2401,6 @@ if (nrow(monthly_ptsd_assess) == 0) {
 monthly_ptsd_assess
 
 
-
 monthly_ptsd_pos <- select(enc, enc_date, ptsd_pos)
 monthly_ptsd_pos <- monthly_ptsd_pos[which(monthly_ptsd_pos$ptsd_pos == 1), ]
 head(monthly_ptsd_pos)
@@ -2287,113 +2417,65 @@ if (nrow(monthly_ptsd_pos) == 0) {
 monthly_ptsd_pos
 
 
-
 # combining all MH assessment pieces
-monthly_mh_cond <- select(monthly_mh_assess, enc_date, mh_assessed)
+monthly_mh_cond <- select(enc, enc_date)
 monthly_mh_cond <- merge(monthly_mh_cond, monthly_depression_assess, by = 'enc_date', all = T)
 monthly_mh_cond <- merge(monthly_mh_cond, monthly_depression_pos, by = 'enc_date', all = T)
 monthly_mh_cond <- merge(monthly_mh_cond, monthly_anxiety_assess, by = 'enc_date', all = T)
 monthly_mh_cond <- merge(monthly_mh_cond, monthly_anxiety_pos, by = 'enc_date', all = T)
 monthly_mh_cond <- merge(monthly_mh_cond, monthly_ptsd_assess, by = 'enc_date', all = T)
 monthly_mh_cond <- merge(monthly_mh_cond, monthly_ptsd_pos, by = 'enc_date', all = T)
-monthly_mh_cond # metrics of MH assessments, positive screens
 monthly_mh_cond$depression_assessed[is.na(monthly_mh_cond$depression_assessed)] <- 0
 monthly_mh_cond$depression_pos[is.na(monthly_mh_cond$depression_pos)] <- 0
 monthly_mh_cond$anxiety_assessed[is.na(monthly_mh_cond$anxiety_assessed)] <- 0
 monthly_mh_cond$anxiety_pos[is.na(monthly_mh_cond$anxiety_pos)] <- 0
 monthly_mh_cond$ptsd_assessed[is.na(monthly_mh_cond$ptsd_assessed)] <- 0
 monthly_mh_cond$ptsd_pos[is.na(monthly_mh_cond$ptsd_pos)] <- 0
-
+monthly_mh_cond <- distinct(monthly_mh_cond)
+monthly_mh_cond # metrics of MH assessments, positive screens
 
 
 
 # PrEP Eligibility based on Risk Assessment
 
 enc$prep_risk_assessed[enc$assessments == 1 &
-                         ((enc$sex_receivemoney___0 != 0 & !is.na(enc$sex_receivemoney___0)) |
-                            (enc$sex_receivemoney___1 != 0 & !is.na(enc$sex_receivemoney___1)) |
-                            (enc$sex_receivemoney___2 != 0 & !is.na(enc$sex_receivemoney___2)) |
-                            (enc$sex_receivemoney___3 != 0 & !is.na(enc$sex_receivemoney___3)) |
-                            (enc$sex_receivemoney___4 != 0 & !is.na(enc$sex_receivemoney___4)) |
-                            (enc$sex_receivemoney___5 != 0 & !is.na(enc$sex_receivemoney___5)) |
-                            (enc$sex_receivemoney___6 != 0 & !is.na(enc$sex_receivemoney___6)) |
-                            (enc$sex_receivemoney___7 != 0 & !is.na(enc$sex_receivemoney___7)) |
-                            (enc$sex_receivemoney___8 != 0 & !is.na(enc$sex_receivemoney___8)) |
-                            (enc$sex_receivedrugs___0 != 0 & !is.na(enc$sex_receivedrugs___0)) |
-                            (enc$sex_receivedrugs___1 != 0 & !is.na(enc$sex_receivedrugs___1)) |
-                            (enc$sex_receivedrugs___2 != 0 & !is.na(enc$sex_receivedrugs___2)) |
-                            (enc$sex_receivedrugs___3 != 0 & !is.na(enc$sex_receivedrugs___3)) |
-                            (enc$sex_receivedrugs___4 != 0 & !is.na(enc$sex_receivedrugs___4)) |
-                            (enc$sex_receivedrugs___5 != 0 & !is.na(enc$sex_receivedrugs___5)) |
-                            (enc$sex_receivedrugs___6 != 0 & !is.na(enc$sex_receivedrugs___6)) |
-                            (enc$sex_receivedrugs___7 != 0 & !is.na(enc$sex_receivedrugs___7)) |
-                            (enc$sex_receivedrugs___8 != 0 & !is.na(enc$sex_receivedrugs___8)) |
-                            (enc$sex_partners_past_year != 0 & !is.na(enc$sex_partners_past_year)) |
-                            (enc$share_works_last != 0 & !is.na(enc$share_works_last)) |
-                            (enc$prior_std != 0 & !is.na(enc$prior_std)) |
-                            (enc$sex_w_man___0 != 0 & !is.na(enc$sex_w_man___0)) |
-                            (enc$sex_w_man___1 != 0 & !is.na(enc$sex_w_man___1)) |
-                            (enc$sex_w_man___2 != 0 & !is.na(enc$sex_w_man___2)) |
-                            (enc$sex_w_man___3 != 0 & !is.na(enc$sex_w_man___3)) |
-                            (enc$sex_w_man___4 != 0 & !is.na(enc$sex_w_man___4)) |
-                            (enc$sex_w_man___5 != 0 & !is.na(enc$sex_w_man___5)) |
-                            (enc$sex_w_man___6 != 0 & !is.na(enc$sex_w_man___6)) |
-                            (enc$sex_w_man___7 != 0 & !is.na(enc$sex_w_man___7)) |
-                            (enc$sex_w_man___8 != 0 & !is.na(enc$sex_w_man___8)) |
-                            (enc$sex_give_anal___0 != 0 & !is.na(enc$sex_give_anal___0)) |
-                            (enc$sex_give_anal___1 != 0 & !is.na(enc$sex_give_anal___1)) |
-                            (enc$sex_give_anal___2 != 0 & !is.na(enc$sex_give_anal___2)) |
-                            (enc$sex_give_anal___3 != 0 & !is.na(enc$sex_give_anal___3)) |
-                            (enc$sex_give_anal___4 != 0 & !is.na(enc$sex_give_anal___4)) |
-                            (enc$sex_give_anal___5 != 0 & !is.na(enc$sex_give_anal___5)) |
-                            (enc$sex_give_anal___6 != 0 & !is.na(enc$sex_give_anal___6)) |
-                            (enc$sex_give_anal___7 != 0 & !is.na(enc$sex_give_anal___7)) |
-                            (enc$sex_give_anal___8 != 0 & !is.na(enc$sex_give_anal___8)) |
-                            (enc$sex_receive_anal___0 != 0 & !is.na(enc$sex_receive_anal___0)) |
-                            (enc$sex_receive_anal___1 != 0 & !is.na(enc$sex_receive_anal___1)) |
-                            (enc$sex_receive_anal___2 != 0 & !is.na(enc$sex_receive_anal___2)) |
-                            (enc$sex_receive_anal___3 != 0 & !is.na(enc$sex_receive_anal___3)) |
-                            (enc$sex_receive_anal___4 != 0 & !is.na(enc$sex_receive_anal___4)) |
-                            (enc$sex_receive_anal___5 != 0 & !is.na(enc$sex_receive_anal___5)) |
-                            (enc$sex_receive_anal___6 != 0 & !is.na(enc$sex_receive_anal___6)) |
-                            (enc$sex_receive_anal___7 != 0 & !is.na(enc$sex_receive_anal___7)) |
-                            (enc$sex_receive_anal___8 != 0 & !is.na(enc$sex_receive_anal___8)) |
-                            (enc$sex_vaginal___0 != 0 & !is.na(enc$sex_vaginal___0)) |
-                            (enc$sex_vaginal___1 != 0 & !is.na(enc$sex_vaginal___1)) |
-                            (enc$sex_vaginal___2 != 0 & !is.na(enc$sex_vaginal___2)) |
-                            (enc$sex_vaginal___3 != 0 & !is.na(enc$sex_vaginal___3)) |
-                            (enc$sex_vaginal___4 != 0 & !is.na(enc$sex_vaginal___4)) |
-                            (enc$sex_vaginal___5 != 0 & !is.na(enc$sex_vaginal___5)) |
-                            (enc$sex_vaginal___6 != 0 & !is.na(enc$sex_vaginal___6)) |
-                            (enc$sex_vaginal___7 != 0 & !is.na(enc$sex_vaginal___7)) |
-                            (enc$sex_vaginal___8 != 0 & !is.na(enc$sex_vaginal___8)) |
-                            (enc$sex_msm___0 != 0 & !is.na(enc$sex_msm___0)) |
-                            (enc$sex_msm___1 != 0 & !is.na(enc$sex_msm___1)) |
-                            (enc$sex_msm___2 != 0 & !is.na(enc$sex_msm___2)) |
-                            (enc$sex_msm___3 != 0 & !is.na(enc$sex_msm___3)) |
-                            (enc$sex_msm___4 != 0 & !is.na(enc$sex_msm___4)) |
-                            (enc$sex_msm___5 != 0 & !is.na(enc$sex_msm___5)) |
-                            (enc$sex_msm___6 != 0 & !is.na(enc$sex_msm___6)) |
-                            (enc$sex_msm___7 != 0 & !is.na(enc$sex_msm___7)) |
-                            (enc$sex_msm___8 != 0 & !is.na(enc$sex_msm___8)) |
-                            (enc$sex_idu___0 != 0 & !is.na(enc$sex_idu___0)) |
-                            (enc$sex_idu___1 != 0 & !is.na(enc$sex_idu___1)) |
-                            (enc$sex_idu___2 != 0 & !is.na(enc$sex_idu___2)) |
-                            (enc$sex_idu___3 != 0 & !is.na(enc$sex_idu___3)) |
-                            (enc$sex_idu___4 != 0 & !is.na(enc$sex_idu___4)) |
-                            (enc$sex_idu___5 != 0 & !is.na(enc$sex_idu___5)) |
-                            (enc$sex_idu___6 != 0 & !is.na(enc$sex_idu___6)) |
-                            (enc$sex_idu___7 != 0 & !is.na(enc$sex_idu___7)) |
-                            (enc$sex_idu___8 != 0 & !is.na(enc$sex_idu___8)) |
-                            (enc$sex_hiv_pos___0 != 0 & !is.na(enc$sex_hiv_pos___0)) |
-                            (enc$sex_hiv_pos___1 != 0 & !is.na(enc$sex_hiv_pos___1)) |
-                            (enc$sex_hiv_pos___2 != 0 & !is.na(enc$sex_hiv_pos___2)) |
-                            (enc$sex_hiv_pos___3 != 0 & !is.na(enc$sex_hiv_pos___3)) |
-                            (enc$sex_hiv_pos___4 != 0 & !is.na(enc$sex_hiv_pos___4)) |
-                            (enc$sex_hiv_pos___5 != 0 & !is.na(enc$sex_hiv_pos___5)) |
-                            (enc$sex_hiv_pos___6 != 0 & !is.na(enc$sex_hiv_pos___6)) |
-                            (enc$sex_hiv_pos___7 != 0 & !is.na(enc$sex_hiv_pos___7)) |
-                            (enc$sex_hiv_pos___8 != 0 & !is.na(enc$sex_hiv_pos___8)))] <- 1
+                         (enc$sex_receivemoney___0 == 1 | enc$sex_receivemoney___1 == 1 |
+                            enc$sex_receivemoney___2 == 1 | enc$sex_receivemoney___3 == 1 |
+                            enc$sex_receivemoney___4 == 1 | enc$sex_receivemoney___5 == 1 |
+                            enc$sex_receivemoney___6 == 1 | enc$sex_receivemoney___7 == 1 |
+                            enc$sex_receivemoney___8 == 1 | enc$sex_receivedrugs___0 == 1 |
+                            enc$sex_receivedrugs___1 == 1 | enc$sex_receivedrugs___2 == 1 |
+                            enc$sex_receivedrugs___3 == 1 | enc$sex_receivedrugs___4 == 1 |
+                            enc$sex_receivedrugs___5 == 1 | enc$sex_receivedrugs___6 == 1 |
+                            enc$sex_receivedrugs___7 == 1 | enc$sex_receivedrugs___8 == 1 |
+                            enc$sex_partners_past_year != '' |
+                            enc$share_works_last == 0 | enc$share_works_last == 1 | enc$share_works_last == 2 |
+                            enc$share_works_last == 3 | enc$share_works_last == 4 |
+                            enc$prior_std == 0 | enc$prior_std == 1 | enc$prior_std == 2 |
+                            enc$prior_std == 3 | enc$prior_std == 4 |
+                            enc$sex_w_man___0 == 1 | enc$sex_w_man___1 == 1 | enc$sex_w_man___2 == 1 |
+                            enc$sex_w_man___3 == 1 | enc$sex_w_man___4 == 1 | enc$sex_w_man___5 == 1 |
+                            enc$sex_w_man___6 == 1 | enc$sex_w_man___7 == 1 | enc$sex_w_man___8 == 1 |
+                            enc$sex_give_anal___0 == 1 | enc$sex_give_anal___1 == 1 | enc$sex_give_anal___2 == 1 |
+                            enc$sex_give_anal___3 == 1 | enc$sex_give_anal___4 == 1 | enc$sex_give_anal___5 == 1 |
+                            enc$sex_give_anal___6 == 1 | enc$sex_give_anal___7 == 1 | enc$sex_give_anal___8 == 1 |
+                            enc$sex_receive_anal___0 == 1 | enc$sex_receive_anal___1 == 1 |
+                            enc$sex_receive_anal___2 == 1 | enc$sex_receive_anal___3 == 1 |
+                            enc$sex_receive_anal___4 == 1 | enc$sex_receive_anal___5 == 1 |
+                            enc$sex_receive_anal___6 == 1 | enc$sex_receive_anal___7 == 1 |
+                            enc$sex_receive_anal___8 == 1 |
+                            enc$sex_vaginal___0 == 1 | enc$sex_vaginal___1 == 1 | enc$sex_vaginal___2 == 1 |
+                            enc$sex_vaginal___3 == 1 | enc$sex_vaginal___4 == 1 | enc$sex_vaginal___5 == 1 |
+                            enc$sex_vaginal___6 == 1 | enc$sex_vaginal___7 == 1 | enc$sex_vaginal___8 == 1 |
+                            enc$sex_msm___0 == 1 | enc$sex_msm___1 == 1 | enc$sex_msm___2 == 1 |
+                            enc$sex_msm___3 == 1 | enc$sex_msm___4 == 1 | enc$sex_msm___5 == 1 |
+                            enc$sex_msm___6 == 1 | enc$sex_msm___7 == 1 | enc$sex_msm___8 == 1 |
+                            enc$sex_idu___0 == 1 | enc$sex_idu___1 == 1 | enc$sex_idu___2 == 1 |
+                            enc$sex_idu___3 == 1 | enc$sex_idu___4 == 1 | enc$sex_idu___5 == 1 |
+                            enc$sex_idu___6 == 1 | enc$sex_idu___7 == 1 | enc$sex_idu___8 == 1 |
+                            enc$sex_hiv_pos___0 == 1 | enc$sex_hiv_pos___1 == 1 | enc$sex_hiv_pos___2 == 1 |
+                            enc$sex_hiv_pos___3 == 1 | enc$sex_hiv_pos___4 == 1 | enc$sex_hiv_pos___5 == 1 |
+                            enc$sex_hiv_pos___6 == 1 | enc$sex_hiv_pos___7 == 1 | enc$sex_hiv_pos___8 == 1)] <- 1
 table(enc$prep_risk_assessed)
 prep_risk_assessed <- enc[which(enc$prep_risk_assessed == 1), ]
 dim(prep_risk_assessed)
@@ -2418,13 +2500,15 @@ prep_eligible_percent
 
 # PrEP Assessed
 enc$prep_assessed[enc$assessments == 1 & enc$prep_eligible == 1 &
-                    (!is.na(enc$prep_knowledge) |
-                       !is.na(enc$prep_current_use) |
-                       !is.na(enc$prep_past_yr) |
-                       !is.na(enc$pep_knowledge) |
-                       !is.na(enc$pep_current_use) |
-                       !is.na(enc$pep_past_yr) |
-                       !is.na(enc$daily_med))] <- 1
+                    (enc$prep_knowledge == 0 | enc$prep_knowledge == 1 | enc$prep_knowledge == 2 |
+                       enc$prep_knowledge == 3 | enc$prep_knowledge == 4 |
+                       enc$prep_current_use == 0 | enc$prep_current_use == 1 |
+                       enc$prep_past_yr == 0 | enc$prep_past_yr == 1 |
+                       enc$pep_knowledge == 0 | enc$pep_knowledge == 1 | enc$pep_knowledge == 2 |
+                       enc$pep_knowledge == 3 | enc$pep_knowledge == 4 |
+                       enc$pep_current_use == 0 | enc$pep_current_use == 1 |
+                       enc$pep_past_yr == 0 | enc$pep_past_yr == 1 |
+                       enc$daily_med == 0 | enc$daily_med == 1)] <- 1
 table(enc$prep_assessed)
 prep_assessed <- enc[which(enc$prep_assessed == 1), ]
 dim(prep_assessed)
@@ -2486,15 +2570,15 @@ monthly_prep_assessed
 
 
 # combining all PrEP pieces
-monthly_prep <- select(monthly_sud_assess, enc_date, assessments)
+monthly_prep <- select(enc, enc_date)
 monthly_prep <- merge(monthly_prep, monthly_prep_risk, by = 'enc_date', all = T)
 monthly_prep <- merge(monthly_prep, monthly_prep_eligible, by = 'enc_date', all = T)
 monthly_prep <- merge(monthly_prep, monthly_prep_assessed, by = 'enc_date', all = T)
-monthly_prep # metrics of PrEP assessments, eligible screens
-monthly_prep$assessments[is.na(monthly_prep$assessments)] <- 0
 monthly_prep$prep_risk_assessed[is.na(monthly_prep$prep_risk_assessed)] <- 0
 monthly_prep$prep_eligible[is.na(monthly_prep$prep_eligible)] <- 0
 monthly_prep$prep_assessed[is.na(monthly_prep$prep_assessed)] <- 0
+monthly_prep <- distinct(monthly_prep)
+monthly_prep # metrics of PrEP assessments, eligible screens
 
 
 
@@ -2502,7 +2586,7 @@ monthly_prep$prep_assessed[is.na(monthly_prep$prep_assessed)] <- 0
 ########################################  HIV Testing  ########################################
 
 table(enc$ctr_calc)
-enc$ctr_tests[enc$ctr_calc == 1 & (enc$counselor_hiv_start == 'zkomrlf0' | enc$enc_counselor == 27)] <- 1
+enc$ctr_tests[enc$ctr_calc == 1 & enc$counselor_hiv_start == 'zkomrlf0'] <- 1
 ctr_tests <- enc[which(enc$ctr_tests == 1), ]
 ctr_tests <- nrow(ctr_tests)
 ctr_tests
@@ -2511,8 +2595,8 @@ ctr_tests_percent <- percent(ctr_tests/encounters, accuracy = 0.1)
 ctr_tests_percent
 
 
-table(enc$ctr_calc, enc$final_test_status_hiv)
-ctr_positive <- enc[which(enc$ctr_calc == 1 & enc$final_test_status_hiv == 1), ]
+table(enc$ctr_tests, enc$final_test_status_hiv)
+ctr_positive <- enc[which(enc$ctr_tests == 1 & enc$final_test_status_hiv == 1), ]
 ctr_positive <- nrow(ctr_positive)
 ctr_positive
 
@@ -2522,8 +2606,8 @@ ctr_positive_percent[is.na(ctr_positive_percent)] <- '0.0%'
 ctr_positive_percent
 
 
-table(enc$ctr_calc, enc$final_test_status_hiv, enc$diagnosis_hiv)
-ctr_new_positive <- enc[which(enc$ctr_calc == 1 & enc$final_test_status_hiv == 1 & enc$diagnosis_hiv == 1), ]
+table(enc$ctr_tests, enc$final_test_status_hiv, enc$diagnosis_hiv)
+ctr_new_positive <- enc[which(enc$ctr_tests == 1 & enc$final_test_status_hiv == 1 & enc$diagnosis_hiv == 1), ]
 ctr_new_positive <- nrow(ctr_new_positive)
 ctr_new_positive
 
@@ -2533,8 +2617,11 @@ ctr_new_positive_percent[is.na(ctr_new_positive_percent)] <- '0.0%'
 ctr_new_positive_percent
 
 
+
+
 table(enc$ehe_calc)
-ehe_tests <- enc[which(enc$ehe_calc == 1), ]
+enc$ehe_tests[enc$ehe_calc == 1 & enc$counselor_hiv_start == 'zkomrlf0'] <- 1
+ehe_tests <- enc[which(enc$ehe_calc == 1 & enc$counselor_hiv_start == 'zkomrlf0'), ]
 ehe_tests <- nrow(ehe_tests)
 ehe_tests
 
@@ -2542,8 +2629,8 @@ ehe_tests_percent <- percent(ehe_tests/encounters, accuracy = 0.01)
 ehe_tests_percent
 
 
-table(enc$ehe_calc, enc$final_test_status_hiv)
-ehe_positive <- enc[which(enc$ehe_calc == 1 & enc$final_test_status_hiv == 1), ]
+table(enc$ehe_tests, enc$final_test_status_hiv)
+ehe_positive <- enc[which(enc$ehe_tests == 1 & enc$final_test_status_hiv == 1), ]
 ehe_positive <- nrow(ehe_positive)
 ehe_positive
 
@@ -2552,8 +2639,8 @@ ehe_positive_percent
 ehe_positive_percent[is.na(ehe_positive_percent)] <- '0.0%'
 ehe_positive_percent
 
-table(enc$ehe_calc, enc$final_test_status_hiv, enc$diagnosis_hiv)
-ehe_new_positive <- enc[which(enc$ehe_calc == 1 & enc$final_test_status_hiv == 1 & enc$diagnosis_hiv == 1), ]
+table(enc$ehe_tests, enc$final_test_status_hiv, enc$diagnosis_hiv)
+ehe_new_positive <- enc[which(enc$ehe_tests == 1 & enc$final_test_status_hiv == 1 & enc$diagnosis_hiv == 1), ]
 ehe_new_positive <- nrow(ehe_new_positive)
 ehe_new_positive
 
@@ -2582,34 +2669,61 @@ total_hiv_new_positive_percent
 
 
 
-monthly_hiv_tests <- select(enc, enc_date, record_id, ctr_calc, ehe_calc)
-monthly_hiv_tests <- monthly_hiv_tests[which(monthly_hiv_tests$ctr_calc == 1 | monthly_hiv_tests$ehe_calc == 1), ]
-head(monthly_hiv_tests)
-monthly_hiv_tests <- select(monthly_hiv_tests, -record_id)
-head(monthly_hiv_tests)
-colnames(monthly_hiv_tests)[2] <- 'ctr_tests'
-colnames(monthly_hiv_tests)[3] <- 'ehe_tests'
+monthly_ctr_tests <- select(enc, enc_date, ctr_tests)
+monthly_ctr_tests <- monthly_ctr_tests[which(monthly_ctr_tests$ctr_tests == 1), ]
+head(monthly_ctr_tests)
+colnames(monthly_ctr_tests)[2] <- 'ctr_tests'
+monthly_ctr_tests$ctr_tests[is.na(monthly_ctr_tests$ctr_tests)] <- 0
+head(monthly_ctr_tests)
+
+if (nrow(monthly_ctr_tests) == 0) {
+  monthly_ctr_tests <- data.frame(enc_date = as.Date("2023-01-01"), ctr_tests = 0)
+} else {
+  monthly_ctr_tests <- aggregate(ctr_tests ~ enc_date, monthly_ctr_tests, FUN = sum)
+}
+monthly_ctr_tests
+monthly_ctr_tests <- distinct(monthly_ctr_tests)
+monthly_ctr_tests
+
+
+
+monthly_ehe_tests <- select(enc, enc_date, ehe_tests)
+monthly_ehe_tests <- monthly_ehe_tests[which(monthly_ehe_tests$ehe_tests == 1), ]
+head(monthly_ehe_tests)
+colnames(monthly_ehe_tests)[2] <- 'ehe_tests'
+monthly_ehe_tests$ehe_tests[is.na(monthly_ehe_tests$ehe_tests)] <- 0
+head(monthly_ehe_tests)
+
+if (nrow(monthly_ehe_tests) == 0) {
+  monthly_ehe_tests <- data.frame(enc_date = as.Date("2023-01-01"), ehe_tests = 0)
+} else {
+  monthly_ehe_tests <- aggregate(ehe_tests ~ enc_date, monthly_ehe_tests, FUN = sum)
+}
+monthly_ehe_tests
+monthly_ehe_tests <- distinct(monthly_ehe_tests)
+monthly_ehe_tests
+
+
+
+# combining all HIV Testing pieces
+monthly_hiv_tests <- select(enc, enc_date)
+monthly_hiv_tests <- merge(monthly_hiv_tests, monthly_ctr_tests, by = 'enc_date', all = T)
+monthly_hiv_tests <- merge(monthly_hiv_tests, monthly_ehe_tests, by = 'enc_date', all = T)
 monthly_hiv_tests$ctr_tests[is.na(monthly_hiv_tests$ctr_tests)] <- 0
 monthly_hiv_tests$ehe_tests[is.na(monthly_hiv_tests$ehe_tests)] <- 0
-head(monthly_hiv_tests)
-
-if (nrow(monthly_hiv_tests) == 0) {
-  aggregated_data <- data.frame(enc_date = as.Date("2023-01-01"), ctr_tests = 0, ehe_tests = 0)
-} else {
-  aggregated_data <- aggregate(cbind(ctr_tests, ehe_tests) ~ enc_date, monthly_hiv_tests, FUN = sum)
-}
-monthly_hiv_tests
+monthly_hiv_tests <- distinct(monthly_hiv_tests)
+monthly_hiv_tests # metrics of HIV Testing
 
 
 
-
-enc$hiv_false_positive[(enc$hiv_result1 == 1 | enc$hiv_result1 == 2 |
-                          enc$hiv_result2 == 1 | enc$hiv_result2 == 2 |
-                          enc$hiv_result3 == 1 | enc$hiv_result3 == 2 |
-                          enc$hiv_result4 == 1 | enc$hiv_result4 == 2 |
-                          enc$hiv_result5 == 1 | enc$hiv_result5 == 2 |
-                          enc$hiv_result6 == 1 | enc$hiv_result6 == 2) &
-                         enc$final_test_status_hiv == 0] <- 1
+enc$hiv_false_positive[enc$counselor_hiv_start == 'zkomrlf0' &
+                         ((enc$hiv_result1 == 1 | enc$hiv_result1 == 2 |
+                             enc$hiv_result2 == 1 | enc$hiv_result2 == 2 |
+                             enc$hiv_result3 == 1 | enc$hiv_result3 == 2 |
+                             enc$hiv_result4 == 1 | enc$hiv_result4 == 2 |
+                             enc$hiv_result5 == 1 | enc$hiv_result5 == 2 |
+                             enc$hiv_result6 == 1 | enc$hiv_result6 == 2) &
+                            enc$final_test_status_hiv == 0)] <- 1
 table(enc$hiv_false_positive)
 hiv_false_positive <- enc[which(enc$hiv_false_positive == 1), ]
 dim(hiv_false_positive)
@@ -2620,7 +2734,8 @@ hiv_false_positive_percent <- percent(hiv_false_positive/total_hiv_tests, accura
 hiv_false_positive_percent
 
 
-enc$hiv_indeterminate[enc$final_test_status_hiv == 2] <- 1
+
+enc$hiv_indeterminate[enc$counselor_hiv_start == 'zkomrlf0' & enc$final_test_status_hiv == 2] <- 1
 table(enc$hiv_indeterminate)
 hiv_indeterminate <- enc[which(enc$hiv_indeterminate == 1), ]
 dim(hiv_indeterminate)
@@ -2650,12 +2765,13 @@ ehe_positivity_rate[is.na(ehe_positivity_rate)] <- '0.0%'
 
 # HCV Rapid Testing
 ## based on fingerstick sample type
-enc$hcv_rapid_test[(enc$sample_type_hcv1 == 5 |
+enc$hcv_rapid_test[enc$counselor_hcv_start == 'zkomrlf0' &
+                     (enc$sample_type_hcv1 == 5 |
                       enc$sample_type_hcv2 == 5 |
                       enc$sample_type_hcv3 == 5 |
                       enc$sample_type_hcv4 == 5 |
                       enc$sample_type_hcv5 == 5 |
-                      enc$sample_type_hcv6 == 5) & (enc$counselor_hcv_start == 'zkomrlf0' | enc$enc_counselor == 27)] <- 1
+                      enc$sample_type_hcv6 == 5)] <- 1
 table(enc$hcv_rapid_test)
 
 hcv_rapid_tests <- enc[which(enc$hcv_rapid_test == 1), ]
@@ -2705,6 +2821,8 @@ if (nrow(monthly_hcv_tests) == 0) {
   monthly_hcv_tests <- aggregate(hcv_tests ~ enc_date, monthly_hcv_tests, FUN = sum)
 }
 monthly_hcv_tests
+monthly_hcv_tests <- distinct(monthly_hcv_tests)
+monthly_hcv_tests
 
 
 hcv_rapid_positivity_rate <- percent(hcv_rapid_new_positive/hcv_rapid_tests, accuracy = 0.01)
@@ -2751,6 +2869,8 @@ if (nrow(monthly_ltc_cases) == 0) {
 } else {
   monthly_ltc_cases <- aggregate(ltc_cases ~ enc_date, monthly_ltc_cases, FUN = sum)
 }
+monthly_ltc_cases
+monthly_ltc_cases <- distinct(monthly_ltc_cases)
 monthly_ltc_cases
 
 
@@ -8135,6 +8255,8 @@ other_not_linked_other_percent[is.na(other_not_linked_other_percent)] <- '0.0%'
 other_not_linked_other_percent
 
 
+
+
 ###############  Linkage Summary  ###############
 
 table(enc$ltc_cases)
@@ -8289,6 +8411,8 @@ total_linked_percent <- percent(total_linked/total_closed_ltc, accuracy = 0.1)
 total_linked_percent
 total_linked_percent[is.na(total_linked_percent)] <- '0.0%'
 total_linked_percent
+
+
 
 
 ###########################################  Referrals  ##########################################
@@ -9047,23 +9171,187 @@ head(referral_plot)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+monthly_encounters <- monthly_encounters %>%
+  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+  summarise(encounters = sum(encounters)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_encounters
+
+monthly_assessments <- monthly_assessments %>%
+  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+  summarise(approach_assessment = sum(approach_assessment),
+            assessments_declined = sum(assessments_declined),
+            assessments_prevented = sum(assessments_prevented),
+            assessments = sum(assessments)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_assessments
+
+monthly_sud_assess <- monthly_sud_assess %>%
+  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+  summarise(sud_assessed = sum(sud_assessed),
+            sud_pos = sum(sud_pos)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_sud_assess
+
+monthly_mh_assess <- monthly_mh_assess %>%
+  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+  summarise(brief_mh_assessed = sum(brief_mh_assessed),
+            mh_assessed = sum(mh_assessed),
+            mh_pos = sum(mh_pos)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_mh_assess
+
+monthly_mh_cond <- monthly_mh_cond %>%
+  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+  summarise(depression_assessed = sum(depression_assessed),
+            depression_pos = sum(depression_pos),
+            anxiety_assessed = sum(anxiety_assessed),
+            anxiety_pos = sum(anxiety_pos),
+            ptsd_assessed = sum(ptsd_assessed),
+            ptsd_pos = sum(ptsd_pos)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_mh_cond
+
+monthly_prep <- monthly_prep %>%
+  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+  summarise(prep_risk_assessed = sum(prep_risk_assessed),
+            prep_eligible = sum(prep_eligible),
+            prep_assessed = sum(prep_assessed)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_prep
+
+monthly_hiv_tests <- monthly_hiv_tests %>%
+  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+  summarise(ctr_tests = sum(ctr_tests),
+            ehe_tests = sum(ehe_tests)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_hiv_tests
+
+monthly_hcv_tests <- monthly_hcv_tests %>%
+  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+  summarise(hcv_tests = sum(hcv_tests)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_hcv_tests
+
+monthly_ltc_cases <- monthly_ltc_cases %>%
+  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+  summarise(ltc_cases = sum(ltc_cases)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_ltc_cases
+
+
+
+
+
+
+
+
+
+
+
 ####################################  Combining all services  ####################################
 
-monthly_metrics <- merge(monthly_encounters, monthly_assessments, by = 'enc_date', all.x = T)
-monthly_metrics <- merge(monthly_metrics, monthly_hiv_tests, by = 'enc_date', all.x = T)
-monthly_metrics <- merge(monthly_metrics, monthly_hcv_tests, by = 'enc_date', all.x = T)
-monthly_metrics <- merge(monthly_metrics, monthly_ltc_cases, by = 'enc_date', all.x = T)
-head(monthly_metrics) # metrics of encounters, assessments, CTR and EHE tests, HCV tests, LTC Cases
-monthly_metrics$encounters[is.na(monthly_metrics$encounters)] <- 0
-monthly_metrics$assessments[is.na(monthly_metrics$assessments)] <- 0
-monthly_metrics$ctr_tests[is.na(monthly_metrics$ctr_tests)] <- 0
-monthly_metrics$ehe_tests[is.na(monthly_metrics$ehe_tests)] <- 0
-monthly_metrics$hcv_tests[is.na(monthly_metrics$hcv_tests)] <- 0
-monthly_metrics$ltc_cases[is.na(monthly_metrics$ltc_cases)] <- 0
-head(monthly_metrics)
+monthly_metrics_main <- merge(monthly_encounters, monthly_assessments, by = 'month_year', all.x = T)
+monthly_metrics_main <- merge(monthly_metrics_main, monthly_sud_assess, by = 'month_year', all.x = T)
+monthly_metrics_main <- merge(monthly_metrics_main, monthly_mh_assess, by = 'month_year', all.x = T)
+monthly_metrics_main <- merge(monthly_metrics_main, monthly_mh_cond, by = 'month_year', all.x = T)
+monthly_metrics_main <- merge(monthly_metrics_main, monthly_prep, by = 'month_year', all.x = T)
+monthly_metrics_main <- merge(monthly_metrics_main, monthly_hiv_tests, by = 'month_year', all.x = T)
+monthly_metrics_main <- merge(monthly_metrics_main, monthly_hcv_tests, by = 'month_year', all.x = T)
+monthly_metrics_main <- merge(monthly_metrics_main, monthly_ltc_cases, by = 'month_year', all.x = T)
+monthly_metrics_main$encounters[is.na(monthly_metrics_main$encounters)] <- 0
+monthly_metrics_main$approach_assessment[is.na(monthly_metrics_main$approach_assessment)] <- 0
+monthly_metrics_main$assessments_declined[is.na(monthly_metrics_main$assessments_declined)] <- 0
+monthly_metrics_main$assessments_prevented[is.na(monthly_metrics_main$assessments_prevented)] <- 0
+monthly_metrics_main$assessments[is.na(monthly_metrics_main$assessments)] <- 0
+monthly_metrics_main$sud_assessed[is.na(monthly_metrics_main$sud_assessed)] <- 0
+monthly_metrics_main$sud_pos[is.na(monthly_metrics_main$sud_pos)] <- 0
+monthly_metrics_main$brief_mh_assessed[is.na(monthly_metrics_main$brief_mh_assessed)] <- 0
+monthly_metrics_main$mh_assessed[is.na(monthly_metrics_main$mh_assessed)] <- 0
+monthly_metrics_main$mh_pos[is.na(monthly_metrics_main$mh_pos)] <- 0
+monthly_metrics_main$depression_assessed[is.na(monthly_metrics_main$depression_assessed)] <- 0
+monthly_metrics_main$depression_pos[is.na(monthly_metrics_main$depression_pos)] <- 0
+monthly_metrics_main$anxiety_assessed[is.na(monthly_metrics_main$anxiety_assessed)] <- 0
+monthly_metrics_main$anxiety_pos[is.na(monthly_metrics_main$anxiety_pos)] <- 0
+monthly_metrics_main$ptsd_assessed[is.na(monthly_metrics_main$ptsd_assessed)] <- 0
+monthly_metrics_main$ptsd_pos[is.na(monthly_metrics_main$ptsd_pos)] <- 0
+monthly_metrics_main$prep_risk_assessed[is.na(monthly_metrics_main$prep_risk_assessed)] <- 0
+monthly_metrics_main$prep_eligible[is.na(monthly_metrics_main$prep_eligible)] <- 0
+monthly_metrics_main$prep_assessed[is.na(monthly_metrics_main$prep_assessed)] <- 0
+monthly_metrics_main$ctr_tests[is.na(monthly_metrics_main$ctr_tests)] <- 0
+monthly_metrics_main$ehe_tests[is.na(monthly_metrics_main$ehe_tests)] <- 0
+monthly_metrics_main$hcv_tests[is.na(monthly_metrics_main$hcv_tests)] <- 0
+monthly_metrics_main$ltc_cases[is.na(monthly_metrics_main$ltc_cases)] <- 0
+monthly_metrics_main <- distinct(monthly_metrics_main)
+monthly_metrics_main # metrics of encounters, assessments, CTR and EHE tests, HCV tests, LTC Cases
 
-monthly_metrics <- monthly_metrics %>%
-  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+
+
+
+
+
+
+
+
+# Monthly Metrics
+
+monthly_metrics <- monthly_metrics_main %>%
+  group_by(month_year) %>%
   summarise(encounters = sum(encounters),
             assessments = sum(assessments),
             ctr_tests = sum(ctr_tests),
@@ -9077,13 +9365,9 @@ monthly_metrics <- monthly_metrics %>%
 monthly_metrics
 
 monthly_metrics$percent_assessed <- percent(monthly_metrics$assessments/monthly_metrics$encounters, accuracy = 0.1)
-monthly_metrics
 monthly_metrics$percent_ctr_tests <- percent(monthly_metrics$ctr_tests/monthly_metrics$encounters, accuracy = 0.1)
-monthly_metrics
 monthly_metrics$percent_ehe_tests <- percent(monthly_metrics$ehe_tests/monthly_metrics$encounters, accuracy = 0.1)
-monthly_metrics
 monthly_metrics$percent_hcv_tests <- percent(monthly_metrics$hcv_tests/monthly_metrics$encounters, accuracy = 0.1)
-monthly_metrics
 monthly_metrics$percent_ltc_cases <- percent(monthly_metrics$ltc_cases/monthly_metrics$encounters, accuracy = 0.1)
 monthly_metrics
 
@@ -9099,8 +9383,39 @@ monthly_metrics
 
 
 
-monthly_sud_assess <- monthly_sud_assess %>%
-  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+# Assessment Approach Metrics
+
+monthly_assessment_approach <- monthly_metrics_main %>%
+  group_by(month_year) %>%
+  summarise(approach_assessment = sum(approach_assessment),
+            assessments = sum(assessments),
+            assessments_declined = sum(assessments_declined),
+            assessments_prevented = sum(assessments_prevented)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_assessment_approach # metrics of assessments, SUD/MH/PrEP screening/positivity
+
+monthly_assessment_approach$percent_assessed <- percent(monthly_assessment_approach$assessments/monthly_assessment_approach$approach_assessment, accuracy = 0.1)
+monthly_assessment_approach$percent_declined <- percent(monthly_assessment_approach$assessments_declined/monthly_assessment_approach$approach_assessment, accuracy = 0.1)
+monthly_assessment_approach$percent_prevented <- percent(monthly_assessment_approach$assessments_prevented/monthly_assessment_approach$approach_assessment, accuracy = 0.1)
+monthly_assessment_approach
+
+monthly_assessment_approach$percent_assessed[is.na(monthly_assessment_approach$percent_assessed)] <- '0.0%'
+monthly_assessment_approach$percent_declined[is.na(monthly_assessment_approach$percent_declined)] <- '0.0%'
+monthly_assessment_approach$percent_prevented[is.na(monthly_assessment_approach$percent_prevented)] <- '0.0%'
+monthly_assessment_approach
+monthly_assessment_approach <- monthly_assessment_approach[, c(1, 2, 3, 6, 4, 7, 5, 8)]
+monthly_assessment_approach
+
+
+
+
+# SUD Metrics
+
+monthly_sud_assess <- monthly_metrics_main %>%
+  group_by(month_year) %>%
   summarise(assessments = sum(assessments),
             sud_assessed = sum(sud_assessed),
             sud_pos = sum(sud_pos)) %>%
@@ -9119,12 +9434,14 @@ monthly_sud_assess
 
 monthly_sud_assess$percent_sud_assessed[is.na(monthly_sud_assess$percent_sud_assessed)] <- '0.0%'
 monthly_sud_assess$percent_sud_pos[is.na(monthly_sud_assess$percent_sud_pos)] <- '0.0%'
+monthly_sud_assess
 
 
 
+# MH Metrics
 
-monthly_mh_assess <- monthly_mh_assess %>%
-  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+monthly_mh_assess <- monthly_metrics_main %>%
+  group_by(month_year) %>%
   summarise(assessments = sum(assessments),
             sud_pos = sum(sud_pos),
             brief_mh_assessed = sum(brief_mh_assessed),
@@ -9153,9 +9470,10 @@ monthly_mh_assess
 
 
 
+# MH Conditions Metrics
 
-monthly_mh_cond <- monthly_mh_cond %>%
-  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+monthly_mh_cond <- monthly_metrics_main %>%
+  group_by(month_year) %>%
   summarise(mh_assessed = sum(mh_assessed),
             depression_assessed = sum(depression_assessed),
             depression_pos = sum(depression_pos),
@@ -9195,9 +9513,10 @@ monthly_mh_cond
 
 
 
+# PrEP Metrics
 
-monthly_prep <- monthly_prep %>%
-  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+monthly_prep <- monthly_metrics_main %>%
+  group_by(month_year) %>%
   summarise(assessments = sum(assessments),
             prep_risk_assessed = sum(prep_risk_assessed),
             prep_eligible = sum(prep_eligible),
@@ -9221,37 +9540,15 @@ monthly_prep
 monthly_prep$prep_risk_percent[is.na(monthly_prep$prep_risk_percent)] <- '0.0%'
 monthly_prep$prep_eligible_percent[is.na(monthly_prep$prep_eligible_percent)] <- '0.0%'
 monthly_prep$prep_assessed_percent[is.na(monthly_prep$prep_assessed_percent)] <- '0.0%'
+monthly_prep
 
 
 
 
-monthly_hiv_tests <- monthly_hiv_tests %>%
-  group_by(month_year = format(enc_date, "%m/%Y")) %>%
-  summarise(ctr_tests = sum(ctr_tests),
-            ehe_tests = sum(ehe_tests)) %>%
-  mutate(year = as.integer(substring(month_year, 4, 7)),
-         month = as.integer(substring(month_year, 1, 2))) %>%
-  arrange(year, month) %>%
-  select(-year, -month)
-monthly_hiv_tests
+# Assessment Metrics
 
-
-
-
-monthly_hcv_tests <- monthly_hcv_tests %>%
-  group_by(month_year = format(enc_date, "%m/%Y")) %>%
-  summarise(hcv_tests = sum(hcv_tests)) %>%
-  mutate(year = as.integer(substring(month_year, 4, 7)),
-         month = as.integer(substring(month_year, 1, 2))) %>%
-  arrange(year, month) %>%
-  select(-year, -month)
-monthly_hcv_tests
-
-
-
-
-monthly_assessments <- monthly_assessments %>%
-  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+monthly_assessments <- monthly_metrics_main %>%
+  group_by(month_year) %>%
   summarise(assessments = sum(assessments)) %>%
   mutate(year = as.integer(substring(month_year, 4, 7)),
          month = as.integer(substring(month_year, 1, 2))) %>%
@@ -9266,13 +9563,12 @@ monthly_prep_num <- select(monthly_prep, -assessments, -prep_risk_assessed, -pre
 assessment_metrics <- merge(monthly_assessments, monthly_sud_num, by = 'month_year', all.x = T)
 assessment_metrics <- merge(assessment_metrics, monthly_mh_num, by = 'month_year', all.x = T)
 assessment_metrics <- merge(assessment_metrics, monthly_prep_num, by = 'month_year', all.x = T)
-assessment_metrics # metrics of assessments, SUD/MH/PrEP screening/positivity
 assessment_metrics$assessments[is.na(assessment_metrics$assessments)] <- 0
 assessment_metrics$sud_assessed[is.na(assessment_metrics$sud_assessed)] <- 0
 assessment_metrics$brief_mh_assessed[is.na(assessment_metrics$brief_mh_assessed)] <- 0
 assessment_metrics$mh_assessed[is.na(assessment_metrics$mh_assessed)] <- 0
 assessment_metrics$prep_eligible[is.na(assessment_metrics$prep_eligible)] <- 0
-assessment_metrics
+assessment_metrics # metrics of assessments, SUD/MH/PrEP screening/positivity
 
 assessment_metrics$Date <- as.Date(paste("01", assessment_metrics$month_year, sep = "/"), format = "%d/%m/%Y")
 assessment_metrics <- select(assessment_metrics, -month_year)
@@ -9293,8 +9589,42 @@ assessment_metrics
 
 
 
+# HIV Testing Metrics
+
+monthly_hiv_tests <- monthly_hiv_tests %>%
+  group_by(month_year) %>%
+  summarise(ctr_tests = sum(ctr_tests),
+            ehe_tests = sum(ehe_tests)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_hiv_tests
+
+
+
+# HCV Testing Metrics
+
+monthly_hcv_tests <- monthly_hcv_tests %>%
+  group_by(month_year) %>%
+  summarise(hcv_tests = sum(hcv_tests)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_hcv_tests
+
+
+
+
+# Formatting metrics tables
+
+colnames(monthly_metrics_main)[1] <- 'Date'
+monthly_metrics_main
 colnames(monthly_metrics)[1] <- 'Date'
 monthly_metrics
+colnames(monthly_assessment_approach)[1] <- 'Date'
+monthly_assessment_approach
 colnames(monthly_sud_assess)[1] <- 'Date'
 monthly_sud_assess
 colnames(monthly_mh_assess)[1] <- 'Date'
@@ -9307,7 +9637,6 @@ colnames(monthly_hiv_tests)[1] <- 'Date'
 monthly_hiv_tests
 colnames(monthly_hcv_tests)[1] <- 'Date'
 monthly_hcv_tests
-
 
 ```
 

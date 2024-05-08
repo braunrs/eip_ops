@@ -1,6 +1,6 @@
 ---
 title: "EIP Operations Website"
-image: eip_logo.png
+image: images/eip_logo.jpg
 navbar: false
 sidebar: false
 about:
