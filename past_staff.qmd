@@ -1,0 +1,53 @@
+---
+title: "Prior EIP Staff"
+image: images/eip_logo.jpg
+lightbox:
+  match: auto
+  effect: fade
+  loop: true
+about:
+    template: jolla
+    image-shape: round
+    image-width: 10em
+---
+
+:::{#hero-heading}
+This lists all prior EIP staff in alphabetical order.
+- Working on adding in additional information, just including images and concept idea for this page for now. - 
+:::
+
+<br>
+<br>
+<br>
+
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+![Matthew Cairns](images/m_cairns.jpg){group="past-staff-gallery" fig-alt="Matthew Cairns"}
+
+![Doorga Dave](images/d_dave.jpg){group="past-staff-gallery" fig-alt="Doorga Dave"}
+
+![Arthur Forbriger](images/a_forbriger.jpg){group="past-staff-gallery" fig-alt="Arthur Forbriger"}
+
+![D'Vaughn House](images/d_house.jpg){group="past-staff-gallery" fig-alt="D'Vaughn House"}
+
+![Danielle Knox](images/d_knox.jpg){group="past-staff-gallery" fig-alt="Danielle Knox"}
+
+![Jordan McNulty](images/j_mcnulty.jpg){group="past-staff-gallery" fig-alt="Jordan McNulty"}
+
+![Jake Perrmann](images/j_perrmann.jpg){group="past-staff-gallery" fig-alt="Jake Perrmann"}
+
+![Sway Rehman](images/s_rehman.jpg){group="past-staff-gallery" fig-alt="Sway Rehman"}
+
+![Hawa Sall](images/h_sall.jpg){group="past-staff-gallery" fig-alt="Hawa Sall"}
+
+![Alex Sheehan](images/a_sheehan.jpg){group="past-staff-gallery" fig-alt="Alex Sheehan"}
+
+![Summer Soliman](images/s_soliman.jpg){group="past-staff-gallery" fig-alt="Summer Soliman"}
+
+![Anthony Spuzzillo](images/a_spuzzillo.jpg){group="past-staff-gallery" fig-alt="Anthony Spuzzillo"}
+
+:::
+
+
+
+

@@ -8,7 +8,7 @@ lightbox:
 about:
     template: jolla
     image-shape: round
-    image-width: 15em
+    image-width: 10em
 ---
 
 :::{#hero-heading}
@@ -109,6 +109,8 @@ The role of the EIP Operations Team...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 ![Jessika Bass](images/j_bass.jpg){group="ops-gallery" fig-alt="Jessika Bass"}
+
+![Rob Braun](images/r_braun.jpg){group="ops-gallery" fig-alt="Rob Braun"}
 
 ![Ryane Sickles](images/r_sickles.jpg){group="ops-gallery" fig-alt="Ryane Sickles"}
 

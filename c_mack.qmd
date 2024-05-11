@@ -6,7 +6,7 @@ lightbox:
 about:
   id: hero-heading
   template: solana
-  image: images/c_mack.jpg
+  image: images/blank_staff.jpg
   image-width: 20em
 format:
   html: 
