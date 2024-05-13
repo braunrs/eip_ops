@@ -8,6 +8,8 @@ website:
     right:
       - text: "Home"
         href: main.qmd
+      - text: "Prior Staff"
+        href: prior_staff.qmd
 
 format:
   html:
