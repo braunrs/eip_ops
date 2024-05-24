@@ -26,7 +26,7 @@ The role of the EIP HPA...
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 [![Pierre Abbey](images/blank_staff.jpg){group="hpa-gallery"}](p_abbey.html "Pierre Abbey")
 
-[![Archit Deshpande](images/a_deshpande.jpg){group="hpa-gallery"}](a_deshpande.html "Archit Deshpande")
+[![Katie Hallinan](images/k_hallinan.jpg){group="hpa-gallery"}](k_hallinan.html "Katie Hallinan")
 
 [![Brooke Johannes](images/b_johannes.jpg){group="hpa-gallery"}](b_johannes.html "Brooke Johannes")
 
@@ -37,8 +37,6 @@ The role of the EIP HPA...
 [![Niharika Sarker](images/n_sarker.jpg){group="hpa-gallery"}](n_sarker.html "Niharika Sarker")
 
 [![Timothy Spaeth](images/t_spaeth.jpg){group="hpa-gallery"}](t_spaeth.html "Timothy Spaeth")
-
-[![Dylanne Twitty](images/blank_staff.jpg){group="hpa-gallery"}](d_twitty.html "Dylanne Twitty")
 :::
 
 
@@ -47,9 +45,9 @@ The role of the EIP HPA...
 <br>
 
 
-### Linkage to Care Coordinators (LtC)
+### Clinical Research Assistant (CRA)
 
-The role of the EIP LtC Coordinator...
+The role of the EIP CRA...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 [![Katie Anderson](images/k_anderson.jpg){group="ltc-gallery"}](k_anderson.html "Katie Anderson")
@@ -58,19 +56,27 @@ The role of the EIP LtC Coordinator...
 
 [![Neria Brempong](images/n_brempong.jpg){group="ltc-gallery"}](n_brempong.html "Neria Brempong")
 
-[![Joseph Fiorelli](images/j_fiorelli.jpg){group="ltc-gallery"}](j_fiorelli.html "Joseph Fiorelli")
-
-[![Katie Hallinan](images/k_hallinan.jpg){group="ltc-gallery"}](k_hallinan.html "Katie Hallinan")
-
-[![Rachel Kombo](images/r_kombo.jpg){group="ltc-gallery"}](r_kombo.html "Rachel Kombo")
-
-[![Carmen Mack](images/blank_staff.jpg){group="ltc-gallery"}](c_mack.html "Carmen Mack")
-
-[![Christine Mai](images/blank_staff.jpg){group="ltc-gallery"}](c_mai.html "Christine Mai")
+[![Archit Deshpande](images/a_deshpande.jpg){group="hpa-gallery"}](a_deshpande.html "Archit Deshpande")
 
 [![Meg Mays](images/m_mays.jpg){group="ltc-gallery"}](m_mays.html "Meg Mays")
 
 [![Noah McGorry](images/n_mcGorry.jpg){group="ltc-gallery"}](n_mcgorry.html "Noah McGorry")
+:::
+
+
+<br>
+<br>
+<br>
+
+
+### Clinical Research Professional (CRP)
+
+The role of the EIP CRP...
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+[![Joseph Fiorelli](images/j_fiorelli.jpg){group="ltc-gallery"}](j_fiorelli.html "Joseph Fiorelli")
+
+[![Rachel Kombo](images/r_kombo.jpg){group="ltc-gallery"}](r_kombo.html "Rachel Kombo")
 
 [![Alaa Salameh](images/a_salameh.jpg){group="ltc-gallery"}](a_salameh.html "Alaa Salameh")
 :::
