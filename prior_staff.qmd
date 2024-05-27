@@ -42,6 +42,9 @@ This lists all prior EIP staff in alphabetical order.
 
 ![Alex Sheehan](images/a_sheehan.jpg){group="past-staff-gallery" fig-alt="Alex Sheehan"}
 
+![Ryane Sickles](images/r_sickles.jpg){group="past-staff-gallery" fig-alt="Ryane Sickles"}
+
+
 ![Summer Soliman](images/s_soliman.jpg){group="past-staff-gallery" fig-alt="Summer Soliman"}
 
 ![Anthony Spuzzillo](images/a_spuzzillo.jpg){group="past-staff-gallery" fig-alt="Anthony Spuzzillo"}

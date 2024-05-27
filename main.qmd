@@ -118,8 +118,6 @@ The role of the EIP Operations Team...
 
 ![Rob Braun](images/r_braun.jpg){group="ops-gallery" fig-alt="Rob Braun"}
 
-![Ryane Sickles](images/r_sickles.jpg){group="ops-gallery" fig-alt="Ryane Sickles"}
-
 ![Elysia Smith](images/e_smith.jpg){group="ops-gallery" fig-alt="Elysia Smith"}
 
 [![Chloe Striker](images/c_striker.jpg){group="ops-gallery"}](c_striker.html "Chloe Striker")
