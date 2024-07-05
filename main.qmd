@@ -26,17 +26,27 @@ The role of the EIP HPA...
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 [![Pierre Abbey](images/blank_staff.jpg){group="hpa-gallery"}](p_abbey.html "Pierre Abbey")
 
-[![Katie Hallinan](images/k_hallinan.jpg){group="hpa-gallery"}](k_hallinan.html "Katie Hallinan")
-
 [![Brooke Johannes](images/b_johannes.jpg){group="hpa-gallery"}](b_johannes.html "Brooke Johannes")
 
 [![Cameron May](images/c_may.jpg){group="hpa-gallery"}](c_may.html "Cameron May")
 
-[![Bella Procaccio](images/b_procaccio.jpg){group="hpa-gallery"}](b_procaccio.html "Bella Procaccio")
-
 [![Niharika Sarker](images/n_sarker.jpg){group="hpa-gallery"}](n_sarker.html "Niharika Sarker")
 
 [![Timothy Spaeth](images/t_spaeth.jpg){group="hpa-gallery"}](t_spaeth.html "Timothy Spaeth")
+:::
+
+
+<br>
+<br>
+<br>
+
+
+### Senior Health Promotion Advocates (srHPAs)
+
+The role of the EIP srHPA...
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+[![Bella Procaccio](images/b_procaccio.jpg){group="srhpa-gallery"}](b_procaccio.html "Bella Procaccio")
 :::
 
 
@@ -50,17 +60,17 @@ The role of the EIP HPA...
 The role of the EIP CRA...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
-[![Katie Anderson](images/k_anderson.jpg){group="ltc-gallery"}](k_anderson.html "Katie Anderson")
+[![Katie Anderson](images/k_anderson.jpg){group="cra-gallery"}](k_anderson.html "Katie Anderson")
 
-[![Rachael Black](images/r_black.jpg){group="ltc-gallery"}](r_black.html "Rachael Black")
+[![Rachael Black](images/r_black.jpg){group="cra-gallery"}](r_black.html "Rachael Black")
 
-[![Neria Brempong](images/n_brempong.jpg){group="ltc-gallery"}](n_brempong.html "Neria Brempong")
+[![Neria Brempong](images/n_brempong.jpg){group="cra-gallery"}](n_brempong.html "Neria Brempong")
 
-[![Archit Deshpande](images/a_deshpande.jpg){group="hpa-gallery"}](a_deshpande.html "Archit Deshpande")
+[![Archit Deshpande](images/a_deshpande.jpg){group="cra-gallery"}](a_deshpande.html "Archit Deshpande")
 
-[![Meg Mays](images/m_mays.jpg){group="ltc-gallery"}](m_mays.html "Meg Mays")
+[![Meg Mays](images/m_mays.jpg){group="cra-gallery"}](m_mays.html "Meg Mays")
 
-[![Noah McGorry](images/n_mcGorry.jpg){group="ltc-gallery"}](n_mcgorry.html "Noah McGorry")
+[![Noah McGorry](images/n_mcGorry.jpg){group="cra-gallery"}](n_mcgorry.html "Noah McGorry")
 :::
 
 
@@ -74,11 +84,13 @@ The role of the EIP CRA...
 The role of the EIP CRP...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
-[![Joseph Fiorelli](images/j_fiorelli.jpg){group="ltc-gallery"}](j_fiorelli.html "Joseph Fiorelli")
+[![Joseph Fiorelli](images/j_fiorelli.jpg){group="crp-gallery"}](j_fiorelli.html "Joseph Fiorelli")
 
-[![Rachel Kombo](images/r_kombo.jpg){group="ltc-gallery"}](r_kombo.html "Rachel Kombo")
+[![Katie Hallinan](images/k_hallinan.jpg){group="crp-gallery"}](k_hallinan.html "Katie Hallinan")
 
-[![Alaa Salameh](images/a_salameh.jpg){group="ltc-gallery"}](a_salameh.html "Alaa Salameh")
+[![Rachel Kombo](images/r_kombo.jpg){group="crp-gallery"}](r_kombo.html "Rachel Kombo")
+
+[![Alaa Salameh](images/a_salameh.jpg){group="crp-gallery"}](a_salameh.html "Alaa Salameh")
 :::
 
 
