@@ -19,9 +19,9 @@ This site shows our current EIP staff and describes their roles within the progr
 <br>
 <br>
 
-### Health Promotion Advocates (HPAs)
+### HPAs
 
-The role of the EIP HPA...
+The role of the EIP Health Promotion Advocate (HPA)...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 [![Pierre Abbey](images/blank_staff.jpg){group="hpa-gallery"}](p_abbey.html "Pierre Abbey")
@@ -41,9 +41,9 @@ The role of the EIP HPA...
 <br>
 
 
-### Senior Health Promotion Advocates (srHPAs)
+### srHPAs
 
-The role of the EIP srHPA...
+The role of the EIP Senior Health Promotion Advocate (srHPA)...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 [![Bella Procaccio](images/b_procaccio.jpg){group="srhpa-gallery"}](b_procaccio.html "Bella Procaccio")
@@ -55,9 +55,9 @@ The role of the EIP srHPA...
 <br>
 
 
-### Clinical Research Assistant (CRA)
+### CRAs
 
-The role of the EIP CRA...
+The role of the EIP Clinical Research Assistant (CRA)...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 [![Katie Anderson](images/k_anderson.jpg){group="cra-gallery"}](k_anderson.html "Katie Anderson")
@@ -79,9 +79,9 @@ The role of the EIP CRA...
 <br>
 
 
-### Clinical Research Professional (CRP)
+### CRPs
 
-The role of the EIP CRP...
+The role of the EIP Clinical Research Professional (CRP)...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 [![Joseph Fiorelli](images/j_fiorelli.jpg){group="crp-gallery"}](j_fiorelli.html "Joseph Fiorelli")
@@ -99,7 +99,7 @@ The role of the EIP CRP...
 <br>
 
 
-### Peer Support Staff
+### Peers
 
 The role of the EIP Peer Support Staff...
 
@@ -121,7 +121,7 @@ The role of the EIP Peer Support Staff...
 <br>
 
 
-### EIP Operations Team
+### Operations
 
 The role of the EIP Operations Team...
 

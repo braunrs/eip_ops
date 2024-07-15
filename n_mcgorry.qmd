@@ -6,7 +6,7 @@ lightbox:
 about:
   id: hero-heading
   template: solana
-  image: images/n_mcgorry.jpg
+  image: images/n_mcGorry.jpg
   image-width: 20em
 format:
   html: 
@@ -50,7 +50,7 @@ eip23$record_id <- paste(eip23$record_id, "_23", sep = "")
 summary(eip23$record_id)
 
 # 2024
-eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20240705_1441.csv')
+eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20240715_1106.csv')
 dim(eip24)
 summary(eip24$record_id)
 eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
@@ -1521,6 +1521,7 @@ eip23$pt_not_notified_sti_reason_dc <- ''
 eip23$sti_result_notification_fu <- ''
 eip23$result_notification_sti_fu <- ''
 eip23$testing_sti_complete <- ''
+eip23$enc_location_513_bus <- ''
 
 
 # Adding variables removed from 2023 dataset to 2024 dataset as blank values
