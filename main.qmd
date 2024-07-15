@@ -68,7 +68,7 @@ The role of the EIP Clinical Research Assistant (CRA)...
 
 [![Archit Deshpande](images/a_deshpande.jpg){group="cra-gallery"}](a_deshpande.html "Archit Deshpande")
 
-[![Carmen Mack](images/c_mack.jpg){group="cra-gallery"}](c_mack.html "Carmen Mack")
+[![Carmen Mack](images/blank_staff.jpg){group="cra-gallery"}](c_mack.html "Carmen Mack")
 
 [![Meg Mays](images/m_mays.jpg){group="cra-gallery"}](m_mays.html "Meg Mays")
 
