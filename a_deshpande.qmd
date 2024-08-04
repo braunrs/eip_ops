@@ -50,7 +50,7 @@ eip23$record_id <- paste(eip23$record_id, "_23", sep = "")
 summary(eip23$record_id)
 
 # 2024
-eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20240729_1157.csv')
+eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20240803_2337.csv')
 dim(eip24)
 summary(eip24$record_id)
 eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
@@ -1523,7 +1523,13 @@ eip23$result_notification_sti_fu <- ''
 eip23$testing_sti_complete <- ''
 eip23$enc_location_513_bus <- ''
 eip23$deshpande_ltc_open_calc <- ''
-
+eip23$peer_intern <- ''
+eip23$offer_outcome_declined_hiv___27 <- ''
+eip23$offer_outcome_declined_hiv_2___27 <- ''
+eip23$offer_outcome_declined_hiv_3___27 <- ''
+eip23$offer_outcome_declined_hiv___28 <- ''
+eip23$offer_outcome_declined_hiv_2___28 <- ''
+eip23$offer_outcome_declined_hiv_3___28 <- ''
 
 # Adding variables removed from 2023 dataset to 2024 dataset as blank values
 eip24$ltc_hcv_referral_uc_pharmacy_telehealth___1 <- ''
@@ -1540,12 +1546,7 @@ eip24$ltc_coordinator_per_case___63 <- ''
 eip24$ltc_coordinator_per_case___49 <- ''
 eip24$ltc_coordinator_per_case___69 <- ''
 eip24$ltc_coordinator_per_case___30 <- ''
-eip23$offer_outcome_declined_hiv___27 <- ''
-eip23$offer_outcome_declined_hiv_2___27 <- ''
-eip23$offer_outcome_declined_hiv_3___27 <- ''
-eip23$offer_outcome_declined_hiv___28 <- ''
-eip23$offer_outcome_declined_hiv_2___28 <- ''
-eip23$offer_outcome_declined_hiv_3___28 <- ''
+
 
 # Removing 2023 variables that are not needed/not in 2024 dataset
 eip23 <- select(eip23, -contact_by1, -contact_by10, -contact_by11, -contact_by12, -contact_by13, -contact_by14, -contact_by15, -contact_by16,
