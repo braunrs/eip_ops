@@ -50,7 +50,7 @@ eip23$record_id <- paste(eip23$record_id, "_23", sep = "")
 summary(eip23$record_id)
 
 # 2024
-eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20240812_0858.csv')
+eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20240826_0930.csv')
 dim(eip24)
 summary(eip24$record_id)
 eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
@@ -1247,16 +1247,6 @@ eip23$ltc_sud_referral_pods___1 <- ''
 eip23$ltc_sud_referral_pods___2 <- ''
 eip23$ltc_sud_referral_pods___3 <- ''
 eip23$ltc_sud_referral_pods_date <- ''
-
-
-
-
-
-
-
-
-
-
 eip23$counselor_sti_start <- ''
 eip23$datetime_sti_start <- ''
 eip23$referred_by_sti <- ''
@@ -1524,12 +1514,14 @@ eip23$testing_sti_complete <- ''
 eip23$enc_location_513_bus <- ''
 eip23$deshpande_ltc_open_calc <- ''
 eip23$peer_intern <- ''
+eip23$counselor_ref_sud_specific___59 <- ''
 eip23$offer_outcome_declined_hiv___27 <- ''
 eip23$offer_outcome_declined_hiv_2___27 <- ''
 eip23$offer_outcome_declined_hiv_3___27 <- ''
 eip23$offer_outcome_declined_hiv___28 <- ''
 eip23$offer_outcome_declined_hiv_2___28 <- ''
 eip23$offer_outcome_declined_hiv_3___28 <- ''
+
 
 # Adding variables removed from 2023 dataset to 2024 dataset as blank values
 eip24$ltc_hcv_referral_uc_pharmacy_telehealth___1 <- ''

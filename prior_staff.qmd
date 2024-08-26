@@ -22,6 +22,9 @@ This lists all prior EIP staff in alphabetical order.
 
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+![Rachel Black](images/r_black.jpg){group="past-staff-gallery" fig-alt="Rachel Black"}
+
+
 ![Matthew Cairns](images/m_cairns.jpg){group="past-staff-gallery" fig-alt="Matthew Cairns"}
 
 ![Doorga Dave](images/d_dave.jpg){group="past-staff-gallery" fig-alt="Doorga Dave"}
@@ -39,6 +42,8 @@ This lists all prior EIP staff in alphabetical order.
 ![Sway Rehman](images/s_rehman.jpg){group="past-staff-gallery" fig-alt="Sway Rehman"}
 
 ![Hawa Sall](images/h_sall.jpg){group="past-staff-gallery" fig-alt="Hawa Sall"}
+
+![Niharika Sarker](images/n_sarker.jpg){group="past-staff-gallery" fig-alt="Niharika Sarker"}
 
 ![Alex Sheehan](images/a_sheehan.jpg){group="past-staff-gallery" fig-alt="Alex Sheehan"}
 
