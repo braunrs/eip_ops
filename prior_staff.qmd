@@ -34,6 +34,7 @@ This lists all prior EIP staff in alphabetical order.
 ![D'Vaughn House](images/d_house.jpg){group="past-staff-gallery" fig-alt="D'Vaughn House"}
 
 ![Danielle Knox](images/d_knox.jpg){group="past-staff-gallery" fig-alt="Danielle Knox"}
+![Meg Mays](images/m_mays.jpg){group="past-staff-gallery" fig-alt="Meg Mays"}(m_mays.html "Meg Mays")
 
 ![Jordan McNulty](images/j_mcnulty.jpg){group="past-staff-gallery" fig-alt="Jordan McNulty"}
 
@@ -43,7 +44,7 @@ This lists all prior EIP staff in alphabetical order.
 
 ![Hawa Sall](images/h_sall.jpg){group="past-staff-gallery" fig-alt="Hawa Sall"}
 
-![Niharika Sarker](images/n_sarker.jpg){group="past-staff-gallery" fig-alt="Niharika Sarker"}
+![Niharika Sarker](images/n_sarker.jpg){group="past-staff-gallery" fig-alt="Niharika Sarker"}(n_sarker.html "Niharika Sarker")
 
 ![Alex Sheehan](images/a_sheehan.jpg){group="past-staff-gallery" fig-alt="Alex Sheehan"}
 

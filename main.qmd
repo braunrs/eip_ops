@@ -30,8 +30,6 @@ The role of the EIP Health Promotion Advocate (HPA)...
 
 [![Cameron May](images/c_may.jpg){group="hpa-gallery"}](c_may.html "Cameron May")
 
-[![Niharika Sarker](images/n_sarker.jpg){group="hpa-gallery"}](n_sarker.html "Niharika Sarker")
-
 [![Timothy Spaeth](images/t_spaeth.jpg){group="hpa-gallery"}](t_spaeth.html "Timothy Spaeth")
 :::
 
@@ -62,15 +60,11 @@ The role of the EIP Clinical Research Assistant (CRA)...
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 [![Katie Anderson](images/k_anderson.jpg){group="cra-gallery"}](k_anderson.html "Katie Anderson")
 
-[![Rachael Black](images/r_black.jpg){group="cra-gallery"}](r_black.html "Rachael Black")
-
 [![Neria Brempong](images/n_brempong.jpg){group="cra-gallery"}](n_brempong.html "Neria Brempong")
 
 [![Archit Deshpande](images/a_deshpande.jpg){group="cra-gallery"}](a_deshpande.html "Archit Deshpande")
 
 [![Carmen Mack](images/blank_staff.jpg){group="cra-gallery"}](c_mack.html "Carmen Mack")
-
-[![Meg Mays](images/m_mays.jpg){group="cra-gallery"}](m_mays.html "Meg Mays")
 
 [![Noah McGorry](images/n_mcGorry.jpg){group="cra-gallery"}](n_mcgorry.html "Noah McGorry")
 :::
