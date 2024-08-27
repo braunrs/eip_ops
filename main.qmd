@@ -30,6 +30,10 @@ The role of the EIP Health Promotion Advocate (HPA)...
 
 [![Cameron May](images/c_may.jpg){group="hpa-gallery"}](c_may.html "Cameron May")
 
+![Brooke Pitula](images/blank_staff.jpg){group="hpa-gallery" fig-alt="Brooke Pitula"}
+
+![Connor Powers](images/c_powers.jpg){group="hpa-gallery" fig-alt="Connor Powers"}
+
 [![Timothy Spaeth](images/t_spaeth.jpg){group="hpa-gallery"}](t_spaeth.html "Timothy Spaeth")
 :::
 

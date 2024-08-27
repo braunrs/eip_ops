@@ -9657,6 +9657,15 @@ monthly_metrics
 
 
 
+average_encounters <- round(mean(monthly_metrics$encounters, na.rm = TRUE), 1)
+average_assessments <- round(mean(monthly_metrics$assessments, na.rm = TRUE), 1)
+average_ctr_tests <- round(mean(monthly_metrics$ctr_tests, na.rm = TRUE), 1)
+average_ehe_tests <- round(mean(monthly_metrics$ehe_tests, na.rm = TRUE), 1)
+average_hcv_tests <- round(mean(monthly_metrics$hcv_tests, na.rm = TRUE), 1)
+average_ltc_cases <- round(mean(monthly_metrics$ltc_cases, na.rm = TRUE), 1)
+
+
+
 
 # Assessment Approach Metrics
 
@@ -9964,13 +9973,17 @@ monthly_metrics_table %>%
 The graph below shows the total number of encounters Katie has had during each month within the reporting period. Also, the total number of each service provided are shown by the trend lines, which allows you to see trends over time. The definitions for how each of these numbers are stratified is described below the graph. This plot is dynamic, meaning you can select and deselect each particular metric by clicking the text in the legend on the right to focus on particular services provided. The plot also has the ability to zoom in on particular time frames by dragging the pointer to select the desired timeframe, and you can also scroll through timepoints using the slider below the x-axis. You can reset the graph by double-clicking within the plot. As mentioned above, not all staff offer or perform these services, so you can deselect the ones not within Katie's role for a more tailored focus of tasks. This is a visual representation of the data shown in the complete summary metrics table above.
 
 <br>
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 # bar/line plot of all metrics
 monthly_metrics$Date <- as.Date(paste("01", monthly_metrics$Date, sep = "/"), format = "%d/%m/%Y")
 monthly_metrics <- monthly_metrics[order(monthly_metrics$Date),]
+
 metrics_plot <- plot_ly(monthly_metrics , x = ~Date, y = ~encounters, type = 'bar',
                         name = 'Encounters', marker = list(color = 'black')) %>%
+  add_trace(x = monthly_metrics$Date, y = rep(average_encounters, nrow(monthly_metrics)), 
+            type = 'scatter', mode = 'lines', line = list(color = 'red', dash = 'dash'),
+            name = paste('Avg Monthly Enc:', round(average_encounters, 1))) %>%
   add_trace(monthly_metrics, x = ~Date, y = ~assessments, type = 'scatter',  mode = 'lines+markers',
             name = 'Assessments', line = list(color = 'lightcoral'), marker = list(color = 'lightcoral')) %>%
   add_trace(monthly_metrics, x = ~Date, y = ~ctr_tests, type = 'scatter',  mode = 'lines+markers',
@@ -10003,6 +10016,29 @@ monthly_metrics$Date <- format(monthly_metrics$Date, "%m/%Y")
 - **HCV Tests:** *A rapid-based HCV tested is counted when the sample type for the HCV test documented on the Testing - HCV form is a fingerstick test. Therefore, lab-based tests are not counted here.*
 
 - **LTC Cases:** *A Linkage to Care case is considered opened when one of the linkage services are selected on the start of the Linkage to Care form in the database. The number counted here are the total number of cases initiated during the encounter, not necessarily those open at that time (for example, a case still open from a prior month).*
+
+
+The table shown below shows the average monthly numbers for encounters and each type of service noted above. This is the average number of encounters/services based on the time frame shown in the graph above, which is when Katie started documenting encounters/services with EIP.
+
+<br>
+```{r, echo=FALSE}
+
+# table of monthly metrics average
+monthly_avg_metrics_tbl <- data.frame(matrix(ncol = 2, nrow = 0))
+colnames(monthly_avg_metrics_tbl) <- c('', 'Monthly Average')
+monthly_avg_metrics_tbl[nrow(monthly_avg_metrics_tbl) + 1,] <- list('Encounters', average_encounters)
+monthly_avg_metrics_tbl[nrow(monthly_avg_metrics_tbl) + 1,] <- list('Assessments', average_assessments)
+monthly_avg_metrics_tbl[nrow(monthly_avg_metrics_tbl) + 1,] <- list('CTR Tests', average_ctr_tests)
+monthly_avg_metrics_tbl[nrow(monthly_avg_metrics_tbl) + 1,] <- list('EHE Tests', average_ehe_tests)
+monthly_avg_metrics_tbl[nrow(monthly_avg_metrics_tbl) + 1,] <- list('HCV Tests', average_hcv_tests)
+monthly_avg_metrics_tbl[nrow(monthly_avg_metrics_tbl) + 1,] <- list('LTC Cases', average_ltc_cases)
+monthly_avg_metrics_tbl %>%
+  kbl(align = 'lc', table.attr = 'data-quarto-disable-processing="true"') %>%
+  kable_paper(bootstrap_options = "striped", full_width = F) %>%
+  kable_styling(full_width = F, font_size = 11)
+
+```
+<br>
 
 
 ## Assessments
