@@ -104,15 +104,10 @@ The role of the EIP Clinical Research Professional (CRP)...
 The role of the EIP Peer Support Staff...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
-![Kimberly Arnold](images/k_arnold.jpg){group="peer-gallery" fig-alt="Kimberly Arnold"}
-
 [![Lauren Duba](images/l_duba.jpg){group="peer-gallery"}](l_duba.html "Lauren Duba")
-
-![Janelle Freman](images/j_freman.jpg){group="peer-gallery" fig-alt="Janelle Freman"}
 
 [![Kathy Legg](images/k_legg.jpg){group="peer-gallery"}](k_legg.html "Kathy Legg")
 
-![Dawn Selleny](images/d_selleny.jpg){group="peer-gallery" fig-alt="Dawn Selleny"}
 :::
 
 

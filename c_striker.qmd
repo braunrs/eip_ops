@@ -50,7 +50,7 @@ eip23$record_id <- paste(eip23$record_id, "_23", sep = "")
 summary(eip23$record_id)
 
 # 2024
-eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20240930_0839.csv')
+eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20241007_0929.csv')
 dim(eip24)
 summary(eip24$record_id)
 eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
@@ -1515,20 +1515,13 @@ eip23$enc_location_513_bus <- ''
 eip23$deshpande_ltc_open_calc <- ''
 eip23$peer_intern <- ''
 eip23$counselor_ref_sud_specific___59 <- ''
-eip23$offer_outcome_declined_hiv___27 <- ''
-eip23$offer_outcome_declined_hiv_2___27 <- ''
-eip23$offer_outcome_declined_hiv_3___27 <- ''
-eip23$offer_outcome_declined_hiv___28 <- ''
-eip23$offer_outcome_declined_hiv_2___28 <- ''
-eip23$offer_outcome_declined_hiv_3___28 <- ''
-
 eip23$hcph_sud_day30_contact_date <- ''
 eip23$hcph_sud_day60_contact_date <- ''
 eip23$hcph_sud_day90_contact_date <- ''
 eip23$ltc_sud_hcph_fu <- ''
-eip23$ltc_sud_hcph_fu_completion___1 <- ''
-eip23$ltc_sud_hcph_fu_completion___2 <- ''
-eip23$ltc_sud_hcph_fu_completion___3 <- ''
+eip23$ltc_sud_hcph_30day_completion <- ''
+eip23$ltc_sud_hcph_60day_completion <- ''
+eip23$ltc_sud_hcph_90day_completion <- ''
 eip23$hcph_followup1 <- ''
 eip23$hcph_followup2 <- ''
 eip23$hcph_followup3 <- ''
@@ -2029,6 +2022,17 @@ eip23$hcph_tx_last_date47 <- ''
 eip23$hcph_tx_last_date48 <- ''
 eip23$hcph_tx_last_date49 <- ''
 eip23$hcph_tx_last_date50 <- ''
+eip23$peer_initial_enc_details___11 <- ''
+eip23$peer_fts_provided <- ''
+eip23$peer_fts_number <- ''
+eip23$peer_fts_number_other <- ''
+eip23$offer_outcome_declined_hiv___27 <- ''
+eip23$offer_outcome_declined_hiv_2___27 <- ''
+eip23$offer_outcome_declined_hiv_3___27 <- ''
+eip23$offer_outcome_declined_hiv___28 <- ''
+eip23$offer_outcome_declined_hiv_2___28 <- ''
+eip23$offer_outcome_declined_hiv_3___28 <- ''
+
 
 
 # Adding variables removed from 2023 dataset to 2024 dataset as blank values
