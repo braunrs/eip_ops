@@ -50,7 +50,7 @@ eip23$record_id <- paste(eip23$record_id, "_23", sep = "")
 summary(eip23$record_id)
 
 # 2024
-eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20241014_0857.csv')
+eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20241018_1212.csv')
 dim(eip24)
 summary(eip24$record_id)
 eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
@@ -1517,11 +1517,11 @@ eip23$peer_intern <- ''
 eip23$counselor_ref_sud_specific___59 <- ''
 eip23$hcph_sud_day30_contact_date <- ''
 eip23$hcph_sud_day60_contact_date <- ''
-eip23$hcph_sud_day90_contact_date <- ''
+eip23$hcph_sud_day180_contact_date <- ''
 eip23$ltc_sud_hcph_fu <- ''
 eip23$ltc_sud_hcph_30day_completion <- ''
 eip23$ltc_sud_hcph_60day_completion <- ''
-eip23$ltc_sud_hcph_90day_completion <- ''
+eip23$ltc_sud_hcph_180day_completion <- ''
 eip23$hcph_followup1 <- ''
 eip23$hcph_followup2 <- ''
 eip23$hcph_followup3 <- ''
@@ -2631,11 +2631,50 @@ monthly_encounters
 
 
 
+########################################  No Service  #########################################
+
+# Approached for Assessment
+enc$no_service[(is.na(enc$offer_outcome_risks) | enc$offer_outcome_risks == '') &
+                 (is.na(enc$offer_outcome_peer) | enc$offer_outcome_peer == '') &
+                 (is.na(enc$offer_outcome_hiv) | enc$offer_outcome_hiv == '') &
+                 (is.na(enc$offer_outcome_hcv) | enc$offer_outcome_hcv == '') &
+                 (enc$ltc_services___1 == 0 & enc$ltc_services___2 == 0 & enc$ltc_services___3 == 0 &
+                    enc$ltc_services___4 == 0 & enc$ltc_services___5 == 0)] <- 1
+table(enc$no_service)
+
+no_service <- enc[which(enc$no_service == 1), ]
+no_service <- nrow(no_service)
+no_service
+
+no_service_percent <- percent(no_service/encounters, accuracy = 0.1)
+no_service_percent
+
+
+monthly_no_service <- select(enc, enc_date, no_service)
+monthly_no_service <- monthly_no_service[which(monthly_no_service$no_service == 1), ]
+head(monthly_no_service)
+colnames(monthly_no_service)[2] <- 'no_service'
+monthly_no_service$no_service[is.na(monthly_no_service$no_service)] <- 0
+head(monthly_no_service)
+
+
+if (nrow(monthly_no_service) == 0) {
+  monthly_no_service <- data.frame(enc_date = as.Date("2023-01-01"), no_service = 0)
+} else {
+  monthly_no_service <- aggregate(no_service ~ enc_date, monthly_no_service, FUN = sum)
+}
+monthly_no_service
+monthly_no_service <- distinct(monthly_no_service)
+monthly_no_service
+
+
+
+
 ########################################  Assessments  ########################################
 
 # Approached for Assessment
 table(enc$counselor_risk_start, enc$offer_outcome_risks)
-enc$approach_assessment[(enc$counselor_risk_start == 'zspat2nf') &
+enc$approach_assessment[(enc$counselor_risk_start == 'zstrcp4i') &
                           (enc$offer_outcome_risks == 0 | enc$offer_outcome_risks == 1 |
                              enc$offer_outcome_risks == 2)] <- 1
 table(enc$approach_assessment)
@@ -2670,7 +2709,7 @@ monthly_assessments
 
 # Declined
 table(enc$counselor_risk_start, enc$offer_outcome_risks)
-enc$assessments_declined[(enc$counselor_risk_start == 'zspat2nf') &
+enc$assessments_declined[(enc$counselor_risk_start == 'zstrcp4i') &
                            enc$offer_outcome_risks == 0] <- 1
 table(enc$assessments_declined)
 
@@ -2704,8 +2743,8 @@ monthly_assessments_declined
 
 # Prevented
 table(enc$counselor_risk_start, enc$offer_outcome_risks)
-enc$assessments_prevented[(enc$counselor_risk_start == 'zspat2nf') &
-                           enc$offer_outcome_risks == 2] <- 1
+enc$assessments_prevented[(enc$counselor_risk_start == 'zstrcp4i') &
+                            enc$offer_outcome_risks == 2] <- 1
 table(enc$assessments_prevented)
 
 assessments_prevented <- enc[which(enc$assessments_prevented == 1), ]
@@ -2738,7 +2777,7 @@ monthly_assessments_prevented
 
 # Assessed
 table(enc$counselor_risk_start, enc$offer_outcome_risks)
-enc$assessments[(enc$counselor_risk_start == 'zspat2nf') &
+enc$assessments[(enc$counselor_risk_start == 'zstrcp4i') &
                   enc$offer_outcome_risks == 1] <- 1
 table(enc$assessments)
 
@@ -3373,7 +3412,7 @@ monthly_prep # metrics of PrEP assessments, eligible screens
 ########################################  HIV Testing  ########################################
 
 table(enc$ctr_calc)
-enc$ctr_tests[enc$ctr_calc == 1 & enc$counselor_hiv_start == 'zspat2nf'] <- 1
+enc$ctr_tests[enc$ctr_calc == 1 & enc$counselor_hiv_start == 'zstrcp4i'] <- 1
 ctr_tests <- enc[which(enc$ctr_tests == 1), ]
 ctr_tests <- nrow(ctr_tests)
 ctr_tests
@@ -3407,8 +3446,8 @@ ctr_new_positive_percent
 
 
 table(enc$ehe_calc)
-enc$ehe_tests[enc$ehe_calc == 1 & enc$counselor_hiv_start == 'zspat2nf'] <- 1
-ehe_tests <- enc[which(enc$ehe_calc == 1 & enc$counselor_hiv_start == 'zspat2nf'), ]
+enc$ehe_tests[enc$ehe_calc == 1 & enc$counselor_hiv_start == 'zstrcp4i'] <- 1
+ehe_tests <- enc[which(enc$ehe_calc == 1 & enc$counselor_hiv_start == 'zstrcp4i'), ]
 ehe_tests <- nrow(ehe_tests)
 ehe_tests
 
@@ -3503,7 +3542,7 @@ monthly_hiv_tests # metrics of HIV Testing
 
 
 
-enc$hiv_false_positive[enc$counselor_hiv_start == 'zspat2nf' &
+enc$hiv_false_positive[enc$counselor_hiv_start == 'zstrcp4i' &
                          ((enc$hiv_result1 == 1 | enc$hiv_result1 == 2 |
                              enc$hiv_result2 == 1 | enc$hiv_result2 == 2 |
                              enc$hiv_result3 == 1 | enc$hiv_result3 == 2 |
@@ -3522,7 +3561,7 @@ hiv_false_positive_percent
 
 
 
-enc$hiv_indeterminate[enc$counselor_hiv_start == 'zspat2nf' & enc$final_test_status_hiv == 2] <- 1
+enc$hiv_indeterminate[enc$counselor_hiv_start == 'zstrcp4i' & enc$final_test_status_hiv == 2] <- 1
 table(enc$hiv_indeterminate)
 hiv_indeterminate <- enc[which(enc$hiv_indeterminate == 1), ]
 dim(hiv_indeterminate)
@@ -3552,13 +3591,13 @@ ehe_positivity_rate[is.na(ehe_positivity_rate)] <- '0.0%'
 
 # HCV Rapid Testing
 ## based on fingerstick sample type
-enc$hcv_rapid_test[enc$counselor_hcv_start == 'zspat2nf' &
+enc$hcv_rapid_test[enc$counselor_hcv_start == 'zstrcp4i' &
                      (enc$sample_type_hcv1 == 5 |
-                      enc$sample_type_hcv2 == 5 |
-                      enc$sample_type_hcv3 == 5 |
-                      enc$sample_type_hcv4 == 5 |
-                      enc$sample_type_hcv5 == 5 |
-                      enc$sample_type_hcv6 == 5)] <- 1
+                        enc$sample_type_hcv2 == 5 |
+                        enc$sample_type_hcv3 == 5 |
+                        enc$sample_type_hcv4 == 5 |
+                        enc$sample_type_hcv5 == 5 |
+                        enc$sample_type_hcv6 == 5)] <- 1
 table(enc$hcv_rapid_test)
 
 hcv_rapid_tests <- enc[which(enc$hcv_rapid_test == 1), ]
@@ -3625,7 +3664,7 @@ hcv_rapid_positivity_rate
 
 ###############  Linkage Cases  ###############
 
-enc$ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                 (enc$ltc_services___1 == 1 |
                    enc$ltc_services___2 == 1 |
                    enc$ltc_services___3 == 1 |
@@ -3665,7 +3704,7 @@ monthly_ltc_cases
 
 ###############  HIV Linkage  ###############
 
-enc$hiv_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$hiv_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                     enc$ltc_services___1 == 1] <- 1
 table(enc$hiv_ltc_cases)
 hiv_ltc_cases <- enc[which(enc$hiv_ltc_cases == 1), ]
@@ -4259,7 +4298,7 @@ hiv_not_linked_other_percent
 
 ###############  HCV Linkage  ###############
 
-enc$hcv_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$hcv_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                     enc$ltc_services___2 == 1] <- 1
 table(enc$hcv_ltc_cases)
 hcv_ltc_cases <- enc[which(enc$hcv_ltc_cases == 1), ]
@@ -4851,7 +4890,7 @@ hcv_not_linked_other_percent
 
 ###############  SUD Linkage  ###############
 
-enc$sud_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$sud_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                     enc$ltc_services___3 == 1] <- 1
 table(enc$sud_ltc_cases)
 sud_ltc_cases <- enc[which(enc$sud_ltc_cases == 1), ]
@@ -5234,7 +5273,7 @@ sud_not_linked_other_percent
 
 ###############  HT Linkage  ###############
 
-enc$ht_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$ht_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                    enc$additional_services___9 == 1] <- 1
 table(enc$ht_ltc_cases)
 ht_ltc_cases <- enc[which(enc$ht_ltc_cases == 1), ]
@@ -5614,7 +5653,7 @@ ht_not_linked_other_percent
 
 ###############  mh Linkage  ###############
 
-enc$mh_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$mh_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                    enc$additional_services___1 == 1] <- 1
 table(enc$mh_ltc_cases)
 mh_ltc_cases <- enc[which(enc$mh_ltc_cases == 1), ]
@@ -5995,7 +6034,7 @@ mh_not_linked_other_percent
 
 ###############  housing Linkage  ###############
 
-enc$housing_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$housing_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                         enc$additional_services___2 == 1] <- 1
 table(enc$housing_ltc_cases)
 housing_ltc_cases <- enc[which(enc$housing_ltc_cases == 1), ]
@@ -6376,7 +6415,7 @@ housing_not_linked_other_percent
 
 ###############  prep Linkage  ###############
 
-enc$prep_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$prep_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                      (enc$ltc_services___5 == 1 |
                         enc$additional_services___3 == 1)] <- 1
 table(enc$prep_ltc_cases)
@@ -6760,7 +6799,7 @@ prep_not_linked_other_percent
 
 ###############  sti Linkage  ###############
 
-enc$sti_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$sti_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                     enc$additional_services___8 == 1] <- 1
 table(enc$sti_ltc_cases)
 sti_ltc_cases <- enc[which(enc$sti_ltc_cases == 1), ]
@@ -7143,7 +7182,7 @@ sti_not_linked_other_percent
 
 ###############  food Linkage  ###############
 
-enc$food_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$food_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                      enc$additional_services___4 == 1] <- 1
 table(enc$food_ltc_cases)
 food_ltc_cases <- enc[which(enc$food_ltc_cases == 1), ]
@@ -7522,7 +7561,7 @@ food_not_linked_other_percent
 
 ###############  financial Linkage  ###############
 
-enc$financial_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$financial_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                           enc$additional_services___5 == 1] <- 1
 table(enc$financial_ltc_cases)
 financial_ltc_cases <- enc[which(enc$financial_ltc_cases == 1), ]
@@ -7903,7 +7942,7 @@ financial_not_linked_other_percent
 
 ###############  personabuse Linkage  ###############
 
-enc$personabuse_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$personabuse_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                             enc$additional_services___6 == 1] <- 1
 table(enc$personabuse_ltc_cases)
 personabuse_ltc_cases <- enc[which(enc$personabuse_ltc_cases == 1), ]
@@ -8284,7 +8323,7 @@ personabuse_not_linked_other_percent
 
 ###############  general Linkage  ###############
 
-enc$general_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$general_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                         enc$additional_services___7 == 1] <- 1
 table(enc$general_ltc_cases)
 general_ltc_cases <- enc[which(enc$general_ltc_cases == 1), ]
@@ -8665,7 +8704,7 @@ general_not_linked_other_percent
 
 ###############  other Linkage  ###############
 
-enc$other_ltc_cases[enc$ltc_coordinator_per_case___77 == 1 &
+enc$other_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
                       enc$additional_services___0 == 1] <- 1
 table(enc$other_ltc_cases)
 other_ltc_cases <- enc[which(enc$other_ltc_cases == 1), ]
@@ -9995,6 +10034,15 @@ monthly_encounters <- monthly_encounters %>%
   select(-year, -month)
 monthly_encounters
 
+monthly_no_service <- monthly_no_service %>%
+  group_by(month_year = format(enc_date, "%m/%Y")) %>%
+  summarise(no_service = sum(no_service)) %>%
+  mutate(year = as.integer(substring(month_year, 4, 7)),
+         month = as.integer(substring(month_year, 1, 2))) %>%
+  arrange(year, month) %>%
+  select(-year, -month)
+monthly_no_service
+
 monthly_assessments <- monthly_assessments %>%
   group_by(month_year = format(enc_date, "%m/%Y")) %>%
   summarise(approach_assessment = sum(approach_assessment),
@@ -10093,7 +10141,8 @@ monthly_ltc_cases
 
 ####################################  Combining all services  ####################################
 
-monthly_metrics_main <- merge(monthly_encounters, monthly_assessments, by = 'month_year', all.x = T)
+monthly_metrics_main <- merge(monthly_encounters, monthly_no_service, by = 'month_year', all.x = T)
+monthly_metrics_main <- merge(monthly_metrics_main, monthly_assessments, by = 'month_year', all.x = T)
 monthly_metrics_main <- merge(monthly_metrics_main, monthly_sud_assess, by = 'month_year', all.x = T)
 monthly_metrics_main <- merge(monthly_metrics_main, monthly_mh_assess, by = 'month_year', all.x = T)
 monthly_metrics_main <- merge(monthly_metrics_main, monthly_mh_cond, by = 'month_year', all.x = T)
@@ -10102,6 +10151,7 @@ monthly_metrics_main <- merge(monthly_metrics_main, monthly_hiv_tests, by = 'mon
 monthly_metrics_main <- merge(monthly_metrics_main, monthly_hcv_tests, by = 'month_year', all.x = T)
 monthly_metrics_main <- merge(monthly_metrics_main, monthly_ltc_cases, by = 'month_year', all.x = T)
 monthly_metrics_main$encounters[is.na(monthly_metrics_main$encounters)] <- 0
+monthly_metrics_main$no_service[is.na(monthly_metrics_main$no_service)] <- 0
 monthly_metrics_main$approach_assessment[is.na(monthly_metrics_main$approach_assessment)] <- 0
 monthly_metrics_main$assessments_declined[is.na(monthly_metrics_main$assessments_declined)] <- 0
 monthly_metrics_main$assessments_prevented[is.na(monthly_metrics_main$assessments_prevented)] <- 0
@@ -10125,7 +10175,7 @@ monthly_metrics_main$ehe_tests[is.na(monthly_metrics_main$ehe_tests)] <- 0
 monthly_metrics_main$hcv_tests[is.na(monthly_metrics_main$hcv_tests)] <- 0
 monthly_metrics_main$ltc_cases[is.na(monthly_metrics_main$ltc_cases)] <- 0
 monthly_metrics_main <- distinct(monthly_metrics_main)
-monthly_metrics_main # metrics of encounters, assessments, CTR and EHE tests, HCV tests, LTC Cases
+monthly_metrics_main # metrics of encounters, no service, assessments, CTR and EHE tests, HCV tests, LTC Cases
 
 
 
@@ -10140,6 +10190,7 @@ monthly_metrics_main # metrics of encounters, assessments, CTR and EHE tests, HC
 monthly_metrics <- monthly_metrics_main %>%
   group_by(month_year) %>%
   summarise(encounters = sum(encounters),
+            no_service = sum(no_service),
             assessments = sum(assessments),
             ctr_tests = sum(ctr_tests),
             ehe_tests = sum(ehe_tests),
@@ -10151,6 +10202,7 @@ monthly_metrics <- monthly_metrics_main %>%
   select(-year, -month)
 monthly_metrics
 
+monthly_metrics$percent_no_service <- percent(monthly_metrics$no_service/monthly_metrics$encounters, accuracy = 0.1)
 monthly_metrics$percent_assessed <- percent(monthly_metrics$assessments/monthly_metrics$encounters, accuracy = 0.1)
 monthly_metrics$percent_ctr_tests <- percent(monthly_metrics$ctr_tests/monthly_metrics$encounters, accuracy = 0.1)
 monthly_metrics$percent_ehe_tests <- percent(monthly_metrics$ehe_tests/monthly_metrics$encounters, accuracy = 0.1)
@@ -10158,18 +10210,20 @@ monthly_metrics$percent_hcv_tests <- percent(monthly_metrics$hcv_tests/monthly_m
 monthly_metrics$percent_ltc_cases <- percent(monthly_metrics$ltc_cases/monthly_metrics$encounters, accuracy = 0.1)
 monthly_metrics
 
+monthly_metrics$percent_no_service[is.na(monthly_metrics$percent_no_service)] <- '0.0%'
 monthly_metrics$percent_assessed[is.na(monthly_metrics$percent_assessed)] <- '0.0%'
 monthly_metrics$percent_ctr_tests[is.na(monthly_metrics$percent_ctr_tests)] <- '0.0%'
 monthly_metrics$percent_ehe_tests[is.na(monthly_metrics$percent_ehe_tests)] <- '0.0%'
 monthly_metrics$percent_hcv_tests[is.na(monthly_metrics$percent_hcv_tests)] <- '0.0%'
 monthly_metrics$percent_ltc_cases[is.na(monthly_metrics$percent_ltc_cases)] <- '0.0%'
 monthly_metrics
-monthly_metrics <- monthly_metrics[, c(1, 2, 3, 8, 4, 9, 5, 10, 6, 11, 7, 12)]
+monthly_metrics <- monthly_metrics[, c(1, 2, 3, 9, 4, 10, 5, 11, 6, 12, 7, 13, 8, 14)]
 monthly_metrics
 
 
 
 average_encounters <- round(mean(monthly_metrics$encounters, na.rm = TRUE), 1)
+average_no_service <- round(mean(monthly_metrics$no_service, na.rm = TRUE), 1)
 average_assessments <- round(mean(monthly_metrics$assessments, na.rm = TRUE), 1)
 average_ctr_tests <- round(mean(monthly_metrics$ctr_tests, na.rm = TRUE), 1)
 average_ehe_tests <- round(mean(monthly_metrics$ehe_tests, na.rm = TRUE), 1)
@@ -10438,7 +10492,10 @@ monthly_hcv_tests
 
 :::{#hero-heading}
 
-This metrics report shows data for encounter information for **Timothy Spaeth**. Any data contained within this report covers clinical information captured in the EIP Database since **January 1st, 2023**. The metrics in this report describe specific encounter information and the services and/or referrals that were provided to patients/clients.
+This metrics report shows data for encounter information for **Timothy Spaeth**. Timothy's start and end date with EIP are shown below, however, any data contained within this report covers clinical information captured in the EIP Database since **January 1st, 2023**. The metrics in this report describe specific encounter information and the services and/or referrals that were provided to patients/clients.
+
+- **Start date:** *1/8/2024*
+- **End date:**
 
 Until a unique patient identifier is created for patients seen by EIP, matching unique patients across multiple years of encounters is difficult. Therefore, patient demographic and population information will refer only to the number of encounters, not the unique number of patients. This part of the report is still in development.
 
@@ -10451,7 +10508,7 @@ The remainder of this metrics report is all encounter-based information. Since s
 
 - **Encounters:** *An encounter is any visit that is created within the patient record in the EIP Database, whether service information is provided or not. Every encounter should have some type of service entered (i.e. Assessment, HIV/HCV Testing, Linkage), but is still counted as an encounter if something is entered within the record (i.e. just Encounter Information or Encounter Checklist info).*
 
-- **Staff indication:** *There are background variables on each page in the EIP Database that captures the REDCap username of the individual completing the form. If you created any of the forms for that encounter within the EIP Database, or if your name is selected as the "EIP Counselor" on the Encounter Checklist page, then you are attached to that record in some capacity and noted in these numbers. If you work as a peer and your name is selected on the "Peer Support" form, that also indicates that encounter as one you were involved with in some way, and thus counted here.*
+- **Staff indication:** *There are background variables on each page in the EIP Database that captures the REDCap username of the individual completing the form. If you created any of the forms for that encounter within the EIP Database, or if your name is selected as the "EIP Counselor" on the Encounter Checklist page, then you are attached to that record in some capacity and noted in these numbers. If you work as a peer and your name is selected on the "Peer Support" form, that also indicates that encounter as one you were involved with in some way, and thus counted here. If you work as a linkage coordinator and selected as linkage staff working the case on the Linkage to Care form, then that encounter is also counted in these numbers.*
 
 Timothy has had a total of **`r encounters` encounters** entered into the EIP Database since January 1st, 2023. A summary table of these encounters and what they consisted of are shown below.
 
@@ -10460,21 +10517,23 @@ Timothy has had a total of **`r encounters` encounters** entered into the EIP Da
 ```{r, echo=FALSE}
 
 # table of all metrics
-monthly_metrics_table <- select(monthly_metrics, Date, encounters, assessments, percent_assessed, ctr_tests, percent_ctr_tests, ehe_tests, percent_ehe_tests, hcv_tests, percent_hcv_tests, ltc_cases, percent_ltc_cases)
+monthly_metrics_table <- select(monthly_metrics, Date, encounters, no_service, percent_no_service, assessments, percent_assessed, ctr_tests, percent_ctr_tests, ehe_tests, percent_ehe_tests, hcv_tests, percent_hcv_tests, ltc_cases, percent_ltc_cases)
 colnames(monthly_metrics_table)[2] <- 'Encounters'
-colnames(monthly_metrics_table)[3] <- 'Assessments'
-colnames(monthly_metrics_table)[4] <- '% Assessed'
-colnames(monthly_metrics_table)[5] <- 'CTR Tests'
-colnames(monthly_metrics_table)[6] <- '% CTR'
-colnames(monthly_metrics_table)[7] <- 'EHE Tests'
-colnames(monthly_metrics_table)[8] <- '% EHE'
-colnames(monthly_metrics_table)[9] <- 'HCV Tests'
-colnames(monthly_metrics_table)[10] <- '% HCV Tests'
-colnames(monthly_metrics_table)[11] <- 'LTC Cases'
-colnames(monthly_metrics_table)[12] <- '% LTC Cases'
-monthly_metrics_table[nrow(monthly_metrics_table) + 1,] <- list('Totals', encounters, assessments, assessments_percent, ctr_tests, ctr_tests_percent, ehe_tests, ehe_tests_percent, hcv_rapid_tests, hcv_rapid_tests_percent, ltc_cases, ltc_cases_percent)
+colnames(monthly_metrics_table)[3] <- 'No Service'
+colnames(monthly_metrics_table)[4] <- '% No Service'
+colnames(monthly_metrics_table)[5] <- 'Assessments'
+colnames(monthly_metrics_table)[6] <- '% Assessed'
+colnames(monthly_metrics_table)[7] <- 'CTR Tests'
+colnames(monthly_metrics_table)[8] <- '% CTR'
+colnames(monthly_metrics_table)[9] <- 'EHE Tests'
+colnames(monthly_metrics_table)[10] <- '% EHE'
+colnames(monthly_metrics_table)[11] <- 'HCV Tests'
+colnames(monthly_metrics_table)[12] <- '% HCV Tests'
+colnames(monthly_metrics_table)[13] <- 'LTC Cases'
+colnames(monthly_metrics_table)[14] <- '% LTC Cases'
+monthly_metrics_table[nrow(monthly_metrics_table) + 1,] <- list('Totals', encounters, no_service, no_service_percent, assessments, assessments_percent, ctr_tests, ctr_tests_percent, ehe_tests, ehe_tests_percent, hcv_rapid_tests, hcv_rapid_tests_percent, ltc_cases, ltc_cases_percent)
 monthly_metrics_table %>%
-  kbl(align = 'lccccccccccc', table.attr = 'data-quarto-disable-processing="true"') %>%
+  kbl(align = 'lccccccccccccc', table.attr = 'data-quarto-disable-processing="true"') %>%
   kable_paper(bootstrap_options = "striped", full_width = F) %>%
   row_spec(row = nrow(monthly_metrics_table), bold = T, background = "lightgrey") %>%
   kable_styling(full_width = F, font_size = 11)
@@ -10496,6 +10555,8 @@ metrics_plot <- plot_ly(monthly_metrics , x = ~Date, y = ~encounters, type = 'ba
   add_trace(x = monthly_metrics$Date, y = rep(average_encounters, nrow(monthly_metrics)), 
             type = 'scatter', mode = 'lines', line = list(color = 'red', dash = 'dash'),
             name = paste('Avg Monthly Enc:', round(average_encounters, 1))) %>%
+  add_trace(monthly_metrics, x = ~Date, y = ~no_service, type = 'scatter',  mode = 'lines+markers',
+            name = 'No Service', line = list(color = 'gray'), marker = list(color = 'gray')) %>%
   add_trace(monthly_metrics, x = ~Date, y = ~assessments, type = 'scatter',  mode = 'lines+markers',
             name = 'Assessments', line = list(color = 'lightcoral'), marker = list(color = 'lightcoral')) %>%
   add_trace(monthly_metrics, x = ~Date, y = ~ctr_tests, type = 'scatter',  mode = 'lines+markers',
@@ -10518,6 +10579,8 @@ monthly_metrics$Date <- format(monthly_metrics$Date, "%m/%Y")
 
 ```
 <br>
+
+- **No Service:** *A No Service encounter is when only basic encounter information is entered into the record, such as encounter date and location, but no service approaches (assessment, testing, linkage) are documented.*
 
 - **Assessments:** *An Assessment is when at least one question located on the Risk Assessment form is answered during the encounter.*
 

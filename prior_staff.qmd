@@ -22,8 +22,9 @@ This lists all prior EIP staff in alphabetical order.
 
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
-![Rachel Black](images/r_black.jpg){group="past-staff-gallery" fig-alt="Rachel Black"}
+![Jessika Bass](images/j_bass.jpg){group="past-staff-gallery" fig-alt="Jessika Bass"}
 
+![Rachel Black](images/r_black.jpg){group="past-staff-gallery" fig-alt="Rachel Black"}
 
 ![Matthew Cairns](images/m_cairns.jpg){group="past-staff-gallery" fig-alt="Matthew Cairns"}
 
