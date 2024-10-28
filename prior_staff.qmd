@@ -30,6 +30,8 @@ This lists all prior EIP staff in alphabetical order.
 
 ![Doorga Dave](images/d_dave.jpg){group="past-staff-gallery" fig-alt="Doorga Dave"}
 
+![Joseph Fiorelli](images/j_fiorelli.jpg){group="past-staff-gallery" fig-alt="Joseph Fiorelli"}
+
 ![Arthur Forbriger](images/a_forbriger.jpg){group="past-staff-gallery" fig-alt="Arthur Forbriger"}
 
 ![D'Vaughn House](images/d_house.jpg){group="past-staff-gallery" fig-alt="D'Vaughn House"}
