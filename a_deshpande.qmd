@@ -50,7 +50,7 @@ eip23$record_id <- paste(eip23$record_id, "_23", sep = "")
 summary(eip23$record_id)
 
 # 2024
-eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20241028_0940.csv')
+eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20241104_0955.csv')
 dim(eip24)
 summary(eip24$record_id)
 eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
@@ -2032,7 +2032,8 @@ eip23$offer_outcome_declined_hiv_3___27 <- ''
 eip23$offer_outcome_declined_hiv___28 <- ''
 eip23$offer_outcome_declined_hiv_2___28 <- ''
 eip23$offer_outcome_declined_hiv_3___28 <- ''
-
+eip23$ltc_coordinator_per_case___81 <- ''
+eip23$ltc_coordinator_per_case___82 <- ''
 
 
 # Adding variables removed from 2023 dataset to 2024 dataset as blank values
@@ -3663,7 +3664,7 @@ hcv_rapid_positivity_rate
 
 ###############  Linkage Cases  ###############
 
-enc$ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                 (enc$ltc_services___1 == 1 |
                    enc$ltc_services___2 == 1 |
                    enc$ltc_services___3 == 1 |
@@ -3703,7 +3704,7 @@ monthly_ltc_cases
 
 ###############  HIV Linkage  ###############
 
-enc$hiv_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$hiv_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                     enc$ltc_services___1 == 1] <- 1
 table(enc$hiv_ltc_cases)
 hiv_ltc_cases <- enc[which(enc$hiv_ltc_cases == 1), ]
@@ -4297,7 +4298,7 @@ hiv_not_linked_other_percent
 
 ###############  HCV Linkage  ###############
 
-enc$hcv_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$hcv_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                     enc$ltc_services___2 == 1] <- 1
 table(enc$hcv_ltc_cases)
 hcv_ltc_cases <- enc[which(enc$hcv_ltc_cases == 1), ]
@@ -4889,7 +4890,7 @@ hcv_not_linked_other_percent
 
 ###############  SUD Linkage  ###############
 
-enc$sud_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$sud_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                     enc$ltc_services___3 == 1] <- 1
 table(enc$sud_ltc_cases)
 sud_ltc_cases <- enc[which(enc$sud_ltc_cases == 1), ]
@@ -5272,7 +5273,7 @@ sud_not_linked_other_percent
 
 ###############  HT Linkage  ###############
 
-enc$ht_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$ht_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                    enc$additional_services___9 == 1] <- 1
 table(enc$ht_ltc_cases)
 ht_ltc_cases <- enc[which(enc$ht_ltc_cases == 1), ]
@@ -5652,7 +5653,7 @@ ht_not_linked_other_percent
 
 ###############  mh Linkage  ###############
 
-enc$mh_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$mh_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                    enc$additional_services___1 == 1] <- 1
 table(enc$mh_ltc_cases)
 mh_ltc_cases <- enc[which(enc$mh_ltc_cases == 1), ]
@@ -6033,7 +6034,7 @@ mh_not_linked_other_percent
 
 ###############  housing Linkage  ###############
 
-enc$housing_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$housing_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                         enc$additional_services___2 == 1] <- 1
 table(enc$housing_ltc_cases)
 housing_ltc_cases <- enc[which(enc$housing_ltc_cases == 1), ]
@@ -6414,7 +6415,7 @@ housing_not_linked_other_percent
 
 ###############  prep Linkage  ###############
 
-enc$prep_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$prep_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                      (enc$ltc_services___5 == 1 |
                         enc$additional_services___3 == 1)] <- 1
 table(enc$prep_ltc_cases)
@@ -6798,7 +6799,7 @@ prep_not_linked_other_percent
 
 ###############  sti Linkage  ###############
 
-enc$sti_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$sti_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                     enc$additional_services___8 == 1] <- 1
 table(enc$sti_ltc_cases)
 sti_ltc_cases <- enc[which(enc$sti_ltc_cases == 1), ]
@@ -7181,7 +7182,7 @@ sti_not_linked_other_percent
 
 ###############  food Linkage  ###############
 
-enc$food_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$food_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                      enc$additional_services___4 == 1] <- 1
 table(enc$food_ltc_cases)
 food_ltc_cases <- enc[which(enc$food_ltc_cases == 1), ]
@@ -7560,7 +7561,7 @@ food_not_linked_other_percent
 
 ###############  financial Linkage  ###############
 
-enc$financial_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$financial_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                           enc$additional_services___5 == 1] <- 1
 table(enc$financial_ltc_cases)
 financial_ltc_cases <- enc[which(enc$financial_ltc_cases == 1), ]
@@ -7941,7 +7942,7 @@ financial_not_linked_other_percent
 
 ###############  personabuse Linkage  ###############
 
-enc$personabuse_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$personabuse_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                             enc$additional_services___6 == 1] <- 1
 table(enc$personabuse_ltc_cases)
 personabuse_ltc_cases <- enc[which(enc$personabuse_ltc_cases == 1), ]
@@ -8322,7 +8323,7 @@ personabuse_not_linked_other_percent
 
 ###############  general Linkage  ###############
 
-enc$general_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$general_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                         enc$additional_services___7 == 1] <- 1
 table(enc$general_ltc_cases)
 general_ltc_cases <- enc[which(enc$general_ltc_cases == 1), ]
@@ -8703,7 +8704,7 @@ general_not_linked_other_percent
 
 ###############  other Linkage  ###############
 
-enc$other_ltc_cases[enc$ltc_coordinator_per_case___43 == 1 &
+enc$other_ltc_cases[enc$ltc_coordinator_per_case___73 == 1 &
                       enc$additional_services___0 == 1] <- 1
 table(enc$other_ltc_cases)
 other_ltc_cases <- enc[which(enc$other_ltc_cases == 1), ]
