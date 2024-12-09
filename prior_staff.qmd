@@ -66,6 +66,7 @@ This lists all prior EIP staff in alphabetical order.
 
 ![Ryane Sickles](images/r_sickles.jpg){group="past-staff-gallery" fig-alt="Ryane Sickles"}
 
+![Elysia Smith](images/e_smith.jpg){group="past-staff-gallery" fig-alt="Elysia Smith"}
 
 ![Summer Soliman](images/s_soliman.jpg){group="past-staff-gallery" fig-alt="Summer Soliman"}
 
