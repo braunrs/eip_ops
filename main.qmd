@@ -62,6 +62,8 @@ The role of the EIP Senior Health Promotion Advocate (srHPA)...
 The role of the EIP Clinical Research Assistant (CRA)...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+[![Katie Anderson](images/k_anderson.jpg){group="cra-gallery"}](k_anderson.html "Katie Anderson")
+
 [![Noah McGorry](images/n_mcGorry.jpg){group="cra-gallery"}](n_mcgorry.html "Noah McGorry")
 :::
 
