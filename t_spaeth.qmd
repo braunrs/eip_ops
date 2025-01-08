@@ -50,7 +50,7 @@ eip23$record_id <- paste(eip23$record_id, "_23", sep = "")
 summary(eip23$record_id)
 
 # 2024
-eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20241230_2043.csv')
+eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20250107_2031.csv')
 dim(eip24)
 summary(eip24$record_id)
 eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
@@ -1287,6 +1287,7 @@ eip23$offer_outcome_declined_hiv_2___27 <- ''
 eip23$offer_outcome_declined_hiv_2___28 <- ''
 eip23$offer_outcome_declined_hiv_3___27 <- ''
 eip23$offer_outcome_declined_hiv_3___28 <- ''
+eip23$enc_location_urc <- ''
 
 
 
