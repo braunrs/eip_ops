@@ -78,8 +78,6 @@ The role of the EIP Clinical Research Assistant (CRA)...
 The role of the EIP Clinical Research Professional (CRP)...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
-[![Katie Hallinan](images/k_hallinan.jpg){group="crp-gallery"}](k_hallinan.html "Katie Hallinan")
-
 [![Rachel Kombo](images/r_kombo.jpg){group="crp-gallery"}](r_kombo.html "Rachel Kombo")
 
 :::
@@ -111,6 +109,8 @@ The role of the EIP Operations Team...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 ![Rob Braun](images/r_braun.jpg){group="ops-gallery" fig-alt="Rob Braun"}
+
+[![Katie Hallinan](images/k_hallinan.jpg){group="ops-gallery"}](k_hallinan.html "Katie Hallinan")
 
 [![Chloe Striker](images/c_striker.jpg){group="ops-gallery"}](c_striker.html "Chloe Striker")
 :::
