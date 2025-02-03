@@ -44,21 +44,21 @@ library(DT)
 
 ### EIP Database Data
 # 2023
-eip23 <- read.csv('M:/EIP Data/EIP Database/REDCap 2023/EIP Database Data 20250112_1508.csv')
+eip23 <- read.csv('M:/EIP Data/EIP Database/REDCap 2023/EIP Database Data 20250130_1413.csv')
 dim(eip23)
 summary(eip23$record_id)
 eip23$record_id <- paste(eip23$record_id, "_23", sep = "")
 summary(eip23$record_id)
 
 # 2024
-eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20250112_1511.csv')
+eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20250203_0801.csv')
 dim(eip24)
 summary(eip24$record_id)
 eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
 summary(eip24$record_id)
 
 # 2025
-eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20250113_1015.csv')
+eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20250203_0805.csv')
 dim(eip25)
 summary(eip25$record_id)
 eip25$record_id <- paste(eip25$record_id, "_25", sep = "")
@@ -804,14 +804,6 @@ dim(eip25)
 eip25 <- distinct(eip25)
 dim(eip25)
 
-
-# until all 2024 encounters are removed from 2025 database...
-summary(eip25$enc_date)
-eip25$enc_date <- as.Date(eip25$enc_date, format = '%m/%d/%Y')
-summary(eip25$enc_date)
-eip25 <- eip25[which(eip25$enc_date >= '2025-01-01'), ]
-summary(eip25$enc_date)
-
 ```
 
 ```{r Combining Datasets, include=FALSE}
@@ -894,10 +886,6 @@ names(eip23)[names(eip23) == 'additional_services___99'] <- 'additional_services
 
 eip23$final_test_status_hcv[eip23$final_test_status_hcv == 3] <- 4
 
-names(eip23)[names(eip23) == 'unsafe_work'] <- 'raft1'
-names(eip23)[names(eip23) == 'forced_work'] <- 'raft2'
-names(eip23)[names(eip23) == 'fear_leave_work'] <- 'raft3'
-names(eip23)[names(eip23) == 'exchange_for_sex'] <- 'raft4'
 
 
 # Adding variables introduced in 2024/2025 to 2023 dataset as blank values
@@ -1482,6 +1470,8 @@ eip23$ltc_coordinator_per_case___82 <- ''
 eip23$counselor_ref_sti_specific___6 <- ''
 eip23$enc_location_urc <- ''
 eip23$hcph_sud_day90_contact_date <- ''
+eip23$wound_care_kit <- ''
+eip23$wound_care_kit_number <- ''
 
 
 
@@ -1540,15 +1530,12 @@ eip24$ltc_coordinator_per_case___69 <- ''
 eip24$ltc_coordinator_per_case___30 <- ''
 
 
-# Changing 2024 variable names that were changed in 2025 dataset
-names(eip24)[names(eip24) == 'unsafe_work'] <- 'raft1'
-names(eip24)[names(eip24) == 'forced_work'] <- 'raft2'
-names(eip24)[names(eip24) == 'fear_leave_work'] <- 'raft3'
-names(eip24)[names(eip24) == 'exchange_for_sex'] <- 'raft4'
 
 
 # Adding variables introduced in 2025 database to 2024 dataset as blank values
 eip24$hcph_sud_day90_contact_date <- ''
+eip24$wound_care_kit <- ''
+eip24$wound_care_kit_number <- ''
 
 
 
@@ -1856,7 +1843,6 @@ dim(eip25)
 eip <- rbind(eip23, eip24, eip25)
 dim(eip)
 
-
 ```
 
 ```{r Patient Information, include=FALSE}
@@ -1864,16 +1850,16 @@ dim(eip)
 # Formatting variables
 
 summary(eip$enc_date)
-eip$enc_date <- as.Date(eip$enc_date, format='%m/%d/%Y')
+eip$enc_date <- as.Date(eip$enc_date, format = '%m/%d/%Y')
 summary(eip$enc_date)
 
 summary(eip$dob)
-eip$dob <- as.Date(eip$dob, format='%m/%d/%Y')
+eip$dob <- as.Date(eip$dob, format = '%m/%d/%Y')
 summary(eip$dob)
 
 
 table(eip$race___1)
-White <- eip[which(eip$race___1 == '1'), ]
+White <- eip[which(eip$race___1 == 1), ]
 dim(White)
 White <- select(White, record_id)
 White$White <- 1
@@ -1883,7 +1869,7 @@ dim(White)
 head(White)
 
 table(eip$race___2)
-Black <- eip[which(eip$race___2 == '1'), ]
+Black <- eip[which(eip$race___2 == 1), ]
 dim(Black)
 Black <- select(Black, record_id)
 Black$Black <- 1
@@ -1893,7 +1879,7 @@ dim(Black)
 head(Black)
 
 table(eip$race___3)
-Asian <- eip[which(eip$race___3 == '1'), ]
+Asian <- eip[which(eip$race___3 == 1), ]
 dim(Asian)
 Asian <- select(Asian, record_id)
 Asian$Asian <- 1
@@ -1903,7 +1889,7 @@ dim(Asian)
 head(Asian)
 
 table(eip$race___4)
-AmIn <- eip[which(eip$race___4 == '1'), ]
+AmIn <- eip[which(eip$race___4 == 1), ]
 dim(AmIn)
 AmIn <- select(AmIn, record_id)
 AmIn$AmIn <- 1
@@ -1913,7 +1899,7 @@ dim(AmIn)
 head(AmIn)
 
 table(eip$race___5)
-RaceOther <- eip[which(eip$race___5 == '1'), ]
+RaceOther <- eip[which(eip$race___5 == 1), ]
 dim(RaceOther)
 RaceOther <- select(RaceOther, record_id)
 RaceOther$RaceOther <- 1
@@ -1923,7 +1909,7 @@ dim(RaceOther)
 head(RaceOther)
 
 table(eip$race___6)
-RaceUnk <- eip[which(eip$race___6 == '1'), ]
+RaceUnk <- eip[which(eip$race___6 == 1), ]
 dim(RaceUnk)
 RaceUnk <- select(RaceUnk, record_id)
 RaceUnk$RaceUnk <- 1
@@ -1999,16 +1985,21 @@ table(eip$sex)
 
 
 
+
 table(eip$sex_raised, eip$sex_selfdefined)
-eip$gender[eip$sex_raised == 1 & eip$sex_selfdefined == 1] <- 'Male'
-eip$gender[eip$sex_raised == 2 & eip$sex_selfdefined == 2] <- 'Female'
-eip$gender[(eip$sex_raised == 1 & eip$sex_selfdefined == 2) |
-             (eip$sex_raised == 2 & eip$sex_selfdefined == 1) |
+eip$gender[(eip$sex_raised == 1 & eip$sex_selfdefined == 1) |
              (eip$sex_raised == 1 & eip$sex_selfdefined == 3) |
-             (eip$sex_raised == 2 & eip$sex_selfdefined == 3)] <- 'Transgender/Nonbinary'
-eip$gender[(eip$sex_raised == 3 & eip$sex_selfdefined == 3) |
-             is.na(eip$sex_raised) | is.na(eip$sex_selfdefined)] <- 'Unknown'
+             (eip$sex_raised == 1 & is.na(eip$sex_selfdefined))] <- 'Male'
+eip$gender[(eip$sex_raised == 2 & eip$sex_selfdefined == 2) |
+             (eip$sex_raised == 2 & eip$sex_selfdefined == 3) |
+             (eip$sex_raised == 2 & is.na(eip$sex_selfdefined))] <- 'Female'
+eip$gender[(eip$sex_selfdefined == 4) |
+             (eip$sex_raised == 1 & eip$sex_selfdefined == 2) |
+             (eip$sex_raised == 2 & eip$sex_selfdefined == 1)] <- 'Transgender/Nonbinary'
+eip$gender[(is.na(eip$sex_raised) & is.na(eip$sex_selfdefined))] <- 'Unknown'
 table(eip$gender)
+
+
 
 
 table(eip$insurance)
@@ -2025,7 +2016,7 @@ table(eip$insurance)
 
 
 # Populations of Interest
-### WOC, Youth (18-24), MSM, IDU, HRHS, PLWHA
+### WOC, Youth (18-29), MSM, IDU, HRHS, PLWHA
 
 table(eip$race, eip$gender)
 eip$WOC[(eip$race != 'White' & eip$race != 'Unknown') & eip$gender == 'Female'] <- 1
@@ -2037,18 +2028,16 @@ eip$Youth[eip$age >= 13 & eip$age <= 29] <- 1
 table(eip$Youth)
 
 
-eip$MSM[eip$gender == 'Male' & ((eip$sex_orientation == '2' | eip$sex_orientation == '4') |
-                                  (eip$sex_w_man___1 == '1' | eip$sex_w_man___2 == '1' |
-                                     eip$sex_w_man___3 == '1') |
-                                  (eip$sex_w_ftm___1 == '1' | eip$sex_w_ftm___2 == '1' |
-                                     eip$sex_w_ftm___3 == '1') |
-                                  (eip$sex_msm___1 == '1' | eip$sex_msm___2 == '1' |
-                                     eip$sex_msm___3 == '1') |
-                                  (eip$hiv_dx_risks___2 == '1'))] <- 1
+eip$MSM[eip$gender == 'Male' &
+          ((eip$sex_orientation == 2 | eip$sex_orientation == 4) |
+             (eip$sex_w_man___1 == 1 | eip$sex_w_man___2 == 1 | eip$sex_w_man___3 == 1) |
+             (eip$sex_w_ftm___1 == 1 | eip$sex_w_ftm___2 == 1 | eip$sex_w_ftm___3 == 1) |
+             (eip$sex_msm___1 == 1 | eip$sex_msm___2 == 1 | eip$sex_msm___3 == 1) |
+             (eip$hiv_dx_risks___2 == 1))] <- 1
 table(eip$MSM)
 
 
-eip$IDU[eip$idu_calc == 1 | eip$hiv_dx_risks___3 == '1'] <- 1
+eip$IDU[eip$idu_calc == 1 | eip$hiv_dx_risks___3 == 1] <- 1
 table(eip$IDU)
 
 
@@ -2062,37 +2051,35 @@ table(eip$IDU)
 ### Heterosexual men/women that have sex with STD+ partner
 ### Heterosexual men/women that have more than 3 partners
 
-eip$Hetero[(eip$gender == 'Male' & (eip$sex_w_woman___1 == '1' |
-                                      eip$sex_w_woman___2 == '1' | eip$sex_w_woman___3 == '1')) |
-             (eip$gender == 'Female' & (eip$sex_w_man___1 == '1' | eip$sex_w_man___2 == '1' |
-                                          eip$sex_w_man___3 == '1'))] <- 1
+eip$Hetero[(eip$gender == 'Male' &
+              (eip$sex_w_woman___1 == 1 | eip$sex_w_woman___2 == 1 |
+                 eip$sex_w_woman___3 == 1 | eip$sex_orientation == 1)) |
+             (eip$gender == 'Female' &
+                (eip$sex_w_man___1 == 1 | eip$sex_w_man___2 == 1 |
+                   eip$sex_w_man___3 == 1 | eip$sex_orientation == 1))] <- 1
 table(eip$Hetero)
 
 
-eip$HRHS[(eip$Hetero == 1) & ((((eip$sex_w_woman___6 == '1' | eip$sex_w_woman___7 == '1') |
-                                  (is.na(eip$sex_w_woman___6) & is.na(eip$sex_w_woman___7) &
-                                     is.na(eip$sex_w_woman___8)))) | (((eip$sex_w_man___6 == '1' |
-                                                                          eip$sex_w_man___7 == '1') |
-                                                                         (is.na(eip$sex_w_man___6) &
-                                                                            is.na(eip$sex_w_man___7) &
-                                                                            is.na(eip$sex_w_man___8)))) |
-                                (eip$sex_msm___1 == '1' | eip$sex_msm___2 == '1' | eip$sex_msm___3 == '1') |
-                                (eip$sex_idu___1 == '1' | eip$sex_idu___2 == '1' | eip$sex_idu___3 == '1') |
-                                (eip$sex_hiv_pos___1 == '1' | eip$sex_hiv_pos___2 == '1' |
-                                   eip$sex_hiv_pos___3 == '1') | (eip$sex_receivemoney___1 == '1' |
-                                                                    eip$sex_receivemoney___2 == '1' |
-                                                                    eip$sex_receivemoney___3 == '1' |
-                                                                    eip$sex_receivedrugs___1 == '1' |
-                                                                    eip$sex_receivedrugs___2 == '1' |
-                                                                    eip$sex_receivedrugs___3 == '1' |
-                                                                    eip$sex_paymoney___1 == '1' |
-                                                                    eip$sex_paymoney___2 == '1' |
-                                                                    eip$sex_paymoney___3 == '1' |
-                                                                    eip$sex_paydrugs___1 == '1' |
-                                                                    eip$sex_paydrugs___2 == '1' |
-                                                                    eip$sex_paydrugs___3 == '1')  |
-                                (eip$sex_sti_pos___1 == '1' | eip$sex_sti_pos___2 == '1' |
-                                   eip$sex_sti_pos___3 == '1') | (eip$sex_partners_past_year >= 3))] <- 1
+eip$HRHS[((eip$Hetero == 1) &
+            ((((eip$sex_w_woman___6 == 1 | eip$sex_w_woman___7 == 1) |
+                 (is.na(eip$sex_w_woman___6) & is.na(eip$sex_w_woman___7) &
+                    is.na(eip$sex_w_woman___8)))) |
+               (((eip$sex_w_man___6 == 1 | eip$sex_w_man___7 == 1) |
+                   (is.na(eip$sex_w_man___6) & is.na(eip$sex_w_man___7) &
+                      is.na(eip$sex_w_man___8)))) |
+               (eip$sex_msm___1 == 1 | eip$sex_msm___2 == 1 | eip$sex_msm___3 == 1) |
+               (eip$sex_idu___1 == 1 | eip$sex_idu___2 == 1 | eip$sex_idu___3 == 1) |
+               (eip$sex_hiv_pos___1 == 1 | eip$sex_hiv_pos___2 == 1 |
+                  eip$sex_hiv_pos___3 == 1) |
+               (eip$sex_receivemoney___1 == 1 | eip$sex_receivemoney___2 == 1 |
+                  eip$sex_receivemoney___3 == 1 | eip$sex_receivedrugs___1 == 1 |
+                  eip$sex_receivedrugs___2 == 1 | eip$sex_receivedrugs___3 == 1 |
+                  eip$sex_paymoney___1 == 1 | eip$sex_paymoney___2 == 1 |
+                  eip$sex_paymoney___3 == 1 | eip$sex_paydrugs___1 == 1 |
+                  eip$sex_paydrugs___2 == 1 | eip$sex_paydrugs___3 == 1)  |
+               (eip$sex_sti_pos___1 == 1 | eip$sex_sti_pos___2 == 1 |
+                  eip$sex_sti_pos___3 == 1) | (eip$sex_partners_past_year >= 3))) |
+           (eip$hiv_dx_risks___1 == 1)] <- 1
 table(eip$HRHS)
 
 
@@ -2339,6 +2326,145 @@ eip$appalachian_pt[eip$address_zip_code == 43006 | eip$address_zip_code == 43056
                      (eip$appalachian == 1 | eip$appalachian_family == 1)] <- 1
 table(eip$appalachian_pt)
 
+
+
+# EIP unique patients
+dim(eip)
+eip_pts <- select(eip, record_id)
+dim(eip_pts)
+eip_pts <- distinct(eip_pts)
+dim(eip_pts)
+
+eip_patients <- nrow(eip_pts)
+eip_patients
+
+
+
+# PLWHA
+eip$plwha[(eip$history_hiv_test_result == 1 |
+             eip$reason_for_offer_category_hiv_test == 7 |
+             eip$reason_for_offer_category_hiv_test == 8 |
+             eip$offer_outcome_declined_hiv___21 == 1 |
+             eip$offer_outcome_declined_hiv_2___21 == 1 |
+             eip$offer_outcome_declined_hiv_3___21 == 1 |
+             eip$final_test_status_hiv == 1 |
+             eip$diagnosis_hiv == 1 |
+             eip$diagnosis_hiv == 2)] <- 1
+table(eip$plwha)
+
+
+table(eip$plwha)
+plwha <- eip[which(eip$plwha == 1), ]
+dim(plwha)
+plwha <- nrow(plwha)
+plwha
+
+
+
+# Formatting contact note dates
+eip$followup_date1 <- as.Date(eip$followup_date1, format = '%m/%d/%Y')
+eip$followup_date2 <- as.Date(eip$followup_date2, format = '%m/%d/%Y')
+eip$followup_date3 <- as.Date(eip$followup_date3, format = '%m/%d/%Y')
+eip$followup_date4 <- as.Date(eip$followup_date4, format = '%m/%d/%Y')
+eip$followup_date5 <- as.Date(eip$followup_date5, format = '%m/%d/%Y')
+eip$followup_date6 <- as.Date(eip$followup_date6, format = '%m/%d/%Y')
+eip$followup_date7 <- as.Date(eip$followup_date7, format = '%m/%d/%Y')
+eip$followup_date8 <- as.Date(eip$followup_date8, format = '%m/%d/%Y')
+eip$followup_date9 <- as.Date(eip$followup_date9, format = '%m/%d/%Y')
+eip$followup_date10 <- as.Date(eip$followup_date10, format = '%m/%d/%Y')
+eip$followup_date11 <- as.Date(eip$followup_date11, format = '%m/%d/%Y')
+eip$followup_date12 <- as.Date(eip$followup_date12, format = '%m/%d/%Y')
+eip$followup_date13 <- as.Date(eip$followup_date13, format = '%m/%d/%Y')
+eip$followup_date14 <- as.Date(eip$followup_date14, format = '%m/%d/%Y')
+eip$followup_date15 <- as.Date(eip$followup_date15, format = '%m/%d/%Y')
+eip$followup_date16 <- as.Date(eip$followup_date16, format = '%m/%d/%Y')
+eip$followup_date17 <- as.Date(eip$followup_date17, format = '%m/%d/%Y')
+eip$followup_date18 <- as.Date(eip$followup_date18, format = '%m/%d/%Y')
+eip$followup_date19 <- as.Date(eip$followup_date19, format = '%m/%d/%Y')
+eip$followup_date20 <- as.Date(eip$followup_date20, format = '%m/%d/%Y')
+eip$followup_date21 <- as.Date(eip$followup_date21, format = '%m/%d/%Y')
+eip$followup_date22 <- as.Date(eip$followup_date22, format = '%m/%d/%Y')
+eip$followup_date23 <- as.Date(eip$followup_date23, format = '%m/%d/%Y')
+eip$followup_date24 <- as.Date(eip$followup_date24, format = '%m/%d/%Y')
+eip$followup_date25 <- as.Date(eip$followup_date25, format = '%m/%d/%Y')
+eip$followup_date26 <- as.Date(eip$followup_date26, format = '%m/%d/%Y')
+eip$followup_date27 <- as.Date(eip$followup_date27, format = '%m/%d/%Y')
+eip$followup_date28 <- as.Date(eip$followup_date28, format = '%m/%d/%Y')
+eip$followup_date29 <- as.Date(eip$followup_date29, format = '%m/%d/%Y')
+eip$followup_date30 <- as.Date(eip$followup_date30, format = '%m/%d/%Y')
+eip$followup_date31 <- as.Date(eip$followup_date31, format = '%m/%d/%Y')
+eip$followup_date32 <- as.Date(eip$followup_date32, format = '%m/%d/%Y')
+eip$followup_date33 <- as.Date(eip$followup_date33, format = '%m/%d/%Y')
+eip$followup_date34 <- as.Date(eip$followup_date34, format = '%m/%d/%Y')
+eip$followup_date35 <- as.Date(eip$followup_date35, format = '%m/%d/%Y')
+eip$followup_date36 <- as.Date(eip$followup_date36, format = '%m/%d/%Y')
+eip$followup_date37 <- as.Date(eip$followup_date37, format = '%m/%d/%Y')
+eip$followup_date38 <- as.Date(eip$followup_date38, format = '%m/%d/%Y')
+eip$followup_date39 <- as.Date(eip$followup_date39, format = '%m/%d/%Y')
+eip$followup_date40 <- as.Date(eip$followup_date40, format = '%m/%d/%Y')
+eip$followup_date41 <- as.Date(eip$followup_date41, format = '%m/%d/%Y')
+eip$followup_date42 <- as.Date(eip$followup_date42, format = '%m/%d/%Y')
+eip$followup_date43 <- as.Date(eip$followup_date43, format = '%m/%d/%Y')
+eip$followup_date44 <- as.Date(eip$followup_date44, format = '%m/%d/%Y')
+eip$followup_date45 <- as.Date(eip$followup_date45, format = '%m/%d/%Y')
+eip$followup_date46 <- as.Date(eip$followup_date46, format = '%m/%d/%Y')
+eip$followup_date47 <- as.Date(eip$followup_date47, format = '%m/%d/%Y')
+eip$followup_date48 <- as.Date(eip$followup_date48, format = '%m/%d/%Y')
+eip$followup_date49 <- as.Date(eip$followup_date49, format = '%m/%d/%Y')
+eip$followup_date50 <- as.Date(eip$followup_date50, format = '%m/%d/%Y')
+
+
+# Formatting timeframe between encounter date and contact note
+eip$datediff1 <- as.numeric(interval(eip$enc_date, eip$followup_date1)/ddays(1))
+eip$datediff2 <- as.numeric(interval(eip$enc_date, eip$followup_date2)/ddays(1))
+eip$datediff3 <- as.numeric(interval(eip$enc_date, eip$followup_date3)/ddays(1))
+eip$datediff4 <- as.numeric(interval(eip$enc_date, eip$followup_date4)/ddays(1))
+eip$datediff5 <- as.numeric(interval(eip$enc_date, eip$followup_date5)/ddays(1))
+eip$datediff6 <- as.numeric(interval(eip$enc_date, eip$followup_date6)/ddays(1))
+eip$datediff7 <- as.numeric(interval(eip$enc_date, eip$followup_date7)/ddays(1))
+eip$datediff8 <- as.numeric(interval(eip$enc_date, eip$followup_date8)/ddays(1))
+eip$datediff9 <- as.numeric(interval(eip$enc_date, eip$followup_date9)/ddays(1))
+eip$datediff10 <- as.numeric(interval(eip$enc_date, eip$followup_date10)/ddays(1))
+eip$datediff11 <- as.numeric(interval(eip$enc_date, eip$followup_date11)/ddays(1))
+eip$datediff12 <- as.numeric(interval(eip$enc_date, eip$followup_date12)/ddays(1))
+eip$datediff13 <- as.numeric(interval(eip$enc_date, eip$followup_date13)/ddays(1))
+eip$datediff14 <- as.numeric(interval(eip$enc_date, eip$followup_date14)/ddays(1))
+eip$datediff15 <- as.numeric(interval(eip$enc_date, eip$followup_date15)/ddays(1))
+eip$datediff16 <- as.numeric(interval(eip$enc_date, eip$followup_date16)/ddays(1))
+eip$datediff17 <- as.numeric(interval(eip$enc_date, eip$followup_date17)/ddays(1))
+eip$datediff18 <- as.numeric(interval(eip$enc_date, eip$followup_date18)/ddays(1))
+eip$datediff19 <- as.numeric(interval(eip$enc_date, eip$followup_date19)/ddays(1))
+eip$datediff20 <- as.numeric(interval(eip$enc_date, eip$followup_date20)/ddays(1))
+eip$datediff21 <- as.numeric(interval(eip$enc_date, eip$followup_date21)/ddays(1))
+eip$datediff22 <- as.numeric(interval(eip$enc_date, eip$followup_date22)/ddays(1))
+eip$datediff23 <- as.numeric(interval(eip$enc_date, eip$followup_date23)/ddays(1))
+eip$datediff24 <- as.numeric(interval(eip$enc_date, eip$followup_date24)/ddays(1))
+eip$datediff25 <- as.numeric(interval(eip$enc_date, eip$followup_date25)/ddays(1))
+eip$datediff26 <- as.numeric(interval(eip$enc_date, eip$followup_date26)/ddays(1))
+eip$datediff27 <- as.numeric(interval(eip$enc_date, eip$followup_date27)/ddays(1))
+eip$datediff28 <- as.numeric(interval(eip$enc_date, eip$followup_date28)/ddays(1))
+eip$datediff29 <- as.numeric(interval(eip$enc_date, eip$followup_date29)/ddays(1))
+eip$datediff30 <- as.numeric(interval(eip$enc_date, eip$followup_date30)/ddays(1))
+eip$datediff31 <- as.numeric(interval(eip$enc_date, eip$followup_date31)/ddays(1))
+eip$datediff32 <- as.numeric(interval(eip$enc_date, eip$followup_date32)/ddays(1))
+eip$datediff33 <- as.numeric(interval(eip$enc_date, eip$followup_date33)/ddays(1))
+eip$datediff34 <- as.numeric(interval(eip$enc_date, eip$followup_date34)/ddays(1))
+eip$datediff35 <- as.numeric(interval(eip$enc_date, eip$followup_date35)/ddays(1))
+eip$datediff36 <- as.numeric(interval(eip$enc_date, eip$followup_date36)/ddays(1))
+eip$datediff37 <- as.numeric(interval(eip$enc_date, eip$followup_date37)/ddays(1))
+eip$datediff38 <- as.numeric(interval(eip$enc_date, eip$followup_date38)/ddays(1))
+eip$datediff39 <- as.numeric(interval(eip$enc_date, eip$followup_date39)/ddays(1))
+eip$datediff40 <- as.numeric(interval(eip$enc_date, eip$followup_date40)/ddays(1))
+eip$datediff41 <- as.numeric(interval(eip$enc_date, eip$followup_date41)/ddays(1))
+eip$datediff42 <- as.numeric(interval(eip$enc_date, eip$followup_date42)/ddays(1))
+eip$datediff43 <- as.numeric(interval(eip$enc_date, eip$followup_date43)/ddays(1))
+eip$datediff44 <- as.numeric(interval(eip$enc_date, eip$followup_date44)/ddays(1))
+eip$datediff45 <- as.numeric(interval(eip$enc_date, eip$followup_date45)/ddays(1))
+eip$datediff46 <- as.numeric(interval(eip$enc_date, eip$followup_date46)/ddays(1))
+eip$datediff47 <- as.numeric(interval(eip$enc_date, eip$followup_date47)/ddays(1))
+eip$datediff48 <- as.numeric(interval(eip$enc_date, eip$followup_date48)/ddays(1))
+eip$datediff49 <- as.numeric(interval(eip$enc_date, eip$followup_date49)/ddays(1))
+eip$datediff50 <- as.numeric(interval(eip$enc_date, eip$followup_date50)/ddays(1))
 
 ```
 
