@@ -44,21 +44,21 @@ library(DT)
 
 ### EIP Database Data
 # 2023
-eip23 <- read.csv('M:/EIP Data/EIP Database/REDCap 2023/EIP Database Data 20250130_1413.csv')
+eip23 <- read.csv('M:/EIP Data/EIP Database/REDCap 2023/EIP Database Data 20250512_2102.csv')
 dim(eip23)
 summary(eip23$record_id)
 eip23$record_id <- paste(eip23$record_id, "_23", sep = "")
 summary(eip23$record_id)
 
 # 2024
-eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20250323_1133.csv')
+eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20250512_2104.csv')
 dim(eip24)
 summary(eip24$record_id)
 eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
 summary(eip24$record_id)
 
 # 2025
-eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20250407_0837.csv')
+eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20250512_2107.csv')
 dim(eip25)
 summary(eip25$record_id)
 eip25$record_id <- paste(eip25$record_id, "_25", sep = "")
@@ -1473,6 +1473,8 @@ eip23$hcph_sud_day90_contact_date <- ''
 eip23$wound_care_kit <- ''
 eip23$wound_care_kit_number <- ''
 eip23$final_ed_dx <- ''
+eip23$syph_order <- ''
+eip23$ltc_coordinator_per_case___3 <- ''
 
 
 
@@ -1538,6 +1540,8 @@ eip24$hcph_sud_day90_contact_date <- ''
 eip24$wound_care_kit <- ''
 eip24$wound_care_kit_number <- ''
 eip24$final_ed_dx <- ''
+eip24$syph_order <- ''
+eip24$ltc_coordinator_per_case___3 <- ''
 
 
 
@@ -1844,6 +1848,7 @@ dim(eip25)
 
 eip <- rbind(eip23, eip24, eip25)
 dim(eip)
+
 
 ```
 

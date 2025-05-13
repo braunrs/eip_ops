@@ -26,7 +26,13 @@ The role of the EIP Health Promotion Advocate (HPA)...
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 [![Pierre Abbey](images/blank_staff.jpg){group="hpa-gallery"}](p_abbey.html "Pierre Abbey")
 
+[![Hena Akhter](images/h_akhter.jpg){group="hpa-gallery"}](h_akhter.html "Hena Akhter")
+
 [![Brooke Johannes](images/b_johannes.jpg){group="hpa-gallery"}](b_johannes.html "Brooke Johannes")
+
+[![Nico Llerena](images/blank_staff.jpg){group="hpa-gallery"}](n_llerena.html "Nico Llerena")
+
+[![Emma Marsella](images/blank_staff.jpg){group="hpa-gallery"}](e_marsella.html "Emma Marsella")
 
 [![Cameron May](images/c_may.jpg){group="hpa-gallery"}](c_may.html "Cameron May")
 
@@ -64,7 +70,6 @@ The role of the EIP Clinical Research Assistant (CRA)...
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 [![Katie Anderson](images/k_anderson.jpg){group="cra-gallery"}](k_anderson.html "Katie Anderson")
 
-[![Noah McGorry](images/n_mcGorry.jpg){group="cra-gallery"}](n_mcgorry.html "Noah McGorry")
 :::
 
 
@@ -80,6 +85,7 @@ The role of the EIP Clinical Research Professional (CRP)...
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
 [![Rachel Kombo](images/r_kombo.jpg){group="crp-gallery"}](r_kombo.html "Rachel Kombo")
 
+[![Noah McGorry](images/n_mcGorry.jpg){group="crp-gallery"}](n_mcgorry.html "Noah McGorry")
 :::
 
 
