@@ -36,8 +36,6 @@ The role of the EIP Health Promotion Advocate (HPA)...
 
 [![Cameron May](images/c_may.jpg){group="hpa-gallery"}](c_may.html "Cameron May")
 
-[![Brooke Pitula](images/blank_staff.jpg){group="hpa-gallery"}](b_pitula.html "Brooke Pitula")
-
 [![Connor Powers](images/c_powers.jpg){group="hpa-gallery"}](c_powers.html "Connor Powers")
 
 [![Timothy Spaeth](images/t_spaeth.jpg){group="hpa-gallery"}](t_spaeth.html "Timothy Spaeth")
@@ -54,6 +52,8 @@ The role of the EIP Health Promotion Advocate (HPA)...
 The role of the EIP Senior Health Promotion Advocate (srHPA)...
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+[![Brooke Pitula](images/blank_staff.jpg){group="srhpa-gallery"}](b_pitula.html "Brooke Pitula")
+
 [![Bella Procaccio](images/b_procaccio.jpg){group="srhpa-gallery"}](b_procaccio.html "Bella Procaccio")
 :::
 
