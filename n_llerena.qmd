@@ -10391,7 +10391,7 @@ monthly_hcv_tests
 
 This metrics report shows data for encounter information for **Nico Llerena**. Nico's start and end date with EIP are shown below, however, any data contained within this report covers clinical information captured in the EIP Database since **January 1st, 2023**. The metrics in this report describe specific encounter information and the services and/or referrals that were provided to patients/clients.
 
-- **Start date:** *9/23/2019*
+- **Start date:** *3/10/2025*
 - **End date:**
 
 Until a unique patient identifier is created for patients seen by EIP, matching unique patients across multiple years of encounters is difficult. Therefore, patient demographic and population information will refer only to the number of encounters, not the unique number of patients. This part of the report is still in development.

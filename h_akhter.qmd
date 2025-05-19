@@ -6,7 +6,7 @@ lightbox:
 about:
   id: hero-heading
   template: solana
-  image: images/c_Akhter.jpg
+  image: images/h_akhter.jpg
   image-width: 20em
 format:
   html: 
@@ -2482,6 +2482,8 @@ eip$datediff50 <- as.numeric(interval(eip$enc_date, eip$followup_date50)/ddays(1
 ###############################################################################################################
 
 # Akhter, Hena
+
+eip <- eip[which(eip$enc_date >= '2025-01-01'), ]
 
 eip$Akhter[eip$counselor_enc_start == 'zakhh5hr' |
               eip$counselor_risk_start == 'zakhh5hr' |
@@ -10391,7 +10393,7 @@ monthly_hcv_tests
 
 This metrics report shows data for encounter information for **Hena Akhter**. Hena's start and end date with EIP are shown below, however, any data contained within this report covers clinical information captured in the EIP Database since **January 1st, 2023**. The metrics in this report describe specific encounter information and the services and/or referrals that were provided to patients/clients.
 
-- **Start date:** *9/23/2019*
+- **Start date:** *2/6/2025*
 - **End date:**
 
 Until a unique patient identifier is created for patients seen by EIP, matching unique patients across multiple years of encounters is difficult. Therefore, patient demographic and population information will refer only to the number of encounters, not the unique number of patients. This part of the report is still in development.
