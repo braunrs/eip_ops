@@ -46,6 +46,8 @@ This lists all prior EIP staff in alphabetical order.
 
 ![Carmen Mack](images/blank_staff.jpg){group="past-staff-gallery" fig-alt="Carmen Mack"}
 
+![Cameron May](images/c_may.jpg){group="past-staff-gallery" fig-alt="Cameron May"}
+
 ![Meg Mays](images/m_mays.jpg){group="past-staff-gallery" fig-alt="Meg Mays"}
 
 ![Jordan McNulty](images/j_mcnulty.jpg){group="past-staff-gallery" fig-alt="Jordan McNulty"}
