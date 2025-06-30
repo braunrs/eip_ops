@@ -58,7 +58,7 @@ eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
 summary(eip24$record_id)
 
 # 2025
-eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20250616_0940.csv')
+eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20250630_0831.csv')
 dim(eip25)
 summary(eip25$record_id)
 eip25$record_id <- paste(eip25$record_id, "_25", sep = "")
@@ -1475,6 +1475,7 @@ eip23$wound_care_kit_number <- ''
 eip23$final_ed_dx <- ''
 eip23$syph_order <- ''
 eip23$ltc_coordinator_per_case___3 <- ''
+eip23$hiv_order <- ''
 
 
 
@@ -1542,6 +1543,7 @@ eip24$wound_care_kit_number <- ''
 eip24$final_ed_dx <- ''
 eip24$syph_order <- ''
 eip24$ltc_coordinator_per_case___3 <- ''
+eip24$hiv_order <- ''
 
 
 
