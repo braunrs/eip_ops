@@ -51,14 +51,14 @@ eip23$record_id <- paste(eip23$record_id, "_23", sep = "")
 summary(eip23$record_id)
 
 # 2024
-eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20250707_1010.csv')
+eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20240903_1024.csv')
 dim(eip24)
 summary(eip24$record_id)
 eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
 summary(eip24$record_id)
 
 # 2025
-eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20250707_1030.csv')
+eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20250903_1028.csv')
 dim(eip25)
 summary(eip25$record_id)
 eip25$record_id <- paste(eip25$record_id, "_25", sep = "")
@@ -1475,7 +1475,14 @@ eip23$wound_care_kit_number <- ''
 eip23$final_ed_dx <- ''
 eip23$syph_order <- ''
 eip23$ltc_coordinator_per_case___3 <- ''
-eip23$hiv_order <- ''
+eip23$ltc_coordinator_per_case___83 <- ''
+eip23$ltc_coordinator_per_case___84 <- ''
+eip23$ltc_coordinator_per_case___85 <- ''
+eip23$ltc_coordinator_per_case___86 <- ''
+eip23$abbey_ltc_open_calc <- ''
+eip23$powers_ltc_open_calc <- ''
+eip23$johannes_ltc_open_calc <- ''
+eip23$spaeth_ltc_open_calc <- ''
 
 
 
@@ -1543,7 +1550,14 @@ eip24$wound_care_kit_number <- ''
 eip24$final_ed_dx <- ''
 eip24$syph_order <- ''
 eip24$ltc_coordinator_per_case___3 <- ''
-eip24$hiv_order <- ''
+eip24$ltc_coordinator_per_case___83 <- ''
+eip24$ltc_coordinator_per_case___84 <- ''
+eip24$ltc_coordinator_per_case___85 <- ''
+eip24$ltc_coordinator_per_case___86 <- ''
+eip24$abbey_ltc_open_calc <- ''
+eip24$powers_ltc_open_calc <- ''
+eip24$johannes_ltc_open_calc <- ''
+eip24$spaeth_ltc_open_calc <- ''
 
 
 

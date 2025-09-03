@@ -22,6 +22,10 @@ This lists all prior EIP staff in alphabetical order.
 
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+![Hena Akhter](images/h_akhter.jpg){group="past-staff-gallery" fig-alt="Hena Akhter"}
+
+![Katie Anderson](images/k_anderson.jpg){group="past-staff-gallery" fig-alt="Katie Anderson"}
+
 ![Jessika Bass](images/j_bass.jpg){group="past-staff-gallery" fig-alt="Jessika Bass"}
 
 ![Rachel Black](images/r_black.jpg){group="past-staff-gallery" fig-alt="Rachel Black"}
@@ -53,6 +57,8 @@ This lists all prior EIP staff in alphabetical order.
 ![Jordan McNulty](images/j_mcnulty.jpg){group="past-staff-gallery" fig-alt="Jordan McNulty"}
 
 ![Jake Perrmann](images/j_perrmann.jpg){group="past-staff-gallery" fig-alt="Jake Perrmann"}
+
+![Bella Procaccio](images/b_procaccio.jpg){group="past-staff-gallery" fig-alt="Bella Procaccio"}
 
 ![Sway Rehman](images/s_rehman.jpg){group="past-staff-gallery" fig-alt="Sway Rehman"}
 

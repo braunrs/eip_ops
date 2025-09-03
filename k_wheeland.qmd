@@ -1,12 +1,12 @@
 ---
-title: "Katie Anderson"
+title: "Kirsten Wheeland"
 date: "`r Sys.Date()`"
 lightbox:
   match: auto
 about:
   id: hero-heading
   template: solana
-  image: images/k_anderson.jpg
+  image: images/blank_staff.jpg
   image-width: 20em
 format:
   html: 
@@ -51,14 +51,14 @@ eip23$record_id <- paste(eip23$record_id, "_23", sep = "")
 summary(eip23$record_id)
 
 # 2024
-eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20250707_1010.csv')
+eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20240903_1024.csv')
 dim(eip24)
 summary(eip24$record_id)
 eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
 summary(eip24$record_id)
 
 # 2025
-eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20250707_1030.csv')
+eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20250903_1028.csv')
 dim(eip25)
 summary(eip25$record_id)
 eip25$record_id <- paste(eip25$record_id, "_25", sep = "")
@@ -1475,7 +1475,14 @@ eip23$wound_care_kit_number <- ''
 eip23$final_ed_dx <- ''
 eip23$syph_order <- ''
 eip23$ltc_coordinator_per_case___3 <- ''
-eip23$hiv_order <- ''
+eip23$ltc_coordinator_per_case___83 <- ''
+eip23$ltc_coordinator_per_case___84 <- ''
+eip23$ltc_coordinator_per_case___85 <- ''
+eip23$ltc_coordinator_per_case___86 <- ''
+eip23$abbey_ltc_open_calc <- ''
+eip23$powers_ltc_open_calc <- ''
+eip23$johannes_ltc_open_calc <- ''
+eip23$spaeth_ltc_open_calc <- ''
 
 
 
@@ -1543,7 +1550,14 @@ eip24$wound_care_kit_number <- ''
 eip24$final_ed_dx <- ''
 eip24$syph_order <- ''
 eip24$ltc_coordinator_per_case___3 <- ''
-eip24$hiv_order <- ''
+eip24$ltc_coordinator_per_case___83 <- ''
+eip24$ltc_coordinator_per_case___84 <- ''
+eip24$ltc_coordinator_per_case___85 <- ''
+eip24$ltc_coordinator_per_case___86 <- ''
+eip24$abbey_ltc_open_calc <- ''
+eip24$powers_ltc_open_calc <- ''
+eip24$johannes_ltc_open_calc <- ''
+eip24$spaeth_ltc_open_calc <- ''
 
 
 
@@ -2477,22 +2491,22 @@ eip$datediff50 <- as.numeric(interval(eip$enc_date, eip$followup_date50)/ddays(1
 
 ```
 
-```{r Anderson Data, include=FALSE}
+```{r Wheeland Data, include=FALSE}
 
 ###############################################################################################################
 #########################################  Creating Staff Identifier  #########################################
 ###############################################################################################################
 
-# Anderson, Katie
+# Wheeland, Kirsten
 
-eip$Anderson[eip$counselor_enc_start == 'zandk5le' |
-              eip$counselor_risk_start == 'zandk5le' |
-              eip$counselor_hiv_start == 'zandk5le' |
-              eip$counselor_hcv_start == 'zandk5le' |
-              eip$enc_counselor == 70 |
-              eip$ltc_coord_start == 'zandk5le' |
-              eip$ltc_coordinator_per_case___70 == 1] <- 1
-table(eip$Anderson)
+eip$Wheeland[eip$counselor_enc_start == 'zwhek8tl' |
+              eip$counselor_risk_start == 'zwhek8tl' |
+              eip$counselor_hiv_start == 'zwhek8tl' |
+              eip$counselor_hcv_start == 'zwhek8tl' |
+              eip$enc_counselor == 85 |
+              eip$ltc_coord_start == 'zwhek8tl' |
+              eip$ltc_coordinator_per_case___85 == 1] <- 1
+table(eip$Wheeland)
 
 
 
@@ -2500,19 +2514,19 @@ table(eip$Anderson)
 #########################################  Creating Encounter Dataset  ########################################
 ###############################################################################################################
 
-table(eip$Anderson)
-enc <- eip[which(eip$Anderson == 1), ]
+table(eip$Wheeland)
+enc <- eip[which(eip$Wheeland == 1), ]
 dim(enc)
 
 
 ########################################  Encounters  ########################################
 
-table(enc$Anderson)
+table(enc$Wheeland)
 encounters <- nrow(enc)
 encounters
 
-monthly_encounters <- select(enc, enc_date, Anderson)
-monthly_encounters <- monthly_encounters[which(monthly_encounters$Anderson == 1), ]
+monthly_encounters <- select(enc, enc_date, Wheeland)
+monthly_encounters <- monthly_encounters[which(monthly_encounters$Wheeland == 1), ]
 head(monthly_encounters)
 colnames(monthly_encounters)[2] <- 'encounters'
 head(monthly_encounters)
@@ -2532,6 +2546,7 @@ monthly_encounters
 
 ########################################  No Service  #########################################
 
+# Approached for Assessment
 enc$no_service[(is.na(enc$offer_outcome_risks) | enc$offer_outcome_risks == '') &
                  (is.na(enc$offer_outcome_peer) | enc$offer_outcome_peer == '') &
                  (is.na(enc$offer_outcome_hiv) | enc$offer_outcome_hiv == '') &
@@ -2572,7 +2587,7 @@ monthly_no_service
 
 # Approached for Assessment
 table(enc$counselor_risk_start, enc$offer_outcome_risks)
-enc$approach_assessment[(enc$counselor_risk_start == 'zandk5le') &
+enc$approach_assessment[(enc$counselor_risk_start == 'zwhek8tl') &
                           (enc$offer_outcome_risks == 0 | enc$offer_outcome_risks == 1 |
                              enc$offer_outcome_risks == 2)] <- 1
 table(enc$approach_assessment)
@@ -2607,7 +2622,7 @@ monthly_assessments
 
 # Declined
 table(enc$counselor_risk_start, enc$offer_outcome_risks)
-enc$assessments_declined[(enc$counselor_risk_start == 'zandk5le') &
+enc$assessments_declined[(enc$counselor_risk_start == 'zwhek8tl') &
                            enc$offer_outcome_risks == 0] <- 1
 table(enc$assessments_declined)
 
@@ -2641,7 +2656,7 @@ monthly_assessments_declined
 
 # Prevented
 table(enc$counselor_risk_start, enc$offer_outcome_risks)
-enc$assessments_prevented[(enc$counselor_risk_start == 'zandk5le') &
+enc$assessments_prevented[(enc$counselor_risk_start == 'zwhek8tl') &
                             enc$offer_outcome_risks == 2] <- 1
 table(enc$assessments_prevented)
 
@@ -2675,7 +2690,7 @@ monthly_assessments_prevented
 
 # Assessed
 table(enc$counselor_risk_start, enc$offer_outcome_risks)
-enc$assessments[(enc$counselor_risk_start == 'zandk5le') &
+enc$assessments[(enc$counselor_risk_start == 'zwhek8tl') &
                   enc$offer_outcome_risks == 1] <- 1
 table(enc$assessments)
 
@@ -3310,7 +3325,7 @@ monthly_prep # metrics of PrEP assessments, eligible screens
 ########################################  HIV Testing  ########################################
 
 table(enc$ctr_calc)
-enc$ctr_tests[enc$ctr_calc == 1 & enc$counselor_hiv_start == 'zandk5le'] <- 1
+enc$ctr_tests[enc$ctr_calc == 1 & enc$counselor_hiv_start == 'zwhek8tl'] <- 1
 ctr_tests <- enc[which(enc$ctr_tests == 1), ]
 ctr_tests <- nrow(ctr_tests)
 ctr_tests
@@ -3344,8 +3359,8 @@ ctr_new_positive_percent
 
 
 table(enc$ehe_calc)
-enc$ehe_tests[enc$ehe_calc == 1 & enc$counselor_hiv_start == 'zandk5le'] <- 1
-ehe_tests <- enc[which(enc$ehe_calc == 1 & enc$counselor_hiv_start == 'zandk5le'), ]
+enc$ehe_tests[enc$ehe_calc == 1 & enc$counselor_hiv_start == 'zwhek8tl'] <- 1
+ehe_tests <- enc[which(enc$ehe_calc == 1 & enc$counselor_hiv_start == 'zwhek8tl'), ]
 ehe_tests <- nrow(ehe_tests)
 ehe_tests
 
@@ -3440,7 +3455,7 @@ monthly_hiv_tests # metrics of HIV Testing
 
 
 
-enc$hiv_false_positive[enc$counselor_hiv_start == 'zandk5le' &
+enc$hiv_false_positive[enc$counselor_hiv_start == 'zwhek8tl' &
                          ((enc$hiv_result1 == 1 | enc$hiv_result1 == 2 |
                              enc$hiv_result2 == 1 | enc$hiv_result2 == 2 |
                              enc$hiv_result3 == 1 | enc$hiv_result3 == 2 |
@@ -3459,7 +3474,7 @@ hiv_false_positive_percent
 
 
 
-enc$hiv_indeterminate[enc$counselor_hiv_start == 'zandk5le' & enc$final_test_status_hiv == 2] <- 1
+enc$hiv_indeterminate[enc$counselor_hiv_start == 'zwhek8tl' & enc$final_test_status_hiv == 2] <- 1
 table(enc$hiv_indeterminate)
 hiv_indeterminate <- enc[which(enc$hiv_indeterminate == 1), ]
 dim(hiv_indeterminate)
@@ -3489,7 +3504,7 @@ ehe_positivity_rate[is.na(ehe_positivity_rate)] <- '0.0%'
 
 # HCV Rapid Testing
 ## based on fingerstick sample type
-enc$hcv_rapid_test[enc$counselor_hcv_start == 'zandk5le' &
+enc$hcv_rapid_test[enc$counselor_hcv_start == 'zwhek8tl' &
                      (enc$sample_type_hcv1 == 5 |
                         enc$sample_type_hcv2 == 5 |
                         enc$sample_type_hcv3 == 5 |
@@ -3562,7 +3577,7 @@ hcv_rapid_positivity_rate
 
 ###############  Linkage Cases  ###############
 
-enc$ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                 (enc$ltc_services___1 == 1 |
                    enc$ltc_services___2 == 1 |
                    enc$ltc_services___3 == 1 |
@@ -3602,7 +3617,7 @@ monthly_ltc_cases
 
 ###############  HIV Linkage  ###############
 
-enc$hiv_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$hiv_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                     enc$ltc_services___1 == 1] <- 1
 table(enc$hiv_ltc_cases)
 hiv_ltc_cases <- enc[which(enc$hiv_ltc_cases == 1), ]
@@ -4196,7 +4211,7 @@ hiv_not_linked_other_percent
 
 ###############  HCV Linkage  ###############
 
-enc$hcv_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$hcv_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                     enc$ltc_services___2 == 1] <- 1
 table(enc$hcv_ltc_cases)
 hcv_ltc_cases <- enc[which(enc$hcv_ltc_cases == 1), ]
@@ -4788,7 +4803,7 @@ hcv_not_linked_other_percent
 
 ###############  SUD Linkage  ###############
 
-enc$sud_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$sud_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                     enc$ltc_services___3 == 1] <- 1
 table(enc$sud_ltc_cases)
 sud_ltc_cases <- enc[which(enc$sud_ltc_cases == 1), ]
@@ -5171,7 +5186,7 @@ sud_not_linked_other_percent
 
 ###############  HT Linkage  ###############
 
-enc$ht_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$ht_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                    enc$additional_services___9 == 1] <- 1
 table(enc$ht_ltc_cases)
 ht_ltc_cases <- enc[which(enc$ht_ltc_cases == 1), ]
@@ -5551,7 +5566,7 @@ ht_not_linked_other_percent
 
 ###############  mh Linkage  ###############
 
-enc$mh_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$mh_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                    enc$additional_services___1 == 1] <- 1
 table(enc$mh_ltc_cases)
 mh_ltc_cases <- enc[which(enc$mh_ltc_cases == 1), ]
@@ -5932,7 +5947,7 @@ mh_not_linked_other_percent
 
 ###############  housing Linkage  ###############
 
-enc$housing_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$housing_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                         enc$additional_services___2 == 1] <- 1
 table(enc$housing_ltc_cases)
 housing_ltc_cases <- enc[which(enc$housing_ltc_cases == 1), ]
@@ -6313,7 +6328,7 @@ housing_not_linked_other_percent
 
 ###############  prep Linkage  ###############
 
-enc$prep_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$prep_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                      (enc$ltc_services___5 == 1 |
                         enc$additional_services___3 == 1)] <- 1
 table(enc$prep_ltc_cases)
@@ -6697,7 +6712,7 @@ prep_not_linked_other_percent
 
 ###############  sti Linkage  ###############
 
-enc$sti_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$sti_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                     enc$additional_services___8 == 1] <- 1
 table(enc$sti_ltc_cases)
 sti_ltc_cases <- enc[which(enc$sti_ltc_cases == 1), ]
@@ -7080,7 +7095,7 @@ sti_not_linked_other_percent
 
 ###############  food Linkage  ###############
 
-enc$food_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$food_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                      enc$additional_services___4 == 1] <- 1
 table(enc$food_ltc_cases)
 food_ltc_cases <- enc[which(enc$food_ltc_cases == 1), ]
@@ -7459,7 +7474,7 @@ food_not_linked_other_percent
 
 ###############  financial Linkage  ###############
 
-enc$financial_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$financial_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                           enc$additional_services___5 == 1] <- 1
 table(enc$financial_ltc_cases)
 financial_ltc_cases <- enc[which(enc$financial_ltc_cases == 1), ]
@@ -7840,7 +7855,7 @@ financial_not_linked_other_percent
 
 ###############  personabuse Linkage  ###############
 
-enc$personabuse_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$personabuse_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                             enc$additional_services___6 == 1] <- 1
 table(enc$personabuse_ltc_cases)
 personabuse_ltc_cases <- enc[which(enc$personabuse_ltc_cases == 1), ]
@@ -8221,7 +8236,7 @@ personabuse_not_linked_other_percent
 
 ###############  general Linkage  ###############
 
-enc$general_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$general_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                         enc$additional_services___7 == 1] <- 1
 table(enc$general_ltc_cases)
 general_ltc_cases <- enc[which(enc$general_ltc_cases == 1), ]
@@ -8602,7 +8617,7 @@ general_not_linked_other_percent
 
 ###############  other Linkage  ###############
 
-enc$other_ltc_cases[enc$ltc_coordinator_per_case___70 == 1 &
+enc$other_ltc_cases[enc$ltc_coordinator_per_case___85 == 1 &
                       enc$additional_services___0 == 1] <- 1
 table(enc$other_ltc_cases)
 other_ltc_cases <- enc[which(enc$other_ltc_cases == 1), ]
@@ -10390,10 +10405,10 @@ monthly_hcv_tests
 
 :::{#hero-heading}
 
-This metrics report shows data for encounter information for **Katie Anderson**. Katie's start and end date with EIP are shown below, however, any data contained within this report covers clinical information captured in the EIP Database since **January 1st, 2023**. The metrics in this report describe specific encounter information and the services and/or referrals that were provided to patients/clients.
+This metrics report shows data for encounter information for **Kirsten Wheeland**. Kirsten's start and end date with EIP are shown below, however, any data contained within this report covers clinical information captured in the EIP Database since **January 1st, 2023**. The metrics in this report describe specific encounter information and the services and/or referrals that were provided to patients/clients.
 
-- **Start date:** *4/1/2024*
-- **End date:** *11/1/2024*
+- **Start date:** *7/12/2024*
+- **End date:**
 
 Until a unique patient identifier is created for patients seen by EIP, matching unique patients across multiple years of encounters is difficult. Therefore, patient demographic and population information will refer only to the number of encounters, not the unique number of patients. This part of the report is still in development.
 
@@ -10408,7 +10423,7 @@ The remainder of this metrics report is all encounter-based information. Since s
 
 - **Staff indication:** *There are background variables on each page in the EIP Database that captures the REDCap username of the individual completing the form. If you created any of the forms for that encounter within the EIP Database, or if your name is selected as the "EIP Counselor" on the Encounter Checklist page, then you are attached to that record in some capacity and noted in these numbers. If you work as a peer and your name is selected on the "Peer Support" form, that also indicates that encounter as one you were involved with in some way, and thus counted here. If you work as a linkage coordinator and selected as linkage staff working the case on the Linkage to Care form, then that encounter is also counted in these numbers.*
 
-Katie has had a total of **`r encounters` encounters** entered into the EIP Database since January 1st, 2023. A summary table of these encounters and what they consisted of are shown below.
+Kirsten has had a total of **`r encounters` encounters** entered into the EIP Database since January 1st, 2023. A summary table of these encounters and what they consisted of are shown below.
 
 
 <br>
@@ -10439,7 +10454,7 @@ monthly_metrics_table %>%
 ```
 <br>
 
-The graph below shows the total number of encounters Katie has had during each month within the reporting period. Also, the total number of each service provided are shown by the trend lines, which allows you to see trends over time. The definitions for how each of these numbers are stratified is described below the graph. This plot is dynamic, meaning you can select and deselect each particular metric by clicking the text in the legend on the right to focus on particular services provided. The plot also has the ability to zoom in on particular time frames by dragging the pointer to select the desired timeframe, and you can also scroll through timepoints using the slider below the x-axis. You can reset the graph by double-clicking within the plot. As mentioned above, not all staff offer or perform these services, so you can deselect the ones not within Katie's role for a more tailored focus of tasks. This is a visual representation of the data shown in the complete summary metrics table above.
+The graph below shows the total number of encounters Kirsten has had during each month within the reporting period. Also, the total number of each service provided are shown by the trend lines, which allows you to see trends over time. The definitions for how each of these numbers are stratified is described below the graph. This plot is dynamic, meaning you can select and deselect each particular metric by clicking the text in the legend on the right to focus on particular services provided. The plot also has the ability to zoom in on particular time frames by dragging the pointer to select the desired timeframe, and you can also scroll through timepoints using the slider below the x-axis. You can reset the graph by double-clicking within the plot. As mentioned above, not all staff offer or perform these services, so you can deselect the ones not within Kirsten's role for a more tailored focus of tasks. This is a visual representation of the data shown in the complete summary metrics table above.
 
 <br>
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -10467,7 +10482,7 @@ metrics_plot <- plot_ly(monthly_metrics , x = ~Date, y = ~encounters, type = 'ba
             name = 'LTC Cases', line = list(color = '#AB82FF'), marker = list(color = '#AB82FF'))
 
 metrics_plot <- metrics_plot %>%
-  layout(title = 'Anderson Monthly Encounters & Services',
+  layout(title = 'Wheeland Monthly Encounters & Services',
          #xaxis = list(rangeslider = list(type = "date")),
          yaxis = list(title = "Total")) %>%
   config(displayModeBar = FALSE)
@@ -10491,7 +10506,7 @@ monthly_metrics$Date <- format(monthly_metrics$Date, "%m/%Y")
 - **LTC Cases:** *A Linkage to Care case is considered opened when one of the linkage services are selected on the start of the Linkage to Care form in the database. The number counted here are the total number of cases initiated during the encounter, not necessarily those open at that time (for example, a case still open from a prior month).*
 
 
-The table shown below shows the average monthly numbers for encounters and each type of service noted above. This is the average number of encounters/services based on the time frame shown in the graph above, which is when Katie started documenting encounters/services with EIP.
+The table shown below shows the average monthly numbers for encounters and each type of service noted above. This is the average number of encounters/services based on the time frame shown in the graph above, which is when Kirsten started documenting encounters/services with EIP.
 
 <br>
 ```{r, echo=FALSE}
@@ -10516,7 +10531,7 @@ monthly_avg_metrics_tbl %>%
 
 ## Assessments
 
-Assessment data contains a lot of important information regarding patient risk and needs, and help determine whether or not the appropriate information and referrals are being provided during the encounter. The assessment data is analyzed in this section and broken down by specific questions to determine when certain screening tools are utilized to determine patient needs. The assessment contains data regarding substance use disorder (**SUD**), mental health (**MH**), and pre-exposure prophylaxis (**PrEP**), all examined below. Katie has conducted a total of **`r assessments` assessments**, which means that `r assessments_percent` of Katie's encounters consisted of an assessment (*`r assessments`/`r encounters`*).
+Assessment data contains a lot of important information regarding patient risk and needs, and help determine whether or not the appropriate information and referrals are being provided during the encounter. The assessment data is analyzed in this section and broken down by specific questions to determine when certain screening tools are utilized to determine patient needs. The assessment contains data regarding substance use disorder (**SUD**), mental health (**MH**), and pre-exposure prophylaxis (**PrEP**), all examined below. Kirsten has conducted a total of **`r assessments` assessments**, which means that `r assessments_percent` of Kirsten's encounters consisted of an assessment (*`r assessments`/`r encounters`*).
 
 A summary of the general monthly trends of screening for each of these conditions is shown in the plot below. The description of the screening tools, as well as the number of screens and positivity per month are discussed within this section as well.
 
@@ -10538,7 +10553,7 @@ assessment_plot <- plot_ly(assessment_metrics , x = ~Date, y = ~assessments, typ
             name = 'PrEP Eligible', line = list(color = 'olivedrab'), marker = list(color = 'olivedrab'))
 
 assessment_plot <- assessment_plot %>%
-  layout(title = 'Anderson Monthly Assessment Trends',
+  layout(title = 'Wheeland Monthly Assessment Trends',
          #xaxis = list(rangeslider = list(type = "date")),
          yaxis = list(title = "Total")) %>%
   config(displayModeBar = FALSE)
@@ -10549,7 +10564,7 @@ assessment_plot
 
 ### Substance Use Disorder (SUD)
 
-SUD disorder measures include the Alcohol Use Disorders Identification Test (AUDIT-C) for alcohol abuse as well as the National Institute on Drug Abuse (NIDA) Modified Alcohol, Smoking, and Substance Involvement Screening Test (ASSIST), or the NM-ASSIST for all forms of substance abuse disorder. If any of the questions within this scale are answered by the patient during the encounter, then they are considered **screened for SUD**. There are scores associated with these measures, and those are calculated within the EIP Database in the background as data is entered. If the individual meets criteria on either the AUDIT-C or the NM-ASSIST, then they are **considered positive for a SUD**. The total number of assessments completed by Katie during this reporting period is **`r assessments`**, with **`r sud_assessed` assessments** having been screened for a SUD (*`r sud_assessed_percent`, `r sud_assessed`/`r assessments`*). For all assessments where the individual was screened for a SUD, there were a total of **`r sud_pos`** that were positive for SUD (*`r sud_pos_percent`, `r sud_pos`/`r sud_assessed`*).
+SUD disorder measures include the Alcohol Use Disorders Identification Test (AUDIT-C) for alcohol abuse as well as the National Institute on Drug Abuse (NIDA) Modified Alcohol, Smoking, and Substance Involvement Screening Test (ASSIST), or the NM-ASSIST for all forms of substance abuse disorder. If any of the questions within this scale are answered by the patient during the encounter, then they are considered **screened for SUD**. There are scores associated with these measures, and those are calculated within the EIP Database in the background as data is entered. If the individual meets criteria on either the AUDIT-C or the NM-ASSIST, then they are **considered positive for a SUD**. The total number of assessments completed by Kirsten during this reporting period is **`r assessments`**, with **`r sud_assessed` assessments** having been screened for a SUD (*`r sud_assessed_percent`, `r sud_assessed`/`r assessments`*). For all assessments where the individual was screened for a SUD, there were a total of **`r sud_pos`** that were positive for SUD (*`r sud_pos_percent`, `r sud_pos`/`r sud_assessed`*).
 
 <br>
 ```{r, echo=FALSE}
@@ -10639,7 +10654,7 @@ monthly_mh_cond_table %>%
 
 ### Pre-Exposure Prophylaxis (PrEP)
 
-PrEP eligibility is covered by several different questions scattered within the assessment that determine whether an individual may be at risk for contracting HIV and could benefit from a PrEP assessment. The total number of assessments Katie conducted where the individual answered at least one of the questions regarding their risk of contracting HIV, and therefore their potential need for PrEP, was **`r prep_risk_assessed` assessments** (*`r prep_risk_assessed_percent` of all those assessed, `r prep_risk_assessed`/`r assessments`*). The total number of assessments where the individual was considered at risk and therefore eligible for PrEP was **`r prep_eligible` assessments** (*`r prep_eligible_percent` of all those assessed for their HIV risk, `r prep_eligible`/`r prep_risk_assessed`*). Once an individual is determined to be eligible for PrEP based on their risks for contracting HIV, our staff is then instructed to discuss the individual's knowledge of PrEP and several other factors, providing education and a referral for PrEP initiation and linkage to a provider. The PrEP assessment is defined as being conducted as long as at least one of the questions within this individualized assessment is answered. The total number of assessments where the individual was eligible for PrEP based on their risks *and* received this PrEP assessment was **`r prep_assessed` assessments** (*`r prep_assessed_percent` of all those eligible for PrEP, `r prep_assessed`/`r prep_eligible`*).
+PrEP eligibility is covered by several different questions scattered within the assessment that determine whether an individual may be at risk for contracting HIV and could benefit from a PrEP assessment. The total number of assessments Kirsten conducted where the individual answered at least one of the questions regarding their risk of contracting HIV, and therefore their potential need for PrEP, was **`r prep_risk_assessed` assessments** (*`r prep_risk_assessed_percent` of all those assessed, `r prep_risk_assessed`/`r assessments`*). The total number of assessments where the individual was considered at risk and therefore eligible for PrEP was **`r prep_eligible` assessments** (*`r prep_eligible_percent` of all those assessed for their HIV risk, `r prep_eligible`/`r prep_risk_assessed`*). Once an individual is determined to be eligible for PrEP based on their risks for contracting HIV, our staff is then instructed to discuss the individual's knowledge of PrEP and several other factors, providing education and a referral for PrEP initiation and linkage to a provider. The PrEP assessment is defined as being conducted as long as at least one of the questions within this individualized assessment is answered. The total number of assessments where the individual was eligible for PrEP based on their risks *and* received this PrEP assessment was **`r prep_assessed` assessments** (*`r prep_assessed_percent` of all those eligible for PrEP, `r prep_assessed`/`r prep_eligible`*).
 
 <br>
 ```{r, echo=FALSE}
@@ -10683,7 +10698,7 @@ An individual is considered at risk for contracting HIV and eligible for PrEP ba
 
 ## HIV Testing
 
-The total number of HIV tests, including both CTR and EHE tests, are shown in the plot below. These only include rapid-based HIV tests that are performed by Katie, and does not include any lab tests that are initiated by medical staff prompted by EIP, or lab draws performed in the community (*unless it is the result of an initial rapid test*). The plot has the ability to select only CTR/EHE tests, and has the ability to zoom in on particular time frames by clicking and dragging. You can reset the graph by double-clicking within the plot.
+The total number of HIV tests, including both CTR and EHE tests, are shown in the plot below. These only include rapid-based HIV tests that are performed by Kirsten, and does not include any lab tests that are initiated by medical staff prompted by EIP, or lab draws performed in the community (*unless it is the result of an initial rapid test*). The plot has the ability to select only CTR/EHE tests, and has the ability to zoom in on particular time frames by clicking and dragging. You can reset the graph by double-clicking within the plot.
 
 <br>
 <br>
@@ -10698,7 +10713,7 @@ monthly_hiv_testing_plot <- plot_ly(data = monthly_hiv_tests, x = ~Date, y = ~ct
   add_trace(y = ~ehe_tests, name = 'EHE Tests',
             text = ~ehe_tests, textposition = 'auto',
             marker = list(color = 'darkgreen')) %>%
-  layout(title = 'Anderson Monthly Rapid HIV Testing',
+  layout(title = 'Wheeland Monthly Rapid HIV Testing',
          #xaxis = list(rangeslider = list(type = "date")),
          yaxis = list(title = 'Total HIV Tests'), barmode = 'stack') %>%
   config(displayModeBar = FALSE)
@@ -10707,9 +10722,9 @@ monthly_hiv_testing_plot
 ```
 <br>
 
-Out of the total number of HIV tests that Katie has conducted (**n = `r total_hiv_tests`**), there have been [**`r total_hiv_positive` positive tests**]{style="color: red;"} (*`r total_hiv_positive_percent` of all HIV tests, `r total_hiv_positive`/`r total_hiv_tests`*). There have been a total of `r ctr_positive` positive CTR tests (*`r ctr_positive_percent` of all CTR tests, `r ctr_positive`/`r ctr_tests`*) and a total of `r ehe_positive` positive EHE tests (*`r ehe_positive_percent` of all EHE tests, `r ehe_positive`/`r ehe_tests`*).
+Out of the total number of HIV tests that Kirsten has conducted (**n = `r total_hiv_tests`**), there have been [**`r total_hiv_positive` positive tests**]{style="color: red;"} (*`r total_hiv_positive_percent` of all HIV tests, `r total_hiv_positive`/`r total_hiv_tests`*). There have been a total of `r ctr_positive` positive CTR tests (*`r ctr_positive_percent` of all CTR tests, `r ctr_positive`/`r ctr_tests`*) and a total of `r ehe_positive` positive EHE tests (*`r ehe_positive_percent` of all EHE tests, `r ehe_positive`/`r ehe_tests`*).
 
-For the individuals positively identified through testing, Katie has identified a total of [**`r total_hiv_new_positive` new positive individuals**]{style="color: red;"} (*`r total_hiv_new_positive_percent` of all positive HIV tests, `r total_hiv_new_positive`/`r total_hiv_positive`*). This number is comprised of `r ctr_new_positive` new positives from CTR testing (*`r ctr_new_positive_percent` percent of all CTR positive tests, `r ctr_new_positive`/`r ctr_positive`*) and `r ehe_new_positive` new positives from EHE testing (*`r ehe_new_positive_percent` percent of all EHE positive tests, `r ehe_new_positive`/`r ehe_positive`*). Therefore, the overall positivity rate for Katie's HIV testing is [**`r hiv_positivity_rate`**]{style="color: red;"} (*`r total_hiv_new_positive`/`r total_hiv_tests`*), and for each program specifically is as follows: `r ctr_positivity_rate` for CTR (*`r ctr_new_positive`/`r ctr_tests`*) and `r ehe_positivity_rate` for EHE (*`r ehe_new_positive`/`r ehe_tests`*).
+For the individuals positively identified through testing, Kirsten has identified a total of [**`r total_hiv_new_positive` new positive individuals**]{style="color: red;"} (*`r total_hiv_new_positive_percent` of all positive HIV tests, `r total_hiv_new_positive`/`r total_hiv_positive`*). This number is comprised of `r ctr_new_positive` new positives from CTR testing (*`r ctr_new_positive_percent` percent of all CTR positive tests, `r ctr_new_positive`/`r ctr_positive`*) and `r ehe_new_positive` new positives from EHE testing (*`r ehe_new_positive_percent` percent of all EHE positive tests, `r ehe_new_positive`/`r ehe_positive`*). Therefore, the overall positivity rate for Kirsten's HIV testing is [**`r hiv_positivity_rate`**]{style="color: red;"} (*`r total_hiv_new_positive`/`r total_hiv_tests`*), and for each program specifically is as follows: `r ctr_positivity_rate` for CTR (*`r ctr_new_positive`/`r ctr_tests`*) and `r ehe_positivity_rate` for EHE (*`r ehe_new_positive`/`r ehe_tests`*).
 
 <br>
 ```{r, echo=FALSE}
@@ -10730,14 +10745,14 @@ hiv_pos_tbl %>%
 <br>
 <br>
 
-Additionally, false positive tests occur when the individual has an initial reactive/positive test, but additional testing shows that their final status is actually a negative result. Katie has had a total of **`r hiv_false_positive` tests that have resulted in a false positive** (*`r hiv_false_positive_percent` of all HIV tests, `r hiv_false_positive`/`r total_hiv_tests`*), or those that had an initial reactive result but a final negative status.
+Additionally, false positive tests occur when the individual has an initial reactive/positive test, but additional testing shows that their final status is actually a negative result. Kirsten has had a total of **`r hiv_false_positive` tests that have resulted in a false positive** (*`r hiv_false_positive_percent` of all HIV tests, `r hiv_false_positive`/`r total_hiv_tests`*), or those that had an initial reactive result but a final negative status.
 
-There are also instances when the initial test may be reactive, but the confirmatory test is negative, leading to a discordant result that requires additional testing (*HIV RNA testing*). Until that RNA testing is completed, this is known as an Indeterminate result. Katie currently has a total of **`r hiv_indeterminate` tests that are indeterminate and in need of RNA testing** (*`r hiv_indeterminate_percent` of all HIV tests, `r hiv_indeterminate`/`r total_hiv_tests`*). This is counted when the final test status is noted as Indeterminate. When the RNA testing confirms the final result, the final status is updated. Therefore, this only counts those that are currently marked as Indeterminate and have not had the follow-up RNA testing necessary to know the individual's final HIV status.
+There are also instances when the initial test may be reactive, but the confirmatory test is negative, leading to a discordant result that requires additional testing (*HIV RNA testing*). Until that RNA testing is completed, this is known as an Indeterminate result. Kirsten currently has a total of **`r hiv_indeterminate` tests that are indeterminate and in need of RNA testing** (*`r hiv_indeterminate_percent` of all HIV tests, `r hiv_indeterminate`/`r total_hiv_tests`*). This is counted when the final test status is noted as Indeterminate. When the RNA testing confirms the final result, the final status is updated. Therefore, this only counts those that are currently marked as Indeterminate and have not had the follow-up RNA testing necessary to know the individual's final HIV status.
 
 
 ## Hepatitis C Testing
 
-The total number of Hepatitis C rapid tests conducted by Katie per month are shown in the plot below. This only considers the rapid tests initiated by our staff, not lab-initiated tests or blood draws (*unless it is the result of an initial rapid test*). The plot has the ability to zoom in on particular time frames by clicking and dragging. You can reset the graph by double-clicking within the plot.
+The total number of Hepatitis C rapid tests conducted by Kirsten per month are shown in the plot below. This only considers the rapid tests initiated by our staff, not lab-initiated tests or blood draws (*unless it is the result of an initial rapid test*). The plot has the ability to zoom in on particular time frames by clicking and dragging. You can reset the graph by double-clicking within the plot.
 
 <br>
 ```{r, echo=FALSE}
@@ -10748,7 +10763,7 @@ monthly_hcv_tests <- monthly_hcv_tests[order(monthly_hcv_tests$Date),]
 monthly_hcv_testing_plot <- plot_ly(data = monthly_hcv_tests, x = ~Date, y = ~hcv_tests, type = 'bar', name = 'HCV Tests',
                                     text = ~hcv_tests, textposition = 'auto',
                                     marker = list(color = 'gold')) %>%
-  layout(title = 'Anderson Monthly Hepatitis C Testing',
+  layout(title = 'Wheeland Monthly Hepatitis C Testing',
          #xaxis = list(rangeslider = list(type = "date")),
          yaxis = list(title = 'Total HCV Tests',
                       dtick = 1,
@@ -10762,7 +10777,7 @@ monthly_hcv_testing_plot
 <br>
 <br>
 
-Out of the total number of rapid HCV tests conducted by Katie (**n = `r hcv_rapid_tests`**), there were a total of [**`r hcv_rapid_positive` reactive/positive HCV results**]{style="color: orange;"} (*`r hcv_rapid_positive_percent` of all rapid HCV tests, `r hcv_rapid_positive`/`r hcv_rapid_tests`*). The total number of newly-identified positives from these tests was **`r hcv_rapid_new_positive` new HCV positive individuals** (*`r hcv_rapid_new_positive_percent` of all HCV positive HCV tests, `r hcv_rapid_new_positive`/`r hcv_rapid_positive`*). Therefore, the overall positivity rate for Katie's Hepatitis C testing is [**`r hcv_rapid_positivity_rate`**]{style="color: orange;"} (*`r hcv_rapid_new_positive`/`r hcv_rapid_tests`*).
+Out of the total number of rapid HCV tests conducted by Kirsten (**n = `r hcv_rapid_tests`**), there were a total of [**`r hcv_rapid_positive` reactive/positive HCV results**]{style="color: orange;"} (*`r hcv_rapid_positive_percent` of all rapid HCV tests, `r hcv_rapid_positive`/`r hcv_rapid_tests`*). The total number of newly-identified positives from these tests was **`r hcv_rapid_new_positive` new HCV positive individuals** (*`r hcv_rapid_new_positive_percent` of all HCV positive HCV tests, `r hcv_rapid_new_positive`/`r hcv_rapid_positive`*). Therefore, the overall positivity rate for Kirsten's Hepatitis C testing is [**`r hcv_rapid_positivity_rate`**]{style="color: orange;"} (*`r hcv_rapid_new_positive`/`r hcv_rapid_tests`*).
 
 <br>
 ```{r, echo=FALSE}
@@ -10823,7 +10838,7 @@ Referrals are documented in the EIP database in three different ways at the enco
 
 There are a few referrals that are only documented at the encounter level, and do not have any component for documentation on the linkage referral list. Those referral types are indicated within the table to the left as well as the figure below, and listed here: *primary care (PCP), ED social work (SW), and Peer services*.
 
-The table to the left highlights the total number of referrals provided during the initial encounter as well as the total number of referrals provided during the linkage follow-up. These referrals do not necessarily mean that Katie is the one who made the referral, since referrals can be made at any point during the encounter/linkage process and by anyone involved. *For example, one staff member may be responsible for one portion of the encounter/linkage, and provided referrals, whereas another staff member may be responsible for another part of the encounter/linkage and provided the referral*.
+The table to the left highlights the total number of referrals provided during the initial encounter as well as the total number of referrals provided during the linkage follow-up. These referrals do not necessarily mean that Kirsten is the one who made the referral, since referrals can be made at any point during the encounter/linkage process and by anyone involved. *For example, one staff member may be responsible for one portion of the encounter/linkage, and provided referrals, whereas another staff member may be responsible for another part of the encounter/linkage and provided the referral*.
 
 The figure below shows the total number of referrals that were provided by each service. This includes any referrals provided during either the initial encounter or the linkage follow-up. The figure is sorted by most total referrals provided to the least. A service referral is only counted once here as long as it was made during either the encounter or linkage process. *For example, if an HIV referral was made bother during the encounter and linkage process, it is only counted once for that encounter*.
 
@@ -10848,9 +10863,9 @@ referral_plot
 
 ## Linkage to Care
 
-Linkage to care (LTC) cases can be initiated for any number of reasons, including (*but not limited to*) self-report of need from the individual, identification of need based on EIP assessment and/or testing information, referral from medical staff outside of EIP, community referrals, or identification and/or referrals based on screening and testing through typical ED/hospital care. Some of our linkage staff are more specialized in specific types of LTC services, while some are cross-trained and can work multiple LTC services. Therefore, this section will cover all aspects of EIP LTC services, so if Katie does not cover some aspects of linkage, that area will still be represented here but will not show any data, or limited data based on the overall encounter and linkage information maintained within the record. This section will first go over the summary of cases worked by Katie, and general numbers of each linkage service and outcome, then will go into greater examination of each type of LTC service.
+Linkage to care (LTC) cases can be initiated for any number of reasons, including (*but not limited to*) self-report of need from the individual, identification of need based on EIP assessment and/or testing information, referral from medical staff outside of EIP, community referrals, or identification and/or referrals based on screening and testing through typical ED/hospital care. Some of our linkage staff are more specialized in specific types of LTC services, while some are cross-trained and can work multiple LTC services. Therefore, this section will cover all aspects of EIP LTC services, so if Kirsten does not cover some aspects of linkage, that area will still be represented here but will not show any data, or limited data based on the overall encounter and linkage information maintained within the record. This section will first go over the summary of cases worked by Kirsten, and general numbers of each linkage service and outcome, then will go into greater examination of each type of LTC service.
 
-The total number of LTC cases that Katie has been involved with is **`r total_ltc_cases` LTC cases**. Our linkage staff is trained to open a linkage case any time need is identified, and then we are able to know the outcome of the case based on their documention within that LTC case. This way, we are able to understand the full scope of need for those we encounter, and determine what happens as we try to engage the patient after their ED visit. We use the term "eligible" cases for those that our linkage team are realistically able to follow-up with and at least have some ability to engage with the individual after leaving the ED. Cases that are designated as "ineligible" include the following situations: the patient is already linked to care, they are deceased, they are incarcerated, they decline linkage services, or there is no contact information for which to follow-up. Also, ongoing linkage cases mean that the individual already has a current linkage case open, so rather than working multiple cases or counting the linkage case twice, we exclude these situations due to ongoing linkage already in process. The total number of Katie's cases that were "eligible" were **`r total_eligible_ltc` eligible LTC cases** (*`r total_eligible_ltc_percent` of all LTC cases, `r total_eligible_ltc`/`r total_ltc_cases`*). Katie currently has an open case load of **`r total_in_progress_ltc` open cases** (*`r total_in_progress_ltc_percent` of all eligible LTC cases, `r total_in_progress_ltc`/`r total_eligible_ltc`*), with **`r total_in_progress_90days` open LTC cases** being open longer than 90 days (*`r total_in_progress_90days_percent` of all open LTC cases, `r total_in_progress_90days`/`r total_in_progress_ltc`*). Therefore, Katie has successfully **closed `r total_closed_ltc` LTC cases** (*`r total_closed_ltc_percent` of all eligible LTC cases, `r total_closed_ltc`/`r total_eligible_ltc`*), with a total of **`r total_linked` cases successfully linked to care** for their particular service (*`r total_linked_percent` of all closed LTC cases, `r total_linked`/`r total_closed_ltc`*). A summary table of these total LTC numbers are shown below. For each particular type of LTC service, you can review each tab below the table.
+The total number of LTC cases that Kirsten has been involved with is **`r total_ltc_cases` LTC cases**. Our linkage staff is trained to open a linkage case any time need is identified, and then we are able to know the outcome of the case based on their documention within that LTC case. This way, we are able to understand the full scope of need for those we encounter, and determine what happens as we try to engage the patient after their ED visit. We use the term "eligible" cases for those that our linkage team are realistically able to follow-up with and at least have some ability to engage with the individual after leaving the ED. Cases that are designated as "ineligible" include the following situations: the patient is already linked to care, they are deceased, they are incarcerated, they decline linkage services, or there is no contact information for which to follow-up. Also, ongoing linkage cases mean that the individual already has a current linkage case open, so rather than working multiple cases or counting the linkage case twice, we exclude these situations due to ongoing linkage already in process. The total number of Kirsten's cases that were "eligible" were **`r total_eligible_ltc` eligible LTC cases** (*`r total_eligible_ltc_percent` of all LTC cases, `r total_eligible_ltc`/`r total_ltc_cases`*). Kirsten currently has an open case load of **`r total_in_progress_ltc` open cases** (*`r total_in_progress_ltc_percent` of all eligible LTC cases, `r total_in_progress_ltc`/`r total_eligible_ltc`*), with **`r total_in_progress_90days` open LTC cases** being open longer than 90 days (*`r total_in_progress_90days_percent` of all open LTC cases, `r total_in_progress_90days`/`r total_in_progress_ltc`*). Therefore, Kirsten has successfully **closed `r total_closed_ltc` LTC cases** (*`r total_closed_ltc_percent` of all eligible LTC cases, `r total_closed_ltc`/`r total_eligible_ltc`*), with a total of **`r total_linked` cases successfully linked to care** for their particular service (*`r total_linked_percent` of all closed LTC cases, `r total_linked`/`r total_closed_ltc`*). A summary table of these total LTC numbers are shown below. For each particular type of LTC service, you can review each tab below the table.
 
 
 <br>
@@ -10879,13 +10894,13 @@ ltc_summary_tbl %>%
 
 #### HIV
 
-HIV linkage cases are further stratified by those that are cases worked for individuals newly diagnosed versus those that were diagnosed previously. The HIV Linkage Flow Diagram is provided here for Katie's HIV linkage cases.
+HIV linkage cases are further stratified by those that are cases worked for individuals newly diagnosed versus those that were diagnosed previously. The HIV Linkage Flow Diagram is provided here for Kirsten's HIV linkage cases.
 
-Katie has worked on a total of **`r hiv_ltc_cases` HIV linkage cases** (*`r hiv_ltc_cases_percent` of all linkage cases, `r hiv_ltc_cases`/`r ltc_cases`*). Out of all HIV linkage cases, there were a total of `r new_hiv_ltc_cases` for those newly diagnosed with HIV (*`r new_hiv_ltc_cases_percent` of all HIV linkage cases, `r new_hiv_ltc_cases`/`r hiv_ltc_cases`*), and a total of `r prev_hiv_ltc_cases` for those that have been previously diagnosed (*`r prev_hiv_ltc_cases_percent` of all HIV linkage cases, `r prev_hiv_ltc_cases`/`r hiv_ltc_cases`*).
+Kirsten has worked on a total of **`r hiv_ltc_cases` HIV linkage cases** (*`r hiv_ltc_cases_percent` of all linkage cases, `r hiv_ltc_cases`/`r ltc_cases`*). Out of all HIV linkage cases, there were a total of `r new_hiv_ltc_cases` for those newly diagnosed with HIV (*`r new_hiv_ltc_cases_percent` of all HIV linkage cases, `r new_hiv_ltc_cases`/`r hiv_ltc_cases`*), and a total of `r prev_hiv_ltc_cases` for those that have been previously diagnosed (*`r prev_hiv_ltc_cases_percent` of all HIV linkage cases, `r prev_hiv_ltc_cases`/`r hiv_ltc_cases`*).
 
 A total of `r hiv_eligible_ltc` of these cases are "eligible" to be linked to care (*`r hiv_eligible_ltc_percent` of all HIV linkage cases, `r hiv_eligible_ltc`/`r hiv_ltc_cases`*), and the reasons the remaining `r hiv_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Out of those "eligible" to be linked, `r hiv_new_eligible_ltc` were for those newly diagnosed for HIV (*`r hiv_new_eligible_ltc_percent` of all "eligible" HIV linkage cases, `r hiv_new_eligible_ltc`/`r hiv_eligible_ltc`*), and `r hiv_prev_eligible_ltc` were for those previously diagnosed (*`r hiv_prev_eligible_ltc_percent` of all "eligible" HIV linkage cases, `r hiv_prev_eligible_ltc`/`r hiv_eligible_ltc`*). Katie is currently working on `r hiv_in_progress` of these HIV linkage cases (*`r hiv_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r hiv_closed_case` thus far (*`r hiv_closed_case_percent` of all "eligible" HIV linkage cases, `r hiv_closed_case`/`r hiv_eligible_ltc`*). Out of those cases closed, a total of `r hiv_not_linked` were unable to be linked to care (*`r hiv_not_linked_percent` of all closed HIV linkage cases, `r hiv_not_linked`/`r hiv_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Out of those "eligible" to be linked, `r hiv_new_eligible_ltc` were for those newly diagnosed for HIV (*`r hiv_new_eligible_ltc_percent` of all "eligible" HIV linkage cases, `r hiv_new_eligible_ltc`/`r hiv_eligible_ltc`*), and `r hiv_prev_eligible_ltc` were for those previously diagnosed (*`r hiv_prev_eligible_ltc_percent` of all "eligible" HIV linkage cases, `r hiv_prev_eligible_ltc`/`r hiv_eligible_ltc`*). Kirsten is currently working on `r hiv_in_progress` of these HIV linkage cases (*`r hiv_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r hiv_closed_case` thus far (*`r hiv_closed_case_percent` of all "eligible" HIV linkage cases, `r hiv_closed_case`/`r hiv_eligible_ltc`*). Out of those cases closed, a total of `r hiv_not_linked` were unable to be linked to care (*`r hiv_not_linked_percent` of all closed HIV linkage cases, `r hiv_not_linked`/`r hiv_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -11145,18 +11160,18 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r hiv_linked` HIV linkage cases** (*`r hiv_linked_percent` of all closed HIV linkage cases, `r hiv_linked`/`r hiv_closed_case`*). Out of all those cases that were successfully linked to care, `r hiv_new_linked` were for those newly diagnosed with HIV (*`r hiv_new_linked_percent` of all "eligible" HIV linkage cases for newly diagnosed individuals, `r hiv_new_linked`/`r hiv_new_eligible_ltc`*), and `r hiv_prev_linked` were for those that were previously diagnosed (*`r hiv_prev_linked_percent` of all "eligible" HIV linkage cases for previously diagnosed individuals, `r hiv_prev_linked`/`r hiv_prev_eligible_ltc`*).
+Therefore, Kirsten has **successfully linked a total of `r hiv_linked` HIV linkage cases** (*`r hiv_linked_percent` of all closed HIV linkage cases, `r hiv_linked`/`r hiv_closed_case`*). Out of all those cases that were successfully linked to care, `r hiv_new_linked` were for those newly diagnosed with HIV (*`r hiv_new_linked_percent` of all "eligible" HIV linkage cases for newly diagnosed individuals, `r hiv_new_linked`/`r hiv_new_eligible_ltc`*), and `r hiv_prev_linked` were for those that were previously diagnosed (*`r hiv_prev_linked_percent` of all "eligible" HIV linkage cases for previously diagnosed individuals, `r hiv_prev_linked`/`r hiv_prev_eligible_ltc`*).
 
 
 #### HCV
 
-Hepatitis C linkage cases are further stratified by those that are cases worked for individuals newly diagnosed versus those that were diagnosed previously. The HCV Linkage Flow Diagram is provided here for Katie's HCV linkage cases.
+Hepatitis C linkage cases are further stratified by those that are cases worked for individuals newly diagnosed versus those that were diagnosed previously. The HCV Linkage Flow Diagram is provided here for Kirsten's HCV linkage cases.
 
-Katie has worked on a total of **`r hcv_ltc_cases` HCV linkage cases** (*`r hcv_ltc_cases_percent` of all linkage cases, `r hcv_ltc_cases`/`r ltc_cases`*). Out of all HCV linkage cases, there were a total of `r new_hcv_ltc_cases` for those newly diagnosed with HCV (*`r new_hcv_ltc_cases_percent` of all HCV linkage cases, `r new_hcv_ltc_cases`/`r hcv_ltc_cases`*), and a total of `r prev_hcv_ltc_cases` for those that have been previously diagnosed (*`r prev_hcv_ltc_cases_percent` of all HCV linkage cases, `r prev_hcv_ltc_cases`/`r hcv_ltc_cases`*).
+Kirsten has worked on a total of **`r hcv_ltc_cases` HCV linkage cases** (*`r hcv_ltc_cases_percent` of all linkage cases, `r hcv_ltc_cases`/`r ltc_cases`*). Out of all HCV linkage cases, there were a total of `r new_hcv_ltc_cases` for those newly diagnosed with HCV (*`r new_hcv_ltc_cases_percent` of all HCV linkage cases, `r new_hcv_ltc_cases`/`r hcv_ltc_cases`*), and a total of `r prev_hcv_ltc_cases` for those that have been previously diagnosed (*`r prev_hcv_ltc_cases_percent` of all HCV linkage cases, `r prev_hcv_ltc_cases`/`r hcv_ltc_cases`*).
 
 A total of `r hcv_eligible_ltc` of these cases are "eligible" to be linked to care (*`r hcv_eligible_ltc_percent` of all HCV linkage cases, `r hcv_eligible_ltc`/`r hcv_ltc_cases`*), and the reasons the remaining `r hcv_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Out of those "eligible" to be linked, `r hcv_new_eligible_ltc` were for those newly diagnosed for HCV (*`r hcv_new_eligible_ltc_percent` of all "eligible" HCV linkage cases, `r hcv_new_eligible_ltc`/`r hcv_eligible_ltc`*), and `r hcv_prev_eligible_ltc` were for those previously diagnosed (*`r hcv_prev_eligible_ltc_percent` of all "eligible" HCV linkage cases, `r hcv_prev_eligible_ltc`/`r hcv_eligible_ltc`*). Katie is currently working on `r hcv_in_progress` of these HCV linkage cases (*`r hcv_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r hcv_closed_case` thus far (*`r hcv_closed_case_percent` of all "eligible" HCV linkage cases, `r hcv_closed_case`/`r hcv_eligible_ltc`*). Out of those cases closed, a total of `r hcv_not_linked` were unable to be linked to care (*`r hcv_not_linked_percent` of all closed HCV linkage cases, `r hcv_not_linked`/`r hcv_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Out of those "eligible" to be linked, `r hcv_new_eligible_ltc` were for those newly diagnosed for HCV (*`r hcv_new_eligible_ltc_percent` of all "eligible" HCV linkage cases, `r hcv_new_eligible_ltc`/`r hcv_eligible_ltc`*), and `r hcv_prev_eligible_ltc` were for those previously diagnosed (*`r hcv_prev_eligible_ltc_percent` of all "eligible" HCV linkage cases, `r hcv_prev_eligible_ltc`/`r hcv_eligible_ltc`*). Kirsten is currently working on `r hcv_in_progress` of these HCV linkage cases (*`r hcv_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r hcv_closed_case` thus far (*`r hcv_closed_case_percent` of all "eligible" HCV linkage cases, `r hcv_closed_case`/`r hcv_eligible_ltc`*). Out of those cases closed, a total of `r hcv_not_linked` were unable to be linked to care (*`r hcv_not_linked_percent` of all closed HCV linkage cases, `r hcv_not_linked`/`r hcv_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -11416,18 +11431,18 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r hcv_linked` HCV linkage cases** (*`r hcv_linked_percent` of all closed HCV linkage cases, `r hcv_linked`/`r hcv_closed_case`*). Out of all those cases that were successfully linked to care, `r hcv_new_linked` were for those newly diagnosed with HCV (*`r hcv_new_linked_percent` of all "eligible" HCV linkage cases for newly diagnosed individuals, `r hcv_new_linked`/`r hcv_new_eligible_ltc`*), and `r hcv_prev_linked` were for those that were previously diagnosed (*`r hcv_prev_linked_percent` of all "eligible" HCV linkage cases for previously diagnosed individuals, `r hcv_prev_linked`/`r hcv_prev_eligible_ltc`*).
+Therefore, Kirsten has **successfully linked a total of `r hcv_linked` HCV linkage cases** (*`r hcv_linked_percent` of all closed HCV linkage cases, `r hcv_linked`/`r hcv_closed_case`*). Out of all those cases that were successfully linked to care, `r hcv_new_linked` were for those newly diagnosed with HCV (*`r hcv_new_linked_percent` of all "eligible" HCV linkage cases for newly diagnosed individuals, `r hcv_new_linked`/`r hcv_new_eligible_ltc`*), and `r hcv_prev_linked` were for those that were previously diagnosed (*`r hcv_prev_linked_percent` of all "eligible" HCV linkage cases for previously diagnosed individuals, `r hcv_prev_linked`/`r hcv_prev_eligible_ltc`*).
 
 
 #### SUD
 
-The SUD Linkage Flow Diagram is provided here for Katie's SUD linkage cases.
+The SUD Linkage Flow Diagram is provided here for Kirsten's SUD linkage cases.
 
-Katie has worked on a total of **`r sud_ltc_cases` SUD linkage cases** (*`r sud_ltc_cases_percent` of all linkage cases, `r sud_ltc_cases`/`r ltc_cases`*).
+Kirsten has worked on a total of **`r sud_ltc_cases` SUD linkage cases** (*`r sud_ltc_cases_percent` of all linkage cases, `r sud_ltc_cases`/`r ltc_cases`*).
 
 A total of `r sud_eligible_ltc` of these cases are "eligible" to be linked to care (*`r sud_eligible_ltc_percent` of all SUD linkage cases, `r sud_eligible_ltc`/`r sud_ltc_cases`*), and the reasons the remaining `r sud_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Katie is currently working on `r sud_in_progress` of these SUD linkage cases (*`r sud_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r sud_closed_case` thus far (*`r sud_closed_case_percent` of all "eligible" SUD linkage cases, `r sud_closed_case`/`r sud_eligible_ltc`*). Out of those cases closed, a total of `r sud_not_linked` were unable to be linked to care (*`r sud_not_linked_percent` of all closed SUD linkage cases, `r sud_not_linked`/`r sud_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Kirsten is currently working on `r sud_in_progress` of these SUD linkage cases (*`r sud_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r sud_closed_case` thus far (*`r sud_closed_case_percent` of all "eligible" SUD linkage cases, `r sud_closed_case`/`r sud_eligible_ltc`*). Out of those cases closed, a total of `r sud_not_linked` were unable to be linked to care (*`r sud_not_linked_percent` of all closed SUD linkage cases, `r sud_not_linked`/`r sud_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -11629,18 +11644,18 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r sud_linked` SUD linkage cases** (*`r sud_linked_percent` of all closed SUD linkage cases, `r sud_linked`/`r sud_closed_case`*).
+Therefore, Kirsten has **successfully linked a total of `r sud_linked` SUD linkage cases** (*`r sud_linked_percent` of all closed SUD linkage cases, `r sud_linked`/`r sud_closed_case`*).
 
 
 #### Human Trafficking
 
-The Human Trafficking (HT) Linkage Flow Diagram is provided here for Katie's HT linkage cases.
+The Human Trafficking (HT) Linkage Flow Diagram is provided here for Kirsten's HT linkage cases.
 
-Katie has worked on a total of **`r ht_ltc_cases` HT linkage cases** (*`r ht_ltc_cases_percent` of all linkage cases, `r ht_ltc_cases`/`r ltc_cases`*).
+Kirsten has worked on a total of **`r ht_ltc_cases` HT linkage cases** (*`r ht_ltc_cases_percent` of all linkage cases, `r ht_ltc_cases`/`r ltc_cases`*).
 
 A total of `r ht_eligible_ltc` of these cases are "eligible" to be linked to care (*`r ht_eligible_ltc_percent` of all HT linkage cases, `r ht_eligible_ltc`/`r ht_ltc_cases`*), and the reasons the remaining `r ht_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Katie is currently working on `r ht_in_progress` of these HT linkage cases (*`r ht_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r ht_closed_case` thus far (*`r ht_closed_case_percent` of all "eligible" HT linkage cases, `r ht_closed_case`/`r ht_eligible_ltc`*). Out of those cases closed, a total of `r ht_not_linked` were unable to be linked to care (*`r ht_not_linked_percent` of all closed HT linkage cases, `r ht_not_linked`/`r ht_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Kirsten is currently working on `r ht_in_progress` of these HT linkage cases (*`r ht_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r ht_closed_case` thus far (*`r ht_closed_case_percent` of all "eligible" HT linkage cases, `r ht_closed_case`/`r ht_eligible_ltc`*). Out of those cases closed, a total of `r ht_not_linked` were unable to be linked to care (*`r ht_not_linked_percent` of all closed HT linkage cases, `r ht_not_linked`/`r ht_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -11843,18 +11858,18 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r ht_linked` HT linkage cases** (*`r ht_linked_percent` of all closed HT linkage cases, `r ht_linked`/`r ht_closed_case`*).
+Therefore, Kirsten has **successfully linked a total of `r ht_linked` HT linkage cases** (*`r ht_linked_percent` of all closed HT linkage cases, `r ht_linked`/`r ht_closed_case`*).
 
 
 #### Mental Health
 
-The Mental Health (MH) Linkage Flow Diagram is provided here for Katie's MH linkage cases.
+The Mental Health (MH) Linkage Flow Diagram is provided here for Kirsten's MH linkage cases.
 
-Katie has worked on a total of **`r mh_ltc_cases` MH linkage cases** (*`r mh_ltc_cases_percent` of all linkage cases, `r mh_ltc_cases`/`r ltc_cases`*).
+Kirsten has worked on a total of **`r mh_ltc_cases` MH linkage cases** (*`r mh_ltc_cases_percent` of all linkage cases, `r mh_ltc_cases`/`r ltc_cases`*).
 
 A total of `r mh_eligible_ltc` of these cases are "eligible" to be linked to care (*`r mh_eligible_ltc_percent` of all MH linkage cases, `r mh_eligible_ltc`/`r mh_ltc_cases`*), and the reasons the remaining `r mh_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Katie is currently working on `r mh_in_progress` of these MH linkage cases (*`r mh_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r mh_closed_case` thus far (*`r mh_closed_case_percent` of all "eligible" MH linkage cases, `r mh_closed_case`/`r mh_eligible_ltc`*). Out of those cases closed, a total of `r mh_not_linked` were unable to be linked to care (*`r mh_not_linked_percent` of all closed MH linkage cases, `r mh_not_linked`/`r mh_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Kirsten is currently working on `r mh_in_progress` of these MH linkage cases (*`r mh_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r mh_closed_case` thus far (*`r mh_closed_case_percent` of all "eligible" MH linkage cases, `r mh_closed_case`/`r mh_eligible_ltc`*). Out of those cases closed, a total of `r mh_not_linked` were unable to be linked to care (*`r mh_not_linked_percent` of all closed MH linkage cases, `r mh_not_linked`/`r mh_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -12056,18 +12071,18 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r mh_linked` MH linkage cases** (*`r mh_linked_percent` of all closed MH linkage cases, `r mh_linked`/`r mh_closed_case`*).
+Therefore, Kirsten has **successfully linked a total of `r mh_linked` MH linkage cases** (*`r mh_linked_percent` of all closed MH linkage cases, `r mh_linked`/`r mh_closed_case`*).
 
 
 #### Housing
 
-The Housing Linkage Flow Diagram is provided here for Katie's Housing linkage cases.
+The Housing Linkage Flow Diagram is provided here for Kirsten's Housing linkage cases.
 
-Katie has worked on a total of **`r housing_ltc_cases` Housing linkage cases** (*`r housing_ltc_cases_percent` of all linkage cases, `r housing_ltc_cases`/`r ltc_cases`*).
+Kirsten has worked on a total of **`r housing_ltc_cases` Housing linkage cases** (*`r housing_ltc_cases_percent` of all linkage cases, `r housing_ltc_cases`/`r ltc_cases`*).
 
 A total of `r housing_eligible_ltc` of these cases are "eligible" to be linked to care (*`r housing_eligible_ltc_percent` of all Housing linkage cases, `r housing_eligible_ltc`/`r housing_ltc_cases`*), and the reasons the remaining `r housing_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Katie is currently working on `r housing_in_progress` of these Housing linkage cases (*`r housing_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r housing_closed_case` thus far (*`r housing_closed_case_percent` of all "eligible" Housing linkage cases, `r housing_closed_case`/`r housing_eligible_ltc`*). Out of those cases closed, a total of `r housing_not_linked` were unable to be linked to care (*`r housing_not_linked_percent` of all closed Housing linkage cases, `r housing_not_linked`/`r housing_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Kirsten is currently working on `r housing_in_progress` of these Housing linkage cases (*`r housing_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r housing_closed_case` thus far (*`r housing_closed_case_percent` of all "eligible" Housing linkage cases, `r housing_closed_case`/`r housing_eligible_ltc`*). Out of those cases closed, a total of `r housing_not_linked` were unable to be linked to care (*`r housing_not_linked_percent` of all closed Housing linkage cases, `r housing_not_linked`/`r housing_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -12269,18 +12284,18 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r housing_linked` Housing linkage cases** (*`r housing_linked_percent` of all closed Housing linkage cases, `r housing_linked`/`r housing_closed_case`*).
+Therefore, Kirsten has **successfully linked a total of `r housing_linked` Housing linkage cases** (*`r housing_linked_percent` of all closed Housing linkage cases, `r housing_linked`/`r housing_closed_case`*).
 
 
 #### PrEP
 
-The PrEP Linkage Flow Diagram is provided here for Katie's PrEP linkage cases.
+The PrEP Linkage Flow Diagram is provided here for Kirsten's PrEP linkage cases.
 
-Katie has worked on a total of **`r prep_ltc_cases` PrEP linkage cases** (*`r prep_ltc_cases_percent` of all linkage cases, `r prep_ltc_cases`/`r ltc_cases`*).
+Kirsten has worked on a total of **`r prep_ltc_cases` PrEP linkage cases** (*`r prep_ltc_cases_percent` of all linkage cases, `r prep_ltc_cases`/`r ltc_cases`*).
 
 A total of `r prep_eligible_ltc` of these cases are "eligible" to be linked to care (*`r prep_eligible_ltc_percent` of all PrEP linkage cases, `r prep_eligible_ltc`/`r prep_ltc_cases`*), and the reasons the remaining `r prep_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Katie is currently working on `r prep_in_progress` of these PrEP linkage cases (*`r prep_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r prep_closed_case` thus far (*`r prep_closed_case_percent` of all "eligible" PrEP linkage cases, `r prep_closed_case`/`r prep_eligible_ltc`*). Out of those cases closed, a total of `r prep_not_linked` were unable to be linked to care (*`r prep_not_linked_percent` of all closed PrEP linkage cases, `r prep_not_linked`/`r prep_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Kirsten is currently working on `r prep_in_progress` of these PrEP linkage cases (*`r prep_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r prep_closed_case` thus far (*`r prep_closed_case_percent` of all "eligible" PrEP linkage cases, `r prep_closed_case`/`r prep_eligible_ltc`*). Out of those cases closed, a total of `r prep_not_linked` were unable to be linked to care (*`r prep_not_linked_percent` of all closed PrEP linkage cases, `r prep_not_linked`/`r prep_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -12482,7 +12497,7 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r prep_linked` PrEP linkage cases** (*`r prep_linked_percent` of all closed PrEP linkage cases, `r prep_linked`/`r prep_closed_case`*).
+Therefore, Kirsten has **successfully linked a total of `r prep_linked` PrEP linkage cases** (*`r prep_linked_percent` of all closed PrEP linkage cases, `r prep_linked`/`r prep_closed_case`*).
 
 
 #### Additional services
@@ -12492,13 +12507,13 @@ Therefore, Katie has **successfully linked a total of `r prep_linked` PrEP linka
 
 ##### STI
 
-The STI Linkage Flow Diagram is provided here for Katie's STI linkage cases.
+The STI Linkage Flow Diagram is provided here for Kirsten's STI linkage cases.
 
-Katie has worked on a total of **`r sti_ltc_cases` STI linkage cases** (*`r sti_ltc_cases_percent` of all linkage cases, `r sti_ltc_cases`/`r ltc_cases`*).
+Kirsten has worked on a total of **`r sti_ltc_cases` STI linkage cases** (*`r sti_ltc_cases_percent` of all linkage cases, `r sti_ltc_cases`/`r ltc_cases`*).
 
 A total of `r sti_eligible_ltc` of these cases are "eligible" to be linked to care (*`r sti_eligible_ltc_percent` of all STI linkage cases, `r sti_eligible_ltc`/`r sti_ltc_cases`*), and the reasons the remaining `r sti_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Katie is currently working on `r sti_in_progress` of these STI linkage cases (*`r sti_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r sti_closed_case` thus far (*`r sti_closed_case_percent` of all "eligible" STI linkage cases, `r sti_closed_case`/`r sti_eligible_ltc`*). Out of those cases closed, a total of `r sti_not_linked` were unable to be linked to care (*`r sti_not_linked_percent` of all closed STI linkage cases, `r sti_not_linked`/`r sti_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Kirsten is currently working on `r sti_in_progress` of these STI linkage cases (*`r sti_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r sti_closed_case` thus far (*`r sti_closed_case_percent` of all "eligible" STI linkage cases, `r sti_closed_case`/`r sti_eligible_ltc`*). Out of those cases closed, a total of `r sti_not_linked` were unable to be linked to care (*`r sti_not_linked_percent` of all closed STI linkage cases, `r sti_not_linked`/`r sti_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -12700,18 +12715,18 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r sti_linked` STI linkage cases** (*`r sti_linked_percent` of all closed STI linkage cases, `r sti_linked`/`r sti_closed_case`*).
+Therefore, Kirsten has **successfully linked a total of `r sti_linked` STI linkage cases** (*`r sti_linked_percent` of all closed STI linkage cases, `r sti_linked`/`r sti_closed_case`*).
 
 
 ##### Food services
 
-The Food services Linkage Flow Diagram is provided here for Katie's Food services linkage cases.
+The Food services Linkage Flow Diagram is provided here for Kirsten's Food services linkage cases.
 
-Katie has worked on a total of **`r food_ltc_cases` Food services linkage cases** (*`r food_ltc_cases_percent` of all linkage cases, `r food_ltc_cases`/`r ltc_cases`*).
+Kirsten has worked on a total of **`r food_ltc_cases` Food services linkage cases** (*`r food_ltc_cases_percent` of all linkage cases, `r food_ltc_cases`/`r ltc_cases`*).
 
 A total of `r food_eligible_ltc` of these cases are "eligible" to be linked to care (*`r food_eligible_ltc_percent` of all Food services linkage cases, `r food_eligible_ltc`/`r food_ltc_cases`*), and the reasons the remaining `r food_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Katie is currently working on `r food_in_progress` of these Food services linkage cases (*`r food_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r food_closed_case` thus far (*`r food_closed_case_percent` of all "eligible" Food services linkage cases, `r food_closed_case`/`r food_eligible_ltc`*). Out of those cases closed, a total of `r food_not_linked` were unable to be linked to care (*`r food_not_linked_percent` of all closed Food services linkage cases, `r food_not_linked`/`r food_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Kirsten is currently working on `r food_in_progress` of these Food services linkage cases (*`r food_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r food_closed_case` thus far (*`r food_closed_case_percent` of all "eligible" Food services linkage cases, `r food_closed_case`/`r food_eligible_ltc`*). Out of those cases closed, a total of `r food_not_linked` were unable to be linked to care (*`r food_not_linked_percent` of all closed Food services linkage cases, `r food_not_linked`/`r food_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -12913,18 +12928,18 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r food_linked` Food services linkage cases** (*`r food_linked_percent` of all closed Food services linkage cases, `r food_linked`/`r food_closed_case`*).
+Therefore, Kirsten has **successfully linked a total of `r food_linked` Food services linkage cases** (*`r food_linked_percent` of all closed Food services linkage cases, `r food_linked`/`r food_closed_case`*).
 
 
 ##### Financial assistance
 
-The Financial assistance Linkage Flow Diagram is provided here for Katie's Financial assistance linkage cases.
+The Financial assistance Linkage Flow Diagram is provided here for Kirsten's Financial assistance linkage cases.
 
-Katie has worked on a total of **`r financial_ltc_cases` Financial assistance linkage cases** (*`r financial_ltc_cases_percent` of all linkage cases, `r financial_ltc_cases`/`r ltc_cases`*).
+Kirsten has worked on a total of **`r financial_ltc_cases` Financial assistance linkage cases** (*`r financial_ltc_cases_percent` of all linkage cases, `r financial_ltc_cases`/`r ltc_cases`*).
 
 A total of `r financial_eligible_ltc` of these cases are "eligible" to be linked to care (*`r financial_eligible_ltc_percent` of all Financial assistance linkage cases, `r financial_eligible_ltc`/`r financial_ltc_cases`*), and the reasons the remaining `r financial_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Katie is currently working on `r financial_in_progress` of these Financial assistance linkage cases (*`r financial_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r financial_closed_case` thus far (*`r financial_closed_case_percent` of all "eligible" Financial assistance linkage cases, `r financial_closed_case`/`r financial_eligible_ltc`*). Out of those cases closed, a total of `r financial_not_linked` were unable to be linked to care (*`r financial_not_linked_percent` of all closed Financial assistance linkage cases, `r financial_not_linked`/`r financial_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Kirsten is currently working on `r financial_in_progress` of these Financial assistance linkage cases (*`r financial_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r financial_closed_case` thus far (*`r financial_closed_case_percent` of all "eligible" Financial assistance linkage cases, `r financial_closed_case`/`r financial_eligible_ltc`*). Out of those cases closed, a total of `r financial_not_linked` were unable to be linked to care (*`r financial_not_linked_percent` of all closed Financial assistance linkage cases, `r financial_not_linked`/`r financial_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -13126,18 +13141,18 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r financial_linked` Financial assistance linkage cases** (*`r financial_linked_percent` of all closed Financial assistance linkage cases, `r financial_linked`/`r financial_closed_case`*).
+Therefore, Kirsten has **successfully linked a total of `r financial_linked` Financial assistance linkage cases** (*`r financial_linked_percent` of all closed Financial assistance linkage cases, `r financial_linked`/`r financial_closed_case`*).
 
 
 ##### Person abuse
 
-The Person abuse Linkage Flow Diagram is provided here for Katie's Person abuse linkage cases.
+The Person abuse Linkage Flow Diagram is provided here for Kirsten's Person abuse linkage cases.
 
-Katie has worked on a total of **`r personabuse_ltc_cases` Person abuse linkage cases** (*`r personabuse_ltc_cases_percent` of all linkage cases, `r personabuse_ltc_cases`/`r ltc_cases`*).
+Kirsten has worked on a total of **`r personabuse_ltc_cases` Person abuse linkage cases** (*`r personabuse_ltc_cases_percent` of all linkage cases, `r personabuse_ltc_cases`/`r ltc_cases`*).
 
 A total of `r personabuse_eligible_ltc` of these cases are "eligible" to be linked to care (*`r personabuse_eligible_ltc_percent` of all Person abuse linkage cases, `r personabuse_eligible_ltc`/`r personabuse_ltc_cases`*), and the reasons the remaining `r personabuse_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Katie is currently working on `r personabuse_in_progress` of these Person abuse linkage cases (*`r personabuse_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r personabuse_closed_case` thus far (*`r personabuse_closed_case_percent` of all "eligible" Person abuse linkage cases, `r personabuse_closed_case`/`r personabuse_eligible_ltc`*). Out of those cases closed, a total of `r personabuse_not_linked` were unable to be linked to care (*`r personabuse_not_linked_percent` of all closed Person abuse linkage cases, `r personabuse_not_linked`/`r personabuse_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Kirsten is currently working on `r personabuse_in_progress` of these Person abuse linkage cases (*`r personabuse_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r personabuse_closed_case` thus far (*`r personabuse_closed_case_percent` of all "eligible" Person abuse linkage cases, `r personabuse_closed_case`/`r personabuse_eligible_ltc`*). Out of those cases closed, a total of `r personabuse_not_linked` were unable to be linked to care (*`r personabuse_not_linked_percent` of all closed Person abuse linkage cases, `r personabuse_not_linked`/`r personabuse_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -13339,18 +13354,18 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r personabuse_linked` Person abuse linkage cases** (*`r personabuse_linked_percent` of all closed Person abuse linkage cases, `r personabuse_linked`/`r personabuse_closed_case`*).
+Therefore, Kirsten has **successfully linked a total of `r personabuse_linked` Person abuse linkage cases** (*`r personabuse_linked_percent` of all closed Person abuse linkage cases, `r personabuse_linked`/`r personabuse_closed_case`*).
 
 
 ##### General health
 
-The General health Linkage Flow Diagram is provided here for Katie's General health linkage cases.
+The General health Linkage Flow Diagram is provided here for Kirsten's General health linkage cases.
 
-Katie has worked on a total of **`r general_ltc_cases` General health linkage cases** (*`r general_ltc_cases_percent` of all linkage cases, `r general_ltc_cases`/`r ltc_cases`*).
+Kirsten has worked on a total of **`r general_ltc_cases` General health linkage cases** (*`r general_ltc_cases_percent` of all linkage cases, `r general_ltc_cases`/`r ltc_cases`*).
 
 A total of `r general_eligible_ltc` of these cases are "eligible" to be linked to care (*`r general_eligible_ltc_percent` of all General health linkage cases, `r general_eligible_ltc`/`r general_ltc_cases`*), and the reasons the remaining `r general_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Katie is currently working on `r general_in_progress` of these General health linkage cases (*`r general_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r general_closed_case` thus far (*`r general_closed_case_percent` of all "eligible" General health linkage cases, `r general_closed_case`/`r general_eligible_ltc`*). Out of those cases closed, a total of `r general_not_linked` were unable to be linked to care (*`r general_not_linked_percent` of all closed General health linkage cases, `r general_not_linked`/`r general_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Kirsten is currently working on `r general_in_progress` of these General health linkage cases (*`r general_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r general_closed_case` thus far (*`r general_closed_case_percent` of all "eligible" General health linkage cases, `r general_closed_case`/`r general_eligible_ltc`*). Out of those cases closed, a total of `r general_not_linked` were unable to be linked to care (*`r general_not_linked_percent` of all closed General health linkage cases, `r general_not_linked`/`r general_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -13552,18 +13567,18 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r general_linked` General health linkage cases** (*`r general_linked_percent` of all closed General health linkage cases, `r general_linked`/`r general_closed_case`*).
+Therefore, Kirsten has **successfully linked a total of `r general_linked` General health linkage cases** (*`r general_linked_percent` of all closed General health linkage cases, `r general_linked`/`r general_closed_case`*).
 
 
 ##### Other Linkage 
 
-The Other Linkage Flow Diagram is provided here for Katie's Other linkage cases.
+The Other Linkage Flow Diagram is provided here for Kirsten's Other linkage cases.
 
-Katie has worked on a total of **`r other_ltc_cases` Other linkage cases** (*`r other_ltc_cases_percent` of all linkage cases, `r other_ltc_cases`/`r ltc_cases`*).
+Kirsten has worked on a total of **`r other_ltc_cases` Other linkage cases** (*`r other_ltc_cases_percent` of all linkage cases, `r other_ltc_cases`/`r ltc_cases`*).
 
 A total of `r other_eligible_ltc` of these cases are "eligible" to be linked to care (*`r other_eligible_ltc_percent` of all Other linkage cases, `r other_eligible_ltc`/`r other_ltc_cases`*), and the reasons the remaining `r other_ineligible_ltc` were "ineligible" are noted in the flow diagram.
 
-Katie is currently working on `r other_in_progress` of these Other linkage cases (*`r other_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r other_closed_case` thus far (*`r other_closed_case_percent` of all "eligible" Other linkage cases, `r other_closed_case`/`r other_eligible_ltc`*). Out of those cases closed, a total of `r other_not_linked` were unable to be linked to care (*`r other_not_linked_percent` of all closed Other linkage cases, `r other_not_linked`/`r other_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
+Kirsten is currently working on `r other_in_progress` of these Other linkage cases (*`r other_in_progress_90days_percent` of which have been open for more than 90 days*), and therefore has closed a total of `r other_closed_case` thus far (*`r other_closed_case_percent` of all "eligible" Other linkage cases, `r other_closed_case`/`r other_eligible_ltc`*). Out of those cases closed, a total of `r other_not_linked` were unable to be linked to care (*`r other_not_linked_percent` of all closed Other linkage cases, `r other_not_linked`/`r other_closed_case`*), with the reasons as to why are shown in the flow diagram. These reasons are not mutually exclusive, and there could be multiple reasons why those linkage cases were unsuccessful.
 
 
 ```{r, echo=FALSE, warning=FALSE}
@@ -13765,9 +13780,10 @@ grid + theme_void()
 ```
 <br>
 
-Therefore, Katie has **successfully linked a total of `r other_linked` Other linkage cases** (*`r other_linked_percent` of all closed Other linkage cases, `r other_linked`/`r other_closed_case`*).
+Therefore, Kirsten has **successfully linked a total of `r other_linked` Other linkage cases** (*`r other_linked_percent` of all closed Other linkage cases, `r other_linked`/`r other_closed_case`*).
 
 :::
 
 :::
+
 
