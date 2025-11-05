@@ -1,0 +1,34 @@
+---
+title: "Connor Powers"
+date: today
+lightbox:
+  match: auto
+about:
+  id: hero-heading
+  template: solana
+  image: images/c_powers2.jpg
+  image-width: 20em
+  image-shape: rounded
+page-layout: full
+about-position: top
+format:
+  html: 
+    grid:
+      sidebar-width: 200px
+      body-width: 1050px
+      margin-width: 250px
+---
+
+
+:::{#hero-heading}
+
+This metrics report shows data for encounter information for **Connor Powers**. Connor's start and end date with EIP are shown below, however, any data contained within this report covers clinical information captured in the EIP Database since **January 1st, 2023**. The metrics in this report describe specific encounter information and the services and/or referrals that were provided to patients/clients.
+
+- **Start date:** *7/12/2024*
+- **End date:**
+
+Until a unique patient identifier is created for patients seen by EIP, matching unique patients across multiple years of encounters is difficult. Therefore, patient demographic and population information will refer only to the number of encounters, not the unique number of patients. This part of the report is still in development.
+
+:::
+
+
