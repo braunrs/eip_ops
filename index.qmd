@@ -1,11 +1,85 @@
 ---
-title: "eip_ops"
+title: "EIP Operations Website"
+image: images/eip_logo.jpg
+navbar: false
+sidebar: false
+about:
+    template: trestles
+    image-shape: round
+    image-width: 15em
+    links:
+      - text: Email
+        icon: envelope
+        href: mailto:uceip@uc.edu
+      - text: Facebook
+        icon: facebook
+        href: https://www.facebook.com/uceip
+        target: _blank
+      - text: Canvas
+        icon: bank
+        href: https://uc.instructure.com/courses/1497886/
+        target: _blank
+      - text: EIP
+        icon: clipboard-pulse
+        href: https://med.uc.edu/depart/emergency-medicine/divisions/early-intervention-program/
+        target: _blank
+      - text: UC Emergency Med
+        icon: activity
+        href: https://med.uc.edu/depart/emergency-medicine/divisions/emergency-medical-services/
+        target: _blank
 ---
 
-This is a Quarto website.
+<div style="text-align: center;">
+  <h2 id="login-title">Login</h2>
+  <form id="login-form">
+    <label for="password">Password:</label>
+    <input type="password" id="password" required><br><br>
+    <button type="button" onclick="authenticate()">Login</button>
+  </form>
+</div>
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+<div id="protected-content" style="display: none">
 
-```{r}
-1 + 1
-```
+**EIP Mission Statement**
+
+The UC Early Intervention Program is committed to identifying and intervening with populations most at risk for threats to health and well-being at the earliest opportunity, and helping these individuals connect with community resources to improve health outcomes.
+
+<br>
+
+**Operations Website**
+
+In order to protect the information contained within this website, this initial landing page is password protected and hides the navigation bar to the actual EIP Data website. Since you gained access to this page with the valid password, you can now use the following link to connect to the data website:
+
+[EIP Operations Website](main.qmd)
+
+<br>
+
+
+</div>
+
+<script>
+  // Function to authenticate the user
+  function authenticate() {
+    var password = document.getElementById('password').value;
+
+    // Example hardcoded password (replace with your actual logic)
+    var validPassword = "EIPops";
+
+    if (password === validPassword) {
+      // Hide login form and login title, and show protected content
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('login-title').style.display = 'none';
+      document.getElementById('protected-content').style.display = 'block';
+    } else {
+      alert('Invalid password');
+    }
+  }
+
+  // Function to handle Enter key press in the password input field
+  document.getElementById('password').addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Prevent default form submission behavior
+      authenticate(); // Call the authenticate function when Enter key is pressed
+    }
+  });
+</script>

@@ -1,0 +1,82 @@
+---
+title: "Prior EIP Staff"
+image: images/eip_logo.jpg
+lightbox:
+  match: auto
+  effect: fade
+  loop: true
+about:
+    template: jolla
+    image-shape: round
+    image-width: 10em
+---
+
+:::{#hero-heading}
+This lists all prior EIP staff in alphabetical order.
+- Working on adding in additional information, just including images and concept idea for this page for now. - 
+:::
+
+<br>
+<br>
+<br>
+
+
+::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+![Hena Akhter](images/h_akhter.jpg){group="past-staff-gallery" fig-alt="Hena Akhter"}
+
+![Katie Anderson](images/k_anderson.jpg){group="past-staff-gallery" fig-alt="Katie Anderson"}
+
+![Jessika Bass](images/j_bass.jpg){group="past-staff-gallery" fig-alt="Jessika Bass"}
+
+![Rachel Black](images/r_black.jpg){group="past-staff-gallery" fig-alt="Rachel Black"}
+
+![Neria Brempong](images/n_brempong.jpg){group="past-staff-gallery" fig-alt="Neria Brempong"}
+
+![Matthew Cairns](images/m_cairns.jpg){group="past-staff-gallery" fig-alt="Matthew Cairns"}
+
+![Doorga Dave](images/d_dave.jpg){group="past-staff-gallery" fig-alt="Doorga Dave"}
+
+![Archit Deshpande](images/a_deshpande.jpg){group="past-staff-gallery" fig-alt="Archit Deshpande"}
+
+![Lauren Duba](images/l_duba.jpg){group="past-staff-gallery" fig-alt="Lauren Duba"}
+
+![Joseph Fiorelli](images/j_fiorelli.jpg){group="past-staff-gallery" fig-alt="Joseph Fiorelli"}
+
+![Arthur Forbriger](images/a_forbriger.jpg){group="past-staff-gallery" fig-alt="Arthur Forbriger"}
+
+![D'Vaughn House](images/d_house.jpg){group="past-staff-gallery" fig-alt="D'Vaughn House"}
+
+![Danielle Knox](images/d_knox.jpg){group="past-staff-gallery" fig-alt="Danielle Knox"}
+
+![Carmen Mack](images/blank_staff.jpg){group="past-staff-gallery" fig-alt="Carmen Mack"}
+
+![Cameron May](images/c_may.jpg){group="past-staff-gallery" fig-alt="Cameron May"}
+
+![Meg Mays](images/m_mays.jpg){group="past-staff-gallery" fig-alt="Meg Mays"}
+
+![Jordan McNulty](images/j_mcnulty.jpg){group="past-staff-gallery" fig-alt="Jordan McNulty"}
+
+![Jake Perrmann](images/j_perrmann.jpg){group="past-staff-gallery" fig-alt="Jake Perrmann"}
+
+![Bella Procaccio](images/b_procaccio.jpg){group="past-staff-gallery" fig-alt="Bella Procaccio"}
+
+![Sway Rehman](images/s_rehman.jpg){group="past-staff-gallery" fig-alt="Sway Rehman"}
+
+![Alaa Salameh](images/a_salameh.jpg){group="past-staff-gallery" fig-alt="Alaa Salameh"}
+
+![Hawa Sall](images/h_sall.jpg){group="past-staff-gallery" fig-alt="Hawa Sall"}
+
+![Niharika Sarker](images/n_sarker.jpg){group="past-staff-gallery" fig-alt="Niharika Sarker"}
+
+![Alex Sheehan](images/a_sheehan.jpg){group="past-staff-gallery" fig-alt="Alex Sheehan"}
+
+![Ryane Sickles](images/r_sickles.jpg){group="past-staff-gallery" fig-alt="Ryane Sickles"}
+
+![Elysia Smith](images/e_smith.jpg){group="past-staff-gallery" fig-alt="Elysia Smith"}
+
+![Summer Soliman](images/s_soliman.jpg){group="past-staff-gallery" fig-alt="Summer Soliman"}
+
+![Anthony Spuzzillo](images/a_spuzzillo.jpg){group="past-staff-gallery" fig-alt="Anthony Spuzzillo"}
+
+:::
+
