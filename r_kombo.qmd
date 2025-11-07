@@ -51,7 +51,7 @@ eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
 summary(eip24$record_id)
 
 # 2025
-eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20251029_1041.csv')
+eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20251106_1445.csv')
 dim(eip25)
 summary(eip25$record_id)
 eip25$record_id <- paste(eip25$record_id, "_25", sep = "")
@@ -1862,6 +1862,31 @@ eip23$ltc_coordinator_per_case___90 <- ''
 eip23$ltc_coordinator_per_case___91 <- ''
 eip23$ltc_coordinator_per_case___92 <- ''
 eip23$kahloon_ltc_open_calc <- ''
+eip23$enc_location_medvouc <- ''
+eip23$enc_location_medvouc_other <- ''
+eip23$offer_outcome_declined_peer___27 <- ''
+eip23$offer_outcome_declined_peer___28 <- ''
+eip23$offer_outcome_declined_peer___29 <- ''
+eip23$offer_outcome_declined_peer___30 <- ''
+eip23$offer_outcome_declined_peer___36 <- ''
+eip23$offer_outcome_declined_peer___33 <- ''
+eip23$offer_outcome_declined_peer___34 <- ''
+eip23$offer_outcome_declined_peer___35 <- ''
+eip23$offer_outcome_declined_peer___0 <- ''
+eip23$ltc_hiv_success_story <- ''
+eip23$ltc_hcv_success_story <- ''
+eip23$ltc_sud_success_story <- ''
+eip23$ltc_prep_success_story <- ''
+eip23$ltc_mh_success_story <- ''
+eip23$ltc_housing_success_story <- ''
+eip23$ltc_food_success_story <- ''
+eip23$ltc_financial_success_story <- ''
+eip23$ltc_ht_success_story <- ''
+eip23$ltc_abuse_success_story <- ''
+eip23$ltc_general_success_story <- ''
+eip23$ltc_sti_success_story <- ''
+eip23$ltc_other_success_story <- ''
+eip23$hcph_sud_next_follow_up_date <- ''
 
 
 # Removing 2023 variables that are not needed/not in 2024 dataset
@@ -2322,7 +2347,31 @@ eip24$ltc_coordinator_per_case___90 <- ''
 eip24$ltc_coordinator_per_case___91 <- ''
 eip24$ltc_coordinator_per_case___92 <- ''
 eip24$kahloon_ltc_open_calc <- ''
-
+eip24$enc_location_medvouc <- ''
+eip24$enc_location_medvouc_other <- ''
+eip24$offer_outcome_declined_peer___27 <- ''
+eip24$offer_outcome_declined_peer___28 <- ''
+eip24$offer_outcome_declined_peer___29 <- ''
+eip24$offer_outcome_declined_peer___30 <- ''
+eip24$offer_outcome_declined_peer___36 <- ''
+eip24$offer_outcome_declined_peer___33 <- ''
+eip24$offer_outcome_declined_peer___34 <- ''
+eip24$offer_outcome_declined_peer___35 <- ''
+eip24$offer_outcome_declined_peer___0 <- ''
+eip24$ltc_hiv_success_story <- ''
+eip24$ltc_hcv_success_story <- ''
+eip24$ltc_sud_success_story <- ''
+eip24$ltc_prep_success_story <- ''
+eip24$ltc_mh_success_story <- ''
+eip24$ltc_housing_success_story <- ''
+eip24$ltc_food_success_story <- ''
+eip24$ltc_financial_success_story <- ''
+eip24$ltc_ht_success_story <- ''
+eip24$ltc_abuse_success_story <- ''
+eip24$ltc_general_success_story <- ''
+eip24$ltc_sti_success_story <- ''
+eip24$ltc_other_success_story <- ''
+eip24$hcph_sud_next_follow_up_date <- ''
 
 
 
@@ -2610,7 +2659,24 @@ eip25$ltc_coordinator_per_case___63 <- ''
 eip25$ltc_coordinator_per_case___49 <- ''
 eip25$ltc_coordinator_per_case___69 <- ''
 eip25$ltc_coordinator_per_case___30 <- ''
-
+eip25$offer_outcome_declined_peer___1 <- ''
+eip25$offer_outcome_declined_peer___2 <- ''
+eip25$offer_outcome_declined_peer___4 <- ''
+eip25$offer_outcome_declined_peer___11 <- ''
+eip25$offer_outcome_declined_peer___12 <- ''
+eip25$offer_outcome_declined_peer___13 <- ''
+eip25$offer_outcome_declined_peer___14 <- ''
+eip25$offer_outcome_declined_peer___15 <- ''
+eip25$offer_outcome_declined_peer___16 <- ''
+eip25$offer_outcome_declined_peer___17 <- ''
+eip25$offer_outcome_declined_peer___18 <- ''
+eip25$offer_outcome_declined_peer___19 <- ''
+eip25$offer_outcome_declined_peer___20 <- ''
+eip25$offer_outcome_declined_peer___21 <- ''
+eip25$offer_outcome_declined_peer___22 <- ''
+eip25$offer_outcome_declined_peer___24 <- ''
+eip25$offer_outcome_declined_peer___25 <- ''
+eip25$offer_outcome_declined_peer___26 <- ''
 
 
 
