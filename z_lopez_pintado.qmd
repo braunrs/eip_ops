@@ -37,25 +37,38 @@ library(DT)
 
 ### EIP Database Data
 # 2023
-eip23 <- read.csv('M:/EIP Data/EIP Database/REDCap 2023/EIP Database Data 20251029_1026.csv')
+eip23 <- read.csv('M:/EIP Data/EIP Database/REDCap 2023/EIP Database Data 20260105_1300.csv')
 dim(eip23)
 summary(eip23$record_id)
 eip23$record_id <- paste(eip23$record_id, "_23", sep = "")
 summary(eip23$record_id)
 
 # 2024
-eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20251029_1030.csv')
+eip24 <- read.csv('M:/EIP Data/EIP Database/REDCap 2024/EIP Database Data 20260105_1302.csv')
 dim(eip24)
 summary(eip24$record_id)
 eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
 summary(eip24$record_id)
 
 # 2025
-eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20251229_1800.csv')
+eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20260105_1023.csv')
 dim(eip25)
 summary(eip25$record_id)
 eip25$record_id <- paste(eip25$record_id, "_25", sep = "")
 summary(eip25$record_id)
+
+# 2026
+eip26 <- read.csv('M:/EIP Data/EIP Database/REDCap 2026/EIP Database Data 20260105_1305.csv')
+dim(eip26)
+summary(eip26$record_id)
+eip26$record_id <- paste(eip26$record_id, "_26", sep = "")
+summary(eip26$record_id)
+
+summary(eip26$enc_date)
+eip26$enc_date <- as.Date(eip26$enc_date, format = '%m/%d/%Y')
+summary(eip26$enc_date)
+eip26 <- eip26[which(eip26$enc_date >= '2026-01-01'), ]
+summary(eip26$enc_date)
 
 ```
 
@@ -797,15 +810,193 @@ dim(eip25)
 eip25 <- distinct(eip25)
 dim(eip25)
 
+
+# 2026
+table(eip26$redcap_event_name)
+person <- eip26[which(eip26$redcap_event_name == 'visit_001_arm_1'), ]
+dim(person)
+
+person <- select(person, record_id, mrn, dob, 
+                 race___1, race___2, race___3, race___4, race___5, race___6, ethnicity,
+                 sex_raised, sex_selfdefined, insurance, address_county,
+                 address_zip_code,
+                 followup_date1, followup_date2, followup_date3, followup_date4,
+                 followup_date5, followup_date6, followup_date7, followup_date8,
+                 followup_date9, followup_date10, followup_date11, followup_date12,
+                 followup_date13, followup_date14, followup_date15, followup_date16,
+                 followup_date17, followup_date18, followup_date19, followup_date20,
+                 followup_date21, followup_date22, followup_date23, followup_date24,
+                 followup_date25, followup_date26, followup_date27, followup_date28,
+                 followup_date29, followup_date30, followup_date31, followup_date32,
+                 followup_date33, followup_date34, followup_date35, followup_date36,
+                 followup_date37, followup_date38, followup_date39, followup_date40,
+                 followup_date41, followup_date42, followup_date43, followup_date44,
+                 followup_date45, followup_date46, followup_date47, followup_date48,
+                 followup_date49, followup_date50, followup_counselor1, followup_counselor2,
+                 followup_counselor3, followup_counselor4, followup_counselor5,
+                 followup_counselor6, followup_counselor7, followup_counselor8,
+                 followup_counselor9, followup_counselor10, followup_counselor11,
+                 followup_counselor12, followup_counselor13, followup_counselor14,
+                 followup_counselor15, followup_counselor16, followup_counselor17,
+                 followup_counselor18, followup_counselor19, followup_counselor20,
+                 followup_counselor21, followup_counselor22, followup_counselor23,
+                 followup_counselor24, followup_counselor25, followup_counselor26,
+                 followup_counselor27, followup_counselor28, followup_counselor29,
+                 followup_counselor30, followup_counselor31, followup_counselor32,
+                 followup_counselor33, followup_counselor34, followup_counselor35,
+                 followup_counselor36, followup_counselor37, followup_counselor38,
+                 followup_counselor39, followup_counselor40, followup_counselor41,
+                 followup_counselor42, followup_counselor43, followup_counselor44,
+                 followup_counselor45, followup_counselor46, followup_counselor47,
+                 followup_counselor48, followup_counselor49, followup_counselor50,
+                 who_initiated_contact1, who_initiated_contact2, who_initiated_contact3, who_initiated_contact4, who_initiated_contact5,
+                 who_initiated_contact6, who_initiated_contact7, who_initiated_contact8, who_initiated_contact9, who_initiated_contact10,
+                 who_initiated_contact11, who_initiated_contact12, who_initiated_contact13, who_initiated_contact14,
+                 who_initiated_contact15, who_initiated_contact16, who_initiated_contact17, who_initiated_contact18,
+                 who_initiated_contact19, who_initiated_contact20, who_initiated_contact21, who_initiated_contact22,
+                 who_initiated_contact23, who_initiated_contact24, who_initiated_contact25, who_initiated_contact26,
+                 who_initiated_contact27, who_initiated_contact28, who_initiated_contact29, who_initiated_contact30,
+                 who_initiated_contact31, who_initiated_contact32, who_initiated_contact33, who_initiated_contact34,
+                 who_initiated_contact35, who_initiated_contact36, who_initiated_contact37, who_initiated_contact38,
+                 who_initiated_contact39, who_initiated_contact40, who_initiated_contact41, who_initiated_contact42,
+                 who_initiated_contact43, who_initiated_contact44, who_initiated_contact45, who_initiated_contact46,
+                 who_initiated_contact47, who_initiated_contact48, who_initiated_contact49, who_initiated_contact50,
+                 contact_with1, contact_with2, contact_with3, contact_with4, contact_with5,
+                 contact_with6, contact_with7, contact_with8, contact_with9, contact_with10,
+                 contact_with11, contact_with12, contact_with13, contact_with14,
+                 contact_with15, contact_with16, contact_with17, contact_with18,
+                 contact_with19, contact_with20, contact_with21, contact_with22,
+                 contact_with23, contact_with24, contact_with25, contact_with26,
+                 contact_with27, contact_with28, contact_with29, contact_with30,
+                 contact_with31, contact_with32, contact_with33, contact_with34,
+                 contact_with35, contact_with36, contact_with37, contact_with38,
+                 contact_with39, contact_with40, contact_with41, contact_with42,
+                 contact_with43, contact_with44, contact_with45, contact_with46,
+                 contact_with47, contact_with48, contact_with49, contact_with50,
+                 ltc_contact1, ltc_contact2, ltc_contact3, ltc_contact4, ltc_contact5,
+                 ltc_contact6, ltc_contact7, ltc_contact8, ltc_contact9, ltc_contact10,
+                 ltc_contact11, ltc_contact12, ltc_contact13, ltc_contact14, ltc_contact15,
+                 ltc_contact16, ltc_contact17, ltc_contact18, ltc_contact19, ltc_contact20,
+                 ltc_contact21, ltc_contact22, ltc_contact23, ltc_contact24, ltc_contact25,
+                 ltc_contact26, ltc_contact27, ltc_contact28, ltc_contact29, ltc_contact30,
+                 ltc_contact31, ltc_contact32, ltc_contact33, ltc_contact34, ltc_contact35,
+                 ltc_contact36, ltc_contact37, ltc_contact38, ltc_contact39, ltc_contact40,
+                 ltc_contact41, ltc_contact42, ltc_contact43, ltc_contact44, ltc_contact45,
+                 ltc_contact46, ltc_contact47, ltc_contact48, ltc_contact49, ltc_contact50,
+                 no_contact_reason1, no_contact_reason2, no_contact_reason3, no_contact_reason4, no_contact_reason5,
+                 no_contact_reason6, no_contact_reason7, no_contact_reason8, no_contact_reason9, no_contact_reason10,
+                 no_contact_reason11, no_contact_reason12, no_contact_reason13, no_contact_reason14,
+                 no_contact_reason15, no_contact_reason16, no_contact_reason17, no_contact_reason18,
+                 no_contact_reason19, no_contact_reason20, no_contact_reason21, no_contact_reason22,
+                 no_contact_reason23, no_contact_reason24, no_contact_reason25, no_contact_reason26,
+                 no_contact_reason27, no_contact_reason28, no_contact_reason29, no_contact_reason30,
+                 no_contact_reason31, no_contact_reason32, no_contact_reason33, no_contact_reason34,
+                 no_contact_reason35, no_contact_reason36, no_contact_reason37, no_contact_reason38,
+                 no_contact_reason39, no_contact_reason40, no_contact_reason41, no_contact_reason42,
+                 no_contact_reason43, no_contact_reason44, no_contact_reason45, no_contact_reason46,
+                 no_contact_reason47, no_contact_reason48, no_contact_reason49, no_contact_reason50)
+dim(person)
+
+eip26 <- select(eip26, -mrn, -dob, 
+                -race___1, -race___2, -race___3, -race___4, -race___5, 
+                -race___6, -ethnicity,
+                -sex_raised, -sex_selfdefined, -insurance, -address_county,
+                -address_zip_code,
+                -followup_date1, -followup_date2, -followup_date3, -followup_date4,
+                -followup_date5, -followup_date6, -followup_date7, -followup_date8,
+                -followup_date9, -followup_date10, -followup_date11, -followup_date12,
+                -followup_date13, -followup_date14, -followup_date15, -followup_date16,
+                -followup_date17, -followup_date18, -followup_date19, -followup_date20,
+                -followup_date21, -followup_date22, -followup_date23, -followup_date24,
+                -followup_date25, -followup_date26, -followup_date27, -followup_date28,
+                -followup_date29, -followup_date30, -followup_date31, -followup_date32,
+                -followup_date33, -followup_date34, -followup_date35, -followup_date36,
+                -followup_date37, -followup_date38, -followup_date39, -followup_date40,
+                -followup_date41, -followup_date42, -followup_date43, -followup_date44,
+                -followup_date45, -followup_date46, -followup_date47, -followup_date48,
+                -followup_date49, -followup_date50, -followup_counselor1, -followup_counselor2,
+                -followup_counselor3, -followup_counselor4, -followup_counselor5,
+                -followup_counselor6, -followup_counselor7, -followup_counselor8,
+                -followup_counselor9, -followup_counselor10, -followup_counselor11,
+                -followup_counselor12, -followup_counselor13, -followup_counselor14,
+                -followup_counselor15, -followup_counselor16, -followup_counselor17,
+                -followup_counselor18, -followup_counselor19, -followup_counselor20,
+                -followup_counselor21, -followup_counselor22, -followup_counselor23,
+                -followup_counselor24, -followup_counselor25, -followup_counselor26,
+                -followup_counselor27, -followup_counselor28, -followup_counselor29,
+                -followup_counselor30, -followup_counselor31, -followup_counselor32,
+                -followup_counselor33, -followup_counselor34, -followup_counselor35,
+                -followup_counselor36, -followup_counselor37, -followup_counselor38,
+                -followup_counselor39, -followup_counselor40, -followup_counselor41,
+                -followup_counselor42, -followup_counselor43, -followup_counselor44,
+                -followup_counselor45, -followup_counselor46, -followup_counselor47,
+                -followup_counselor48, -followup_counselor49, -followup_counselor50,
+                -who_initiated_contact1, -who_initiated_contact2, -who_initiated_contact3, -who_initiated_contact4, -who_initiated_contact5,
+                -who_initiated_contact6, -who_initiated_contact7, -who_initiated_contact8, -who_initiated_contact9, -who_initiated_contact10,
+                -who_initiated_contact11, -who_initiated_contact12, -who_initiated_contact13, -who_initiated_contact14,
+                -who_initiated_contact15, -who_initiated_contact16, -who_initiated_contact17, -who_initiated_contact18,
+                -who_initiated_contact19, -who_initiated_contact20, -who_initiated_contact21, -who_initiated_contact22,
+                -who_initiated_contact23, -who_initiated_contact24, -who_initiated_contact25, -who_initiated_contact26,
+                -who_initiated_contact27, -who_initiated_contact28, -who_initiated_contact29, -who_initiated_contact30,
+                -who_initiated_contact31, -who_initiated_contact32, -who_initiated_contact33, -who_initiated_contact34,
+                -who_initiated_contact35, -who_initiated_contact36, -who_initiated_contact37, -who_initiated_contact38,
+                -who_initiated_contact39, -who_initiated_contact40, -who_initiated_contact41, -who_initiated_contact42,
+                -who_initiated_contact43, -who_initiated_contact44, -who_initiated_contact45, -who_initiated_contact46,
+                -who_initiated_contact47, -who_initiated_contact48, -who_initiated_contact49, -who_initiated_contact50,
+                -contact_with1, -contact_with2, -contact_with3, -contact_with4, -contact_with5,
+                -contact_with6, -contact_with7, -contact_with8, -contact_with9, -contact_with10,
+                -contact_with11, -contact_with12, -contact_with13, -contact_with14,
+                -contact_with15, -contact_with16, -contact_with17, -contact_with18,
+                -contact_with19, -contact_with20, -contact_with21, -contact_with22,
+                -contact_with23, -contact_with24, -contact_with25, -contact_with26,
+                -contact_with27, -contact_with28, -contact_with29, -contact_with30,
+                -contact_with31, -contact_with32, -contact_with33, -contact_with34,
+                -contact_with35, -contact_with36, -contact_with37, -contact_with38,
+                -contact_with39, -contact_with40, -contact_with41, -contact_with42,
+                -contact_with43, -contact_with44, -contact_with45, -contact_with46,
+                -contact_with47, -contact_with48, -contact_with49, -contact_with50,
+                -ltc_contact1, -ltc_contact2, -ltc_contact3, -ltc_contact4, -ltc_contact5,
+                -ltc_contact6, -ltc_contact7, -ltc_contact8, -ltc_contact9, -ltc_contact10,
+                -ltc_contact11, -ltc_contact12, -ltc_contact13, -ltc_contact14, -ltc_contact15,
+                -ltc_contact16, -ltc_contact17, -ltc_contact18, -ltc_contact19, -ltc_contact20,
+                -ltc_contact21, -ltc_contact22, -ltc_contact23, -ltc_contact24, -ltc_contact25,
+                -ltc_contact26, -ltc_contact27, -ltc_contact28, -ltc_contact29, -ltc_contact30,
+                -ltc_contact31, -ltc_contact32, -ltc_contact33, -ltc_contact34, -ltc_contact35,
+                -ltc_contact36, -ltc_contact37, -ltc_contact38, -ltc_contact39, -ltc_contact40,
+                -ltc_contact41, -ltc_contact42, -ltc_contact43, -ltc_contact44, -ltc_contact45,
+                -ltc_contact46, -ltc_contact47, -ltc_contact48, -ltc_contact49, -ltc_contact50,
+                -no_contact_reason1, -no_contact_reason2, -no_contact_reason3, -no_contact_reason4, -no_contact_reason5,
+                -no_contact_reason6, -no_contact_reason7, -no_contact_reason8, -no_contact_reason9, -no_contact_reason10,
+                -no_contact_reason11, -no_contact_reason12, -no_contact_reason13, -no_contact_reason14,
+                -no_contact_reason15, -no_contact_reason16, -no_contact_reason17, -no_contact_reason18,
+                -no_contact_reason19, -no_contact_reason20, -no_contact_reason21, -no_contact_reason22,
+                -no_contact_reason23, -no_contact_reason24, -no_contact_reason25, -no_contact_reason26,
+                -no_contact_reason27, -no_contact_reason28, -no_contact_reason29, -no_contact_reason30,
+                -no_contact_reason31, -no_contact_reason32, -no_contact_reason33, -no_contact_reason34,
+                -no_contact_reason35, -no_contact_reason36, -no_contact_reason37, -no_contact_reason38,
+                -no_contact_reason39, -no_contact_reason40, -no_contact_reason41, -no_contact_reason42,
+                -no_contact_reason43, -no_contact_reason44, -no_contact_reason45, -no_contact_reason46,
+                -no_contact_reason47, -no_contact_reason48, -no_contact_reason49, -no_contact_reason50)
+
+# Merge person dataset with full eip dataset
+
+dim(eip26)
+dim(person)
+eip26 <- merge(eip26, person, by='record_id', all.x=T)
+dim(eip26)
+eip26 <- distinct(eip26)
+dim(eip26)
+
 ```
 
 ```{r Combining Datasets, include=FALSE}
 
-####################  Combine 2023/2024/2025 Data  ####################
+####################  Combine 2023/2024/2025/2026 Data  ####################
 
 dim(eip23)
 dim(eip24)
 dim(eip25)
+dim(eip26)
 
 
 #####  Updating 2023 Dataset  #####
@@ -1888,6 +2079,56 @@ eip23$ltc_sti_success_story <- ''
 eip23$ltc_other_success_story <- ''
 eip23$hcph_sud_next_follow_up_date <- ''
 
+eip23$enc_location_street_med <- ''
+eip23$xts_provided <- ''
+eip23$xts_number <- ''
+eip23$ltc_services___6 <- ''
+eip23$ltc_peer_final_ltc_status <- ''
+eip23$ltc_peer_declined_rsn___23 <- ''
+eip23$ltc_peer_declined_rsn___27 <- ''
+eip23$ltc_peer_declined_rsn___3 <- ''
+eip23$ltc_peer_declined_rsn___5 <- ''
+eip23$ltc_peer_declined_rsn___6 <- ''
+eip23$ltc_peer_declined_rsn___7 <- ''
+eip23$ltc_peer_declined_rsn___8 <- ''
+eip23$ltc_peer_declined_rsn___9 <- ''
+eip23$ltc_peer_declined_rsn___10 <- ''
+eip23$ltc_peer_declined_rsn___28 <- ''
+eip23$ltc_peer_declined_rsn___29 <- ''
+eip23$ltc_peer_declined_rsn___30 <- ''
+eip23$ltc_peer_declined_rsn___36 <- ''
+eip23$ltc_peer_declined_rsn___33 <- ''
+eip23$ltc_peer_declined_rsn___34 <- ''
+eip23$ltc_peer_declined_rsn___35 <- ''
+eip23$ltc_peer_declined_rsn___0 <- ''
+eip23$ltc_peer_declined_rsn_other <- ''
+eip23$ltc_peer_prevented_rsn___1 <- ''
+eip23$ltc_peer_prevented_rsn___2 <- ''
+eip23$ltc_peer_prevented_rsn___11 <- ''
+eip23$ltc_peer_prevented_rsn___3 <- ''
+eip23$ltc_peer_prevented_rsn___4 <- ''
+eip23$ltc_peer_prevented_rsn___5 <- ''
+eip23$ltc_peer_prevented_rsn___6 <- ''
+eip23$ltc_peer_prevented_rsn___8 <- ''
+eip23$ltc_peer_prevented_rsn___9 <- ''
+eip23$ltc_peer_prevented_rsn___12 <- ''
+eip23$ltc_peer_prevented_rsn___19 <- ''
+eip23$ltc_peer_prevented_rsn___20 <- ''
+eip23$ltc_peer_prevented_rsn___16 <- ''
+eip23$ltc_peer_prevented_rsn___17 <- ''
+eip23$ltc_peer_prevented_rsn___18 <- ''
+eip23$ltc_peer_prevented_rsn___0 <- ''
+eip23$ltc_peer_prevented_rsn_other <- ''
+eip23$peer_link_eip <- ''
+eip23$ltc_peer_success_story <- ''
+eip23$close_case_peer <- ''
+eip23$close_case_peer_date <- ''
+eip23$hiv_next_follow_up_date <- ''
+eip23$hcv_next_follow_up_date <- ''
+eip23$sud_next_follow_up_date <- ''
+eip23$peer_next_follow_up_date <- ''
+eip23$add_next_follow_up_date <- ''
+
 
 # Removing 2023 variables that are not needed/not in 2024 dataset
 eip23 <- select(eip23, -contact_by1, -contact_by10, -contact_by11, -contact_by12, -contact_by13, -contact_by14, -contact_by15, -contact_by16,
@@ -2373,6 +2614,56 @@ eip24$ltc_sti_success_story <- ''
 eip24$ltc_other_success_story <- ''
 eip24$hcph_sud_next_follow_up_date <- ''
 
+eip24$enc_location_street_med <- ''
+eip24$xts_provided <- ''
+eip24$xts_number <- ''
+eip24$ltc_services___6 <- ''
+eip24$ltc_peer_final_ltc_status <- ''
+eip24$ltc_peer_declined_rsn___23 <- ''
+eip24$ltc_peer_declined_rsn___27 <- ''
+eip24$ltc_peer_declined_rsn___3 <- ''
+eip24$ltc_peer_declined_rsn___5 <- ''
+eip24$ltc_peer_declined_rsn___6 <- ''
+eip24$ltc_peer_declined_rsn___7 <- ''
+eip24$ltc_peer_declined_rsn___8 <- ''
+eip24$ltc_peer_declined_rsn___9 <- ''
+eip24$ltc_peer_declined_rsn___10 <- ''
+eip24$ltc_peer_declined_rsn___28 <- ''
+eip24$ltc_peer_declined_rsn___29 <- ''
+eip24$ltc_peer_declined_rsn___30 <- ''
+eip24$ltc_peer_declined_rsn___36 <- ''
+eip24$ltc_peer_declined_rsn___33 <- ''
+eip24$ltc_peer_declined_rsn___34 <- ''
+eip24$ltc_peer_declined_rsn___35 <- ''
+eip24$ltc_peer_declined_rsn___0 <- ''
+eip24$ltc_peer_declined_rsn_other <- ''
+eip24$ltc_peer_prevented_rsn___1 <- ''
+eip24$ltc_peer_prevented_rsn___2 <- ''
+eip24$ltc_peer_prevented_rsn___11 <- ''
+eip24$ltc_peer_prevented_rsn___3 <- ''
+eip24$ltc_peer_prevented_rsn___4 <- ''
+eip24$ltc_peer_prevented_rsn___5 <- ''
+eip24$ltc_peer_prevented_rsn___6 <- ''
+eip24$ltc_peer_prevented_rsn___8 <- ''
+eip24$ltc_peer_prevented_rsn___9 <- ''
+eip24$ltc_peer_prevented_rsn___12 <- ''
+eip24$ltc_peer_prevented_rsn___19 <- ''
+eip24$ltc_peer_prevented_rsn___20 <- ''
+eip24$ltc_peer_prevented_rsn___16 <- ''
+eip24$ltc_peer_prevented_rsn___17 <- ''
+eip24$ltc_peer_prevented_rsn___18 <- ''
+eip24$ltc_peer_prevented_rsn___0 <- ''
+eip24$ltc_peer_prevented_rsn_other <- ''
+eip24$peer_link_eip <- ''
+eip24$ltc_peer_success_story <- ''
+eip24$close_case_peer <- ''
+eip24$close_case_peer_date <- ''
+eip24$hiv_next_follow_up_date <- ''
+eip24$hcv_next_follow_up_date <- ''
+eip24$sud_next_follow_up_date <- ''
+eip24$peer_next_follow_up_date <- ''
+eip24$add_next_follow_up_date <- ''
+
 
 
 #####  Updating 2025 Dataset  #####
@@ -2678,6 +2969,585 @@ eip25$offer_outcome_declined_peer___24 <- ''
 eip25$offer_outcome_declined_peer___25 <- ''
 eip25$offer_outcome_declined_peer___26 <- ''
 
+# Adding variables added to 2026 database as blank values
+eip25$enc_location_street_med <- ''
+eip25$xts_provided <- ''
+eip25$xts_number <- ''
+eip25$ltc_services___6 <- ''
+eip25$ltc_peer_final_ltc_status <- ''
+eip25$ltc_peer_declined_rsn___23 <- ''
+eip25$ltc_peer_declined_rsn___27 <- ''
+eip25$ltc_peer_declined_rsn___3 <- ''
+eip25$ltc_peer_declined_rsn___5 <- ''
+eip25$ltc_peer_declined_rsn___6 <- ''
+eip25$ltc_peer_declined_rsn___7 <- ''
+eip25$ltc_peer_declined_rsn___8 <- ''
+eip25$ltc_peer_declined_rsn___9 <- ''
+eip25$ltc_peer_declined_rsn___10 <- ''
+eip25$ltc_peer_declined_rsn___28 <- ''
+eip25$ltc_peer_declined_rsn___29 <- ''
+eip25$ltc_peer_declined_rsn___30 <- ''
+eip25$ltc_peer_declined_rsn___36 <- ''
+eip25$ltc_peer_declined_rsn___33 <- ''
+eip25$ltc_peer_declined_rsn___34 <- ''
+eip25$ltc_peer_declined_rsn___35 <- ''
+eip25$ltc_peer_declined_rsn___0 <- ''
+eip25$ltc_peer_declined_rsn_other <- ''
+eip25$ltc_peer_prevented_rsn___1 <- ''
+eip25$ltc_peer_prevented_rsn___2 <- ''
+eip25$ltc_peer_prevented_rsn___11 <- ''
+eip25$ltc_peer_prevented_rsn___3 <- ''
+eip25$ltc_peer_prevented_rsn___4 <- ''
+eip25$ltc_peer_prevented_rsn___5 <- ''
+eip25$ltc_peer_prevented_rsn___6 <- ''
+eip25$ltc_peer_prevented_rsn___8 <- ''
+eip25$ltc_peer_prevented_rsn___9 <- ''
+eip25$ltc_peer_prevented_rsn___12 <- ''
+eip25$ltc_peer_prevented_rsn___19 <- ''
+eip25$ltc_peer_prevented_rsn___20 <- ''
+eip25$ltc_peer_prevented_rsn___16 <- ''
+eip25$ltc_peer_prevented_rsn___17 <- ''
+eip25$ltc_peer_prevented_rsn___18 <- ''
+eip25$ltc_peer_prevented_rsn___0 <- ''
+eip25$ltc_peer_prevented_rsn_other <- ''
+eip25$peer_link_eip <- ''
+eip25$ltc_peer_success_story <- ''
+eip25$close_case_peer <- ''
+eip25$close_case_peer_date <- ''
+eip25$hiv_next_follow_up_date <- ''
+eip25$hcv_next_follow_up_date <- ''
+eip25$sud_next_follow_up_date <- ''
+eip25$peer_next_follow_up_date <- ''
+eip25$add_next_follow_up_date <- ''
+
+
+
+#####  Updating 2026 Dataset  #####
+
+# Adding variables removed in 2026 database from 2024/2025 database as blank values
+eip26$peer_navigator_id___14 <- ''
+eip26$peer_navigator_id___67 <- ''
+eip26$peer_navigator_id___14 <- ''
+eip26$peer_navigator_id___67               
+eip26$eligible_blackard_icf <- ''
+eip26$naccho_day14_contact_date <- ''
+eip26$naccho_day30_contact_date <- ''
+eip26$partner_status_1___1 <- ''
+eip26$partner_status_1___2 <- ''
+eip26$partner_status_1___3 <- ''
+eip26$partner_status_1___4 <- ''
+eip26$partner_status_1___5 <- ''
+eip26$partner_status_1___6 <- ''
+eip26$partner_status_1___7 <- ''
+eip26$partner_status_1___8 <- ''
+eip26$partner_status_2___1 <- ''
+eip26$partner_status_2___2 <- ''
+eip26$partner_status_2___3 <- ''
+eip26$partner_status_2___4 <- ''
+eip26$partner_status_2___5 <- ''
+eip26$partner_status_2___6 <- ''
+eip26$partner_status_2___7 <- ''
+eip26$partner_status_2___8 <- ''
+eip26$partner_status_3___1 <- ''
+eip26$partner_status_3___2 <- ''
+eip26$partner_status_3___3 <- ''
+eip26$partner_status_3___4 <- ''
+eip26$partner_status_3___5 <- ''
+eip26$partner_status_3___6 <- ''
+eip26$partner_status_3___7 <- ''
+eip26$partner_status_3___8 <- ''
+eip26$partner_status_4___1 <- ''
+eip26$partner_status_4___2 <- ''
+eip26$partner_status_4___3 <- ''
+eip26$partner_status_4___4 <- ''
+eip26$partner_status_4___5 <- ''
+eip26$partner_status_4___6 <- ''
+eip26$partner_status_4___7 <- ''
+eip26$partner_status_4___8 <- ''
+eip26$partner_status_5___1 <- ''
+eip26$partner_status_5___2 <- ''
+eip26$partner_status_5___3 <- ''
+eip26$partner_status_5___4 <- ''
+eip26$partner_status_5___5 <- ''
+eip26$partner_status_5___6 <- ''
+eip26$partner_status_5___7 <- ''
+eip26$partner_status_5___8 <- ''
+eip26$counselor_ref_sti_specific___6 <- ''
+eip26$ltc_coordinator_per_case___5 <- ''
+eip26$ltc_coordinator_per_case___6 <- ''
+eip26$ltc_coordinator_per_case___8 <- ''
+eip26$ltc_coordinator_per_case___73 <- ''
+eip26$ltc_coordinator_per_case___14 <- ''
+eip26$ltc_coordinator_per_case___65 <- ''
+eip26$ltc_coordinator_per_case___59 <- ''
+eip26$ltc_coordinator_per_case___67 <- ''
+eip26$ltc_coordinator_per_case___72 <- ''
+eip26$ltc_coordinator_per_case___47 <- ''
+eip26$ltc_coordinator_per_case___66 <- ''
+eip26$ltc_coordinator_per_case___76 <- ''
+eip26$ltc_coordinator_per_case___40 <- ''
+eip26$ltc_coordinator_per_case___41 <- ''
+eip26$ltc_coordinator_per_case___75 <- ''
+eip26$ltc_coordinator_per_case___1 <- ''
+eip26$ltc_coordinator_per_case___48 <- ''
+eip26$ltc_sud_oud_fu <- ''
+eip26$ltc_sud_oud_pos_fu <- ''
+eip26$ltc_service1___6 <- ''
+eip26$ltc_service2___6 <- ''
+eip26$ltc_service3___6 <- ''
+eip26$ltc_service4___6 <- ''
+eip26$ltc_service5___6 <- ''
+eip26$ltc_service6___6 <- ''
+eip26$ltc_service7___6 <- ''
+eip26$ltc_service8___6 <- ''
+eip26$ltc_service9___6 <- ''
+eip26$ltc_service10___6 <- ''
+eip26$ltc_service11___6 <- ''
+eip26$ltc_service12___6 <- ''
+eip26$ltc_service13___6 <- ''
+eip26$ltc_service14___6 <- ''
+eip26$ltc_service15___6 <- ''
+eip26$ltc_service16___6 <- ''
+eip26$ltc_service17___6 <- ''
+eip26$ltc_service18___6 <- ''
+eip26$ltc_service19___6 <- ''
+eip26$ltc_service20___6 <- ''
+eip26$ltc_service21___6 <- ''
+eip26$ltc_service22___6 <- ''
+eip26$ltc_service23___6 <- ''
+eip26$ltc_service24___6 <- ''
+eip26$ltc_service25___6 <- ''
+eip26$ltc_service26___6 <- ''
+eip26$ltc_service27___6 <- ''
+eip26$ltc_service28___6 <- ''
+eip26$ltc_service29___6 <- ''
+eip26$ltc_service30___6 <- ''
+eip26$ltc_service31___6 <- ''
+eip26$ltc_service32___6 <- ''
+eip26$ltc_service33___6 <- ''
+eip26$ltc_service34___6 <- ''
+eip26$ltc_service35___6 <- ''
+eip26$ltc_service36___6 <- ''
+eip26$ltc_service37___6 <- ''
+eip26$ltc_service38___6 <- ''
+eip26$ltc_service39___6 <- ''
+eip26$ltc_service40___6 <- ''
+eip26$ltc_service41___6 <- ''
+eip26$ltc_service42___6 <- ''
+eip26$ltc_service43___6 <- ''
+eip26$ltc_service44___6 <- ''
+eip26$ltc_service45___6 <- ''
+eip26$ltc_service46___6 <- ''
+eip26$ltc_service47___6 <- ''
+eip26$ltc_service48___6 <- ''
+eip26$ltc_service49___6 <- ''
+eip26$ltc_service50___6 <- ''
+eip26$ltc_service1___8 <- ''
+eip26$ltc_service2___8 <- ''
+eip26$ltc_service3___8 <- ''
+eip26$ltc_service4___8 <- ''
+eip26$ltc_service5___8 <- ''
+eip26$ltc_service6___8 <- ''
+eip26$ltc_service7___8 <- ''
+eip26$ltc_service8___8 <- ''
+eip26$ltc_service9___8 <- ''
+eip26$ltc_service10___8 <- ''
+eip26$ltc_service11___8 <- ''
+eip26$ltc_service12___8 <- ''
+eip26$ltc_service13___8 <- ''
+eip26$ltc_service14___8 <- ''
+eip26$ltc_service15___8 <- ''
+eip26$ltc_service16___8 <- ''
+eip26$ltc_service17___8 <- ''
+eip26$ltc_service18___8 <- ''
+eip26$ltc_service19___8 <- ''
+eip26$ltc_service20___8 <- ''
+eip26$ltc_service21___8 <- ''
+eip26$ltc_service22___8 <- ''
+eip26$ltc_service23___8 <- ''
+eip26$ltc_service24___8 <- ''
+eip26$ltc_service25___8 <- ''
+eip26$ltc_service26___8 <- ''
+eip26$ltc_service27___8 <- ''
+eip26$ltc_service28___8 <- ''
+eip26$ltc_service29___8 <- ''
+eip26$ltc_service30___8 <- ''
+eip26$ltc_service31___8 <- ''
+eip26$ltc_service32___8 <- ''
+eip26$ltc_service33___8 <- ''
+eip26$ltc_service34___8 <- ''
+eip26$ltc_service35___8 <- ''
+eip26$ltc_service36___8 <- ''
+eip26$ltc_service37___8 <- ''
+eip26$ltc_service38___8 <- ''
+eip26$ltc_service39___8 <- ''
+eip26$ltc_service40___8 <- ''
+eip26$ltc_service41___8 <- ''
+eip26$ltc_service42___8 <- ''
+eip26$ltc_service43___8 <- ''
+eip26$ltc_service44___8 <- ''
+eip26$ltc_service45___8 <- ''
+eip26$ltc_service46___8 <- ''
+eip26$ltc_service47___8 <- ''
+eip26$ltc_service48___8 <- ''
+eip26$ltc_service49___8 <- ''
+eip26$ltc_service50___8 <- ''
+eip26$naccho_contact_day1 <- ''
+eip26$naccho_contact_day2 <- ''
+eip26$naccho_contact_day3 <- ''
+eip26$naccho_contact_day4 <- ''
+eip26$naccho_contact_day5 <- ''
+eip26$naccho_contact_day6 <- ''
+eip26$naccho_contact_day7 <- ''
+eip26$naccho_contact_day8 <- ''
+eip26$naccho_contact_day9 <- ''
+eip26$naccho_contact_day10 <- ''
+eip26$naccho_contact_day11 <- ''
+eip26$naccho_contact_day12 <- ''
+eip26$naccho_contact_day13 <- ''
+eip26$naccho_contact_day14 <- ''
+eip26$naccho_contact_day15 <- ''
+eip26$naccho_contact_day16 <- ''
+eip26$naccho_contact_day17 <- ''
+eip26$naccho_contact_day18 <- ''
+eip26$naccho_contact_day19 <- ''
+eip26$naccho_contact_day20 <- ''
+eip26$naccho_contact_day21 <- ''
+eip26$naccho_contact_day22 <- ''
+eip26$naccho_contact_day23 <- ''
+eip26$naccho_contact_day24 <- ''
+eip26$naccho_contact_day25 <- ''
+eip26$naccho_contact_day26 <- ''
+eip26$naccho_contact_day27 <- ''
+eip26$naccho_contact_day28 <- ''
+eip26$naccho_contact_day29 <- ''
+eip26$naccho_contact_day30 <- ''
+eip26$naccho_contact_day31 <- ''
+eip26$naccho_contact_day32 <- ''
+eip26$naccho_contact_day33 <- ''
+eip26$naccho_contact_day34 <- ''
+eip26$naccho_contact_day35 <- ''
+eip26$naccho_contact_day36 <- ''
+eip26$naccho_contact_day37 <- ''
+eip26$naccho_contact_day38 <- ''
+eip26$naccho_contact_day39 <- ''
+eip26$naccho_contact_day40 <- ''
+eip26$naccho_contact_day41 <- ''
+eip26$naccho_contact_day42 <- ''
+eip26$naccho_contact_day43 <- ''
+eip26$naccho_contact_day44 <- ''
+eip26$naccho_contact_day45 <- ''
+eip26$naccho_contact_day46 <- ''
+eip26$naccho_contact_day47 <- ''
+eip26$naccho_contact_day48 <- ''
+eip26$naccho_contact_day49 <- ''
+eip26$naccho_contact_day50 <- ''
+eip26$naccho_contact_confirm_tx1 <- ''
+eip26$naccho_contact_confirm_tx2 <- ''
+eip26$naccho_contact_confirm_tx3 <- ''
+eip26$naccho_contact_confirm_tx4 <- ''
+eip26$naccho_contact_confirm_tx5 <- ''
+eip26$naccho_contact_confirm_tx6 <- ''
+eip26$naccho_contact_confirm_tx7 <- ''
+eip26$naccho_contact_confirm_tx8 <- ''
+eip26$naccho_contact_confirm_tx9 <- ''
+eip26$naccho_contact_confirm_tx10 <- ''
+eip26$naccho_contact_confirm_tx11 <- ''
+eip26$naccho_contact_confirm_tx12 <- ''
+eip26$naccho_contact_confirm_tx13 <- ''
+eip26$naccho_contact_confirm_tx14 <- ''
+eip26$naccho_contact_confirm_tx15 <- ''
+eip26$naccho_contact_confirm_tx16 <- ''
+eip26$naccho_contact_confirm_tx17 <- ''
+eip26$naccho_contact_confirm_tx18 <- ''
+eip26$naccho_contact_confirm_tx19 <- ''
+eip26$naccho_contact_confirm_tx20 <- ''
+eip26$naccho_contact_confirm_tx21 <- ''
+eip26$naccho_contact_confirm_tx22 <- ''
+eip26$naccho_contact_confirm_tx23 <- ''
+eip26$naccho_contact_confirm_tx24 <- ''
+eip26$naccho_contact_confirm_tx25 <- ''
+eip26$naccho_contact_confirm_tx26 <- ''
+eip26$naccho_contact_confirm_tx27 <- ''
+eip26$naccho_contact_confirm_tx28 <- ''
+eip26$naccho_contact_confirm_tx29 <- ''
+eip26$naccho_contact_confirm_tx30 <- ''
+eip26$naccho_contact_confirm_tx31 <- ''
+eip26$naccho_contact_confirm_tx32 <- ''
+eip26$naccho_contact_confirm_tx33 <- ''
+eip26$naccho_contact_confirm_tx34 <- ''
+eip26$naccho_contact_confirm_tx35 <- ''
+eip26$naccho_contact_confirm_tx36 <- ''
+eip26$naccho_contact_confirm_tx37 <- ''
+eip26$naccho_contact_confirm_tx38 <- ''
+eip26$naccho_contact_confirm_tx39 <- ''
+eip26$naccho_contact_confirm_tx40 <- ''
+eip26$naccho_contact_confirm_tx41 <- ''
+eip26$naccho_contact_confirm_tx42 <- ''
+eip26$naccho_contact_confirm_tx43 <- ''
+eip26$naccho_contact_confirm_tx44 <- ''
+eip26$naccho_contact_confirm_tx45 <- ''
+eip26$naccho_contact_confirm_tx46 <- ''
+eip26$naccho_contact_confirm_tx47 <- ''
+eip26$naccho_contact_confirm_tx48 <- ''
+eip26$naccho_contact_confirm_tx49 <- ''
+eip26$naccho_contact_confirm_tx50 <- ''
+eip26$ltc_hcv_referral_uc_pharmacy_telehealth___1 <- ''
+eip26$ltc_hcv_referral_uc_pharmacy_telehealth___2 <- ''
+eip26$ltc_hcv_referral_uc_pharmacy_telehealth___3 <- ''
+eip26$ltc_coordinator_per_case___2 <- ''
+eip26$ltc_coordinator_per_case___12 <- ''
+eip26$ltc_coordinator_per_case___61 <- ''
+eip26$ltc_coordinator_per_case___54 <- ''
+eip26$ltc_coordinator_per_case___24 <- ''
+eip26$ltc_coordinator_per_case___64 <- ''
+eip26$ltc_coordinator_per_case___28 <- ''
+eip26$ltc_coordinator_per_case___63 <- ''
+eip26$ltc_coordinator_per_case___49 <- ''
+eip26$ltc_coordinator_per_case___69 <- ''
+eip26$ltc_coordinator_per_case___30 <- ''
+eip26$offer_outcome_declined_peer___1 <- ''
+eip26$offer_outcome_declined_peer___2 <- ''
+eip26$offer_outcome_declined_peer___4 <- ''
+eip26$offer_outcome_declined_peer___11 <- ''
+eip26$offer_outcome_declined_peer___12 <- ''
+eip26$offer_outcome_declined_peer___13 <- ''
+eip26$offer_outcome_declined_peer___14 <- ''
+eip26$offer_outcome_declined_peer___15 <- ''
+eip26$offer_outcome_declined_peer___16 <- ''
+eip26$offer_outcome_declined_peer___17 <- ''
+eip26$offer_outcome_declined_peer___18 <- ''
+eip26$offer_outcome_declined_peer___19 <- ''
+eip26$offer_outcome_declined_peer___20 <- ''
+eip26$offer_outcome_declined_peer___21 <- ''
+eip26$offer_outcome_declined_peer___22 <- ''
+eip26$offer_outcome_declined_peer___24 <- ''
+eip26$offer_outcome_declined_peer___25 <- ''
+eip26$offer_outcome_declined_peer___26 <- ''
+
+eip26$enc_location_urc <- ''
+eip26$appalachian <- ''
+eip26$appalachian_family <- ''
+eip26$fts_knowledge <- ''
+eip26$fts_use <- ''
+eip26$fts_offered <- ''
+eip26$fts_not_provided_rsn___1 <- ''
+eip26$fts_not_provided_rsn___2 <- ''
+eip26$fts_not_provided_rsn___3 <- ''
+eip26$fts_not_provided_rsn___4 <- ''
+eip26$fts_not_provided_rsn___5 <- ''
+eip26$fts_not_provided_rsn___6 <- ''
+eip26$fts_not_provided_rsn___7 <- ''
+eip26$fts_not_provided_rsn___8 <- ''
+eip26$fts_not_provided_rsn___9 <- ''
+eip26$fts_not_provided_rsn___10 <- ''
+eip26$fts_not_provided_rsn_other <- ''
+eip26$fts_declined_rsn___1 <- ''
+eip26$fts_declined_rsn___2 <- ''
+eip26$fts_declined_rsn___3 <- ''
+eip26$fts_declined_rsn___4 <- ''
+eip26$fts_declined_rsn_other <- ''
+eip26$prep_assessment_rsn <- ''
+eip26$prep_counsel_edu <- ''
+eip26$prep_referral <- ''
+eip26$prep_referral_accept <- ''
+eip26$prep_pre_counsel_edu_rsn <- ''
+eip26$prep_pre_counsel_edu_rsn_other <- ''
+eip26$prep_referral_rsn <- ''
+eip26$prep_referral_rsn_other <- ''
+eip26$prep_referral_decline_rsn <- ''
+eip26$prep_referral_decline_rsn_other <- ''
+eip26$reduction_plan <- ''
+eip26$staff_start_peer <- ''
+eip26$date_start_peer <- ''
+eip26$peer_referred_by <- ''
+eip26$peer_reason_for_offer_category <- ''
+eip26$peer_reason_for_offer_self_req___1 <- ''
+eip26$peer_reason_for_offer_self_req___2 <- ''
+eip26$peer_reason_for_offer_self_req___3 <- ''
+eip26$peer_reason_for_offer_self_req___5 <- ''
+eip26$peer_reason_for_offer_self_req___6 <- ''
+eip26$peer_reason_for_offer_self_req___7 <- ''
+eip26$peer_reason_for_offer_self_req___8 <- ''
+eip26$peer_reason_for_offer_self_req___9 <- ''
+eip26$peer_reason_for_offer_self_req___4 <- ''
+eip26$peer_reason_for_offer_routine_freq <- ''
+eip26$peer_reason_for_offer_self_req_other <- ''
+eip26$peer_reason_for_offer_diagnostic___1 <- ''
+eip26$peer_reason_for_offer_diagnostic___2 <- ''
+eip26$peer_reason_for_offer_diagnostic___3 <- ''
+eip26$peer_reason_for_offer_diagnostic___4 <- ''
+eip26$peer_reason_for_offer_diagnostic___5 <- ''
+eip26$peer_reason_for_offer_diagnostic___6 <- ''
+eip26$peer_reason_for_offer_diagnostic___7 <- ''
+eip26$peer_reason_for_offer_diagnostic___8 <- ''
+eip26$peer_reason_for_offer_diagnostic___9 <- ''
+eip26$peer_reason_for_offer_diagnostic___10 <- ''
+eip26$peer_reason_for_offer_diagnostic___11 <- ''
+eip26$peer_reason_for_offer_diagnostic___12 <- ''
+eip26$peer_reason_for_offer_diagnostic___13 <- ''
+eip26$peer_reason_for_offer_diagnostic___14 <- ''
+eip26$peer_reason_for_offer_diagnostic___15 <- ''
+eip26$peer_reason_for_offer_diagnostic___16 <- ''
+eip26$peer_reason_for_offer_diagnostic___17 <- ''
+eip26$peer_reason_for_offer_diagnostic___18 <- ''
+eip26$peer_reason_for_offer_diagnostic___19 <- ''
+eip26$peer_reason_for_offer_diagnostic___20 <- ''
+eip26$peer_reason_for_offer_diagnostic___21 <- ''
+eip26$peer_reason_for_offer_diagnostic___22 <- ''
+eip26$peer_reason_for_offer_diagnostic___23 <- ''
+eip26$peer_reason_for_offer_diagnostic___24 <- ''
+eip26$peer_reason_for_offer_diagnostic___25 <- ''
+eip26$peer_reason_for_offer_diagnostic___26 <- ''
+eip26$peer_reason_for_offer_diagnostic___27 <- ''
+eip26$peer_reason_for_offer_diagnostic___28 <- ''
+eip26$peer_reason_for_offer_diagnostic___29 <- ''
+eip26$peer_reason_for_offer_diagnostic___30 <- ''
+eip26$peer_reason_for_offer_diagnostic___31 <- ''
+eip26$peer_reason_for_offer_diagnostic___32 <- ''
+eip26$peer_reason_for_offer_diagnostic___33 <- ''
+eip26$peer_reason_for_offer_diagnostic_other <- ''
+eip26$peer_reason_for_offer_clinical___1 <- ''
+eip26$peer_reason_for_offer_clinical___2 <- ''
+eip26$peer_reason_for_offer_clinical___3 <- ''
+eip26$peer_reason_for_offer_clinical___4 <- ''
+eip26$peer_reason_for_offer_clinical___5 <- ''
+eip26$peer_reason_for_offer_clinical___7 <- ''
+eip26$peer_reason_for_offer_clinical___8 <- ''
+eip26$peer_reason_for_offer_clinical___9 <- ''
+eip26$peer_reason_for_offer_clinical___10 <- ''
+eip26$peer_reason_for_offer_clinical___11 <- ''
+eip26$peer_reason_for_offer_clinical___12 <- ''
+eip26$peer_reason_for_offer_clinical___13 <- ''
+eip26$peer_reason_for_offer_clinical___14 <- ''
+eip26$peer_reason_for_offer_clinical___15 <- ''
+eip26$peer_reason_for_offer_clinical___16 <- ''
+eip26$peer_reason_for_offer_clinical___17 <- ''
+eip26$peer_reason_for_offer_clinical___18 <- ''
+eip26$peer_reason_for_offer_clinical___19 <- ''
+eip26$peer_reason_for_offer_clinical___20 <- ''
+eip26$peer_reason_for_offer_clinical___21 <- ''
+eip26$peer_reason_for_offer_clinical___22 <- ''
+eip26$peer_reason_for_offer_clinical___23 <- ''
+eip26$peer_reason_for_offer_clinical___24 <- ''
+eip26$peer_reason_for_offer_clinical___25 <- ''
+eip26$peer_reason_for_offer_clinical___26 <- ''
+eip26$peer_reason_for_offer_clinical___27 <- ''
+eip26$peer_reason_for_offer_clinical___28 <- ''
+eip26$peer_reason_for_offer_clinical___29 <- ''
+eip26$peer_reason_for_offer_clinical___30 <- ''
+eip26$peer_reason_for_offer_clinical___31 <- ''
+eip26$peer_reason_for_offer_clinical_other <- ''
+eip26$peer_reason_for_offer_counselor___1 <- ''
+eip26$peer_reason_for_offer_counselor___2 <- ''
+eip26$peer_reason_for_offer_counselor___3 <- ''
+eip26$peer_reason_for_offer_counselor___4 <- ''
+eip26$peer_reason_for_offer_counselor___5 <- ''
+eip26$peer_reason_for_offer_counselor___6 <- ''
+eip26$peer_reason_for_offer_counselor___7 <- ''
+eip26$peer_reason_for_offer_counselor___8 <- ''
+eip26$peer_reason_for_offer_counselor___9 <- ''
+eip26$peer_reason_for_offer_counselor___10 <- ''
+eip26$peer_reason_for_offer_counselor___11 <- ''
+eip26$peer_reason_for_offer_counselor___12 <- ''
+eip26$peer_reason_for_offer_counselor___13 <- ''
+eip26$peer_reason_for_offer_counselor___14 <- ''
+eip26$peer_reason_for_offer_counselor___15 <- ''
+eip26$peer_reason_for_offer_counselor___16 <- ''
+eip26$peer_reason_for_offer_counselor___17 <- ''
+eip26$peer_reason_for_offer_counselor___18 <- ''
+eip26$peer_reason_for_offer_counselor___19 <- ''
+eip26$peer_reason_for_offer_counselor___20 <- ''
+eip26$peer_reason_for_offer_counselor___21 <- ''
+eip26$peer_reason_for_offer_counselor___22 <- ''
+eip26$peer_reason_for_offer_counselor___23 <- ''
+eip26$peer_reason_for_offer_counselor___24 <- ''
+eip26$peer_reason_for_offer_counselor___25 <- ''
+eip26$peer_reason_for_offer_counselor___26 <- ''
+eip26$peer_reason_for_offer_counselor___27 <- ''
+eip26$peer_reason_for_offer_counselor___28 <- ''
+eip26$peer_reason_for_offer_counselor___29 <- ''
+eip26$peer_reason_for_offer_counselor___30 <- ''
+eip26$peer_reason_for_offer_counselor_other <- ''
+eip26$peer_reason_for_offer_demographics___1 <- ''
+eip26$peer_reason_for_offer_demographics___2 <- ''
+eip26$peer_reason_for_offer_demographics___3 <- ''
+eip26$peer_reason_for_offer_demographics___4 <- ''
+eip26$peer_reason_for_offer_tnt___1 <- ''
+eip26$peer_reason_for_offer_tnt___2 <- ''
+eip26$peer_reason_for_offer_tnt___3 <- ''
+eip26$peer_reason_for_offer_tnt_number <- ''
+eip26$peer_reason_for_offer_tnt_relation <- ''
+eip26$offer_outcome_time_peer <- ''
+eip26$offer_outcome_location_peer <- ''
+eip26$offer_outcome_room_peer <- ''
+eip26$offer_outcome_approach_peer___1 <- ''
+eip26$offer_outcome_approach_peer___2 <- ''
+eip26$offer_outcome_approach_peer___3 <- ''
+eip26$offer_outcome_approach_peer___4 <- ''
+eip26$offer_outcome_approach_peer___5 <- ''
+eip26$offer_outcome_approach_peer___6 <- ''
+eip26$offer_outcome_approach_peer___7 <- ''
+eip26$offer_outcome_approach_peer___8 <- ''
+eip26$offer_outcome_peer <- ''
+eip26$offer_outcome_declined_peer___23 <- ''
+eip26$offer_outcome_declined_peer___27 <- ''
+eip26$offer_outcome_declined_peer___3 <- ''
+eip26$offer_outcome_declined_peer___5 <- ''
+eip26$offer_outcome_declined_peer___6 <- ''
+eip26$offer_outcome_declined_peer___7 <- ''
+eip26$offer_outcome_declined_peer___8 <- ''
+eip26$offer_outcome_declined_peer___9 <- ''
+eip26$offer_outcome_declined_peer___10 <- ''
+eip26$offer_outcome_declined_peer___28 <- ''
+eip26$offer_outcome_declined_peer___29 <- ''
+eip26$offer_outcome_declined_peer___30 <- ''
+eip26$offer_outcome_declined_peer___36 <- ''
+eip26$offer_outcome_declined_peer___33 <- ''
+eip26$offer_outcome_declined_peer___34 <- ''
+eip26$offer_outcome_declined_peer___35 <- ''
+eip26$offer_outcome_declined_peer___0 <- ''
+eip26$offer_outcome_declined_other_peer <- ''
+eip26$offer_outcome_prevented_peer___1 <- ''
+eip26$offer_outcome_prevented_peer___2 <- ''
+eip26$offer_outcome_prevented_peer___3 <- ''
+eip26$offer_outcome_prevented_peer___4 <- ''
+eip26$offer_outcome_prevented_peer___5 <- ''
+eip26$offer_outcome_prevented_peer___6 <- ''
+eip26$offer_outcome_prevented_peer___7 <- ''
+eip26$offer_outcome_prevented_peer___8 <- ''
+eip26$offer_outcome_prevented_peer___9 <- ''
+eip26$offer_outcome_prevented_peer___10 <- ''
+eip26$offer_outcome_prevented_other_peer <- ''
+eip26$peer_fts_number_other <- ''
+eip26$peer_fu_yn <- ''
+eip26$peer_next_fu_date <- ''
+eip26$peer_fu_closed <- ''
+eip26$peer_support_complete <- ''
+eip26$offer_outcome_location_hiv <- ''
+eip26$offer_outcome_room_hiv <- ''
+eip26$offer_outcome_location_hiv_2 <- ''
+eip26$offer_outcome_room_hiv_2 <- ''
+eip26$offer_outcome_location_hiv_3 <- ''
+eip26$offer_outcome_room_hiv_3 <- ''
+eip26$offer_outcome_location_hcv <- ''
+eip26$offer_outcome_room_hcv <- ''
+eip26$offer_outcome_location_hcv_2 <- ''
+eip26$offer_outcome_room_hcv_2 <- ''
+eip26$offer_outcome_location_hcv_3 <- ''
+eip26$offer_outcome_room_hcv_3 <- ''
+eip26$offer_outcome_location_sti <- ''
+eip26$offer_outcome_room_sti <- ''
+eip26$offer_outcome_location_sti_2 <- ''
+eip26$offer_outcome_room_sti_2 <- ''
+eip26$offer_outcome_location_sti_3 <- ''
+eip26$offer_outcome_room_sti_3 <- ''
+eip26$ltc_services___5 <- ''
+eip26$ltc_coordinator_per_case___70 <- ''
+eip26$ltc_coordinator_per_case___79 <- ''
+eip26$ltc_coordinator_per_case___78 <- ''
+eip26$ltc_coordinator_per_case___71 <- ''
+eip26$anderson_ltc_open_calc <- ''
 
 
 #####  Combining matched datasets  #####
@@ -2688,11 +3558,15 @@ setdiff(names(eip24), names(eip23))
 setdiff(names(eip24), names(eip25))
 setdiff(names(eip25), names(eip24))
 
+setdiff(names(eip25), names(eip26))
+setdiff(names(eip26), names(eip25))
+
 dim(eip23)
 dim(eip24)
 dim(eip25)
+dim(eip26)
 
-eip <- rbind(eip23, eip24, eip25)
+eip <- rbind(eip23, eip24, eip25, eip26)
 dim(eip)
 
 
