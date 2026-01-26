@@ -52,19 +52,6 @@ This site shows our current EIP staff and describes their roles within the progr
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1em; align-items: end;">
   <figure style="margin: 0; text-align: center;">
-    <a href="a_gao.html" title="Angela Gao">
-      <img src="images/a_gao.jpg" alt="Angela Gao"
-           style="width: 100%; height: auto; display: block; border-radius: 8px;">
-    </a>
-    <figcaption style="margin-top: 0.5em; font-size: 0.9em; color: #555;">
-      Angela Gao
-    </figcaption>
-  </figure>
-</div>
-
-
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1em; align-items: end;">
-  <figure style="margin: 0; text-align: center;">
     <a href="t_johnson.html" title="Tina Johnson">
       <img src="images/blank_staff.jpg" alt="Tina Johnson"
            style="width: 100%; height: auto; display: block; border-radius: 8px;">
@@ -214,19 +201,6 @@ This site shows our current EIP staff and describes their roles within the progr
     </a>
     <figcaption style="margin-top: 0.5em; font-size: 0.9em; color: #555;">
       Pierre Abbey
-    </figcaption>
-  </figure>
-</div>
-
-
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1em; align-items: end;">
-  <figure style="margin: 0; text-align: center;">
-    <a href="b_johannes.html" title="Brooke Johannes">
-      <img src="images/b_johannes.jpg" alt="Brooke Johannes"
-           style="width: 100%; height: auto; display: block; border-radius: 8px;">
-    </a>
-    <figcaption style="margin-top: 0.5em; font-size: 0.9em; color: #555;">
-      Brooke Johannes
     </figcaption>
   </figure>
 </div>
