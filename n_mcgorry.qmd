@@ -64,12 +64,6 @@ summary(eip26$record_id)
 eip26$record_id <- paste(eip26$record_id, "_26", sep = "")
 summary(eip26$record_id)
 
-summary(eip26$enc_date)
-eip26$enc_date <- as.Date(eip26$enc_date, format = '%m/%d/%Y')
-summary(eip26$enc_date)
-eip26 <- eip26[which(eip26$enc_date >= '2026-01-01'), ]
-summary(eip26$enc_date)
-
 ```
 
 ```{r Patient Data to Encounter, include=FALSE}
