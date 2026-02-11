@@ -2248,7 +2248,8 @@ monthly_encounters
 ########################################  No Service  #########################################
 
 # Approached for Assessment
-enc$no_service[(is.na(enc$offer_outcome_risks) | enc$offer_outcome_risks == '') &
+enc$no_service[(enc$counselor_risk_start == 'zpitbb5a' | enc$enc_counselor == 82) &
+                 (is.na(enc$offer_outcome_risks) | enc$offer_outcome_risks == '') &
                  (is.na(enc$offer_outcome_peer) | enc$offer_outcome_peer == '') &
                  (is.na(enc$offer_outcome_hiv) | enc$offer_outcome_hiv == '') &
                  (is.na(enc$offer_outcome_hcv) | enc$offer_outcome_hcv == '') &
@@ -2288,7 +2289,7 @@ monthly_no_service
 
 # Approached for Assessment
 table(enc$counselor_risk_start, enc$offer_outcome_risks)
-enc$approach_assessment[(enc$counselor_risk_start == 'zpitbb5a') &
+enc$approach_assessment[(enc$counselor_risk_start == 'zpitbb5a' | enc$enc_counselor == 82) &
                           (enc$offer_outcome_risks == 0 | enc$offer_outcome_risks == 1 |
                              enc$offer_outcome_risks == 2)] <- 1
 table(enc$approach_assessment)
@@ -2323,7 +2324,7 @@ monthly_assessments
 
 # Declined
 table(enc$counselor_risk_start, enc$offer_outcome_risks)
-enc$assessments_declined[(enc$counselor_risk_start == 'zpitbb5a') &
+enc$assessments_declined[(enc$counselor_risk_start == 'zpitbb5a' | enc$enc_counselor == 82) &
                            enc$offer_outcome_risks == 0] <- 1
 table(enc$assessments_declined)
 
@@ -2357,7 +2358,7 @@ monthly_assessments_declined
 
 # Prevented
 table(enc$counselor_risk_start, enc$offer_outcome_risks)
-enc$assessments_prevented[(enc$counselor_risk_start == 'zpitbb5a') &
+enc$assessments_prevented[(enc$counselor_risk_start == 'zpitbb5a' | enc$enc_counselor == 82) &
                             enc$offer_outcome_risks == 2] <- 1
 table(enc$assessments_prevented)
 
@@ -2391,7 +2392,7 @@ monthly_assessments_prevented
 
 # Assessed
 table(enc$counselor_risk_start, enc$offer_outcome_risks)
-enc$assessments[(enc$counselor_risk_start == 'zpitbb5a') &
+enc$assessments[(enc$counselor_risk_start == 'zpitbb5a' | enc$enc_counselor == 82) &
                   enc$offer_outcome_risks == 1] <- 1
 table(enc$assessments)
 
@@ -3026,7 +3027,7 @@ monthly_prep # metrics of PrEP assessments, eligible screens
 ########################################  HIV Testing  ########################################
 
 table(enc$ctr_calc)
-enc$ctr_tests[enc$ctr_calc == 1 & enc$counselor_hiv_start == 'zpitbb5a'] <- 1
+enc$ctr_tests[(enc$counselor_risk_start == 'zpitbb5a' | enc$enc_counselor == 82) & enc$ctr_calc == 1] <- 1
 ctr_tests <- enc[which(enc$ctr_tests == 1), ]
 ctr_tests <- nrow(ctr_tests)
 ctr_tests
@@ -3060,8 +3061,8 @@ ctr_new_positive_percent
 
 
 table(enc$ehe_calc)
-enc$ehe_tests[enc$ehe_calc == 1 & enc$counselor_hiv_start == 'zpitbb5a'] <- 1
-ehe_tests <- enc[which(enc$ehe_calc == 1 & enc$counselor_hiv_start == 'zpitbb5a'), ]
+enc$ehe_tests[(enc$counselor_risk_start == 'zpitbb5a' | enc$enc_counselor == 82) & enc$ehe_calc == 1] <- 1
+ehe_tests <- enc[which(enc$ehe_tests == 1), ]
 ehe_tests <- nrow(ehe_tests)
 ehe_tests
 
@@ -3156,14 +3157,14 @@ monthly_hiv_tests # metrics of HIV Testing
 
 
 
-enc$hiv_false_positive[enc$counselor_hiv_start == 'zpitbb5a' &
-                         ((enc$hiv_result1 == 1 | enc$hiv_result1 == 2 |
+enc$hiv_false_positive[(enc$counselor_risk_start == 'zpitbb5a' | enc$enc_counselor == 82) &
+                         (enc$hiv_result1 == 1 | enc$hiv_result1 == 2 |
                              enc$hiv_result2 == 1 | enc$hiv_result2 == 2 |
                              enc$hiv_result3 == 1 | enc$hiv_result3 == 2 |
                              enc$hiv_result4 == 1 | enc$hiv_result4 == 2 |
                              enc$hiv_result5 == 1 | enc$hiv_result5 == 2 |
                              enc$hiv_result6 == 1 | enc$hiv_result6 == 2) &
-                            enc$final_test_status_hiv == 0)] <- 1
+                            enc$final_test_status_hiv == 0] <- 1
 table(enc$hiv_false_positive)
 hiv_false_positive <- enc[which(enc$hiv_false_positive == 1), ]
 dim(hiv_false_positive)
@@ -3175,7 +3176,8 @@ hiv_false_positive_percent
 
 
 
-enc$hiv_indeterminate[enc$counselor_hiv_start == 'zpitbb5a' & enc$final_test_status_hiv == 2] <- 1
+enc$hiv_indeterminate[(enc$counselor_risk_start == 'zpitbb5a' | enc$enc_counselor == 82) &
+                        enc$final_test_status_hiv == 2] <- 1
 table(enc$hiv_indeterminate)
 hiv_indeterminate <- enc[which(enc$hiv_indeterminate == 1), ]
 dim(hiv_indeterminate)
@@ -3205,13 +3207,13 @@ ehe_positivity_rate[is.na(ehe_positivity_rate)] <- '0.0%'
 
 # HCV Rapid Testing
 ## based on fingerstick sample type
-enc$hcv_rapid_test[enc$counselor_hcv_start == 'zpitbb5a' &
-                     (enc$sample_type_hcv1 == 5 |
+enc$hcv_rapid_test[(enc$counselor_risk_start == 'zpitbb5a' | enc$enc_counselor == 82) &
+                     enc$sample_type_hcv1 == 5 |
                         enc$sample_type_hcv2 == 5 |
                         enc$sample_type_hcv3 == 5 |
                         enc$sample_type_hcv4 == 5 |
                         enc$sample_type_hcv5 == 5 |
-                        enc$sample_type_hcv6 == 5)] <- 1
+                        enc$sample_type_hcv6 == 5] <- 1
 table(enc$hcv_rapid_test)
 
 hcv_rapid_tests <- enc[which(enc$hcv_rapid_test == 1), ]
@@ -10078,11 +10080,7 @@ monthly_hcv_tests
 
 :::{.grid .align-items-center}
 ::: {.g-col-8}
-This metrics report shows data for encounter information for **Brooke Pitula**. 
-Brooke's start and end date with EIP are shown below, however, any data contained 
-within this report covers clinical information captured in the EIP Database since 
-**January 1st, 2023**. The metrics in this report describe specific encounter information 
-and the services and/or referrals that were provided to patients/clients.
+This metrics report shows data for encounter information for **Brooke Pitula**. The metrics in this report describe specific encounter information and the services and/or referrals that were provided to patients/clients.
 
 - **Start date:** *11/1/2024*  
 - **End date:**  
@@ -13469,12 +13467,6 @@ Therefore, Brooke has **successfully linked a total of `r other_linked` Other li
 :::
 
 :::
-
-
-
-
-
-
 
 
 
