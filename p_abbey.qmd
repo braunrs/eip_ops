@@ -58,7 +58,7 @@ eip25$record_id <- paste(eip25$record_id, "_25", sep = "")
 summary(eip25$record_id)
 
 # 2026
-eip26 <- read.csv('M:/EIP Data/EIP Database/REDCap 2026/EIP Database Data 20260302_0922.csv')
+eip26 <- read.csv('M:/EIP Data/EIP Database/REDCap 2026/EIP Database Data 20260304_1113.csv')
 dim(eip26)
 summary(eip26$record_id)
 eip26$record_id <- paste(eip26$record_id, "_26", sep = "")
@@ -1334,6 +1334,7 @@ eip23$ltc_sud_referral_uc_inpt___3 <- ''
 eip23$ltc_sud_referral_uc_inpt___0 <- ''
 eip23$mgen_sr <- ''
 eip23$mgen_treat <- ''
+eip23$pitula_ltc_open_calc <- ''
 
 
 # Removing 2023 variables that are not needed/not in 2024 dataset
@@ -1885,6 +1886,7 @@ eip24$ltc_sud_referral_uc_inpt___3 <- ''
 eip24$ltc_sud_referral_uc_inpt___0 <- ''
 eip24$mgen_sr <- ''
 eip24$mgen_treat <- ''
+eip24$pitula_ltc_open_calc <- ''
 
 
 #####  Updating 2025 Dataset  #####
@@ -2256,6 +2258,7 @@ eip25$ltc_sud_referral_uc_inpt___3 <- ''
 eip25$ltc_sud_referral_uc_inpt___0 <- ''
 eip25$mgen_sr <- ''
 eip25$mgen_treat <- ''
+eip25$pitula_ltc_open_calc <- ''
 
 
 #####  Updating 2026 Dataset  #####

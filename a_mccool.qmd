@@ -50,7 +50,7 @@ eip25$record_id <- paste(eip25$record_id, "_25", sep = "")
 summary(eip25$record_id)
 
 # 2026
-eip26 <- read.csv('M:/EIP Data/EIP Database/REDCap 2026/EIP Database Data 20260302_0922.csv')
+eip26 <- read.csv('M:/EIP Data/EIP Database/REDCap 2026/EIP Database Data 20260304_1113.csv')
 dim(eip26)
 summary(eip26$record_id)
 eip26$record_id <- paste(eip26$record_id, "_26", sep = "")
@@ -658,6 +658,8 @@ eip24$ltc_coordinator_per_case___69 <- ''
 eip24$ltc_coordinator_per_case___30 <- ''
 eip24$mgen_sr <- ''
 eip24$mgen_treat <- ''
+eip24$pitula_ltc_open_calc <- ''
+
 
 #####  Updating 2025 Dataset  #####
 
@@ -1027,6 +1029,7 @@ eip25$counselor_ref_sud_specific___60 <- ''
 eip25$counselor_ref_sud_specific___61 <- ''
 eip25$mgen_sr <- ''
 eip25$mgen_treat <- ''
+eip25$pitula_ltc_open_calc <- ''
 
 
 #####  Updating 2026 Dataset  #####
