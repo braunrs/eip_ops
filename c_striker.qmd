@@ -51,14 +51,14 @@ eip24$record_id <- paste(eip24$record_id, "_24", sep = "")
 summary(eip24$record_id)
 
 # 2025
-eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20260330_1255.csv')
+eip25 <- read.csv('M:/EIP Data/EIP Database/REDCap 2025/EIP Database Data 20260511_1023.csv')
 dim(eip25)
 summary(eip25$record_id)
 eip25$record_id <- paste(eip25$record_id, "_25", sep = "")
 summary(eip25$record_id)
 
 # 2026
-eip26 <- read.csv('M:/EIP Data/EIP Database/REDCap 2026/EIP Database Data 20260406_1208.csv')
+eip26 <- read.csv('M:/EIP Data/EIP Database/REDCap 2026/EIP Database Data 20260511_1026.csv')
 dim(eip26)
 summary(eip26$record_id)
 eip26$record_id <- paste(eip26$record_id, "_26", sep = "")
@@ -1268,7 +1268,6 @@ eip23$ltc_general_success_story <- ''
 eip23$ltc_sti_success_story <- ''
 eip23$ltc_other_success_story <- ''
 eip23$hcph_sud_next_follow_up_date <- ''
-
 eip23$enc_location_street_med <- ''
 eip23$xts_provided <- ''
 eip23$xts_number <- ''
@@ -1335,6 +1334,10 @@ eip23$ltc_sud_referral_uc_inpt___0 <- ''
 eip23$mgen_sr <- ''
 eip23$mgen_treat <- ''
 eip23$pitula_ltc_open_calc <- ''
+eip23$ltc_coordinator_per_case___93 <- ''
+eip23$ltc_coordinator_per_case___94 <- ''
+eip23$ltc_coordinator_per_case___95 <- ''
+eip23$ltc_coordinator_per_case___96 <- ''
 
 
 # Removing 2023 variables that are not needed/not in 2024 dataset
@@ -1820,7 +1823,6 @@ eip24$ltc_general_success_story <- ''
 eip24$ltc_sti_success_story <- ''
 eip24$ltc_other_success_story <- ''
 eip24$hcph_sud_next_follow_up_date <- ''
-
 eip24$enc_location_street_med <- ''
 eip24$xts_provided <- ''
 eip24$xts_number <- ''
@@ -1887,7 +1889,10 @@ eip24$ltc_sud_referral_uc_inpt___0 <- ''
 eip24$mgen_sr <- ''
 eip24$mgen_treat <- ''
 eip24$pitula_ltc_open_calc <- ''
-
+eip24$ltc_coordinator_per_case___93 <- ''
+eip24$ltc_coordinator_per_case___94 <- ''
+eip24$ltc_coordinator_per_case___95 <- ''
+eip24$ltc_coordinator_per_case___96 <- ''
 
 #####  Updating 2025 Dataset  #####
 
@@ -2259,7 +2264,10 @@ eip25$ltc_sud_referral_uc_inpt___0 <- ''
 eip25$mgen_sr <- ''
 eip25$mgen_treat <- ''
 eip25$pitula_ltc_open_calc <- ''
-
+eip25$ltc_coordinator_per_case___93 <- ''
+eip25$ltc_coordinator_per_case___94 <- ''
+eip25$ltc_coordinator_per_case___95 <- ''
+eip25$ltc_coordinator_per_case___96 <- ''
 
 #####  Updating 2026 Dataset  #####
 
@@ -2563,7 +2571,6 @@ eip26$offer_outcome_declined_peer___22 <- ''
 eip26$offer_outcome_declined_peer___24 <- ''
 eip26$offer_outcome_declined_peer___25 <- ''
 eip26$offer_outcome_declined_peer___26 <- ''
-
 eip26$enc_location_urc <- ''
 eip26$appalachian <- ''
 eip26$appalachian_family <- ''
