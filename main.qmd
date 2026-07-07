@@ -65,19 +65,6 @@ This site shows our current EIP staff and describes their roles within the progr
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1em; align-items: end;">
   <figure style="margin: 0; text-align: center;">
-    <a href="s_koch.html" title="Skylar Koch">
-      <img src="images/s_koch.jpg" alt="Skylar Koch"
-           style="width: 100%; height: auto; display: block; border-radius: 8px;">
-    </a>
-    <figcaption style="margin-top: 0.5em; font-size: 0.9em; color: #555;">
-      Skylar Koch
-    </figcaption>
-  </figure>
-</div>
-
-
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1em; align-items: end;">
-  <figure style="margin: 0; text-align: center;">
     <a href="z_lopez_pintado.html" title="Zoe Lopez-Pintado">
       <img src="images/z_lopez_pintado.jpg" alt="Zoe Lopez-Pintado"
            style="width: 100%; height: auto; display: block; border-radius: 8px;">
@@ -182,6 +169,19 @@ This site shows our current EIP staff and describes their roles within the progr
     </a>
     <figcaption style="margin-top: 0.5em; font-size: 0.9em; color: #555;">
       Nico Llerena
+    </figcaption>
+  </figure>
+</div>
+
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1em; align-items: end;">
+  <figure style="margin: 0; text-align: center;">
+    <a href="s_koch.html" title="Skylar Koch">
+      <img src="images/s_koch.jpg" alt="Skylar Koch"
+           style="width: 100%; height: auto; display: block; border-radius: 8px;">
+    </a>
+    <figcaption style="margin-top: 0.5em; font-size: 0.9em; color: #555;">
+      Skylar Koch
     </figcaption>
   </figure>
 </div>
@@ -328,7 +328,7 @@ This site shows our current EIP staff and describes their roles within the progr
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1em; align-items: end;">
   <figure style="margin: 0; text-align: center;">
     <a href="c_powers.html" title="Connor Powers">
-      <img src="images/c_powers.jpg" alt="Connor Powers"
+      <img src="images/c_powers2.jpg" alt="Connor Powers"
            style="width: 100%; height: auto; display: block; border-radius: 8px;">
     </a>
     <figcaption style="margin-top: 0.5em; font-size: 0.9em; color: #555;">
