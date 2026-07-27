@@ -22,6 +22,9 @@ This lists all prior EIP staff in alphabetical order.
 
 
 ::: {style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;" layout-valign="bottom"}
+![Pierre Abbey](images/p_abbey.jpg){group="past-staff-gallery" fig-alt="Pierre Abbey"}
+
+
 ![Hena Akhter](images/h_akhter.jpg){group="past-staff-gallery" fig-alt="Hena Akhter"}
 
 ![Katie Anderson](images/k_anderson.jpg){group="past-staff-gallery" fig-alt="Katie Anderson"}
@@ -44,11 +47,20 @@ This lists all prior EIP staff in alphabetical order.
 
 ![Arthur Forbriger](images/a_forbriger.jpg){group="past-staff-gallery" fig-alt="Arthur Forbriger"}
 
+![Katie Hallinan](images/k_hallinan2.jpg){group="past-staff-gallery" fig-alt="Katie Hallinan"}
+
+
 ![D'Vaughn House](images/d_house.jpg){group="past-staff-gallery" fig-alt="D'Vaughn House"}
 
 ![Danielle Knox](images/d_knox.jpg){group="past-staff-gallery" fig-alt="Danielle Knox"}
 
+![Nico Llerena](images/n_llerena.jpg){group="past-staff-gallery" fig-alt="Nico Llerena"}
+
+
 ![Carmen Mack](images/blank_staff.jpg){group="past-staff-gallery" fig-alt="Carmen Mack"}
+
+![Emma Marsella](images/e_marsella.jpg){group="past-staff-gallery" fig-alt="Emma Marsella"}
+
 
 ![Cameron May](images/c_may.jpg){group="past-staff-gallery" fig-alt="Cameron May"}
 
