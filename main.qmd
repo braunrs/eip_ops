@@ -78,6 +78,19 @@ This site shows our current EIP staff and describes their roles within the progr
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1em; align-items: end;">
   <figure style="margin: 0; text-align: center;">
+    <a href="i_holmes.html" title="Ivy Holmes">
+      <img src="images/blank_staff.jpg" alt="Ivy Holmes"
+           style="width: 100%; height: auto; display: block; border-radius: 8px;">
+    </a>
+    <figcaption style="margin-top: 0.5em; font-size: 0.9em; color: #555;">
+      Ivy Holmes
+    </figcaption>
+  </figure>
+</div>
+
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1em; align-items: end;">
+  <figure style="margin: 0; text-align: center;">
     <a href="m_ichida.html" title="Mia Ichida">
       <img src="images/blank_staff.jpg" alt="Mia Ichida"
            style="width: 100%; height: auto; display: block; border-radius: 8px;">
