@@ -50,7 +50,7 @@ eip25$record_id <- paste(eip25$record_id, "_25", sep = "")
 summary(eip25$record_id)
 
 # 2026
-eip26 <- read.csv('M:/EIP Data/EIP Database/REDCap 2026/EIP Database Data 20260804_0925.csv')
+eip26 <- read.csv('M:/EIP Data/EIP Database/REDCap 2026/EIP Database Data 20260928_1429.csv')
 dim(eip26)
 summary(eip26$record_id)
 eip26$record_id <- paste(eip26$record_id, "_26", sep = "")
@@ -664,6 +664,16 @@ eip24$ltc_coordinator_per_case___94 <- ''
 eip24$ltc_coordinator_per_case___95 <- ''
 eip24$ltc_coordinator_per_case___96 <- ''
 
+eip24$eip_flag_yn <- ''
+eip24$eip_flag_rsn <- ''
+eip24$mts_provided <- ''
+eip24$mts_number <- ''
+eip24$ltc_coordinator_per_case___99 <- ''
+eip24$ltc_coordinator_per_case___98 <- ''
+eip24$ltc_coordinator_per_case___97 <- ''
+eip24$lopez_pintado_ltc_open_calc <- ''
+eip24$mccool_ltc_open_calc <- ''
+
 
 #####  Updating 2025 Dataset  #####
 
@@ -1037,6 +1047,17 @@ eip25$ltc_coordinator_per_case___93 <- ''
 eip25$ltc_coordinator_per_case___94 <- ''
 eip25$ltc_coordinator_per_case___95 <- ''
 eip25$ltc_coordinator_per_case___96 <- ''
+
+eip25$eip_flag_yn <- ''
+eip25$eip_flag_rsn <- ''
+eip25$mts_provided <- ''
+eip25$mts_number <- ''
+eip25$ltc_coordinator_per_case___99 <- ''
+eip25$ltc_coordinator_per_case___98 <- ''
+eip25$ltc_coordinator_per_case___97 <- ''
+eip25$lopez_pintado_ltc_open_calc <- ''
+eip25$mccool_ltc_open_calc <- ''
+
 
 
 #####  Updating 2026 Dataset  #####

@@ -58,7 +58,7 @@ eip25$record_id <- paste(eip25$record_id, "_25", sep = "")
 summary(eip25$record_id)
 
 # 2026
-eip26 <- read.csv('M:/EIP Data/EIP Database/REDCap 2026/EIP Database Data 20260804_0925.csv')
+eip26 <- read.csv('M:/EIP Data/EIP Database/REDCap 2026/EIP Database Data 20260928_1429.csv')
 dim(eip26)
 summary(eip26$record_id)
 eip26$record_id <- paste(eip26$record_id, "_26", sep = "")
@@ -1339,6 +1339,16 @@ eip23$ltc_coordinator_per_case___94 <- ''
 eip23$ltc_coordinator_per_case___95 <- ''
 eip23$ltc_coordinator_per_case___96 <- ''
 
+eip23$eip_flag_yn <- ''
+eip23$eip_flag_rsn <- ''
+eip23$mts_provided <- ''
+eip23$mts_number <- ''
+eip23$ltc_coordinator_per_case___99 <- ''
+eip23$ltc_coordinator_per_case___98 <- ''
+eip23$ltc_coordinator_per_case___97 <- ''
+eip23$lopez_pintado_ltc_open_calc <- ''
+eip23$mccool_ltc_open_calc <- ''
+
 
 # Removing 2023 variables that are not needed/not in 2024 dataset
 eip23 <- select(eip23, -contact_by1, -contact_by10, -contact_by11, -contact_by12, -contact_by13, -contact_by14, -contact_by15, -contact_by16,
@@ -1894,6 +1904,17 @@ eip24$ltc_coordinator_per_case___94 <- ''
 eip24$ltc_coordinator_per_case___95 <- ''
 eip24$ltc_coordinator_per_case___96 <- ''
 
+eip24$eip_flag_yn <- ''
+eip24$eip_flag_rsn <- ''
+eip24$mts_provided <- ''
+eip24$mts_number <- ''
+eip24$ltc_coordinator_per_case___99 <- ''
+eip24$ltc_coordinator_per_case___98 <- ''
+eip24$ltc_coordinator_per_case___97 <- ''
+eip24$lopez_pintado_ltc_open_calc <- ''
+eip24$mccool_ltc_open_calc <- ''
+
+
 #####  Updating 2025 Dataset  #####
 
 # Adding variables removed in 2025 database from 2024 database as blank values
@@ -2197,6 +2218,7 @@ eip25$offer_outcome_declined_peer___24 <- ''
 eip25$offer_outcome_declined_peer___25 <- ''
 eip25$offer_outcome_declined_peer___26 <- ''
 
+
 # Adding variables added to 2026 database as blank values
 eip25$enc_location_street_med <- ''
 eip25$xts_provided <- ''
@@ -2268,6 +2290,17 @@ eip25$ltc_coordinator_per_case___93 <- ''
 eip25$ltc_coordinator_per_case___94 <- ''
 eip25$ltc_coordinator_per_case___95 <- ''
 eip25$ltc_coordinator_per_case___96 <- ''
+
+eip25$eip_flag_yn <- ''
+eip25$eip_flag_rsn <- ''
+eip25$mts_provided <- ''
+eip25$mts_number <- ''
+eip25$ltc_coordinator_per_case___99 <- ''
+eip25$ltc_coordinator_per_case___98 <- ''
+eip25$ltc_coordinator_per_case___97 <- ''
+eip25$lopez_pintado_ltc_open_calc <- ''
+eip25$mccool_ltc_open_calc <- ''
+
 
 #####  Updating 2026 Dataset  #####
 
